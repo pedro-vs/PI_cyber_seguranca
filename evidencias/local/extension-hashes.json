@@ -1,0 +1,12 @@
+{
+  "extension/background.js": "9fe5ad68ec55fd609e5259aab5491f4ccaebd0c1eca8baf9fe9c1cc7bb2f2fc9",
+  "extension/content/storage.js": "915d6ba25a4f62eeacf6da5147fab097a72567ebee2201e985c12b4427c4b24f",
+  "extension/lib/domain.js": "fcc4e0b9f8775327245a1cf286e7405c515dd512f8facd1b69f9af57d9e46092",
+  "extension/lib/model.js": "6d7e142bb4376575a6c8f2bcb04da545734ad07149db0a3142147db70c65df56",
+  "extension/manifest.json": "e2090484adb0d5d66465996df19d5b60fd71ca20bdfef1d5f7b60d2b454ee539",
+  "extension/popup/popup.css": "ccdd721dd93dc13d69e44106da8993b88498e7b6195264cb34178df484c1c278",
+  "extension/popup/popup.html": "62ce32c4486ece37a99b0514d4371fb955daffd70fc3c749d7b445495737ee41",
+  "extension/popup/popup.js": "514691be20a9132563714be9c8bef21b5fdcb858a2716c50d901ae326fc14298",
+  "extension/vendor/PROVENIENCIA.md": "0a97a0e223b3ce73cc5251d262b5dabd2f322e2f0f1fd88da2ed83609dd4c75e",
+  "extension/vendor/public_suffix_list.dat": "257b298daca42f6d8ec964e238c2a55518e14f09d3117917ec8acee6f188503e"
+}

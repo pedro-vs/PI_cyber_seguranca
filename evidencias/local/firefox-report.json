@@ -1,0 +1,379 @@
+{
+  "browser": {
+    "buildID": "20260921121718",
+    "name": "Firefox",
+    "vendor": "Mozilla",
+    "version": "156.0.1"
+  },
+  "cookies": {
+    "correlatedWriteEvents": 2,
+    "correlatedWrites": [
+      {
+        "at": 1790273796617,
+        "cause": "explicit",
+        "domain": "localhost",
+        "expirationDate": null,
+        "firstPartyDomain": "",
+        "hostOnly": true,
+        "httpOnly": false,
+        "name": "pl_session_js",
+        "partitionKey": null,
+        "path": "/",
+        "sameSite": "lax",
+        "secure": false,
+        "session": true,
+        "storeId": "firefox-default"
+      },
+      {
+        "at": 1790273796618,
+        "cause": "explicit",
+        "domain": "localhost",
+        "expirationDate": 1790360196.617,
+        "firstPartyDomain": "",
+        "hostOnly": true,
+        "httpOnly": false,
+        "name": "pl_persistent_js",
+        "partitionKey": null,
+        "path": "/",
+        "sameSite": "lax",
+        "secure": false,
+        "session": false,
+        "storeId": "firefox-default"
+      }
+    ],
+    "errors": [],
+    "items": [
+      {
+        "domain": "localhost",
+        "expirationDate": null,
+        "firstPartyDomain": "",
+        "hostOnly": true,
+        "httpOnly": false,
+        "name": "pl_session_http",
+        "partitionKey": null,
+        "party": "first",
+        "path": "/",
+        "sameSite": "lax",
+        "secure": false,
+        "session": true,
+        "storeId": "firefox-default"
+      },
+      {
+        "domain": "localhost",
+        "expirationDate": 1790360196.555,
+        "firstPartyDomain": "",
+        "hostOnly": true,
+        "httpOnly": false,
+        "name": "pl_persistent_http",
+        "partitionKey": null,
+        "party": "first",
+        "path": "/",
+        "sameSite": "lax",
+        "secure": false,
+        "session": false,
+        "storeId": "firefox-default"
+      },
+      {
+        "domain": "localhost",
+        "expirationDate": null,
+        "firstPartyDomain": "",
+        "hostOnly": true,
+        "httpOnly": true,
+        "name": "pl_httponly",
+        "partitionKey": null,
+        "party": "first",
+        "path": "/",
+        "sameSite": "lax",
+        "secure": false,
+        "session": true,
+        "storeId": "firefox-default"
+      },
+      {
+        "domain": "localhost",
+        "expirationDate": null,
+        "firstPartyDomain": "",
+        "hostOnly": true,
+        "httpOnly": false,
+        "name": "pl_session_js",
+        "partitionKey": null,
+        "party": "first",
+        "path": "/",
+        "sameSite": "lax",
+        "secure": false,
+        "session": true,
+        "storeId": "firefox-default"
+      },
+      {
+        "domain": "localhost",
+        "expirationDate": 1790360196.617,
+        "firstPartyDomain": "",
+        "hostOnly": true,
+        "httpOnly": false,
+        "name": "pl_persistent_js",
+        "partitionKey": null,
+        "party": "first",
+        "path": "/",
+        "sameSite": "lax",
+        "secure": false,
+        "session": false,
+        "storeId": "firefox-default"
+      }
+    ],
+    "observationWindowMs": 30000,
+    "setCookieAttempts": [
+      {
+        "at": 1790273796555,
+        "host": "localhost",
+        "name": "pl_session_http",
+        "requestId": "6",
+        "url": "http://localhost:8787/"
+      },
+      {
+        "at": 1790273796555,
+        "host": "localhost",
+        "name": "pl_persistent_http",
+        "requestId": "6",
+        "url": "http://localhost:8787/"
+      },
+      {
+        "at": 1790273796555,
+        "host": "localhost",
+        "name": "pl_httponly",
+        "requestId": "6",
+        "url": "http://localhost:8787/"
+      }
+    ],
+    "totals": {
+      "first": 5,
+      "partitioned": 0,
+      "persistent": 2,
+      "session": 3,
+      "third": 0,
+      "total": 5
+    }
+  },
+  "coverage": {
+    "cookies": "Inventário atual; gravações correlacionadas em 30s não provam a aba de origem. Set-Cookie é tentativa, não aceite.",
+    "droppedCookieHeaders": 0,
+    "droppedCookieWrites": 0,
+    "droppedRequests": 0,
+    "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+    "partial": false,
+    "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis.",
+    "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB."
+  },
+  "extensionVersion": "0.1.0",
+  "generatedAt": "2026-09-24T18:16:37.149Z",
+  "network": {
+    "domains": [
+      {
+        "failed": 0,
+        "host": "127.0.0.1",
+        "party": "third",
+        "requests": 4,
+        "site": "127.0.0.1",
+        "types": [
+          "image",
+          "sub_frame",
+          "script",
+          "xmlhttprequest"
+        ]
+      },
+      {
+        "failed": 0,
+        "host": "localhost",
+        "party": "first",
+        "requests": 3,
+        "site": "localhost",
+        "types": [
+          "main_frame",
+          "script",
+          "image"
+        ]
+      }
+    ],
+    "requests": [
+      {
+        "at": 1790273796548,
+        "documentUrl": "",
+        "error": null,
+        "frameId": 0,
+        "fromCache": false,
+        "host": "localhost",
+        "id": "6",
+        "method": "GET",
+        "parentFrameId": -1,
+        "party": "first",
+        "queryKeys": [],
+        "status": "completed",
+        "statusCode": 200,
+        "type": "main_frame",
+        "url": "http://localhost:8787/"
+      },
+      {
+        "at": 1790273796589,
+        "documentUrl": "http://localhost:8787/",
+        "error": null,
+        "frameId": 0,
+        "fromCache": false,
+        "host": "localhost",
+        "id": "8",
+        "method": "GET",
+        "parentFrameId": -1,
+        "party": "first",
+        "queryKeys": [],
+        "status": "completed",
+        "statusCode": 200,
+        "type": "script",
+        "url": "http://localhost:8787/fixture.js"
+      },
+      {
+        "at": 1790273796592,
+        "documentUrl": "http://localhost:8787/",
+        "error": null,
+        "frameId": 0,
+        "fromCache": false,
+        "host": "127.0.0.1",
+        "id": "9",
+        "method": "GET",
+        "parentFrameId": -1,
+        "party": "third",
+        "queryKeys": [
+          "demo_signal"
+        ],
+        "status": "completed",
+        "statusCode": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8787/pixel"
+      },
+      {
+        "at": 1790273796611,
+        "documentUrl": "http://localhost:8787/",
+        "error": null,
+        "frameId": 17179869185,
+        "fromCache": false,
+        "host": "127.0.0.1",
+        "id": "12",
+        "method": "GET",
+        "parentFrameId": 0,
+        "party": "third",
+        "queryKeys": [],
+        "status": "completed",
+        "statusCode": 200,
+        "type": "sub_frame",
+        "url": "http://127.0.0.1:8787/frame"
+      },
+      {
+        "at": 1790273796623,
+        "documentUrl": "http://127.0.0.1:8787/frame",
+        "error": null,
+        "frameId": 17179869185,
+        "fromCache": false,
+        "host": "127.0.0.1",
+        "id": "13",
+        "method": "GET",
+        "parentFrameId": 0,
+        "party": "third",
+        "queryKeys": [],
+        "status": "completed",
+        "statusCode": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8787/frame.js"
+      },
+      {
+        "at": 1790273796627,
+        "documentUrl": "http://localhost:8787/",
+        "error": null,
+        "frameId": 0,
+        "fromCache": false,
+        "host": "localhost",
+        "id": "14",
+        "method": "GET",
+        "parentFrameId": -1,
+        "party": "first",
+        "queryKeys": [],
+        "status": "completed",
+        "statusCode": 204,
+        "type": "image",
+        "url": "http://localhost:8787/favicon.ico"
+      },
+      {
+        "at": 1790273796629,
+        "documentUrl": "http://localhost:8787/",
+        "error": null,
+        "frameId": 0,
+        "fromCache": false,
+        "host": "127.0.0.1",
+        "id": "15",
+        "method": "GET",
+        "parentFrameId": -1,
+        "party": "third",
+        "queryKeys": [],
+        "status": "completed",
+        "statusCode": 200,
+        "type": "xmlhttprequest",
+        "url": "http://127.0.0.1:8787/api"
+      }
+    ],
+    "totals": {
+      "failed": 0,
+      "first": 3,
+      "third": 4,
+      "total": 7,
+      "unknown": 0
+    }
+  },
+  "page": {
+    "queryKeys": [],
+    "site": "localhost",
+    "startedAt": 1790273796548,
+    "url": "http://localhost:8787/"
+  },
+  "schemaVersion": 1,
+  "score": {
+    "status": "not-implemented",
+    "value": null
+  },
+  "storage": [
+    {
+      "at": 1790273797147,
+      "frameId": 0,
+      "indexedDB": {
+        "count": 1,
+        "status": "observed",
+        "unit": "databases"
+      },
+      "localStorage": {
+        "count": 2,
+        "status": "observed",
+        "unit": "keys"
+      },
+      "origin": "http://localhost:8787",
+      "sessionStorage": {
+        "count": 1,
+        "status": "observed",
+        "unit": "keys"
+      }
+    },
+    {
+      "at": 1790273797147,
+      "frameId": 17179869185,
+      "indexedDB": {
+        "count": 0,
+        "status": "observed",
+        "unit": "databases"
+      },
+      "localStorage": {
+        "count": 1,
+        "status": "observed",
+        "unit": "keys"
+      },
+      "origin": "http://127.0.0.1:8787",
+      "sessionStorage": {
+        "count": 1,
+        "status": "observed",
+        "unit": "keys"
+      }
+    }
+  ]
+}
