@@ -18,9 +18,10 @@ import zipfile
 parser = argparse.ArgumentParser()
 parser.add_argument('--firefox', required=True)
 parser.add_argument('--geckodriver', required=True)
+parser.add_argument('--out', default='evidencias/desenvolvimento/etapa-2-canvas/regressao-etapa1')
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[1]
-out = root / 'evidencias/local'
+out = root / args.out
 out.mkdir(parents=True, exist_ok=True)
 opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 base = 'http://127.0.0.1:4444'

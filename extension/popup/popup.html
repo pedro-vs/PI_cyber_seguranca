@@ -2,18 +2,19 @@
 <html lang="pt-BR">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Privacy Lens</title><link rel="stylesheet" href="popup.css"></head>
 <body>
-  <header><div class="brand">◈ PRIVACY LENS <span>ETAPA 1</span></div><h1 id="site">Relatório da página</h1><p id="url" class="muted">Lendo observações…</p></header>
+  <header><div class="brand">◈ PRIVACY LENS <span>ETAPA 2 · CANVAS</span></div><h1 id="site">Relatório da página</h1><p id="url" class="muted">Lendo observações…</p></header>
   <main>
     <p id="error" class="notice" hidden role="alert"></p>
     <div class="toolbar"><button id="refresh">Atualizar</button><button id="export" class="secondary" disabled>Exportar JSON</button><button id="open" class="secondary">Abrir relatório</button></div>
     <p id="status" class="muted" aria-live="polite"></p>
+    <section id="canvas-section"><h2>Canvas</h2><strong id="canvas-result">Aguardando coleta</strong><p id="canvas-counts"></p><p id="canvas-methods" class="muted"></p><p id="canvas-explanation" class="muted"></p><p id="canvas-coverage" class="muted"></p><details id="canvas-details"><summary>Ver sequência e APIs observadas</summary><div id="canvas-list" class="rows"></div></details></section>
     <section class="score"><div><p class="eyebrow">PRIVACY SCORE</p><strong>Em preparação</strong></div><p>A pontuação será habilitada após os detectores e a metodologia serem validados.</p></section>
     <div class="metrics"><article><strong id="third">—</strong><span>requisições a terceiros</span></article><article><strong id="cookies">—</strong><span>cookies no inventário</span></article><article><strong id="frames">—</strong><span>frames com coleta</span></article></div>
     <section><h2>Rede <span id="network-count"></span></h2><p class="muted">Terceiro observado não significa rastreador confirmado. A contagem é de requisições, incluindo tentativas que falharam.</p><div id="domains" class="rows"></div></section>
     <section><h2>Cookies</h2><p id="cookie-summary"></p><p id="cookie-writes" class="muted"></p><p class="muted">Inventário inclui cookies preexistentes. Gravações em 30 s são correlacionadas; a API não informa a aba autora. Set-Cookie conta tentativas de gravação.</p><details><summary>Ver nomes, tipos e expiração</summary><div id="cookie-list" class="rows"></div></details></section>
     <section><h2>Armazenamento HTML5</h2><p class="muted">Snapshots por frame: local/session = chaves; IndexedDB = bancos. Não somar frames da mesma origem. Ausência de acesso não significa zero.</p><div id="storage-list" class="rows"></div></section>
-    <section><h2>Cobertura desta versão</h2><p class="muted">Canvas, cookie sync, bounce tracking, hook e bloqueio personalizado entram nas próximas etapas.</p><p id="coverage" class="muted"></p></section>
+    <section><h2>Cobertura desta versão</h2><p class="muted">Canvas disponível como indicador heurístico. Cookie sync, bounce tracking, hook e bloqueio personalizado permanecem pendentes.</p><p id="coverage" class="muted"></p></section>
   </main>
-  <footer>Observação local · sem envio de dados · v0.1.0</footer>
+  <footer>Observação local · sem envio de dados · v0.2.0</footer>
   <script src="popup.js"></script>
 </body></html>

@@ -1,0 +1,14 @@
+{
+  "extension/background.js": "6cc8ed1f3555f6b09c3199feece3a3bd4f4a5ea07846856a65ebff76b4498565",
+  "extension/content/canvas.js": "1201832e34073919af606290d873b216f23f424aa385b49c086dee0c62314eaf",
+  "extension/content/storage.js": "915d6ba25a4f62eeacf6da5147fab097a72567ebee2201e985c12b4427c4b24f",
+  "extension/lib/canvas.js": "d6802476f985856fb159bb947053b2d38571f07d1e6f051f71537ea89fe8132d",
+  "extension/lib/domain.js": "fcc4e0b9f8775327245a1cf286e7405c515dd512f8facd1b69f9af57d9e46092",
+  "extension/lib/model.js": "3243c89f44e8275b2b72531d500903a61553f87ee4d655da0d742517484dbd7f",
+  "extension/manifest.json": "60e310e29af1085a2ce096eef296a93852e1c206c07d86fa8dc40119dd2eb9c8",
+  "extension/popup/popup.css": "3e9f7b4edc9b875d7a621457d3eedc54536341d4ceaf7a2fd06d1dfeda96f4d3",
+  "extension/popup/popup.html": "7b0fbfd63469254d423d2771b243cb887e67f06ef177f7444accbe8a301a99c1",
+  "extension/popup/popup.js": "dd6abe20d7161ce5b5a4922e3c4fbfe76e414108fbb6f5065afaa8174e616b52",
+  "extension/vendor/PROVENIENCIA.md": "0a97a0e223b3ce73cc5251d262b5dabd2f322e2f0f1fd88da2ed83609dd4c75e",
+  "extension/vendor/public_suffix_list.dat": "257b298daca42f6d8ec964e238c2a55518e14f09d3117917ec8acee6f188503e"
+}

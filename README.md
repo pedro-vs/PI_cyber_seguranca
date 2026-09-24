@@ -1,6 +1,8 @@
 # Privacy Lens — Insper
 
-Extensão Firefox para a Avaliação Intermediária de Cibersegurança. **Versão 0.1.0 / Etapa 1**, desenvolvida em 24/09/2026. Esta entrega inicia o projeto; ainda não cumpre todos os requisitos de C, B ou A.
+Extensão Firefox para a Avaliação Intermediária de Cibersegurança. **Versão 0.2.0 / Etapa 2A — Canvas**, em 24/09/2026. A Etapa 1 foi validada pelo aluno no macOS/Firefox 156.0.1. Canvas está implementado e testado automaticamente; a validação manual deste bloco e suas evidências ainda estão pendentes. Ainda não cumpre todos os requisitos de C, B ou A.
+
+**Comece pelo roteiro atual: [Canvas, atualização e prints obrigatórios](docs/ETAPA_2_CANVAS.md).** Ele define exatamente como atualizar sem alterar o histórico Git e quais capturas/JSONs salvar. [Lista de arquivos alterados](docs/ARQUIVOS_ETAPA_2_CANVAS.md).
 
 ## Comece aqui
 
@@ -51,6 +53,7 @@ Abra `http://localhost:8787/empty`: as requisições anteriores e gravações co
 - Inventário de cookies dos domínios observados: domínio, nome, sessão/persistente, expiração, HttpOnly, Secure, chave de partição. Filtragem pelo cookie store da aba e partição do site.
 - Tentativas HTTP Set-Cookie separadas de cookies existentes e de gravações correlacionadas pela API de cookies.
 - Snapshots localStorage/sessionStorage/IndexedDB por frame HTTP(S), com estados indisponível/sem suporte.
+- Canvas: instrumentação Firefox no contexto real da página; distinção entre desenho, leitura e sequência compatível; evidência por API/frame.
 - Popup, relatório em aba e exportação JSON. Dados transitórios ficam na memória da extensão.
 - Testes de lógica e fixture local reproduzível.
 
@@ -86,16 +89,8 @@ Abra `http://localhost:8787/empty`: as requisições anteriores e gravações co
 | `docs/FONTES.md` | Documentação consultada |
 | `evidencias/` | Resultados reais locais e espaços pendentes para DDG/sites |
 
-## Git: registre a evolução real
+## Git e próximo bloco
 
-**COMMIT AGORA**, depois de conferir o carregamento local:
+Seu histórico da Etapa 1 foi informado como validado e commitado. Esta entrega não inclui `.git` nem executa comandos no seu GitHub. Preserve os commits existentes e suas evidências. Não rode novamente git init e não substitua a pasta inteira do repositório.
 
-```bash
-git init -b main
-git add .
-git commit -m "feat: add initial Firefox network cookies and storage report"
-```
-
-Crie o repositório remoto na sua conta e conecte-o quando tiver a URL. Se esta pasta já estiver em um repositório, pule `git init`. Não foi criado histórico em seu nome, nem alteradas datas. Faça novos commits após cada bloco real; um único commit de hoje não satisfaz o histórico ao longo da semana.
-
-Próximo bloco: validar a coleta no seu Firefox, corrigir divergências reais e adicionar instrumentação de canvas com controles positivos/negativos e os primeiros testes DDG. O trabalho final depende também dos três sites sorteados por matrícula.
+Para este bloco, execute a validação de canvas descrita em `docs/ETAPA_2_CANVAS.md` e envie prints/JSONs. O próximo commit será indicado após essa validação. Cookies, DDG, score e outros recursos não foram misturados neste bloco.

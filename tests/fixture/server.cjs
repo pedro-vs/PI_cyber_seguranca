@@ -5,6 +5,15 @@ const top = `http://localhost:${port}`, third = `http://127.0.0.1:${port}`;
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, top);
   res.setHeader("Cache-Control", "no-store");
+  if (["/canvas/negative","/canvas/positive","/canvas/read-only","/canvas/errors","/canvas/frame"].includes(url.pathname)) {
+    res.setHeader("Content-Type","text/html; charset=utf-8");
+    res.setHeader("Content-Security-Policy","default-src 'self'; script-src 'self'; style-src 'self'; frame-src http://127.0.0.1:*;");
+    return res.end(fs.readFileSync(path.join(__dirname,"canvas.html")));
+  }
+  if (["/canvas.css","/canvas-fixture.js"].includes(url.pathname)) {
+    res.setHeader("Content-Type",url.pathname.endsWith(".css")?"text/css":"application/javascript");
+    return res.end(fs.readFileSync(path.join(__dirname,url.pathname.slice(1)),"utf8").replaceAll("__PORT__",String(port)));
+  }
   if (url.pathname === "/redirect") { res.writeHead(302, {Location: "/"}); return res.end(); }
   if (url.pathname === "/empty") { res.setHeader("Content-Type", "text/html; charset=utf-8"); return res.end("<!doctype html><title>Página vazia</title><h1>Página sem recursos externos</h1>"); }
   if (url.pathname === "/pixel") {

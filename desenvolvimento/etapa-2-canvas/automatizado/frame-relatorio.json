@@ -1,0 +1,400 @@
+{
+  "browser": {
+    "buildID": "20260921121718",
+    "name": "Firefox",
+    "vendor": "Mozilla",
+    "version": "156.0.1"
+  },
+  "canvas": {
+    "canvasCount": 1,
+    "classification": "indicator",
+    "drawingCalls": 2,
+    "failedReadbacks": 0,
+    "frames": [
+      {
+        "at": 1790277054023,
+        "frameId": 0,
+        "instrumentation": {
+          "failed": [],
+          "installed": [
+            "CanvasRenderingContext2D.fillRect",
+            "CanvasRenderingContext2D.strokeRect",
+            "CanvasRenderingContext2D.fillText",
+            "CanvasRenderingContext2D.strokeText",
+            "CanvasRenderingContext2D.drawImage",
+            "CanvasRenderingContext2D.putImageData",
+            "CanvasRenderingContext2D.fill",
+            "CanvasRenderingContext2D.stroke",
+            "CanvasRenderingContext2D.getImageData",
+            "HTMLCanvasElement.toDataURL",
+            "HTMLCanvasElement.toBlob"
+          ],
+          "replaced": [],
+          "strategy": "Firefox wrappedJSObject + exportFunction",
+          "unsupported": []
+        },
+        "observation": {
+          "canvasCount": 0,
+          "canvases": [],
+          "classification": "not-observed",
+          "drawingCalls": 0,
+          "droppedEvents": 0,
+          "droppedSamples": 0,
+          "failedReadbacks": 0,
+          "indicatorCanvases": 0,
+          "readbackCalls": 0,
+          "ruleVersion": "canvas-sequence-v1",
+          "samples": [],
+          "used": false,
+          "windowMs": 5000
+        },
+        "origin": "http://localhost:8787",
+        "sequence": 5,
+        "timeOrigin": 1790277053592,
+        "url": "http://localhost:8787/canvas/frame"
+      },
+      {
+        "at": 1790277054023,
+        "frameId": 17179869185,
+        "instrumentation": {
+          "failed": [],
+          "installed": [
+            "CanvasRenderingContext2D.fillRect",
+            "CanvasRenderingContext2D.strokeRect",
+            "CanvasRenderingContext2D.fillText",
+            "CanvasRenderingContext2D.strokeText",
+            "CanvasRenderingContext2D.drawImage",
+            "CanvasRenderingContext2D.putImageData",
+            "CanvasRenderingContext2D.fill",
+            "CanvasRenderingContext2D.stroke",
+            "CanvasRenderingContext2D.getImageData",
+            "HTMLCanvasElement.toDataURL",
+            "HTMLCanvasElement.toBlob"
+          ],
+          "replaced": [],
+          "strategy": "Firefox wrappedJSObject + exportFunction",
+          "unsupported": []
+        },
+        "observation": {
+          "canvasCount": 1,
+          "canvases": [
+            {
+              "drawCount": 2,
+              "drawMethods": [
+                "CanvasRenderingContext2D.fillRect",
+                "CanvasRenderingContext2D.fillText"
+              ],
+              "failedReadCount": 0,
+              "id": 1,
+              "indicator": true,
+              "lastDrawAt": 40,
+              "lastDrawMethod": "CanvasRenderingContext2D.fillText",
+              "readCount": 3,
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData",
+                "HTMLCanvasElement.toDataURL",
+                "HTMLCanvasElement.toBlob"
+              ]
+            }
+          ],
+          "classification": "indicator",
+          "drawingCalls": 2,
+          "droppedEvents": 0,
+          "droppedSamples": 0,
+          "failedReadbacks": 0,
+          "indicatorCanvases": 1,
+          "readbackCalls": 3,
+          "ruleVersion": "canvas-sequence-v1",
+          "samples": [
+            {
+              "at": 40,
+              "canvasId": 1,
+              "correlated": true,
+              "drawToReadMs": 0,
+              "errorName": null,
+              "height": 100,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "precedingDraw": "CanvasRenderingContext2D.fillText",
+              "width": 320
+            },
+            {
+              "at": 41,
+              "canvasId": 1,
+              "correlated": true,
+              "drawToReadMs": 1,
+              "errorName": null,
+              "height": 100,
+              "method": "HTMLCanvasElement.toDataURL",
+              "outcome": "returned",
+              "precedingDraw": "CanvasRenderingContext2D.fillText",
+              "width": 320
+            },
+            {
+              "at": 41,
+              "canvasId": 1,
+              "correlated": true,
+              "drawToReadMs": 1,
+              "errorName": null,
+              "height": 100,
+              "method": "HTMLCanvasElement.toBlob",
+              "outcome": "requested",
+              "precedingDraw": "CanvasRenderingContext2D.fillText",
+              "width": 320
+            }
+          ],
+          "used": true,
+          "windowMs": 5000
+        },
+        "origin": "http://127.0.0.1:8787",
+        "sequence": 5,
+        "timeOrigin": 1790277053611,
+        "url": "http://127.0.0.1:8787/canvas/positive"
+      }
+    ],
+    "indicatorCanvases": 1,
+    "meaning": "Desenho seguido de leitura/exportação no mesmo canvas em até 5 s é um indício heurístico, não prova de rastreamento.",
+    "partial": false,
+    "readbackCalls": 3,
+    "ruleVersion": "canvas-sequence-v1",
+    "windowMs": 5000
+  },
+  "cookies": {
+    "correlatedWriteEvents": 0,
+    "correlatedWrites": [],
+    "errors": [],
+    "items": [],
+    "observationWindowMs": 30000,
+    "setCookieAttempts": [],
+    "totals": {
+      "first": 0,
+      "partitioned": 0,
+      "persistent": 0,
+      "session": 0,
+      "third": 0,
+      "total": 0
+    }
+  },
+  "coverage": {
+    "cookies": "Inventário atual; gravações correlacionadas em 30s não provam a aba de origem. Set-Cookie é tentativa, não aceite.",
+    "droppedCookieHeaders": 0,
+    "droppedCookieWrites": 0,
+    "droppedRequests": 0,
+    "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+    "partial": false,
+    "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis.",
+    "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB."
+  },
+  "extensionVersion": "0.2.0",
+  "generatedAt": "2026-09-24T19:10:54.024Z",
+  "network": {
+    "domains": [
+      {
+        "failed": 0,
+        "host": "localhost",
+        "party": "first",
+        "requests": 4,
+        "site": "localhost",
+        "types": [
+          "main_frame",
+          "stylesheet",
+          "script",
+          "image"
+        ]
+      },
+      {
+        "failed": 0,
+        "host": "127.0.0.1",
+        "party": "third",
+        "requests": 3,
+        "site": "127.0.0.1",
+        "types": [
+          "sub_frame",
+          "stylesheet",
+          "script"
+        ]
+      }
+    ],
+    "requests": [
+      {
+        "at": 1790277053592,
+        "documentUrl": "",
+        "error": null,
+        "frameId": 0,
+        "fromCache": false,
+        "host": "localhost",
+        "id": "53",
+        "method": "GET",
+        "parentFrameId": -1,
+        "party": "first",
+        "queryKeys": [],
+        "status": "completed",
+        "statusCode": 200,
+        "type": "main_frame",
+        "url": "http://localhost:8787/canvas/frame"
+      },
+      {
+        "at": 1790277053606,
+        "documentUrl": "http://localhost:8787/canvas/frame",
+        "error": null,
+        "frameId": 0,
+        "fromCache": false,
+        "host": "localhost",
+        "id": "54",
+        "method": "GET",
+        "parentFrameId": -1,
+        "party": "first",
+        "queryKeys": [],
+        "status": "completed",
+        "statusCode": 200,
+        "type": "stylesheet",
+        "url": "http://localhost:8787/canvas.css"
+      },
+      {
+        "at": 1790277053607,
+        "documentUrl": "http://localhost:8787/canvas/frame",
+        "error": null,
+        "frameId": 0,
+        "fromCache": false,
+        "host": "localhost",
+        "id": "55",
+        "method": "GET",
+        "parentFrameId": -1,
+        "party": "first",
+        "queryKeys": [],
+        "status": "completed",
+        "statusCode": 200,
+        "type": "script",
+        "url": "http://localhost:8787/canvas-fixture.js"
+      },
+      {
+        "at": 1790277053616,
+        "documentUrl": "http://localhost:8787/canvas/frame",
+        "error": null,
+        "frameId": 17179869185,
+        "fromCache": false,
+        "host": "127.0.0.1",
+        "id": "57",
+        "method": "GET",
+        "parentFrameId": 0,
+        "party": "third",
+        "queryKeys": [],
+        "status": "completed",
+        "statusCode": 200,
+        "type": "sub_frame",
+        "url": "http://127.0.0.1:8787/canvas/positive"
+      },
+      {
+        "at": 1790277053617,
+        "documentUrl": "http://localhost:8787/canvas/frame",
+        "error": null,
+        "frameId": 0,
+        "fromCache": true,
+        "host": "localhost",
+        "id": "58",
+        "method": "GET",
+        "parentFrameId": -1,
+        "party": "first",
+        "queryKeys": [],
+        "status": "completed",
+        "statusCode": 204,
+        "type": "image",
+        "url": "http://localhost:8787/favicon.ico"
+      },
+      {
+        "at": 1790277053624,
+        "documentUrl": "http://127.0.0.1:8787/canvas/positive",
+        "error": null,
+        "frameId": 17179869185,
+        "fromCache": false,
+        "host": "127.0.0.1",
+        "id": "60",
+        "method": "GET",
+        "parentFrameId": 0,
+        "party": "third",
+        "queryKeys": [],
+        "status": "completed",
+        "statusCode": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8787/canvas.css"
+      },
+      {
+        "at": 1790277053625,
+        "documentUrl": "http://127.0.0.1:8787/canvas/positive",
+        "error": null,
+        "frameId": 17179869185,
+        "fromCache": false,
+        "host": "127.0.0.1",
+        "id": "61",
+        "method": "GET",
+        "parentFrameId": 0,
+        "party": "third",
+        "queryKeys": [],
+        "status": "completed",
+        "statusCode": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8787/canvas-fixture.js"
+      }
+    ],
+    "totals": {
+      "failed": 0,
+      "first": 4,
+      "third": 3,
+      "total": 7,
+      "unknown": 0
+    }
+  },
+  "page": {
+    "queryKeys": [],
+    "site": "localhost",
+    "startedAt": 1790277053592,
+    "url": "http://localhost:8787/canvas/frame"
+  },
+  "schemaVersion": 2,
+  "score": {
+    "status": "not-implemented",
+    "value": null
+  },
+  "storage": [
+    {
+      "at": 1790277054023,
+      "frameId": 0,
+      "indexedDB": {
+        "count": 0,
+        "status": "observed",
+        "unit": "databases"
+      },
+      "localStorage": {
+        "count": 0,
+        "status": "observed",
+        "unit": "keys"
+      },
+      "origin": "http://localhost:8787",
+      "sessionStorage": {
+        "count": 0,
+        "status": "observed",
+        "unit": "keys"
+      }
+    },
+    {
+      "at": 1790277054023,
+      "frameId": 17179869185,
+      "indexedDB": {
+        "count": 0,
+        "status": "observed",
+        "unit": "databases"
+      },
+      "localStorage": {
+        "count": 0,
+        "status": "observed",
+        "unit": "keys"
+      },
+      "origin": "http://127.0.0.1:8787",
+      "sessionStorage": {
+        "count": 0,
+        "status": "observed",
+        "unit": "keys"
+      }
+    }
+  ]
+}

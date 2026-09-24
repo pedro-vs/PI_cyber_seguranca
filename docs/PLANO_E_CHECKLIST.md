@@ -1,5 +1,7 @@
 # Plano e checklist — fonte de verdade: PDF do enunciado
 
+**Atualização 0.2.0:** Etapa 1 validada e commitada pelo aluno; canvas implementado neste bloco, com validação manual pendente. Consulte a checklist operacional e os prints obrigatórios em `ETAPA_2_CANVAS.md`. Os critérios gerais abaixo só serão encerrados com suas evidências completas.
+
 PDF de 4 páginas lido integralmente. Referências: entregáveis na p. 2; conceitos e descontos na p. 3; entrega na p. 4. Prazo operacional usado: **29/09/2026**, informado pelo aluno; o PDF diz “1 semana a partir da divulgação”.
 
 ## Obrigatório para qualquer conceito
@@ -82,4 +84,4 @@ Estrutura de evidências já preparada: `evidencias/local/`, `evidencias/duckduc
 
 ## Escopo exato da Etapa 1
 
-Entregar uma base observacional instalável, testável e compreensível, com rede/cookies/storage e interface; comprovar os cálculos de classificação; fornecer fixture e instruções. Score, fingerprinting, bloqueio e reconhecimento de hook não recebem resultados simulados. A validação manual do aluno é a próxima interação, antes de desenvolver o bloco seguinte.
+Entregar uma base observacional instalável, testável e compreensível, com rede/cookies/storage e interface; comprovar os cálculos de classificação; fornecer fixture e instruções. Na Etapa 1, score, fingerprinting, bloqueio e reconhecimento de hook não recebiam resultados simulados. A v0.2.0 acrescenta somente canvas, descrito no roteiro atual. A validação manual da Etapa 1 foi informada como concluída. A próxima validação é a de canvas v0.2.0, antes de cookies/DDG.

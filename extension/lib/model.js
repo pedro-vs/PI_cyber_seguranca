@@ -22,7 +22,7 @@
   };
   P.newPage = (tabId, url, requestId, startedAt = Date.now()) => ({
     tabId, topUrl: url, navigationRequestId: requestId, startedAt,
-    storeId: null, requests: [], latestRequest: new Map(), frames: new Map(),
+    storeId: null, requests: [], latestRequest: new Map(), frames: new Map(), canvasFrames: new Map(),
     cookieWrites: new Map(), setCookies: [], droppedRequests: 0, droppedCookieHeaders: 0,
     cookieWriteEvents: 0, droppedCookieWrites: 0, partial: requestId === null
   });

@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "browserVersion": "156.0.1",
+  "collectedAt": "2026-09-24T19:10:54.024Z",
+  "extensionVersion": "0.2.0",
+  "mode": "headless; perfil temporário; fixture local com CSP; relatório real aberto em aba",
+  "containerSandboxOverrides": {
+    "MOZ_DISABLE_CONTENT_SANDBOX": "1",
+    "MOZ_DISABLE_RDD_SANDBOX": "1",
+    "MOZ_DISABLE_GMP_SANDBOX": "1"
+  },
+  "cases": {
+    "negative": {
+      "status": "passed",
+      "observed": [
+        "draw-only",
+        2,
+        0,
+        0,
+        0
+      ],
+      "report": "negative-relatorio.json",
+      "screenshot": "negative-plugin.png"
+    },
+    "positive": {
+      "status": "passed",
+      "observed": [
+        "indicator",
+        2,
+        3,
+        0,
+        1
+      ],
+      "report": "positive-relatorio.json",
+      "screenshot": "positive-plugin.png"
+    },
+    "read-only": {
+      "status": "passed",
+      "observed": [
+        "readback-only",
+        0,
+        1,
+        0,
+        0
+      ],
+      "report": "read-only-relatorio.json",
+      "screenshot": "read-only-plugin.png"
+    },
+    "errors": {
+      "status": "passed",
+      "observed": [
+        "readback-only",
+        2,
+        1,
+        1,
+        0
+      ],
+      "report": "errors-relatorio.json",
+      "screenshot": "errors-plugin.png"
+    },
+    "frame": {
+      "status": "passed",
+      "observed": [
+        "indicator",
+        2,
+        3,
+        0,
+        1
+      ],
+      "report": "frame-relatorio.json",
+      "screenshot": "frame-plugin.png"
+    }
+  },
+  "nativeComparison": "PNG dataURL, ImageData/pixel, Blob/tipo/tamanho e IndexSizeError iguais com/sem extensão",
+  "functionSignatures": "name/length preservados nas três APIs de leitura",
+  "coverageReplacement": "substituição de método sinalizada como cobertura parcial",
+  "ddg": "não executado",
+  "manualMacOS": "pendente de validação do aluno"
+}

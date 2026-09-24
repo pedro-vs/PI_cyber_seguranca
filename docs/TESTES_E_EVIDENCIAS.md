@@ -1,5 +1,7 @@
 # Protocolo de testes e evidências
 
+**Roteiro atual:** `ETAPA_2_CANVAS.md`, com URL/ação/espera/seção/conteúdo/nome/pasta para cada print obrigatório de canvas. Os DDG abaixo continuam planejados, não executados.
+
 Resultados DDG e dos sites reais estão **pendentes**. Consultar a documentação online não executa os testes. Resultados reais desta etapa são somente os explicitamente registrados em `evidencias/local/`.
 
 ## Registrar para toda execução
@@ -41,7 +43,7 @@ Duplicar a linha para cada subteste/configuração, mantendo um print do plugin 
 
 - Tracker Reporting: abrir a URL, aguardar 30s, registrar o tracker anunciado, comparar domínio/tipo/estado no JSON e no DevTools. Se houver bloqueio antecipado, registrar a prova, não inventar requisição ausente.
 - Storage Blocking: executar os controles que a página oferecer, registrar cada tipo/origem e estado. Comparar “bloqueado” da página com “indisponível”/estoque do plugin, sem confundir a tentativa com sucesso de escrita.
-- Canvas: executar a ação da página, guardar o resultado e a sequência observada. Na Etapa 1 o detector ainda não existe: o resultado do plugin é “não implementado”.
+- Canvas: executar a ação da página, guardar o resultado e a sequência observada. Na v0.2.0 o detector de sequência canvas existe; seus resultados DDG ainda estão pendentes e só serão preenchidos na execução real.
 - Tracker Blocking: primeiro medição observacional; depois repetir com domínio escolhido na blocklist, mantendo o resto. Provar bloqueio com evento e resultado da página.
 - Storage Partitioning: seguir o fluxo entre top sites indicado pelo teste. Comparar a mesma origem terceira sob contextos distintos; um snapshot único não é suficiente.
 - Bounce Tracking: seguir os links/redirects do próprio teste e manter o histórico entre documentos. Capturar URL/cadeia/tempo/identificador, incluindo controles de login legítimo.
@@ -75,4 +77,4 @@ Exemplos de hipóteses a testar, não resultados: recurso bloqueado antes de obs
 
 ## Próximos commits reais
 
-Depois de cada detector funcionando: COMMIT AGORA com mensagem específica. Depois de executar DDG: `test: record DuckDuckGo privacy evidence`. Depois de sites reais: `test: reconcile assigned sites with reference tools`. Não fabricar commits ou retroagir datas.
+Depois de cada bloco validado no Firefox do aluno e com evidências registradas, indicar o próximo commit específico. Não antecipar commits de blocos ainda não validados. Depois de executar DDG: `test: record DuckDuckGo privacy evidence`. Depois de sites reais: `test: reconcile assigned sites with reference tools`. Não fabricar commits ou retroagir datas.

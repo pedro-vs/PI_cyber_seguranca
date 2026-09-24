@@ -19,7 +19,32 @@ function row(target, title, lines, party, count) {
   $(target).append(el);
 }
 function storageText(value, unit) { return value?.status === "observed" ? `${value.count} ${unit}` : `não observável (${value?.reason || value?.status || "sem coleta"})`; }
+function renderCanvas(canvas) {
+  const labels = {indicator:"Indicador de canvas fingerprinting detectado", "draw-only":"Canvas utilizado · indicador não detectado",
+    "readback-only":"Leitura/exportação observada · sem sequência compatível", "not-observed":"Nenhuma chamada canvas observada",
+    unavailable:"Canvas não observável · recarregue a página"};
+  $("canvas-result").textContent = labels[canvas.classification] || labels.unavailable;
+  $("canvas-result").className = canvas.classification === "indicator" ? "indicator" : "";
+  $("canvas-counts").textContent = `${canvas.drawingCalls} desenhos · ${canvas.readbackCalls} leituras/exportações (${canvas.failedReadbacks} com exceção) · ${canvas.indicatorCanvases} canvas com indício`;
+  const methods = [...new Set(canvas.frames.flatMap(f => f.observation.canvases.flatMap(c => c.readMethods)))];
+  $("canvas-methods").textContent = methods.length ? `APIs de leitura: ${methods.map(m => m.split(".").pop()).join(" · ")}` : "Nenhuma API de leitura/exportação observada.";
+  $("canvas-explanation").textContent = "Regra: desenho + leitura/exportação no mesmo canvas em até 5 s. Indício de baixa especificidade: editores e capturas legítimas também fazem isso. Não comprova rastreamento. toBlob registra solicitação, não o resultado do callback.";
+  $("canvas-coverage").textContent = `${canvas.frames.length} frames com instrumentação. ${canvas.partial ? "Cobertura parcial: confira os detalhes." : "Métodos previstos instalados nos frames coletados."} Canvas 2D/HTML; workers, OffscreenCanvas e WebGL não cobertos.`;
+  $("canvas-list").replaceChildren();
+  for (const frame of canvas.frames) {
+    const o = frame.observation, i = frame.instrumentation;
+    row("canvas-list", frame.url, [`Frame ${frame.frameId} · ${i.installed.length} métodos instalados · ${o.canvasCount} canvas observados`,
+      `Falhas: ${i.failed.length} · ausentes: ${i.unsupported.length} · substituídos: ${i.replaced.length} · eventos fora do limite: ${o.droppedEvents} · amostras fora do limite: ${o.droppedSamples}`,
+      ...i.failed.map(f => `${f.method}: ${f.error}`), ...i.replaced.map(m => `Instrumentação substituída: ${m}`)]);
+    for (const sample of o.samples) row("canvas-list", `Canvas #${sample.canvasId} · ${sample.method.split(".").pop()}`, [
+      `${sample.width} × ${sample.height} · ${sample.outcome === "threw" ? `exceção ${sample.errorName}` : sample.outcome === "requested" ? "exportação solicitada" : "retorno sem exceção"}`,
+      sample.precedingDraw ? `Desenho anterior: ${sample.precedingDraw.split(".").pop()} · intervalo ${Math.round(sample.drawToReadMs)} ms` : "Sem desenho anterior observado neste canvas.",
+      sample.correlated ? "Sequência compatível com a regra; intenção não determinada." : "Esta chamada não atende à regra de sequência."
+    ]);
+  }
+}
 function render(data) {
+  renderCanvas(data.canvas);
   $("site").textContent = data.page.site;
   $("url").textContent = data.page.url;
   $("third").textContent = data.network.totals.third;

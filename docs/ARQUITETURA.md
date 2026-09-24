@@ -43,9 +43,9 @@ Partições de outros top sites são excluídas; cookies não particionados perm
 
 Medimos estado nos momentos `document_start`, DOMContentLoaded, pageshow, após 1s/5s, evento storage e pedido manual. A contagem pode perder escritas breves. Um armazenamento vazio não prova que não foi acessado. Frames repetidos podem compartilhar storage: não somamos contagens como se fossem bancos independentes. `IndexedDB.databases()` dá quantidade de bancos, não quantidade de object stores/registros. Workers não são instrumentados.
 
-## Próxima instrumentação, ainda não implementada
+## Instrumentação incremental
 
-- Canvas: interceptar APIs de leitura, registrar sequência draw→read e contexto; apenas desenho não pontua. Manter funcionamento e detectar a própria presença em js-leaks.
+- Canvas implementado na v0.2.0: wrappers Firefox com wrappedJSObject/exportFunction, desenho/leitura/indício separados, mesmos canvas/frame e intervalo de 5 s. Não altera score. Detalhes e limites em ETAPA_2_CANVAS.md; js-leaks ainda não executado.
 - Cookie sync: observar fluxo de identificador entre domínios, com hash efêmero e evidência de origem/destino; remover valores brutos e não classificar `utm_source` como ID de usuário automaticamente.
 - Bounce: histórico limitado entre navegações, redirects HTTP e client-side; considerar permanência e interação. Login legítimo é controle negativo.
 - Hook: WebSocket/polling com janela temporal, domínio e contexto; comparar descritores de globais e mudanças não causadas pela própria extensão. Sinais não equivalem a exploração confirmada.

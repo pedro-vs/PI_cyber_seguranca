@@ -94,17 +94,38 @@ browser.webNavigation.onCommitted.addListener(d => {
     if (!P.isWeb(d.url)) { pages.delete(d.tabId); return; }
     state.topUrl = d.url;
     state.frames.clear();
-  } else state.frames.delete(d.frameId);
+    state.canvasFrames.clear();
+  } else { state.frames.delete(d.frameId); state.canvasFrames.delete(d.frameId); }
 });
 
 browser.runtime.onMessage.addListener((message, sender) => {
   if (!message || sender.id !== browser.runtime.id) return undefined;
   if (message.type === "storage-snapshot" && sender.tab) return receiveStorage(message, sender);
+  if (message.type === "canvas-snapshot" && sender.tab) return receiveCanvas(message, sender);
   // Somente páginas internas podem solicitar inventários completos da aba.
   if (sender.tab && !sender.url?.startsWith(browser.runtime.getURL(""))) return undefined;
   if (message.type === "report" && Number.isInteger(message.tabId)) return report(message.tabId, message.refresh);
   return undefined;
 });
+
+async function receiveCanvas(message, sender) {
+  await ready;
+  const state = pages.get(sender.tab.id);
+  if (!state || !P.isWeb(sender.url) || !Number.isFinite(message.timeOrigin) ||
+    message.timeOrigin < state.startedAt - 100 || !Number.isInteger(message.sequence)) return;
+  const observation = message.observation, instrumentation = message.instrumentation;
+  if (!observation || observation.ruleVersion !== "canvas-sequence-v1" || !instrumentation ||
+    !Array.isArray(observation.samples) || observation.samples.length > 40 ||
+    !Array.isArray(observation.canvases) || observation.canvases.length > 100) return;
+  let frame;
+  try { frame = await browser.webNavigation.getFrame({tabId:sender.tab.id,frameId:sender.frameId}); } catch { return; }
+  if (!frame || frame.url !== sender.url || pages.get(sender.tab.id) !== state) return;
+  const previous = state.canvasFrames.get(sender.frameId);
+  if (previous?.timeOrigin === message.timeOrigin && previous.sequence >= message.sequence) return;
+  state.canvasFrames.set(sender.frameId, {frameId:sender.frameId, origin:new URL(sender.url).origin,
+    url:P.safeUrl(sender.url).url, timeOrigin:message.timeOrigin, sequence:message.sequence,
+    at:Date.now(), observation, instrumentation});
+}
 
 async function receiveStorage(message, sender) {
   await ready;
@@ -151,17 +172,19 @@ async function report(tabId, refresh) {
   state.storeId = tab.cookieStoreId;
   if (refresh) {
     const frames = await browser.webNavigation.getAllFrames({tabId}).catch(() => []);
-    await Promise.all((frames || []).map(frame => browser.tabs.sendMessage(tabId, {type: "collect-storage"},
-      {frameId: frame.frameId}).catch(() => {})));
+    const activeIds = new Set((frames || []).map(frame => frame.frameId));
+    for (const id of state.canvasFrames.keys()) if (!activeIds.has(id)) state.canvasFrames.delete(id);
+    await Promise.all((frames || []).flatMap(frame => ["collect-storage", "collect-canvas"].map(type =>
+      browser.tabs.sendMessage(tabId, {type}, {frameId:frame.frameId}).catch(() => {}))));
   }
   const cookies = await collectCookies(state);
   if (pages.get(tabId) !== state) return {error: "A página mudou durante a coleta. Clique em Atualizar."};
   const network = P.summarizeNetwork(state, resolveDomain);
-  return {schemaVersion: 1, extensionVersion: browser.runtime.getManifest().version,
+  return {schemaVersion: 2, extensionVersion: browser.runtime.getManifest().version,
     generatedAt: new Date().toISOString(), browser: await browser.runtime.getBrowserInfo(),
     page: {...P.safeUrl(state.topUrl), site: resolveDomain(P.host(state.topUrl)), startedAt: state.startedAt},
     network: {...network, requests: state.requests.map(r => ({...r, party: P.party(r.host, P.host(state.topUrl), resolveDomain)}))},
-    cookies, storage: [...state.frames.values()],
+    cookies, storage: [...state.frames.values()], canvas:P.summarizeCanvas([...state.canvasFrames.values()]),
     score: {status: "not-implemented", value: null},
     coverage: {partial: state.partial, droppedRequests: state.droppedRequests, droppedCookieHeaders: state.droppedCookieHeaders,
       droppedCookieWrites: state.droppedCookieWrites,
