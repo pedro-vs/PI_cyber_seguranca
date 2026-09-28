@@ -1,8 +1,8 @@
 # Privacy Lens — Insper
 
-Extensão Firefox para a Avaliação Intermediária de Cibersegurança. **Versão 0.2.0 / Etapa 2A — Canvas**, em 24/09/2026. A Etapa 1 foi validada pelo aluno no macOS/Firefox 156.0.1. Canvas está implementado e testado automaticamente; a validação manual deste bloco e suas evidências ainda estão pendentes. Ainda não cumpre todos os requisitos de C, B ou A.
+Extensão Firefox para a Avaliação Intermediária de Cibersegurança. **Versão 0.3.0 / bloco atual: atribuição de cookies**, em 28/09/2026. Etapa 1 e canvas foram informados como validados pelo aluno no macOS/Firefox 156.0.1. Alteração e lógica de tentativa recusada passaram na validação manual informada pelo aluno; a correção da correlação de cookies terceiros aguarda repetição manual. Ainda não cumpre todos os requisitos de C, B ou A.
 
-**Comece pelo roteiro atual: [Canvas, atualização e prints obrigatórios](docs/ETAPA_2_CANVAS.md).** Ele define exatamente como atualizar sem alterar o histórico Git e quais capturas/JSONs salvar. [Lista de arquivos alterados](docs/ARQUIVOS_ETAPA_2_CANVAS.md).
+**Comece pelo roteiro atual: [Cookies, conceitos e validação manual](docs/ETAPA_3_COOKIES.md).** Inclui preparação, URLs, números por cenário, erros e evidências locais. O [roteiro anterior de canvas](docs/ETAPA_2_CANVAS.md) permanece preservado.
 
 ## Comece aqui
 
@@ -61,11 +61,11 @@ Abra `http://localhost:8787/empty`: as requisições anteriores e gravações co
 
 **Terceiro não é sinônimo de rastreador.** O painel não transforma CDNs ou fontes externas em ataques. As quantidades são requisições observadas, não conexões TCP/TLS.
 
-**Cookie existente não é cookie injetado nesta carga.** O inventário inclui preexistentes. `Set-Cookie` indica tentativa do servidor, inclusive se rejeitada pelo navegador. `cookies.onChanged` confirma alteração no armazenamento, mas não fornece tabId: a correlação limita-se aos domínios vistos, store, partição e primeiros 30 segundos. Outra aba do mesmo site pode participar da correlação. Ainda é necessário aprofundar atribuição de cookies na Etapa 2.
+**Cookie existente não é cookie injetado nesta carga.** O inventário, a preexistência observada, as tentativas HTTP, os eventos e as identidades provavelmente criadas/alteradas são medidas separadas. `onChanged` não informa a aba autora. Criação é inferida da sequência de eventos; preexistência exige observação anterior ao início. Sem essa evidência, o painel declara indeterminação. Veja [método e limitações](docs/ETAPA_3_COOKIES.md).
 
 **Não observável não é zero.** Páginas internas, domínios protegidos pelo Firefox, frames opacos (`about:blank`, `srcdoc`, sandbox), workers e dados escritos/apagados entre snapshots têm lacunas. O inventário não diz quem originalmente gravou os dados. Scripts terceiros executados no documento principal escrevem no storage da origem desse documento.
 
-**Limites:** 4.000 eventos de requisição, 2.000 tentativas Set-Cookie, 2.000 identidades de cookies correlacionadas e inventário dos primeiros 256 sites por navegação. Truncamentos de rede/headers/consulta são indicados. O relatório deve ser exportado antes de fechar a aba ou recarregar a extensão. SPA permanece na mesma navegação; histórico BFCache e cadeia de bounce entre documentos serão tratados na próxima etapa.
+**Limites:** 4.000 eventos de requisição, 2.000 tentativas Set-Cookie, 2.000 eventos detalhados de cookies e inventário dos primeiros 256 sites por navegação; histórico global limitado a 4.000 identidades e 4.000 marcadores de substituição, só em memória. Perdas são indicadas. Exporte antes de navegar, fechar a aba ou recarregar a extensão. SPA permanece na mesma navegação; BFCache e cadeia de bounce entre documentos continuam como limitações.
 
 ## Arquivos e plano
 
@@ -75,6 +75,7 @@ Abra `http://localhost:8787/empty`: as requisições anteriores e gravações co
 | `extension/background.js` | Eventos do Firefox, estado, cookies e relatório |
 | `extension/lib/domain.js` | PSL, classificação e redução de URLs |
 | `extension/lib/model.js` | Metadados, filtros e agregação |
+| `extension/lib/cookies.js` | Histórico sem valores, eventos, janela temporal e resumo de atribuição |
 | `extension/content/storage.js` | Snapshots por frame |
 | `extension/popup/` | HTML/CSS/JS da interface |
 | `extension/vendor/` | PSL local e proveniência |
@@ -93,4 +94,4 @@ Abra `http://localhost:8787/empty`: as requisições anteriores e gravações co
 
 Seu histórico da Etapa 1 foi informado como validado e commitado. Esta entrega não inclui `.git` nem executa comandos no seu GitHub. Preserve os commits existentes e suas evidências. Não rode novamente git init e não substitua a pasta inteira do repositório.
 
-Para este bloco, execute a validação de canvas descrita em `docs/ETAPA_2_CANVAS.md` e envie prints/JSONs. O próximo commit será indicado após essa validação. Cookies, DDG, score e outros recursos não foram misturados neste bloco.
+Para este bloco, execute a validação de cookies descrita em `docs/ETAPA_3_COOKIES.md` e envie os resultados. DDG aguarda essa validação. Nenhum commit é executado automaticamente; o histórico e as evidências existentes são preservados.

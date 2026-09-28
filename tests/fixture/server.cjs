@@ -2,9 +2,11 @@
 const http = require("node:http"), fs = require("node:fs"), path = require("node:path");
 const port = Number(process.env.FIXTURE_PORT || 8787);
 const top = `http://localhost:${port}`, third = `http://127.0.0.1:${port}`;
+const cookiesFixture = require("./cookies.cjs");
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, top);
   res.setHeader("Cache-Control", "no-store");
+  if (cookiesFixture(req, res, url, port)) return;
   if (["/canvas/negative","/canvas/positive","/canvas/read-only","/canvas/errors","/canvas/frame"].includes(url.pathname)) {
     res.setHeader("Content-Type","text/html; charset=utf-8");
     res.setHeader("Content-Security-Policy","default-src 'self'; script-src 'self'; style-src 'self'; frame-src http://127.0.0.1:*;");
@@ -22,7 +24,7 @@ const server = http.createServer((req, res) => {
   }
   if (url.pathname === "/api") { res.setHeader("Content-Type", "application/json"); res.setHeader("Access-Control-Allow-Origin", top); return res.end('{"ok":true}'); }
   if (url.pathname === "/favicon.ico") { res.writeHead(204); return res.end(); }
-  if (["/fixture.js", "/frame.js"].includes(url.pathname)) {
+  if (["/fixture.js", "/frame.js", "/cookies-fixture.js"].includes(url.pathname)) {
     res.setHeader("Content-Type", "application/javascript");
     return res.end(fs.readFileSync(path.join(__dirname,url.pathname.slice(1)),"utf8").replaceAll("__PORT__",String(port)));
   }

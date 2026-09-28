@@ -1,25 +1,62 @@
 /* global browser, PrivacyLens */
 "use strict";
 const P = PrivacyLens, pages = new Map();
-let resolveDomain, startupError = null;
+const cookieHistory = P.createCookieHistory();
+const cookieDiagnostics = P.createCookieDiagnostics();
+const cookieIngress = [];
+let cookieIngressDropped = 0;
+let cookieTasks = Promise.resolve(), cookieProcessingErrors = 0;
+let resolveDomain, startupError = null, readyStatus = "pending";
 const ready = fetch(browser.runtime.getURL("vendor/public_suffix_list.dat"))
   .then(r => { if (!r.ok) throw new Error("Não foi possível ler a Public Suffix List"); return r.text(); })
-  .then(text => { resolveDomain = P.createDomainResolver(text); })
-  .catch(error => { startupError = error.message; });
+  .then(text => { resolveDomain = P.createDomainResolver(text); readyStatus = "ready"; })
+  .catch(error => { startupError = error.message; readyStatus = "error"; });
 // Listeners de rede precisam existir antes da leitura assíncrona da PSL.
 installObservers();
 
 function stateFor(tabId, url, requestId = null, timestamp) {
   const state = P.newPage(tabId, url, requestId, timestamp);
+  state.cookieBaseline = cookieHistory.before(state.startedAt);
+  cookieDiagnostics.navigation(state, Date.now());
   pages.set(tabId, state);
-  state.storeReady = browser.tabs.get(tabId).then(tab => { state.storeId = tab.cookieStoreId; }).catch(() => {});
+  state.storeStatus = "pending";
+  state.storeReady = browser.tabs.get(tabId).then(tab => {
+    state.storeId = tab.cookieStoreId; state.storeStatus = state.storeId ? "ready" : "unavailable";
+  }).catch(() => { state.storeStatus = "error"; });
+  // Firefox pode entregar onChanged antes de onBeforeRequest, mesmo quando o
+  // timestamp original da requisição é anterior ao evento. Reavalia só eventos
+  // reais já recebidos, na mesma janela, contra o host do novo main_frame.
+  for (const receipt of cookieIngress) {
+    const {event, trace} = receipt;
+    if (!P.inCookieWindow(state, event.at)) continue;
+    const context = contextFor(state, event.at), decision = cookieDiagnostics.decision(trace, state, context, "navigation-start-replay", Date.now());
+    correlateCookieEvent(receipt, [{state, context, decision}]);
+  }
   return state;
 }
 
-function contextFor(state) {
-  return {topUrl: state.topUrl, storeId: state.storeId,
-    hosts: new Set([P.host(state.topUrl), ...state.requests.map(r => r.host),
-      ...[...state.frames.values()].map(f => P.host(f.origin))].filter(Boolean))};
+function contextFor(state, at = Infinity) {
+  const hostEvidence = [...state.hostFirstSeen.values()].filter(h => h.at <= at);
+  const hosts = new Set(hostEvidence.map(h => h.host));
+  // Inventário continua abrangendo os frames atuais. Correlação usa somente
+  // hosts com início de requisição comprovado até o horário original do evento.
+  if (at === Infinity) for (const host of [P.host(state.topUrl), ...[...state.frames.values()].map(f => P.host(f.origin))]) {
+    if (host) hosts.add(host);
+  }
+  return {topUrl:state.topUrl, storeId:state.storeId, hosts, hostEvidence};
+}
+
+function replayCookieHost(state, host) {
+  const evidence = state.hostFirstSeen.get(host);
+  if (!evidence) return;
+  for (const receipt of cookieIngress) {
+    const {event, trace, countedStates} = receipt, domain = P.normalizeHost(event.domain);
+    if (countedStates.has(state) || !P.inCookieWindow(state, event.at) || evidence.at > event.at) continue;
+    if (!(event.hostOnly ? host === domain : host === domain || host.endsWith(`.${domain}`))) continue;
+    const context = contextFor(state, event.at);
+    const decision = cookieDiagnostics.decision(trace, state, context, "host-request-replay", Date.now());
+    correlateCookieEvent(receipt, [{state, context, decision}]);
+  }
 }
 
 function installObservers() {
@@ -31,7 +68,9 @@ function installObservers() {
       state.topUrl = d.url;
     }
     if (!state) return; // A página precisa ser recarregada após instalar.
+    const host = P.host(d.url), previous = state.hostFirstSeen.get(host);
     P.recordRequest(state, d);
+    if (state.hostFirstSeen.get(host) !== previous) replayCookieHost(state, host);
   }, {urls: ["<all_urls>"]});
 
   browser.webRequest.onHeadersReceived.addListener(d => {
@@ -42,11 +81,10 @@ function installObservers() {
       if (header.name.toLowerCase() !== "set-cookie") continue;
       // Firefox pode reunir vários campos Set-Cookie separados por newline.
       for (const line of (header.value || "").split(/\r?\n/)) {
-        const equals = line.indexOf("=");
-        if (equals < 1) continue;
+        const attempt = P.setCookieAttempt(line, d);
+        if (!attempt) continue;
         if (state.setCookies.length >= 2000) { state.droppedCookieHeaders++; continue; }
-        state.setCookies.push({at: d.timeStamp, requestId: d.requestId, host: P.host(d.url),
-          url: P.safeUrl(d.url).url, name: line.slice(0, equals).trim()});
+        state.setCookies.push(attempt);
       }
     }
   }, {urls: ["<all_urls>"]}, ["responseHeaders"]);
@@ -61,22 +99,60 @@ function installObservers() {
   browser.webRequest.onCompleted.addListener(d => finishRequest(d, "completed"), {urls: ["<all_urls>"]});
   browser.webRequest.onErrorOccurred.addListener(d => finishRequest(d, "error"), {urls: ["<all_urls>"]});
 
-  browser.cookies.onChanged.addListener(change => {
-    if (change.removed) return;
-    const metadata = P.cookieMetadata(change.cookie), now = Date.now();
-    const candidates = [...pages.values()].filter(state => now >= state.startedAt && now - state.startedAt <= 30000);
-    // Aguarda PSL/store sem perder eventos precoces; mantém a navegação candidata.
-    ready.then(() => Promise.all(candidates.map(async state => {
-      await state.storeReady;
-      if (startupError || pages.get(state.tabId) !== state) return;
-      // onChanged não contém tabId: correlação temporal, nunca causalidade confirmada.
-      if (!P.cookieMatches(metadata, contextFor(state), resolveDomain)) return;
-      state.cookieWriteEvents++;
-      const key = P.cookieKey(metadata);
-      if (state.cookieWrites.has(key) || state.cookieWrites.size < 2000) state.cookieWrites.set(key, {...metadata, at: now, cause: change.cause});
-      else state.droppedCookieWrites++;
-    }))).catch(() => {});
-  });
+  browser.cookies.onChanged.addListener(receiveCookieChange);
+  cookieDiagnostics.registered(Date.now());
+}
+
+function receiveCookieChange(change) {
+  const at = Date.now();
+  // Entrada registrada antes da janela, dos filtros e de qualquer espera assíncrona.
+  const trace = cookieDiagnostics.receive(change, at, readyStatus), candidates = [];
+  try {
+    for (const state of pages.values()) {
+      const context = contextFor(state, at), decision = cookieDiagnostics.decision(trace, state, context);
+      const reason = P.cookieWindowReason(state, at);
+      if (reason) Object.assign(decision, {status:"discarded", reason});
+      else candidates.push({state, context, decision});
+    }
+    // A cópia já sanitizada evita reter o valor no trabalho assíncrono.
+    const event = cookieHistory.change({cookie:trace.cookie, removed:trace.removed, cause:trace.cause}, at);
+    const receipt = {event, trace, countedStates:new WeakSet()};
+    while (cookieIngress.length && cookieIngress[0].event.at < at - P.COOKIE_WINDOW_MS) cookieIngress.shift();
+    cookieIngress.push(receipt);
+    if (cookieIngress.length > 2000) { cookieIngress.shift(); cookieIngressDropped++; }
+    correlateCookieEvent(receipt, candidates);
+  } catch {
+    cookieProcessingErrors++; trace.error = "synchronous-processing-error";
+    for (const {decision} of candidates) if (decision.status === "pending") Object.assign(decision, {status:"discarded",reason:trace.error});
+  }
+}
+
+function correlateCookieEvent({event, countedStates}, candidates) {
+  cookieTasks = cookieTasks.then(async () => {
+      await ready;
+      await Promise.all(candidates.map(({state}) => state.storeReady));
+      const matches = candidates.filter(({state, context, decision}) => {
+        if (countedStates.has(state)) {
+          Object.assign(decision, {status:"duplicate", reason:"already-counted"});
+          return false;
+        }
+        context.storeId = state.storeId;
+        Object.assign(decision, {storeIdAfterWait:state.storeId, storeStatusAfterWait:state.storeStatus,
+          sameNavigation:pages.get(state.tabId) === state, processedAt:Date.now(), readyAfterWait:readyStatus});
+        const reason = startupError ? "resolver-unavailable" : pages.get(state.tabId) !== state ? "navigation-replaced" :
+          !state.storeId ? "store-unavailable" : P.cookieMatchReason(event, context, resolveDomain);
+        if (reason) Object.assign(decision, {status:"discarded", reason});
+        return !reason;
+      });
+      for (const {state, context, decision} of matches) {
+        const associated = P.recordCookieEvent(state, event, context, resolveDomain, matches.length);
+        countedStates.add(state);
+        Object.assign(decision, {status:associated ? "associated" : "discarded", reason:associated ? null : "event-detail-limit"});
+      }
+    }).catch(() => {
+      cookieProcessingErrors++;
+      for (const {decision} of candidates) if (decision.status === "pending") Object.assign(decision, {status:"discarded",reason:"processing-error"});
+    });
 }
 
 function finishRequest(d, status) {
@@ -141,25 +217,30 @@ async function receiveStorage(message, sender) {
 }
 
 async function collectCookies(state) {
+  await state.storeReady;
+  await cookieTasks;
   const context = contextFor(state), results = new Map(), errors = [];
+  const requestedRevision = cookieHistory.revision;
   const domains = [...new Set([...context.hosts].map(resolveDomain))];
   // Domínios observados e cookie store da aba; não consulta todo o perfil.
-  await Promise.all(domains.slice(0, 256).map(async domain => {
+  if (!context.storeId) errors.push("Cookie store indisponível: inventário não consultado.");
+  await Promise.all((context.storeId ? domains.slice(0, 256) : []).map(async domain => {
     try {
       const found = await browser.cookies.getAll({domain, storeId: context.storeId,
         firstPartyDomain: null, partitionKey: {}});
       for (const cookie of found) {
         if (P.cookieMatches(cookie, context, resolveDomain)) results.set(P.cookieKey(cookie), P.cookieMetadata(cookie));
       }
-    } catch (error) { errors.push(`${domain}: ${error.message}`); }
+    } catch { errors.push(`${domain}: inventário indisponível`); }
   }));
   if (domains.length > 256) errors.push("Inventário limitado aos primeiros 256 sites observados.");
-  const items = [...results.values()].map(c => ({...c, party: P.party(P.normalizeHost(c.domain), P.host(state.topUrl), resolveDomain)}));
-  return {items, errors, totals: {total: items.length, first: items.filter(c => c.party === "first").length,
-    third: items.filter(c => c.party === "third").length, session: items.filter(c => c.session).length,
-    persistent: items.filter(c => !c.session).length, partitioned: items.filter(c => c.partitionKey?.topLevelSite).length},
-    correlatedWrites: [...state.cookieWrites.values()], correlatedWriteEvents: state.cookieWriteEvents,
-    setCookieAttempts: [...state.setCookies], observationWindowMs: 30000};
+  cookieHistory.inventory([...results.values()], Date.now(), requestedRevision);
+  await cookieTasks;
+  const summary = P.summarizeCookies(state, [...results.values()], context, resolveDomain);
+  return {...summary, errors,
+    diagnostics:cookieDiagnostics.report(state, context, summary, browser.cookies.onChanged.hasListener(receiveCookieChange), readyStatus),
+    historyDropped: cookieHistory.dropped, ingressDropped:cookieIngressDropped, processingErrors: cookieProcessingErrors,
+    inventoryChangedDuringQuery: requestedRevision !== cookieHistory.revision};
 }
 
 async function report(tabId, refresh) {
@@ -180,7 +261,7 @@ async function report(tabId, refresh) {
   const cookies = await collectCookies(state);
   if (pages.get(tabId) !== state) return {error: "A página mudou durante a coleta. Clique em Atualizar."};
   const network = P.summarizeNetwork(state, resolveDomain);
-  return {schemaVersion: 2, extensionVersion: browser.runtime.getManifest().version,
+  return {schemaVersion: 3, extensionVersion: browser.runtime.getManifest().version,
     generatedAt: new Date().toISOString(), browser: await browser.runtime.getBrowserInfo(),
     page: {...P.safeUrl(state.topUrl), site: resolveDomain(P.host(state.topUrl)), startedAt: state.startedAt},
     network: {...network, requests: state.requests.map(r => ({...r, party: P.party(r.host, P.host(state.topUrl), resolveDomain)}))},
@@ -189,7 +270,7 @@ async function report(tabId, refresh) {
     coverage: {partial: state.partial, droppedRequests: state.droppedRequests, droppedCookieHeaders: state.droppedCookieHeaders,
       droppedCookieWrites: state.droppedCookieWrites,
       storage: "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
-      cookies: "Inventário atual; gravações correlacionadas em 30s não provam a aba de origem. Set-Cookie é tentativa, não aceite.",
+      cookies: "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
       network: "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
       privacy: "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis."}};
 }

@@ -35,7 +35,7 @@ CNAME cloaking não é resolvido. A classificação não identifica o controlado
 
 ## Cookies e limites de inferência
 
-`getAll` pode incluir cookies preexistentes e cookies com caminho que não foi solicitado nesta visita. É um inventário de domínios observados, não prova de transmissão. `onChanged` não informa requestId/tabId: associamos eventos aos contextos compatíveis por 30s e contamos identidades únicas, sem alegar criação exclusiva. Quando várias abas do mesmo site estão abertas, a atribuição pode ser ambígua. O processamento aguarda a resolução do cookieStoreId e da PSL sem adiar o registro dos listeners de rede. A próxima etapa deve aprofundar a atribuição antes de fechar o critério de “injetados”.
+`getAll` pode incluir cookies preexistentes e cookies com caminho não solicitado nesta visita. É inventário, não prova de transmissão. `onChanged` não informa requestId/tabId: eventos são correlacionados aos contextos compatíveis nos primeiros 30 s. Hosts e URL são congelados no recebimento, antes de aguardar PSL/store. O histórico de metadados permite distinguir observações anteriores; snapshots tardios não viram baseline retroativamente. Overwrite e escrita distinguem alteração de criação inferida. Tentativas HTTP nunca são promovidas a sucesso. O [método de cookies](ETAPA_3_COOKIES.md) define os conceitos, as incertezas e o roteiro manual pendente; o critério da avaliação ainda depende dessa evidência.
 
 Partições de outros top sites são excluídas; cookies não particionados permanecem possíveis candidatos do inventário, sem afirmar que teriam sido enviados em contexto terceiro. Possuir partitionKey é observação da API, não prova geral de funcionamento do storage partitioning.
 
@@ -53,4 +53,4 @@ Medimos estado nos momentos `document_start`, DOMContentLoaded, pageshow, após 
 
 ## Memória e reprodutibilidade
 
-Novo carregamento cria estado; fechar aba o remove. O background mantém apenas a sessão ativa de cada aba. Limites são documentados no README. Exportar antes de navegar. O logger contém horários/requestId/tipos/status suficientes para cruzamento inicial com HAR, mas não substitui o HAR nem fornece pilha completa do initiator.
+Novo carregamento cria estado; fechar aba o remove. O background mantém a navegação atual de cada aba e um histórico limitado de metadados de cookies, compartilhado em memória entre navegações, sem valores. Recarregar a extensão apaga esse histórico. Limites são documentados no README. Exportar antes de navegar. Os registros contêm horários/requestId/tipos/status para cruzamento inicial com HAR, mas não o substituem nem fornecem pilha completa do initiator.
