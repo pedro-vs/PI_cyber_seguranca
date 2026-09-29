@@ -1,6 +1,6 @@
 # Plano e checklist — fonte de verdade: PDF do enunciado
 
-**Atualização 0.4.0:** etapas 1, 2 e 3 informadas como validadas manualmente pelo aluno. Indicadores avançados implementados; validação manual local/DDG pendente. Consulte [ETAPA_4_TRACKING.md](ETAPA_4_TRACKING.md) e [VALIDACAO_DDG_V04.md](VALIDACAO_DDG_V04.md). A checklist geral abaixo só será encerrada com evidências completas; cronograma e textos das versões anteriores são históricos. Score, hook/hijacking e blocklist foram explicitamente adiados nesta etapa.
+**Atualização 0.5.0:** testes DDG 1–7 da v0.4.0 relatados como concluídos, com limitações registradas e artefatos aguardando conferência. Conceito A implementado e com testes: descritores/canais, score com cobertura, blocklist persistente e roteiro js-leaks. Consulte [CONCEITO_A.md](CONCEITO_A.md). A checklist acadêmica geral só será encerrada com evidências completas; js-leaks manual, aplicação do score aos três sites e comparação Blacklight continuam pendentes. Cronograma e textos das versões anteriores são históricos.
 
 PDF de 4 páginas lido integralmente. Referências: entregáveis na p. 2; conceitos e descontos na p. 3; entrega na p. 4. Prazo operacional usado: **29/09/2026**, informado pelo aluno; o PDF diz “1 semana a partir da divulgação”.
 
@@ -78,7 +78,7 @@ Se C atrasar, proteger primeiro seus testes e entregáveis gerais. Não declarar
 
 ## Estrutura planejada
 
-Arquivos atuais estão descritos no README. Próximos módulos entrarão em `extension/detectors/` (canvas, tracking, security), `extension/lib/score.js` e `extension/lib/blocklist.js`. Não há código fictício nesses caminhos nesta entrega.
+Arquivos atuais estão descritos no README. Os módulos implementados ficam em `extension/lib/` (incluindo security, score e blocklist), com coleta em `extension/content/` e integração no background/popup. Não há módulo `extension/detectors/` nesta organização.
 
 Estrutura de evidências já preparada: `evidencias/local/`, `evidencias/duckduckgo/`, `evidencias/sites-reais/site-1/`, `site-2/`, `site-3/`, `evidencias/har/`, `evidencias/screenshots/`.
 

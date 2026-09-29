@@ -1,8 +1,8 @@
 # Privacy Lens — Insper
 
-Extensão Firefox para a Avaliação Intermediária de Cibersegurança. **Versão 0.4.0 / bloco atual: indicadores avançados e preparação DDG**, em 28/09/2026. O aluno informou validação manual das etapas 1, 2 e 3, incluindo cookies terceiros, no macOS/Firefox 156.0.1. DDG e os entregáveis dos três sites reais continuam pendentes; ainda não cumpre todos os requisitos de C, B ou A.
+Extensão Firefox para a Avaliação Intermediária de Cibersegurança. **Versão 0.5.0 / bloco Conceito A**, em 29/09/2026. Os testes DDG 1–7 da v0.4.0 foram relatados como concluídos; resultados e limitações estão na [tabela consolidada](evidencias/duckduckgo/RESULTADOS.md). Conferência dos artefatos, DDG js-leaks e entregáveis dos três sites reais continuam pendentes. Implementação não equivale à conclusão de todos os requisitos acadêmicos.
 
-**Comece pelo [método e controles locais da etapa 4](docs/ETAPA_4_TRACKING.md) e pelo [roteiro completo dos sete testes DDG](docs/VALIDACAO_DDG_V04.md).** Os resultados oficiais serão preenchidos pelo aluno na [tabela de registro](evidencias/duckduckgo/RESULTADOS.md). Roteiros e evidências anteriores de [cookies](docs/ETAPA_3_COOKIES.md) e [canvas](docs/ETAPA_2_CANVAS.md) permanecem preservados.
+**Comece pelo [método e controles de Conceito A](docs/CONCEITO_A.md), pela [metodologia do score](docs/SCORE_PROPOSTA.md) e pelo [próximo teste manual: js-leaks](evidencias/duckduckgo/js-leaks/REGISTRO.md).** O [protocolo DDG v0.4.0](docs/VALIDACAO_DDG_V04.md) e os roteiros de [cookies](docs/ETAPA_3_COOKIES.md), [canvas](docs/ETAPA_2_CANVAS.md) e [tracking](docs/ETAPA_4_TRACKING.md) permanecem como referências históricas.
 
 ## Comece aqui
 
@@ -39,7 +39,7 @@ Deixe o terceiro comando rodando. Abra **http://localhost:8787/** no Firefox, ag
 | Frame principal: sessionStorage | 1 chave |
 | Frame principal: IndexedDB | 1 banco; não é contagem de registros |
 | Frame terceiro | 1 chave local e 1 de sessão, ou acesso indisponível conforme a proteção |
-| Score | Em preparação, sem nota fictícia |
+| Score | Descontos observados e intervalo enquanto houver categorias sem cobertura; método privacy-score-v1 |
 
 Abra `http://localhost:8787/empty`: as requisições anteriores e gravações correlacionadas devem zerar; os 5 cookies existentes continuam no inventário. Abra `http://localhost:8787/redirect`: os dois passos da navegação HTTP devem constar no JSON. `localhost` e `127.0.0.1` apontam para seu computador, mas são sites diferentes para a classificação. Pare o servidor com Ctrl+C.
 
@@ -57,7 +57,10 @@ Abra `http://localhost:8787/empty`: as requisições anteriores e gravações co
 - Bounce: sequência principal entre sites, tempos, ligação HTTP/cliente e indicadores adicionais; inferência JS explicitamente limitada quando Firefox não fornece a flag.
 - Query parameters e propagação compatível com cookie sync: HMAC efêmero por navegação, sem exportar valores/hashes nem comparar valores de cookies; parâmetros funcionais e de campanha tratados separadamente.
 - Contexto de storage por origem/frame/top site, sem deduzir bloqueio ou particionamento apenas de ausência/contagem. Rede expõe erros/redirects sem atribuir bloqueio ao plugin.
-- Popup, relatório em aba e exportação JSON. Dados transitórios ficam na memória da extensão.
+- Indicadores de alterações em APIs e canais terceiros, instrumentação própria separada e limites explícitos.
+- Privacy score por categoria, pesos/evidências e intervalo quando a cobertura é parcial.
+- Blocklist personalizada inicialmente vazia: adicionar/remover, escopo de subdomínios, pausar/reativar, persistência local e decisões próprias de cancelamento.
+- Popup, relatório em aba e exportação JSON. Observações ficam em memória; somente a configuração da blocklist persiste localmente.
 - Testes de lógica e fixture local reproduzível.
 
 ## O que os números significam
@@ -81,13 +84,16 @@ Abra `http://localhost:8787/empty`: as requisições anteriores e gravações co
 | `extension/lib/cookies.js` | Histórico sem valores, eventos, janela temporal e resumo de atribuição |
 | `extension/lib/advanced-tracking.js` | Sequências de bounce, parâmetros e comparação efêmera entre sites |
 | `extension/content/storage.js` | Snapshots por frame |
+| `extension/lib/security.js`, `extension/content/security*.js` | Descritores selecionados, bootstrap próprio e correlação de canais |
+| `extension/lib/score.js` | Pesos, descontos e intervalo de cobertura |
+| `extension/lib/blocklist.js` | Validação, persistência e decisão por hostname |
 | `extension/popup/` | HTML/CSS/JS da interface |
 | `extension/vendor/` | PSL local e proveniência |
 | `tests/` | Testes de lógica, teste Firefox opcional e fixture |
 | `scripts/check.cjs` | Verificação de sintaxe e referências do manifest |
 | `docs/PLANO_E_CHECKLIST.md` | C/B/A, riscos, cronograma e próximas etapas |
 | `docs/ARQUITETURA.md` | Decisões técnicas e limites |
-| `docs/SCORE_PROPOSTA.md` | Proposta preliminar de metodologia, sem resultados |
+| `docs/SCORE_PROPOSTA.md` | Metodologia privacy-score-v1 implementada, aplicação aos três sites pendente |
 | `docs/TESTES_E_EVIDENCIAS.md` | Protocolo DDG, sites reais e reconciliação |
 | `docs/RELATORIO_MODELO.md` | Esqueleto do futuro relatório PDF |
 | `docs/VALIDACAO_ETAPA_1.md` | O que foi efetivamente validado nesta entrega |
@@ -98,4 +104,4 @@ Abra `http://localhost:8787/empty`: as requisições anteriores e gravações co
 
 Seu histórico da Etapa 1 foi informado como validado e commitado. Esta entrega não inclui `.git` nem executa comandos no seu GitHub. Preserve os commits existentes e suas evidências. Não rode novamente git init e não substitua a pasta inteira do repositório.
 
-Para este bloco, valide as fixtures de tracking e execute os sete roteiros DDG em `docs/VALIDACAO_DDG_V04.md`. Não há resultados DDG previamente preenchidos. Hook/hijacking, score e blocklist não foram implementados nesta etapa. O aluno fará o commit após validar; histórico e evidências existentes são preservados.
+Valide as fixtures de Conceito A e execute o controle DDG js-leaks com/sem extensão. Os detectores B foram preservados; a lista deve estar vazia nas comparações observacionais anteriores. Nenhum commit é criado neste bloco. Histórico e evidências existentes são preservados.

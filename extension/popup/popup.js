@@ -44,6 +44,7 @@ function renderCanvas(canvas) {
   }
 }
 function render(data) {
+  renderConceptA(data);
   renderCanvas(data.canvas);
   renderAdvanced(data.advancedTracking);
   $("extension-version").textContent = `v${data.extensionVersion}`;
@@ -60,6 +61,7 @@ function render(data) {
   for (const request of data.network.requests.slice(0,200)) row("request-list", request.url, [
     `ID ${request.id} · frame ${request.frameId} · ${request.type} · ${request.at} · ${request.status} · HTTP ${request.statusCode ?? "não observado"}`,
     `Erro: ${request.error || "nenhum observado"} · parâmetros (só nomes): ${request.queryKeys.join(", ") || "nenhum"}`,
+    ...(request.blockedBy ? [`Cancelamento solicitado pelo Privacy Lens · regra ${request.matchedRule}. Não atribui outros erros ao plugin.`] : []),
     ...(request.redirectTo ? [`Redirect para ${request.redirectTo}`] : [])
   ], request.party);
   const c = data.cookies.totals;
@@ -166,6 +168,8 @@ async function refresh() {
     $("error").textContent = error.message; $("error").hidden = false; $("status").textContent = "Coleta indisponível.";
     for (const id of ["third","cookies","frames"]) $(id).textContent = "—";
     renderAdvanced(PrivacyLens.unavailableTrackingReport("report-failed"));
+    renderConceptA(null);
+    await loadBlocklist();
   }
   finally { $("refresh").disabled = false; }
 }
@@ -180,4 +184,5 @@ $("export").addEventListener("click", () => {
   link.download = `privacy-lens-${new Date().toISOString().replace(/[:.]/g, "-")}.json`;
   document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 10000);
 });
+setupConceptA();
 refresh();

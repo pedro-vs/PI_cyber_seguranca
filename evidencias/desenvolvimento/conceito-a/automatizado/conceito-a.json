@@ -1,0 +1,4787 @@
+{
+  "status": "passed",
+  "browserVersion": "156.0.1",
+  "extensionVersion": "0.5.0",
+  "mode": "headless; perfil temporário; fixture local; sem screenshots",
+  "ddgJsLeaks": "não executado; roteiro manual separado",
+  "cases": [
+    {
+      "scenario": "negative",
+      "report": {
+        "advancedTracking": {
+          "availability": "available",
+          "bounce": {
+            "route": [
+              {
+                "at": 1790659148404,
+                "domain": "localhost",
+                "incoming": "start",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "11",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/negative"
+              }
+            ],
+            "sequences": [],
+            "status": "insufficient-evidence"
+          },
+          "cookieSync": {
+            "endpointHints": [],
+            "indicators": [],
+            "limitation": "Sem leitura/comparação de valores de cookies; endpoint com nome sync, isoladamente, é evidência insuficiente.",
+            "status": "not-observed"
+          },
+          "coverage": {
+            "comparison": "HMAC-SHA-256 com chave efêmera por navegação; valores, chaves e hashes não exportados. Nenhuma comparação entre abas.",
+            "dropped": {
+              "findings": 0,
+              "hashes": 0,
+              "hops": 0,
+              "observations": 0,
+              "outOfOrder": 0,
+              "parameters": 0,
+              "previousHops": 0,
+              "values": 0
+            },
+            "hashErrors": 0,
+            "limitations": "Janela de passagem intermediária: 10 s. Histórico curto de main_frame só participa por ligação observada; navegação comum zera queries/comparações. POST, IDs transformados, CNAME, workers sem tabId e frames opacos não cobertos.",
+            "limits": {
+              "bounceMs": 10000,
+              "findings": 128,
+              "hashes": 4096,
+              "hops": 32,
+              "observations": 512,
+              "parameters": 24,
+              "previousHops": 8,
+              "urlLength": 16384,
+              "valueLength": 256
+            },
+            "observedRequests": 3,
+            "partial": false,
+            "pendingComparisons": 0
+          },
+          "queryParameters": {
+            "findings": [],
+            "limitation": "Campanha, formato semelhante a ID e reutilização são sinais, não tracking confirmado. Parâmetros funcionais são excluídos da comparação.",
+            "status": "not-observed"
+          },
+          "version": "advanced-tracking-v1"
+        },
+        "blocklist": {
+          "decisions": [],
+          "dropped": 0,
+          "enabled": true,
+          "error": null,
+          "rules": [],
+          "status": "ready"
+        },
+        "browser": {
+          "buildID": "20260921121718",
+          "name": "Firefox",
+          "vendor": "Mozilla",
+          "version": "156.0.1"
+        },
+        "canvas": {
+          "canvasCount": 0,
+          "classification": "not-observed",
+          "drawingCalls": 0,
+          "failedReadbacks": 0,
+          "frames": [
+            {
+              "at": 1790659180230,
+              "frameId": 0,
+              "instrumentation": {
+                "failed": [],
+                "installed": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "replaced": [],
+                "strategy": "Firefox wrappedJSObject + exportFunction",
+                "unsupported": []
+              },
+              "observation": {
+                "canvasCount": 0,
+                "canvases": [],
+                "classification": "not-observed",
+                "drawingCalls": 0,
+                "droppedEvents": 0,
+                "droppedSamples": 0,
+                "failedReadbacks": 0,
+                "indicatorCanvases": 0,
+                "readbackCalls": 0,
+                "ruleVersion": "canvas-sequence-v1",
+                "samples": [],
+                "used": false,
+                "windowMs": 5000
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659148395,
+              "url": "http://localhost:49155/security/negative"
+            }
+          ],
+          "indicatorCanvases": 0,
+          "meaning": "Desenho seguido de leitura/exportação no mesmo canvas em até 5 s é um indício heurístico, não prova de rastreamento.",
+          "partial": false,
+          "readbackCalls": 0,
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000
+        },
+        "cookies": {
+          "attribution": "Correlação temporal e de contexto; não comprova autoria da aba. Criação é inferida de explicit sem overwrite observado. Não somar estoque, tentativas e eventos.",
+          "correlatedWriteEvents": 0,
+          "correlatedWrites": [],
+          "diagnostics": {
+            "counts": {
+              "associated": 0,
+              "discarded": 0,
+              "pending": 0,
+              "received": 0
+            },
+            "decisions": [],
+            "dropped": 0,
+            "droppedDecisions": 0,
+            "listenerActive": true,
+            "meaning": "Não recebido significa nenhuma entrada encontrada no listener para esta navegação até esta coleta, incluindo reavaliações de eventos anteriores à entrega de onBeforeRequest, com cobertura disponível. Não prova que o Firefox nunca disparou o evento. Probes por nome/domínio não provam autoria nem aceite de Set-Cookie. Consulte priorReceipts para a ordem de entrega.",
+            "navigation": {
+              "hosts": [
+                "localhost"
+              ],
+              "observedAt": 1790659148406,
+              "requestId": "11",
+              "sequence": 1,
+              "startedAt": 1790659148404,
+              "storeId": "firefox-default",
+              "storeStatus": "ready",
+              "topUrl": "http://localhost:49155/security/negative"
+            },
+            "probes": [],
+            "readyStatus": "ready",
+            "registeredAt": 1790659148183,
+            "totalReceivedSinceRegistration": 0,
+            "version": "cookie-ingress-v1"
+          },
+          "errors": [],
+          "eventTotals": {
+            "changed": 0,
+            "created": 0,
+            "observed": 0,
+            "removed": 0,
+            "unknown": 0,
+            "writes": 0
+          },
+          "events": [],
+          "historyDropped": 0,
+          "ingressDropped": 0,
+          "inventoryChangedDuringQuery": false,
+          "items": [],
+          "observationWindowMs": 30000,
+          "preexisting": {
+            "completeness": "partial-prior-observations-only",
+            "currentCount": 0,
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            },
+            "unknownCurrentCount": 0
+          },
+          "probable": {
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            }
+          },
+          "processingErrors": 0,
+          "setCookieAttempts": [],
+          "totals": {
+            "first": 0,
+            "partitioned": 0,
+            "persistent": 0,
+            "session": 0,
+            "third": 0,
+            "total": 0
+          },
+          "window": {
+            "endsAt": 1790659178404,
+            "startedAt": 1790659148404,
+            "status": "closed"
+          }
+        },
+        "coverage": {
+          "canvasFramesComplete": true,
+          "cookies": "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
+          "droppedCookieHeaders": 0,
+          "droppedCookieWrites": 0,
+          "droppedRequests": 0,
+          "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+          "partial": false,
+          "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis.",
+          "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
+          "storageFramesComplete": true
+        },
+        "extensionVersion": "0.5.0",
+        "generatedAt": "2026-09-29T05:19:40.232Z",
+        "network": {
+          "domains": [
+            {
+              "failed": 0,
+              "host": "localhost",
+              "party": "first",
+              "requests": 3,
+              "site": "localhost",
+              "types": [
+                "main_frame",
+                "script",
+                "image"
+              ]
+            }
+          ],
+          "requests": [
+            {
+              "at": 1790659148404,
+              "documentUrl": "",
+              "error": null,
+              "finishedAt": 1790659148447,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "11",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "main_frame",
+              "url": "http://localhost:49155/security/negative"
+            },
+            {
+              "at": 1790659148466,
+              "documentUrl": "http://localhost:49155/security/negative",
+              "error": null,
+              "finishedAt": 1790659148469,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "12",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "script",
+              "url": "http://localhost:49155/security/client.js"
+            },
+            {
+              "at": 1790659148499,
+              "documentUrl": "http://localhost:49155/security/negative",
+              "error": null,
+              "finishedAt": 1790659148518,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "13",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 204,
+              "type": "image",
+              "url": "http://localhost:49155/favicon.ico"
+            }
+          ],
+          "totals": {
+            "failed": 0,
+            "first": 3,
+            "third": 0,
+            "total": 3,
+            "unknown": 0
+          }
+        },
+        "page": {
+          "queryKeys": [],
+          "site": "localhost",
+          "startedAt": 1790659148404,
+          "url": "http://localhost:49155/security/negative"
+        },
+        "schemaVersion": 3,
+        "score": {
+          "categories": [
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [],
+              "id": "N",
+              "label": "Exposição a terceiros",
+              "points": 0
+            },
+            {
+              "cap": 20,
+              "covered": true,
+              "evidence": [],
+              "id": "C",
+              "label": "Gravações de cookies correlacionadas",
+              "points": 0
+            },
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [],
+              "id": "S",
+              "label": "Persistência em storage terceiro",
+              "points": 0
+            },
+            {
+              "cap": 15,
+              "covered": true,
+              "evidence": [],
+              "id": "F",
+              "label": "Sequência canvas",
+              "points": 0
+            },
+            {
+              "cap": 25,
+              "covered": true,
+              "evidence": [],
+              "id": "T",
+              "label": "Ligação entre sites",
+              "points": 0
+            },
+            {
+              "cap": 20,
+              "covered": true,
+              "evidence": [],
+              "id": "H",
+              "label": "Alterações de API e canal persistente",
+              "points": 0
+            }
+          ],
+          "coveredCategories": 6,
+          "interpretation": "Índice normativo de exposição observada, não probabilidade de ataque. Maior = menos penalizações observadas; lacunas não são zeros confirmados.",
+          "method": "100 − N − C − S − F − T − H; tetos 10/20/10/15/25/20. T usa o maior sinal moderado por navegação; T/H: sinais isolados de confiança baixa não pontuam. Bloqueios não ganham bônus.",
+          "observedValue": 100,
+          "range": {
+            "max": 100,
+            "min": 100
+          },
+          "status": "observed",
+          "totalCategories": 6,
+          "value": 100,
+          "version": "privacy-score-v1"
+        },
+        "security": {
+          "availability": "available",
+          "changes": [],
+          "channels": [],
+          "combinations": [],
+          "coverage": {
+            "dropped": 0,
+            "elapsedMs": 31828,
+            "limitations": "APIs selecionadas comparadas ao document_start; mudanças anteriores, entre amostras, workers e configurações do navegador não são verificadas. Não prova hijacking. Instrumentação canvas própria é separada.",
+            "partial": false
+          },
+          "frames": [
+            {
+              "at": 1790659180230,
+              "frameId": 0,
+              "observation": {
+                "changes": [],
+                "failed": [],
+                "ownInstrumentation": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "scans": 36,
+                "status": "observed",
+                "unsupported": [],
+                "version": "integrity-v1"
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 35,
+              "timeOrigin": 1790659148395
+            }
+          ],
+          "status": "not-observed",
+          "version": "security-v1"
+        },
+        "storage": [
+          {
+            "activeAtRefresh": true,
+            "at": 1790659180230,
+            "context": "top-level",
+            "frameId": 0,
+            "indexedDB": {
+              "count": 0,
+              "status": "observed",
+              "unit": "databases"
+            },
+            "localStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "origin": "http://localhost:49155",
+            "partitioning": "not-established-by-snapshot",
+            "party": "first",
+            "sessionStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "topOrigin": "http://localhost:49155"
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "polling",
+      "report": {
+        "advancedTracking": {
+          "availability": "available",
+          "bounce": {
+            "route": [
+              {
+                "at": 1790659148404,
+                "domain": "localhost",
+                "incoming": "start",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "11",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/negative"
+              },
+              {
+                "at": 1790659180250,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "125",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/polling"
+              }
+            ],
+            "sequences": [],
+            "status": "insufficient-evidence"
+          },
+          "cookieSync": {
+            "endpointHints": [],
+            "indicators": [],
+            "limitation": "Sem leitura/comparação de valores de cookies; endpoint com nome sync, isoladamente, é evidência insuficiente.",
+            "status": "not-observed"
+          },
+          "coverage": {
+            "comparison": "HMAC-SHA-256 com chave efêmera por navegação; valores, chaves e hashes não exportados. Nenhuma comparação entre abas.",
+            "dropped": {
+              "findings": 0,
+              "hashes": 0,
+              "hops": 0,
+              "observations": 0,
+              "outOfOrder": 0,
+              "parameters": 0,
+              "previousHops": 0,
+              "values": 0
+            },
+            "hashErrors": 0,
+            "limitations": "Janela de passagem intermediária: 10 s. Histórico curto de main_frame só participa por ligação observada; navegação comum zera queries/comparações. POST, IDs transformados, CNAME, workers sem tabId e frames opacos não cobertos.",
+            "limits": {
+              "bounceMs": 10000,
+              "findings": 128,
+              "hashes": 4096,
+              "hops": 32,
+              "observations": 512,
+              "parameters": 24,
+              "previousHops": 8,
+              "urlLength": 16384,
+              "valueLength": 256
+            },
+            "observedRequests": 7,
+            "partial": false,
+            "pendingComparisons": 0
+          },
+          "queryParameters": {
+            "findings": [],
+            "limitation": "Campanha, formato semelhante a ID e reutilização são sinais, não tracking confirmado. Parâmetros funcionais são excluídos da comparação.",
+            "status": "not-observed"
+          },
+          "version": "advanced-tracking-v1"
+        },
+        "blocklist": {
+          "decisions": [],
+          "dropped": 0,
+          "enabled": true,
+          "error": null,
+          "rules": [],
+          "status": "ready"
+        },
+        "browser": {
+          "buildID": "20260921121718",
+          "name": "Firefox",
+          "vendor": "Mozilla",
+          "version": "156.0.1"
+        },
+        "canvas": {
+          "canvasCount": 0,
+          "classification": "not-observed",
+          "drawingCalls": 0,
+          "failedReadbacks": 0,
+          "frames": [
+            {
+              "at": 1790659187008,
+              "frameId": 0,
+              "instrumentation": {
+                "failed": [],
+                "installed": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "replaced": [],
+                "strategy": "Firefox wrappedJSObject + exportFunction",
+                "unsupported": []
+              },
+              "observation": {
+                "canvasCount": 0,
+                "canvases": [],
+                "classification": "not-observed",
+                "drawingCalls": 0,
+                "droppedEvents": 0,
+                "droppedSamples": 0,
+                "failedReadbacks": 0,
+                "indicatorCanvases": 0,
+                "readbackCalls": 0,
+                "ruleVersion": "canvas-sequence-v1",
+                "samples": [],
+                "used": false,
+                "windowMs": 5000
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659180249,
+              "url": "http://localhost:49155/security/polling"
+            }
+          ],
+          "indicatorCanvases": 0,
+          "meaning": "Desenho seguido de leitura/exportação no mesmo canvas em até 5 s é um indício heurístico, não prova de rastreamento.",
+          "partial": false,
+          "readbackCalls": 0,
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000
+        },
+        "cookies": {
+          "attribution": "Correlação temporal e de contexto; não comprova autoria da aba. Criação é inferida de explicit sem overwrite observado. Não somar estoque, tentativas e eventos.",
+          "correlatedWriteEvents": 0,
+          "correlatedWrites": [],
+          "diagnostics": {
+            "counts": {
+              "associated": 0,
+              "discarded": 0,
+              "pending": 0,
+              "received": 0
+            },
+            "decisions": [],
+            "dropped": 0,
+            "droppedDecisions": 0,
+            "listenerActive": true,
+            "meaning": "Não recebido significa nenhuma entrada encontrada no listener para esta navegação até esta coleta, incluindo reavaliações de eventos anteriores à entrega de onBeforeRequest, com cobertura disponível. Não prova que o Firefox nunca disparou o evento. Probes por nome/domínio não provam autoria nem aceite de Set-Cookie. Consulte priorReceipts para a ordem de entrega.",
+            "navigation": {
+              "hosts": [
+                "localhost",
+                "127.0.0.1"
+              ],
+              "observedAt": 1790659180251,
+              "requestId": "125",
+              "sequence": 2,
+              "startedAt": 1790659180250,
+              "storeId": "firefox-default",
+              "storeStatus": "ready",
+              "topUrl": "http://localhost:49155/security/polling"
+            },
+            "probes": [],
+            "readyStatus": "ready",
+            "registeredAt": 1790659148183,
+            "totalReceivedSinceRegistration": 0,
+            "version": "cookie-ingress-v1"
+          },
+          "errors": [],
+          "eventTotals": {
+            "changed": 0,
+            "created": 0,
+            "observed": 0,
+            "removed": 0,
+            "unknown": 0,
+            "writes": 0
+          },
+          "events": [],
+          "historyDropped": 0,
+          "ingressDropped": 0,
+          "inventoryChangedDuringQuery": false,
+          "items": [],
+          "observationWindowMs": 30000,
+          "preexisting": {
+            "completeness": "partial-prior-observations-only",
+            "currentCount": 0,
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            },
+            "unknownCurrentCount": 0
+          },
+          "probable": {
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            }
+          },
+          "processingErrors": 0,
+          "setCookieAttempts": [],
+          "totals": {
+            "first": 0,
+            "partitioned": 0,
+            "persistent": 0,
+            "session": 0,
+            "third": 0,
+            "total": 0
+          },
+          "window": {
+            "endsAt": 1790659210250,
+            "startedAt": 1790659180250,
+            "status": "open"
+          }
+        },
+        "coverage": {
+          "canvasFramesComplete": true,
+          "cookies": "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
+          "droppedCookieHeaders": 0,
+          "droppedCookieWrites": 0,
+          "droppedRequests": 0,
+          "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+          "partial": false,
+          "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis.",
+          "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
+          "storageFramesComplete": true
+        },
+        "extensionVersion": "0.5.0",
+        "generatedAt": "2026-09-29T05:19:47.010Z",
+        "network": {
+          "domains": [
+            {
+              "failed": 0,
+              "host": "127.0.0.1",
+              "party": "third",
+              "requests": 4,
+              "site": "127.0.0.1",
+              "types": [
+                "xmlhttprequest"
+              ]
+            },
+            {
+              "failed": 0,
+              "host": "localhost",
+              "party": "first",
+              "requests": 3,
+              "site": "localhost",
+              "types": [
+                "main_frame",
+                "script",
+                "image"
+              ]
+            }
+          ],
+          "requests": [
+            {
+              "at": 1790659180250,
+              "documentUrl": "",
+              "error": null,
+              "finishedAt": 1790659180259,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "125",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "main_frame",
+              "url": "http://localhost:49155/security/polling"
+            },
+            {
+              "at": 1790659180269,
+              "documentUrl": "http://localhost:49155/security/polling",
+              "error": null,
+              "finishedAt": 1790659180275,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "126",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "script",
+              "url": "http://localhost:49155/security/client.js"
+            },
+            {
+              "at": 1790659180282,
+              "documentUrl": "http://localhost:49155/security/polling",
+              "error": null,
+              "finishedAt": 1790659180284,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "127",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 204,
+              "type": "image",
+              "url": "http://localhost:49155/favicon.ico"
+            },
+            {
+              "at": 1790659180781,
+              "documentUrl": "http://localhost:49155/security/polling",
+              "error": null,
+              "finishedAt": 1790659180783,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "127.0.0.1",
+              "id": "128",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "third",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "xmlhttprequest",
+              "url": "http://127.0.0.1:49155/api"
+            },
+            {
+              "at": 1790659182787,
+              "documentUrl": "http://localhost:49155/security/polling",
+              "error": null,
+              "finishedAt": 1790659182789,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "127.0.0.1",
+              "id": "130",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "third",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "xmlhttprequest",
+              "url": "http://127.0.0.1:49155/api"
+            },
+            {
+              "at": 1790659184795,
+              "documentUrl": "http://localhost:49155/security/polling",
+              "error": null,
+              "finishedAt": 1790659184798,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "127.0.0.1",
+              "id": "146",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "third",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "xmlhttprequest",
+              "url": "http://127.0.0.1:49155/api"
+            },
+            {
+              "at": 1790659186804,
+              "documentUrl": "http://localhost:49155/security/polling",
+              "error": null,
+              "finishedAt": 1790659186808,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "127.0.0.1",
+              "id": "158",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "third",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "xmlhttprequest",
+              "url": "http://127.0.0.1:49155/api"
+            }
+          ],
+          "totals": {
+            "failed": 0,
+            "first": 3,
+            "third": 4,
+            "total": 7,
+            "unknown": 0
+          }
+        },
+        "page": {
+          "queryKeys": [],
+          "site": "localhost",
+          "startedAt": 1790659180250,
+          "url": "http://localhost:49155/security/polling"
+        },
+        "schemaVersion": 3,
+        "score": {
+          "categories": [
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [
+                {
+                  "at": 1790659186804,
+                  "requestId": "158",
+                  "site": "127.0.0.1"
+                }
+              ],
+              "id": "N",
+              "label": "Exposição a terceiros",
+              "points": 2
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "C",
+              "label": "Gravações de cookies correlacionadas",
+              "points": 0
+            },
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [],
+              "id": "S",
+              "label": "Persistência em storage terceiro",
+              "points": 0
+            },
+            {
+              "cap": 15,
+              "covered": true,
+              "evidence": [],
+              "id": "F",
+              "label": "Sequência canvas",
+              "points": 0
+            },
+            {
+              "cap": 25,
+              "covered": true,
+              "evidence": [],
+              "id": "T",
+              "label": "Ligação entre sites",
+              "points": 0
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "H",
+              "label": "Alterações de API e canal persistente",
+              "points": 0
+            }
+          ],
+          "coveredCategories": 4,
+          "interpretation": "Índice normativo de exposição observada, não probabilidade de ataque. Maior = menos penalizações observadas; lacunas não são zeros confirmados.",
+          "method": "100 − N − C − S − F − T − H; tetos 10/20/10/15/25/20. T usa o maior sinal moderado por navegação; T/H: sinais isolados de confiança baixa não pontuam. Bloqueios não ganham bônus.",
+          "observedValue": 98,
+          "range": {
+            "max": 98,
+            "min": 58
+          },
+          "status": "partial",
+          "totalCategories": 6,
+          "value": null,
+          "version": "privacy-score-v1"
+        },
+        "security": {
+          "availability": "available",
+          "changes": [],
+          "channels": [
+            {
+              "at": 1790659180781,
+              "confidence": "low",
+              "count": 4,
+              "domain": "127.0.0.1",
+              "frameId": 0,
+              "kind": "repeated-third-party-requests",
+              "lastAt": 1790659186804,
+              "persistent": true,
+              "reason": "4 respostas 2xx do mesmo endpoint/frame em 5–30 s; compatível com polling, também comum em aplicações legítimas.",
+              "requestIds": [
+                "128",
+                "130",
+                "146",
+                "158"
+              ],
+              "spanMs": 6023,
+              "url": "http://127.0.0.1:49155/api"
+            }
+          ],
+          "combinations": [],
+          "coverage": {
+            "dropped": 0,
+            "elapsedMs": 6760,
+            "limitations": "APIs selecionadas comparadas ao document_start; mudanças anteriores, entre amostras, workers e configurações do navegador não são verificadas. Não prova hijacking. Instrumentação canvas própria é separada.",
+            "partial": true
+          },
+          "frames": [
+            {
+              "at": 1790659187008,
+              "frameId": 0,
+              "observation": {
+                "changes": [],
+                "failed": [],
+                "ownInstrumentation": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "scans": 12,
+                "status": "observed",
+                "unsupported": [],
+                "version": "integrity-v1"
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 11,
+              "timeOrigin": 1790659180249
+            }
+          ],
+          "status": "observations",
+          "version": "security-v1"
+        },
+        "storage": [
+          {
+            "activeAtRefresh": true,
+            "at": 1790659187008,
+            "context": "top-level",
+            "frameId": 0,
+            "indexedDB": {
+              "count": 0,
+              "status": "observed",
+              "unit": "databases"
+            },
+            "localStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "origin": "http://localhost:49155",
+            "partitioning": "not-established-by-snapshot",
+            "party": "first",
+            "sessionStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "topOrigin": "http://localhost:49155"
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "hook",
+      "report": {
+        "advancedTracking": {
+          "availability": "available",
+          "bounce": {
+            "route": [
+              {
+                "at": 1790659180250,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "125",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/polling"
+              },
+              {
+                "at": 1790659187031,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "160",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/hook"
+              }
+            ],
+            "sequences": [],
+            "status": "insufficient-evidence"
+          },
+          "cookieSync": {
+            "endpointHints": [],
+            "indicators": [],
+            "limitation": "Sem leitura/comparação de valores de cookies; endpoint com nome sync, isoladamente, é evidência insuficiente.",
+            "status": "not-observed"
+          },
+          "coverage": {
+            "comparison": "HMAC-SHA-256 com chave efêmera por navegação; valores, chaves e hashes não exportados. Nenhuma comparação entre abas.",
+            "dropped": {
+              "findings": 0,
+              "hashes": 0,
+              "hops": 0,
+              "observations": 0,
+              "outOfOrder": 0,
+              "parameters": 0,
+              "previousHops": 0,
+              "values": 0
+            },
+            "hashErrors": 0,
+            "limitations": "Janela de passagem intermediária: 10 s. Histórico curto de main_frame só participa por ligação observada; navegação comum zera queries/comparações. POST, IDs transformados, CNAME, workers sem tabId e frames opacos não cobertos.",
+            "limits": {
+              "bounceMs": 10000,
+              "findings": 128,
+              "hashes": 4096,
+              "hops": 32,
+              "observations": 512,
+              "parameters": 24,
+              "previousHops": 8,
+              "urlLength": 16384,
+              "valueLength": 256
+            },
+            "observedRequests": 7,
+            "partial": false,
+            "pendingComparisons": 0
+          },
+          "queryParameters": {
+            "findings": [],
+            "limitation": "Campanha, formato semelhante a ID e reutilização são sinais, não tracking confirmado. Parâmetros funcionais são excluídos da comparação.",
+            "status": "not-observed"
+          },
+          "version": "advanced-tracking-v1"
+        },
+        "blocklist": {
+          "decisions": [],
+          "dropped": 0,
+          "enabled": true,
+          "error": null,
+          "rules": [],
+          "status": "ready"
+        },
+        "browser": {
+          "buildID": "20260921121718",
+          "name": "Firefox",
+          "vendor": "Mozilla",
+          "version": "156.0.1"
+        },
+        "canvas": {
+          "canvasCount": 0,
+          "classification": "not-observed",
+          "drawingCalls": 0,
+          "failedReadbacks": 0,
+          "frames": [
+            {
+              "at": 1790659193824,
+              "frameId": 0,
+              "instrumentation": {
+                "failed": [],
+                "installed": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "replaced": [],
+                "strategy": "Firefox wrappedJSObject + exportFunction",
+                "unsupported": []
+              },
+              "observation": {
+                "canvasCount": 0,
+                "canvases": [],
+                "classification": "not-observed",
+                "drawingCalls": 0,
+                "droppedEvents": 0,
+                "droppedSamples": 0,
+                "failedReadbacks": 0,
+                "indicatorCanvases": 0,
+                "readbackCalls": 0,
+                "ruleVersion": "canvas-sequence-v1",
+                "samples": [],
+                "used": false,
+                "windowMs": 5000
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659187030,
+              "url": "http://localhost:49155/security/hook"
+            }
+          ],
+          "indicatorCanvases": 0,
+          "meaning": "Desenho seguido de leitura/exportação no mesmo canvas em até 5 s é um indício heurístico, não prova de rastreamento.",
+          "partial": false,
+          "readbackCalls": 0,
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000
+        },
+        "cookies": {
+          "attribution": "Correlação temporal e de contexto; não comprova autoria da aba. Criação é inferida de explicit sem overwrite observado. Não somar estoque, tentativas e eventos.",
+          "correlatedWriteEvents": 0,
+          "correlatedWrites": [],
+          "diagnostics": {
+            "counts": {
+              "associated": 0,
+              "discarded": 0,
+              "pending": 0,
+              "received": 0
+            },
+            "decisions": [],
+            "dropped": 0,
+            "droppedDecisions": 0,
+            "listenerActive": true,
+            "meaning": "Não recebido significa nenhuma entrada encontrada no listener para esta navegação até esta coleta, incluindo reavaliações de eventos anteriores à entrega de onBeforeRequest, com cobertura disponível. Não prova que o Firefox nunca disparou o evento. Probes por nome/domínio não provam autoria nem aceite de Set-Cookie. Consulte priorReceipts para a ordem de entrega.",
+            "navigation": {
+              "hosts": [
+                "localhost",
+                "127.0.0.1"
+              ],
+              "observedAt": 1790659187032,
+              "requestId": "160",
+              "sequence": 3,
+              "startedAt": 1790659187031,
+              "storeId": "firefox-default",
+              "storeStatus": "ready",
+              "topUrl": "http://localhost:49155/security/hook"
+            },
+            "probes": [],
+            "readyStatus": "ready",
+            "registeredAt": 1790659148183,
+            "totalReceivedSinceRegistration": 0,
+            "version": "cookie-ingress-v1"
+          },
+          "errors": [],
+          "eventTotals": {
+            "changed": 0,
+            "created": 0,
+            "observed": 0,
+            "removed": 0,
+            "unknown": 0,
+            "writes": 0
+          },
+          "events": [],
+          "historyDropped": 0,
+          "ingressDropped": 0,
+          "inventoryChangedDuringQuery": false,
+          "items": [],
+          "observationWindowMs": 30000,
+          "preexisting": {
+            "completeness": "partial-prior-observations-only",
+            "currentCount": 0,
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            },
+            "unknownCurrentCount": 0
+          },
+          "probable": {
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            }
+          },
+          "processingErrors": 0,
+          "setCookieAttempts": [],
+          "totals": {
+            "first": 0,
+            "partitioned": 0,
+            "persistent": 0,
+            "session": 0,
+            "third": 0,
+            "total": 0
+          },
+          "window": {
+            "endsAt": 1790659217031,
+            "startedAt": 1790659187031,
+            "status": "open"
+          }
+        },
+        "coverage": {
+          "canvasFramesComplete": true,
+          "cookies": "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
+          "droppedCookieHeaders": 0,
+          "droppedCookieWrites": 0,
+          "droppedRequests": 0,
+          "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+          "partial": false,
+          "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis.",
+          "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
+          "storageFramesComplete": true
+        },
+        "extensionVersion": "0.5.0",
+        "generatedAt": "2026-09-29T05:19:53.825Z",
+        "network": {
+          "domains": [
+            {
+              "failed": 0,
+              "host": "127.0.0.1",
+              "party": "third",
+              "requests": 4,
+              "site": "127.0.0.1",
+              "types": [
+                "xmlhttprequest"
+              ]
+            },
+            {
+              "failed": 0,
+              "host": "localhost",
+              "party": "first",
+              "requests": 3,
+              "site": "localhost",
+              "types": [
+                "main_frame",
+                "script",
+                "image"
+              ]
+            }
+          ],
+          "requests": [
+            {
+              "at": 1790659187031,
+              "documentUrl": "",
+              "error": null,
+              "finishedAt": 1790659187038,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "160",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "main_frame",
+              "url": "http://localhost:49155/security/hook"
+            },
+            {
+              "at": 1790659187052,
+              "documentUrl": "http://localhost:49155/security/hook",
+              "error": null,
+              "finishedAt": 1790659187054,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "162",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "script",
+              "url": "http://localhost:49155/security/client.js"
+            },
+            {
+              "at": 1790659187064,
+              "documentUrl": "http://localhost:49155/security/hook",
+              "error": null,
+              "finishedAt": 1790659187066,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "163",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 204,
+              "type": "image",
+              "url": "http://localhost:49155/favicon.ico"
+            },
+            {
+              "at": 1790659187560,
+              "documentUrl": "http://localhost:49155/security/hook",
+              "error": null,
+              "finishedAt": 1790659187562,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "127.0.0.1",
+              "id": "167",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "third",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "xmlhttprequest",
+              "url": "http://127.0.0.1:49155/api"
+            },
+            {
+              "at": 1790659189564,
+              "documentUrl": "http://localhost:49155/security/hook",
+              "error": null,
+              "finishedAt": 1790659189566,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "127.0.0.1",
+              "id": "184",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "third",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "xmlhttprequest",
+              "url": "http://127.0.0.1:49155/api"
+            },
+            {
+              "at": 1790659191568,
+              "documentUrl": "http://localhost:49155/security/hook",
+              "error": null,
+              "finishedAt": 1790659191571,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "127.0.0.1",
+              "id": "191",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "third",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "xmlhttprequest",
+              "url": "http://127.0.0.1:49155/api"
+            },
+            {
+              "at": 1790659193574,
+              "documentUrl": "http://localhost:49155/security/hook",
+              "error": null,
+              "finishedAt": 1790659193576,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "127.0.0.1",
+              "id": "192",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "third",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "xmlhttprequest",
+              "url": "http://127.0.0.1:49155/api"
+            }
+          ],
+          "totals": {
+            "failed": 0,
+            "first": 3,
+            "third": 4,
+            "total": 7,
+            "unknown": 0
+          }
+        },
+        "page": {
+          "queryKeys": [],
+          "site": "localhost",
+          "startedAt": 1790659187031,
+          "url": "http://localhost:49155/security/hook"
+        },
+        "schemaVersion": 3,
+        "score": {
+          "categories": [
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [
+                {
+                  "at": 1790659193574,
+                  "requestId": "192",
+                  "site": "127.0.0.1"
+                }
+              ],
+              "id": "N",
+              "label": "Exposição a terceiros",
+              "points": 2
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "C",
+              "label": "Gravações de cookies correlacionadas",
+              "points": 0
+            },
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [],
+              "id": "S",
+              "label": "Persistência em storage terceiro",
+              "points": 0
+            },
+            {
+              "cap": 15,
+              "covered": true,
+              "evidence": [],
+              "id": "F",
+              "label": "Sequência canvas",
+              "points": 0
+            },
+            {
+              "cap": 25,
+              "covered": true,
+              "evidence": [],
+              "id": "T",
+              "label": "Ligação entre sites",
+              "points": 0
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [
+                {
+                  "apis": [
+                    "Window.fetch"
+                  ],
+                  "at": 1790659187560,
+                  "domain": "127.0.0.1",
+                  "frameId": 0,
+                  "requestIds": [
+                    "167",
+                    "184",
+                    "191",
+                    "192"
+                  ]
+                }
+              ],
+              "id": "H",
+              "label": "Alterações de API e canal persistente",
+              "points": 20
+            }
+          ],
+          "coveredCategories": 4,
+          "interpretation": "Índice normativo de exposição observada, não probabilidade de ataque. Maior = menos penalizações observadas; lacunas não são zeros confirmados.",
+          "method": "100 − N − C − S − F − T − H; tetos 10/20/10/15/25/20. T usa o maior sinal moderado por navegação; T/H: sinais isolados de confiança baixa não pontuam. Bloqueios não ganham bônus.",
+          "observedValue": 78,
+          "range": {
+            "max": 78,
+            "min": 58
+          },
+          "status": "partial",
+          "totalCategories": 6,
+          "value": null,
+          "version": "privacy-score-v1"
+        },
+        "security": {
+          "availability": "available",
+          "changes": [
+            {
+              "afterOwnInstrumentation": false,
+              "api": "Window.fetch",
+              "at": 1790659188045,
+              "frameId": 0,
+              "kind": "descriptor-changed",
+              "origin": "http://localhost:49155"
+            }
+          ],
+          "channels": [
+            {
+              "at": 1790659187560,
+              "confidence": "low",
+              "count": 4,
+              "domain": "127.0.0.1",
+              "frameId": 0,
+              "kind": "repeated-third-party-requests",
+              "lastAt": 1790659193574,
+              "persistent": true,
+              "reason": "4 respostas 2xx do mesmo endpoint/frame em 5–30 s; compatível com polling, também comum em aplicações legítimas.",
+              "requestIds": [
+                "167",
+                "184",
+                "191",
+                "192"
+              ],
+              "spanMs": 6014,
+              "url": "http://127.0.0.1:49155/api"
+            }
+          ],
+          "combinations": [
+            {
+              "changes": [
+                {
+                  "afterOwnInstrumentation": false,
+                  "api": "Window.fetch",
+                  "at": 1790659188045,
+                  "frameId": 0,
+                  "kind": "descriptor-changed",
+                  "origin": "http://localhost:49155"
+                }
+              ],
+              "channel": {
+                "at": 1790659187560,
+                "confidence": "low",
+                "count": 4,
+                "domain": "127.0.0.1",
+                "frameId": 0,
+                "kind": "repeated-third-party-requests",
+                "lastAt": 1790659193574,
+                "persistent": true,
+                "reason": "4 respostas 2xx do mesmo endpoint/frame em 5–30 s; compatível com polling, também comum em aplicações legítimas.",
+                "requestIds": [
+                  "167",
+                  "184",
+                  "191",
+                  "192"
+                ],
+                "spanMs": 6014,
+                "url": "http://127.0.0.1:49155/api"
+              },
+              "confidence": "moderate",
+              "reason": "Alteração de API e requisições repetidas coexistem no mesmo frame/intervalo; causalidade e autoria não estabelecidas."
+            }
+          ],
+          "coverage": {
+            "dropped": 0,
+            "elapsedMs": 6794,
+            "limitations": "APIs selecionadas comparadas ao document_start; mudanças anteriores, entre amostras, workers e configurações do navegador não são verificadas. Não prova hijacking. Instrumentação canvas própria é separada.",
+            "partial": true
+          },
+          "frames": [
+            {
+              "at": 1790659193824,
+              "frameId": 0,
+              "observation": {
+                "changes": [
+                  {
+                    "afterOwnInstrumentation": false,
+                    "api": "Window.fetch",
+                    "at": 1790659188045,
+                    "kind": "descriptor-changed"
+                  }
+                ],
+                "failed": [],
+                "ownInstrumentation": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "scans": 12,
+                "status": "observed",
+                "unsupported": [],
+                "version": "integrity-v1"
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 11,
+              "timeOrigin": 1790659187030
+            }
+          ],
+          "status": "combined-indicator",
+          "version": "security-v1"
+        },
+        "storage": [
+          {
+            "activeAtRefresh": true,
+            "at": 1790659193824,
+            "context": "top-level",
+            "frameId": 0,
+            "indexedDB": {
+              "count": 0,
+              "status": "observed",
+              "unit": "databases"
+            },
+            "localStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "origin": "http://localhost:49155",
+            "partitioning": "not-established-by-snapshot",
+            "party": "first",
+            "sessionStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "topOrigin": "http://localhost:49155"
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "websocket",
+      "report": {
+        "advancedTracking": {
+          "availability": "available",
+          "bounce": {
+            "route": [
+              {
+                "at": 1790659187031,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "160",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/hook"
+              },
+              {
+                "at": 1790659193845,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "193",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/websocket"
+              }
+            ],
+            "sequences": [],
+            "status": "insufficient-evidence"
+          },
+          "cookieSync": {
+            "endpointHints": [],
+            "indicators": [],
+            "limitation": "Sem leitura/comparação de valores de cookies; endpoint com nome sync, isoladamente, é evidência insuficiente.",
+            "status": "not-observed"
+          },
+          "coverage": {
+            "comparison": "HMAC-SHA-256 com chave efêmera por navegação; valores, chaves e hashes não exportados. Nenhuma comparação entre abas.",
+            "dropped": {
+              "findings": 0,
+              "hashes": 0,
+              "hops": 0,
+              "observations": 0,
+              "outOfOrder": 0,
+              "parameters": 0,
+              "previousHops": 0,
+              "values": 0
+            },
+            "hashErrors": 0,
+            "limitations": "Janela de passagem intermediária: 10 s. Histórico curto de main_frame só participa por ligação observada; navegação comum zera queries/comparações. POST, IDs transformados, CNAME, workers sem tabId e frames opacos não cobertos.",
+            "limits": {
+              "bounceMs": 10000,
+              "findings": 128,
+              "hashes": 4096,
+              "hops": 32,
+              "observations": 512,
+              "parameters": 24,
+              "previousHops": 8,
+              "urlLength": 16384,
+              "valueLength": 256
+            },
+            "observedRequests": 4,
+            "partial": false,
+            "pendingComparisons": 0
+          },
+          "queryParameters": {
+            "findings": [],
+            "limitation": "Campanha, formato semelhante a ID e reutilização são sinais, não tracking confirmado. Parâmetros funcionais são excluídos da comparação.",
+            "status": "not-observed"
+          },
+          "version": "advanced-tracking-v1"
+        },
+        "blocklist": {
+          "decisions": [],
+          "dropped": 0,
+          "enabled": true,
+          "error": null,
+          "rules": [],
+          "status": "ready"
+        },
+        "browser": {
+          "buildID": "20260921121718",
+          "name": "Firefox",
+          "vendor": "Mozilla",
+          "version": "156.0.1"
+        },
+        "canvas": {
+          "canvasCount": 0,
+          "classification": "not-observed",
+          "drawingCalls": 0,
+          "failedReadbacks": 0,
+          "frames": [
+            {
+              "at": 1790659194591,
+              "frameId": 0,
+              "instrumentation": {
+                "failed": [],
+                "installed": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "replaced": [],
+                "strategy": "Firefox wrappedJSObject + exportFunction",
+                "unsupported": []
+              },
+              "observation": {
+                "canvasCount": 0,
+                "canvases": [],
+                "classification": "not-observed",
+                "drawingCalls": 0,
+                "droppedEvents": 0,
+                "droppedSamples": 0,
+                "failedReadbacks": 0,
+                "indicatorCanvases": 0,
+                "readbackCalls": 0,
+                "ruleVersion": "canvas-sequence-v1",
+                "samples": [],
+                "used": false,
+                "windowMs": 5000
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659193843,
+              "url": "http://localhost:49155/security/websocket"
+            }
+          ],
+          "indicatorCanvases": 0,
+          "meaning": "Desenho seguido de leitura/exportação no mesmo canvas em até 5 s é um indício heurístico, não prova de rastreamento.",
+          "partial": false,
+          "readbackCalls": 0,
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000
+        },
+        "cookies": {
+          "attribution": "Correlação temporal e de contexto; não comprova autoria da aba. Criação é inferida de explicit sem overwrite observado. Não somar estoque, tentativas e eventos.",
+          "correlatedWriteEvents": 0,
+          "correlatedWrites": [],
+          "diagnostics": {
+            "counts": {
+              "associated": 0,
+              "discarded": 0,
+              "pending": 0,
+              "received": 0
+            },
+            "decisions": [],
+            "dropped": 0,
+            "droppedDecisions": 0,
+            "listenerActive": true,
+            "meaning": "Não recebido significa nenhuma entrada encontrada no listener para esta navegação até esta coleta, incluindo reavaliações de eventos anteriores à entrega de onBeforeRequest, com cobertura disponível. Não prova que o Firefox nunca disparou o evento. Probes por nome/domínio não provam autoria nem aceite de Set-Cookie. Consulte priorReceipts para a ordem de entrega.",
+            "navigation": {
+              "hosts": [
+                "localhost",
+                "127.0.0.1"
+              ],
+              "observedAt": 1790659193846,
+              "requestId": "193",
+              "sequence": 4,
+              "startedAt": 1790659193845,
+              "storeId": "firefox-default",
+              "storeStatus": "ready",
+              "topUrl": "http://localhost:49155/security/websocket"
+            },
+            "probes": [],
+            "readyStatus": "ready",
+            "registeredAt": 1790659148183,
+            "totalReceivedSinceRegistration": 0,
+            "version": "cookie-ingress-v1"
+          },
+          "errors": [],
+          "eventTotals": {
+            "changed": 0,
+            "created": 0,
+            "observed": 0,
+            "removed": 0,
+            "unknown": 0,
+            "writes": 0
+          },
+          "events": [],
+          "historyDropped": 0,
+          "ingressDropped": 0,
+          "inventoryChangedDuringQuery": false,
+          "items": [],
+          "observationWindowMs": 30000,
+          "preexisting": {
+            "completeness": "partial-prior-observations-only",
+            "currentCount": 0,
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            },
+            "unknownCurrentCount": 0
+          },
+          "probable": {
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            }
+          },
+          "processingErrors": 0,
+          "setCookieAttempts": [],
+          "totals": {
+            "first": 0,
+            "partitioned": 0,
+            "persistent": 0,
+            "session": 0,
+            "third": 0,
+            "total": 0
+          },
+          "window": {
+            "endsAt": 1790659223845,
+            "startedAt": 1790659193845,
+            "status": "open"
+          }
+        },
+        "coverage": {
+          "canvasFramesComplete": true,
+          "cookies": "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
+          "droppedCookieHeaders": 0,
+          "droppedCookieWrites": 0,
+          "droppedRequests": 0,
+          "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+          "partial": false,
+          "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis.",
+          "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
+          "storageFramesComplete": true
+        },
+        "extensionVersion": "0.5.0",
+        "generatedAt": "2026-09-29T05:19:54.591Z",
+        "network": {
+          "domains": [
+            {
+              "failed": 0,
+              "host": "localhost",
+              "party": "first",
+              "requests": 3,
+              "site": "localhost",
+              "types": [
+                "main_frame",
+                "script",
+                "image"
+              ]
+            },
+            {
+              "failed": 1,
+              "host": "127.0.0.1",
+              "party": "third",
+              "requests": 1,
+              "site": "127.0.0.1",
+              "types": [
+                "websocket"
+              ]
+            }
+          ],
+          "requests": [
+            {
+              "at": 1790659193845,
+              "documentUrl": "",
+              "error": null,
+              "finishedAt": 1790659193851,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "193",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "main_frame",
+              "url": "http://localhost:49155/security/websocket"
+            },
+            {
+              "at": 1790659193864,
+              "documentUrl": "http://localhost:49155/security/websocket",
+              "error": null,
+              "finishedAt": 1790659193867,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "194",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "script",
+              "url": "http://localhost:49155/security/client.js"
+            },
+            {
+              "at": 1790659193875,
+              "documentUrl": "http://localhost:49155/security/websocket",
+              "error": null,
+              "finishedAt": 1790659193877,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "195",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 204,
+              "type": "image",
+              "url": "http://localhost:49155/favicon.ico"
+            },
+            {
+              "at": 1790659194373,
+              "documentUrl": "http://localhost:49155/security/websocket",
+              "error": "NS_ERROR_WEBSOCKET_CONNECTION_REFUSED",
+              "finishedAt": 1790659194375,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "127.0.0.1",
+              "id": "196",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "third",
+              "queryKeys": [],
+              "status": "error",
+              "statusCode": 404,
+              "type": "websocket",
+              "url": "ws://127.0.0.1:49155/security/socket"
+            }
+          ],
+          "totals": {
+            "failed": 1,
+            "first": 3,
+            "third": 1,
+            "total": 4,
+            "unknown": 0
+          }
+        },
+        "page": {
+          "queryKeys": [],
+          "site": "localhost",
+          "startedAt": 1790659193845,
+          "url": "http://localhost:49155/security/websocket"
+        },
+        "schemaVersion": 3,
+        "score": {
+          "categories": [
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [],
+              "id": "N",
+              "label": "Exposição a terceiros",
+              "points": 0
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "C",
+              "label": "Gravações de cookies correlacionadas",
+              "points": 0
+            },
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [],
+              "id": "S",
+              "label": "Persistência em storage terceiro",
+              "points": 0
+            },
+            {
+              "cap": 15,
+              "covered": true,
+              "evidence": [],
+              "id": "F",
+              "label": "Sequência canvas",
+              "points": 0
+            },
+            {
+              "cap": 25,
+              "covered": true,
+              "evidence": [],
+              "id": "T",
+              "label": "Ligação entre sites",
+              "points": 0
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "H",
+              "label": "Alterações de API e canal persistente",
+              "points": 0
+            }
+          ],
+          "coveredCategories": 4,
+          "interpretation": "Índice normativo de exposição observada, não probabilidade de ataque. Maior = menos penalizações observadas; lacunas não são zeros confirmados.",
+          "method": "100 − N − C − S − F − T − H; tetos 10/20/10/15/25/20. T usa o maior sinal moderado por navegação; T/H: sinais isolados de confiança baixa não pontuam. Bloqueios não ganham bônus.",
+          "observedValue": 100,
+          "range": {
+            "max": 100,
+            "min": 60
+          },
+          "status": "partial",
+          "totalCategories": 6,
+          "value": null,
+          "version": "privacy-score-v1"
+        },
+        "security": {
+          "availability": "available",
+          "changes": [],
+          "channels": [
+            {
+              "at": 1790659194373,
+              "confidence": "low",
+              "domain": "127.0.0.1",
+              "error": "NS_ERROR_WEBSOCKET_CONNECTION_REFUSED",
+              "frameId": 0,
+              "kind": "websocket-attempt",
+              "persistent": false,
+              "reason": "A API de rede não demonstra duração nem conteúdo do canal WebSocket.",
+              "requestIds": [
+                "196"
+              ],
+              "status": "error",
+              "statusCode": 404,
+              "url": "ws://127.0.0.1:49155/security/socket"
+            }
+          ],
+          "combinations": [],
+          "coverage": {
+            "dropped": 0,
+            "elapsedMs": 747,
+            "limitations": "APIs selecionadas comparadas ao document_start; mudanças anteriores, entre amostras, workers e configurações do navegador não são verificadas. Não prova hijacking. Instrumentação canvas própria é separada.",
+            "partial": true
+          },
+          "frames": [
+            {
+              "at": 1790659194591,
+              "frameId": 0,
+              "observation": {
+                "changes": [],
+                "failed": [],
+                "ownInstrumentation": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "scans": 6,
+                "status": "observed",
+                "unsupported": [],
+                "version": "integrity-v1"
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659193843
+            }
+          ],
+          "status": "observations",
+          "version": "security-v1"
+        },
+        "storage": [
+          {
+            "activeAtRefresh": true,
+            "at": 1790659194591,
+            "context": "top-level",
+            "frameId": 0,
+            "indexedDB": {
+              "count": 0,
+              "status": "observed",
+              "unit": "databases"
+            },
+            "localStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "origin": "http://localhost:49155",
+            "partitioning": "not-established-by-snapshot",
+            "party": "first",
+            "sessionStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "topOrigin": "http://localhost:49155"
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "blocklist-empty",
+      "report": {
+        "advancedTracking": {
+          "availability": "available",
+          "bounce": {
+            "route": [
+              {
+                "at": 1790659193845,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "193",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/websocket"
+              },
+              {
+                "at": 1790659194615,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "197",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/blocklist"
+              }
+            ],
+            "sequences": [],
+            "status": "insufficient-evidence"
+          },
+          "cookieSync": {
+            "endpointHints": [],
+            "indicators": [],
+            "limitation": "Sem leitura/comparação de valores de cookies; endpoint com nome sync, isoladamente, é evidência insuficiente.",
+            "status": "not-observed"
+          },
+          "coverage": {
+            "comparison": "HMAC-SHA-256 com chave efêmera por navegação; valores, chaves e hashes não exportados. Nenhuma comparação entre abas.",
+            "dropped": {
+              "findings": 0,
+              "hashes": 0,
+              "hops": 0,
+              "observations": 0,
+              "outOfOrder": 0,
+              "parameters": 0,
+              "previousHops": 0,
+              "values": 0
+            },
+            "hashErrors": 0,
+            "limitations": "Janela de passagem intermediária: 10 s. Histórico curto de main_frame só participa por ligação observada; navegação comum zera queries/comparações. POST, IDs transformados, CNAME, workers sem tabId e frames opacos não cobertos.",
+            "limits": {
+              "bounceMs": 10000,
+              "findings": 128,
+              "hashes": 4096,
+              "hops": 32,
+              "observations": 512,
+              "parameters": 24,
+              "previousHops": 8,
+              "urlLength": 16384,
+              "valueLength": 256
+            },
+            "observedRequests": 4,
+            "partial": false,
+            "pendingComparisons": 0
+          },
+          "queryParameters": {
+            "findings": [],
+            "limitation": "Campanha, formato semelhante a ID e reutilização são sinais, não tracking confirmado. Parâmetros funcionais são excluídos da comparação.",
+            "status": "not-observed"
+          },
+          "version": "advanced-tracking-v1"
+        },
+        "blocklist": {
+          "decisions": [],
+          "dropped": 0,
+          "enabled": true,
+          "error": null,
+          "rules": [],
+          "status": "ready"
+        },
+        "browser": {
+          "buildID": "20260921121718",
+          "name": "Firefox",
+          "vendor": "Mozilla",
+          "version": "156.0.1"
+        },
+        "canvas": {
+          "canvasCount": 0,
+          "classification": "not-observed",
+          "drawingCalls": 0,
+          "failedReadbacks": 0,
+          "frames": [
+            {
+              "at": 1790659195347,
+              "frameId": 0,
+              "instrumentation": {
+                "failed": [],
+                "installed": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "replaced": [],
+                "strategy": "Firefox wrappedJSObject + exportFunction",
+                "unsupported": []
+              },
+              "observation": {
+                "canvasCount": 0,
+                "canvases": [],
+                "classification": "not-observed",
+                "drawingCalls": 0,
+                "droppedEvents": 0,
+                "droppedSamples": 0,
+                "failedReadbacks": 0,
+                "indicatorCanvases": 0,
+                "readbackCalls": 0,
+                "ruleVersion": "canvas-sequence-v1",
+                "samples": [],
+                "used": false,
+                "windowMs": 5000
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659194615,
+              "url": "http://localhost:49155/security/blocklist"
+            }
+          ],
+          "indicatorCanvases": 0,
+          "meaning": "Desenho seguido de leitura/exportação no mesmo canvas em até 5 s é um indício heurístico, não prova de rastreamento.",
+          "partial": false,
+          "readbackCalls": 0,
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000
+        },
+        "cookies": {
+          "attribution": "Correlação temporal e de contexto; não comprova autoria da aba. Criação é inferida de explicit sem overwrite observado. Não somar estoque, tentativas e eventos.",
+          "correlatedWriteEvents": 0,
+          "correlatedWrites": [],
+          "diagnostics": {
+            "counts": {
+              "associated": 0,
+              "discarded": 0,
+              "pending": 0,
+              "received": 0
+            },
+            "decisions": [],
+            "dropped": 0,
+            "droppedDecisions": 0,
+            "listenerActive": true,
+            "meaning": "Não recebido significa nenhuma entrada encontrada no listener para esta navegação até esta coleta, incluindo reavaliações de eventos anteriores à entrega de onBeforeRequest, com cobertura disponível. Não prova que o Firefox nunca disparou o evento. Probes por nome/domínio não provam autoria nem aceite de Set-Cookie. Consulte priorReceipts para a ordem de entrega.",
+            "navigation": {
+              "hosts": [
+                "localhost",
+                "127.0.0.1"
+              ],
+              "observedAt": 1790659194617,
+              "requestId": "197",
+              "sequence": 5,
+              "startedAt": 1790659194615,
+              "storeId": "firefox-default",
+              "storeStatus": "ready",
+              "topUrl": "http://localhost:49155/security/blocklist"
+            },
+            "probes": [],
+            "readyStatus": "ready",
+            "registeredAt": 1790659148183,
+            "totalReceivedSinceRegistration": 0,
+            "version": "cookie-ingress-v1"
+          },
+          "errors": [],
+          "eventTotals": {
+            "changed": 0,
+            "created": 0,
+            "observed": 0,
+            "removed": 0,
+            "unknown": 0,
+            "writes": 0
+          },
+          "events": [],
+          "historyDropped": 0,
+          "ingressDropped": 0,
+          "inventoryChangedDuringQuery": false,
+          "items": [],
+          "observationWindowMs": 30000,
+          "preexisting": {
+            "completeness": "partial-prior-observations-only",
+            "currentCount": 0,
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            },
+            "unknownCurrentCount": 0
+          },
+          "probable": {
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            }
+          },
+          "processingErrors": 0,
+          "setCookieAttempts": [],
+          "totals": {
+            "first": 0,
+            "partitioned": 0,
+            "persistent": 0,
+            "session": 0,
+            "third": 0,
+            "total": 0
+          },
+          "window": {
+            "endsAt": 1790659224615,
+            "startedAt": 1790659194615,
+            "status": "open"
+          }
+        },
+        "coverage": {
+          "canvasFramesComplete": true,
+          "cookies": "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
+          "droppedCookieHeaders": 0,
+          "droppedCookieWrites": 0,
+          "droppedRequests": 0,
+          "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+          "partial": false,
+          "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis.",
+          "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
+          "storageFramesComplete": true
+        },
+        "extensionVersion": "0.5.0",
+        "generatedAt": "2026-09-29T05:19:55.349Z",
+        "network": {
+          "domains": [
+            {
+              "failed": 0,
+              "host": "localhost",
+              "party": "first",
+              "requests": 3,
+              "site": "localhost",
+              "types": [
+                "main_frame",
+                "script",
+                "image"
+              ]
+            },
+            {
+              "failed": 0,
+              "host": "127.0.0.1",
+              "party": "third",
+              "requests": 1,
+              "site": "127.0.0.1",
+              "types": [
+                "image"
+              ]
+            }
+          ],
+          "requests": [
+            {
+              "at": 1790659194615,
+              "documentUrl": "",
+              "error": null,
+              "finishedAt": 1790659194622,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "197",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "main_frame",
+              "url": "http://localhost:49155/security/blocklist"
+            },
+            {
+              "at": 1790659194637,
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": null,
+              "finishedAt": 1790659194645,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "198",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "script",
+              "url": "http://localhost:49155/security/client.js"
+            },
+            {
+              "at": 1790659194638,
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": null,
+              "finishedAt": 1790659194649,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "127.0.0.1",
+              "id": "199",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "third",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "image",
+              "url": "http://127.0.0.1:49155/pixel"
+            },
+            {
+              "at": 1790659194650,
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": null,
+              "finishedAt": 1790659194651,
+              "frameId": 0,
+              "fromCache": true,
+              "host": "localhost",
+              "id": "200",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 204,
+              "type": "image",
+              "url": "http://localhost:49155/favicon.ico"
+            }
+          ],
+          "totals": {
+            "failed": 0,
+            "first": 3,
+            "third": 1,
+            "total": 4,
+            "unknown": 0
+          }
+        },
+        "page": {
+          "queryKeys": [],
+          "site": "localhost",
+          "startedAt": 1790659194615,
+          "url": "http://localhost:49155/security/blocklist"
+        },
+        "schemaVersion": 3,
+        "score": {
+          "categories": [
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [
+                {
+                  "at": 1790659194638,
+                  "requestId": "199",
+                  "site": "127.0.0.1"
+                }
+              ],
+              "id": "N",
+              "label": "Exposição a terceiros",
+              "points": 2
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "C",
+              "label": "Gravações de cookies correlacionadas",
+              "points": 0
+            },
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [],
+              "id": "S",
+              "label": "Persistência em storage terceiro",
+              "points": 0
+            },
+            {
+              "cap": 15,
+              "covered": true,
+              "evidence": [],
+              "id": "F",
+              "label": "Sequência canvas",
+              "points": 0
+            },
+            {
+              "cap": 25,
+              "covered": true,
+              "evidence": [],
+              "id": "T",
+              "label": "Ligação entre sites",
+              "points": 0
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "H",
+              "label": "Alterações de API e canal persistente",
+              "points": 0
+            }
+          ],
+          "coveredCategories": 4,
+          "interpretation": "Índice normativo de exposição observada, não probabilidade de ataque. Maior = menos penalizações observadas; lacunas não são zeros confirmados.",
+          "method": "100 − N − C − S − F − T − H; tetos 10/20/10/15/25/20. T usa o maior sinal moderado por navegação; T/H: sinais isolados de confiança baixa não pontuam. Bloqueios não ganham bônus.",
+          "observedValue": 98,
+          "range": {
+            "max": 98,
+            "min": 58
+          },
+          "status": "partial",
+          "totalCategories": 6,
+          "value": null,
+          "version": "privacy-score-v1"
+        },
+        "security": {
+          "availability": "available",
+          "changes": [],
+          "channels": [],
+          "combinations": [],
+          "coverage": {
+            "dropped": 0,
+            "elapsedMs": 734,
+            "limitations": "APIs selecionadas comparadas ao document_start; mudanças anteriores, entre amostras, workers e configurações do navegador não são verificadas. Não prova hijacking. Instrumentação canvas própria é separada.",
+            "partial": true
+          },
+          "frames": [
+            {
+              "at": 1790659195348,
+              "frameId": 0,
+              "observation": {
+                "changes": [],
+                "failed": [],
+                "ownInstrumentation": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "scans": 6,
+                "status": "observed",
+                "unsupported": [],
+                "version": "integrity-v1"
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659194615
+            }
+          ],
+          "status": "not-observed",
+          "version": "security-v1"
+        },
+        "storage": [
+          {
+            "activeAtRefresh": true,
+            "at": 1790659195348,
+            "context": "top-level",
+            "frameId": 0,
+            "indexedDB": {
+              "count": 0,
+              "status": "observed",
+              "unit": "databases"
+            },
+            "localStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "origin": "http://localhost:49155",
+            "partitioning": "not-established-by-snapshot",
+            "party": "first",
+            "sessionStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "topOrigin": "http://localhost:49155"
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "blocklist-add",
+      "report": {
+        "advancedTracking": {
+          "availability": "available",
+          "bounce": {
+            "route": [
+              {
+                "at": 1790659194615,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "197",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/blocklist"
+              },
+              {
+                "at": 1790659195481,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "201",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/blocklist"
+              }
+            ],
+            "sequences": [],
+            "status": "insufficient-evidence"
+          },
+          "cookieSync": {
+            "endpointHints": [],
+            "indicators": [],
+            "limitation": "Sem leitura/comparação de valores de cookies; endpoint com nome sync, isoladamente, é evidência insuficiente.",
+            "status": "not-observed"
+          },
+          "coverage": {
+            "comparison": "HMAC-SHA-256 com chave efêmera por navegação; valores, chaves e hashes não exportados. Nenhuma comparação entre abas.",
+            "dropped": {
+              "findings": 0,
+              "hashes": 0,
+              "hops": 0,
+              "observations": 0,
+              "outOfOrder": 0,
+              "parameters": 0,
+              "previousHops": 0,
+              "values": 0
+            },
+            "hashErrors": 0,
+            "limitations": "Janela de passagem intermediária: 10 s. Histórico curto de main_frame só participa por ligação observada; navegação comum zera queries/comparações. POST, IDs transformados, CNAME, workers sem tabId e frames opacos não cobertos.",
+            "limits": {
+              "bounceMs": 10000,
+              "findings": 128,
+              "hashes": 4096,
+              "hops": 32,
+              "observations": 512,
+              "parameters": 24,
+              "previousHops": 8,
+              "urlLength": 16384,
+              "valueLength": 256
+            },
+            "observedRequests": 4,
+            "partial": false,
+            "pendingComparisons": 0
+          },
+          "queryParameters": {
+            "findings": [],
+            "limitation": "Campanha, formato semelhante a ID e reutilização são sinais, não tracking confirmado. Parâmetros funcionais são excluídos da comparação.",
+            "status": "not-observed"
+          },
+          "version": "advanced-tracking-v1"
+        },
+        "blocklist": {
+          "decisions": [
+            {
+              "action": "cancel-requested",
+              "at": 1790659195499,
+              "author": "privacy-lens-custom-list",
+              "frameId": 0,
+              "host": "127.0.0.1",
+              "requestId": "203",
+              "rule": {
+                "host": "127.0.0.1",
+                "includeSubdomains": true
+              },
+              "type": "image",
+              "url": "http://127.0.0.1:49155/pixel"
+            }
+          ],
+          "dropped": 0,
+          "enabled": true,
+          "error": null,
+          "rules": [
+            {
+              "host": "127.0.0.1",
+              "includeSubdomains": true
+            }
+          ],
+          "status": "ready"
+        },
+        "browser": {
+          "buildID": "20260921121718",
+          "name": "Firefox",
+          "vendor": "Mozilla",
+          "version": "156.0.1"
+        },
+        "canvas": {
+          "canvasCount": 0,
+          "classification": "not-observed",
+          "drawingCalls": 0,
+          "failedReadbacks": 0,
+          "frames": [
+            {
+              "at": 1790659196187,
+              "frameId": 0,
+              "instrumentation": {
+                "failed": [],
+                "installed": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "replaced": [],
+                "strategy": "Firefox wrappedJSObject + exportFunction",
+                "unsupported": []
+              },
+              "observation": {
+                "canvasCount": 0,
+                "canvases": [],
+                "classification": "not-observed",
+                "drawingCalls": 0,
+                "droppedEvents": 0,
+                "droppedSamples": 0,
+                "failedReadbacks": 0,
+                "indicatorCanvases": 0,
+                "readbackCalls": 0,
+                "ruleVersion": "canvas-sequence-v1",
+                "samples": [],
+                "used": false,
+                "windowMs": 5000
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659195480,
+              "url": "http://localhost:49155/security/blocklist"
+            }
+          ],
+          "indicatorCanvases": 0,
+          "meaning": "Desenho seguido de leitura/exportação no mesmo canvas em até 5 s é um indício heurístico, não prova de rastreamento.",
+          "partial": false,
+          "readbackCalls": 0,
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000
+        },
+        "cookies": {
+          "attribution": "Correlação temporal e de contexto; não comprova autoria da aba. Criação é inferida de explicit sem overwrite observado. Não somar estoque, tentativas e eventos.",
+          "correlatedWriteEvents": 0,
+          "correlatedWrites": [],
+          "diagnostics": {
+            "counts": {
+              "associated": 0,
+              "discarded": 0,
+              "pending": 0,
+              "received": 0
+            },
+            "decisions": [],
+            "dropped": 0,
+            "droppedDecisions": 0,
+            "listenerActive": true,
+            "meaning": "Não recebido significa nenhuma entrada encontrada no listener para esta navegação até esta coleta, incluindo reavaliações de eventos anteriores à entrega de onBeforeRequest, com cobertura disponível. Não prova que o Firefox nunca disparou o evento. Probes por nome/domínio não provam autoria nem aceite de Set-Cookie. Consulte priorReceipts para a ordem de entrega.",
+            "navigation": {
+              "hosts": [
+                "localhost",
+                "127.0.0.1"
+              ],
+              "observedAt": 1790659195482,
+              "requestId": "201",
+              "sequence": 6,
+              "startedAt": 1790659195481,
+              "storeId": "firefox-default",
+              "storeStatus": "ready",
+              "topUrl": "http://localhost:49155/security/blocklist"
+            },
+            "probes": [],
+            "readyStatus": "ready",
+            "registeredAt": 1790659148183,
+            "totalReceivedSinceRegistration": 0,
+            "version": "cookie-ingress-v1"
+          },
+          "errors": [],
+          "eventTotals": {
+            "changed": 0,
+            "created": 0,
+            "observed": 0,
+            "removed": 0,
+            "unknown": 0,
+            "writes": 0
+          },
+          "events": [],
+          "historyDropped": 0,
+          "ingressDropped": 0,
+          "inventoryChangedDuringQuery": false,
+          "items": [],
+          "observationWindowMs": 30000,
+          "preexisting": {
+            "completeness": "partial-prior-observations-only",
+            "currentCount": 0,
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            },
+            "unknownCurrentCount": 0
+          },
+          "probable": {
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            }
+          },
+          "processingErrors": 0,
+          "setCookieAttempts": [],
+          "totals": {
+            "first": 0,
+            "partitioned": 0,
+            "persistent": 0,
+            "session": 0,
+            "third": 0,
+            "total": 0
+          },
+          "window": {
+            "endsAt": 1790659225481,
+            "startedAt": 1790659195481,
+            "status": "open"
+          }
+        },
+        "coverage": {
+          "canvasFramesComplete": true,
+          "cookies": "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
+          "droppedCookieHeaders": 0,
+          "droppedCookieWrites": 0,
+          "droppedRequests": 0,
+          "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+          "partial": false,
+          "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis.",
+          "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
+          "storageFramesComplete": true
+        },
+        "extensionVersion": "0.5.0",
+        "generatedAt": "2026-09-29T05:19:56.189Z",
+        "network": {
+          "domains": [
+            {
+              "failed": 0,
+              "host": "localhost",
+              "party": "first",
+              "requests": 3,
+              "site": "localhost",
+              "types": [
+                "main_frame",
+                "script",
+                "image"
+              ]
+            },
+            {
+              "failed": 1,
+              "host": "127.0.0.1",
+              "party": "third",
+              "requests": 1,
+              "site": "127.0.0.1",
+              "types": [
+                "image"
+              ]
+            }
+          ],
+          "requests": [
+            {
+              "at": 1790659195481,
+              "documentUrl": "",
+              "error": null,
+              "finishedAt": 1790659195486,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "201",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "main_frame",
+              "url": "http://localhost:49155/security/blocklist"
+            },
+            {
+              "at": 1790659195498,
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": null,
+              "finishedAt": 1790659195500,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "202",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "script",
+              "url": "http://localhost:49155/security/client.js"
+            },
+            {
+              "at": 1790659195499,
+              "blockedBy": "privacy-lens-custom-list",
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": "NS_ERROR_ABORT",
+              "finishedAt": 1790659195501,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "127.0.0.1",
+              "id": "203",
+              "matchedRule": "127.0.0.1",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "third",
+              "queryKeys": [],
+              "status": "error",
+              "statusCode": null,
+              "type": "image",
+              "url": "http://127.0.0.1:49155/pixel"
+            },
+            {
+              "at": 1790659195508,
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": null,
+              "finishedAt": 1790659195510,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "204",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 204,
+              "type": "image",
+              "url": "http://localhost:49155/favicon.ico"
+            }
+          ],
+          "totals": {
+            "failed": 1,
+            "first": 3,
+            "third": 1,
+            "total": 4,
+            "unknown": 0
+          }
+        },
+        "page": {
+          "queryKeys": [],
+          "site": "localhost",
+          "startedAt": 1790659195481,
+          "url": "http://localhost:49155/security/blocklist"
+        },
+        "schemaVersion": 3,
+        "score": {
+          "categories": [
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [],
+              "id": "N",
+              "label": "Exposição a terceiros",
+              "points": 0
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "C",
+              "label": "Gravações de cookies correlacionadas",
+              "points": 0
+            },
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [],
+              "id": "S",
+              "label": "Persistência em storage terceiro",
+              "points": 0
+            },
+            {
+              "cap": 15,
+              "covered": true,
+              "evidence": [],
+              "id": "F",
+              "label": "Sequência canvas",
+              "points": 0
+            },
+            {
+              "cap": 25,
+              "covered": true,
+              "evidence": [],
+              "id": "T",
+              "label": "Ligação entre sites",
+              "points": 0
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "H",
+              "label": "Alterações de API e canal persistente",
+              "points": 0
+            }
+          ],
+          "coveredCategories": 4,
+          "interpretation": "Índice normativo de exposição observada, não probabilidade de ataque. Maior = menos penalizações observadas; lacunas não são zeros confirmados.",
+          "method": "100 − N − C − S − F − T − H; tetos 10/20/10/15/25/20. T usa o maior sinal moderado por navegação; T/H: sinais isolados de confiança baixa não pontuam. Bloqueios não ganham bônus.",
+          "observedValue": 100,
+          "range": {
+            "max": 100,
+            "min": 60
+          },
+          "status": "partial",
+          "totalCategories": 6,
+          "value": null,
+          "version": "privacy-score-v1"
+        },
+        "security": {
+          "availability": "available",
+          "changes": [],
+          "channels": [],
+          "combinations": [],
+          "coverage": {
+            "dropped": 0,
+            "elapsedMs": 708,
+            "limitations": "APIs selecionadas comparadas ao document_start; mudanças anteriores, entre amostras, workers e configurações do navegador não são verificadas. Não prova hijacking. Instrumentação canvas própria é separada.",
+            "partial": true
+          },
+          "frames": [
+            {
+              "at": 1790659196187,
+              "frameId": 0,
+              "observation": {
+                "changes": [],
+                "failed": [],
+                "ownInstrumentation": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "scans": 6,
+                "status": "observed",
+                "unsupported": [],
+                "version": "integrity-v1"
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659195480
+            }
+          ],
+          "status": "not-observed",
+          "version": "security-v1"
+        },
+        "storage": [
+          {
+            "activeAtRefresh": true,
+            "at": 1790659196188,
+            "context": "top-level",
+            "frameId": 0,
+            "indexedDB": {
+              "count": 0,
+              "status": "observed",
+              "unit": "databases"
+            },
+            "localStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "origin": "http://localhost:49155",
+            "partitioning": "not-established-by-snapshot",
+            "party": "first",
+            "sessionStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "topOrigin": "http://localhost:49155"
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "blocklist-pause",
+      "report": {
+        "advancedTracking": {
+          "availability": "available",
+          "bounce": {
+            "route": [
+              {
+                "at": 1790659195481,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "201",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/blocklist"
+              },
+              {
+                "at": 1790659196318,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "205",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/blocklist"
+              }
+            ],
+            "sequences": [],
+            "status": "insufficient-evidence"
+          },
+          "cookieSync": {
+            "endpointHints": [],
+            "indicators": [],
+            "limitation": "Sem leitura/comparação de valores de cookies; endpoint com nome sync, isoladamente, é evidência insuficiente.",
+            "status": "not-observed"
+          },
+          "coverage": {
+            "comparison": "HMAC-SHA-256 com chave efêmera por navegação; valores, chaves e hashes não exportados. Nenhuma comparação entre abas.",
+            "dropped": {
+              "findings": 0,
+              "hashes": 0,
+              "hops": 0,
+              "observations": 0,
+              "outOfOrder": 0,
+              "parameters": 0,
+              "previousHops": 0,
+              "values": 0
+            },
+            "hashErrors": 0,
+            "limitations": "Janela de passagem intermediária: 10 s. Histórico curto de main_frame só participa por ligação observada; navegação comum zera queries/comparações. POST, IDs transformados, CNAME, workers sem tabId e frames opacos não cobertos.",
+            "limits": {
+              "bounceMs": 10000,
+              "findings": 128,
+              "hashes": 4096,
+              "hops": 32,
+              "observations": 512,
+              "parameters": 24,
+              "previousHops": 8,
+              "urlLength": 16384,
+              "valueLength": 256
+            },
+            "observedRequests": 4,
+            "partial": false,
+            "pendingComparisons": 0
+          },
+          "queryParameters": {
+            "findings": [],
+            "limitation": "Campanha, formato semelhante a ID e reutilização são sinais, não tracking confirmado. Parâmetros funcionais são excluídos da comparação.",
+            "status": "not-observed"
+          },
+          "version": "advanced-tracking-v1"
+        },
+        "blocklist": {
+          "decisions": [],
+          "dropped": 0,
+          "enabled": false,
+          "error": null,
+          "rules": [
+            {
+              "host": "127.0.0.1",
+              "includeSubdomains": true
+            }
+          ],
+          "status": "ready"
+        },
+        "browser": {
+          "buildID": "20260921121718",
+          "name": "Firefox",
+          "vendor": "Mozilla",
+          "version": "156.0.1"
+        },
+        "canvas": {
+          "canvasCount": 0,
+          "classification": "not-observed",
+          "drawingCalls": 0,
+          "failedReadbacks": 0,
+          "frames": [
+            {
+              "at": 1790659197031,
+              "frameId": 0,
+              "instrumentation": {
+                "failed": [],
+                "installed": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "replaced": [],
+                "strategy": "Firefox wrappedJSObject + exportFunction",
+                "unsupported": []
+              },
+              "observation": {
+                "canvasCount": 0,
+                "canvases": [],
+                "classification": "not-observed",
+                "drawingCalls": 0,
+                "droppedEvents": 0,
+                "droppedSamples": 0,
+                "failedReadbacks": 0,
+                "indicatorCanvases": 0,
+                "readbackCalls": 0,
+                "ruleVersion": "canvas-sequence-v1",
+                "samples": [],
+                "used": false,
+                "windowMs": 5000
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659196317,
+              "url": "http://localhost:49155/security/blocklist"
+            }
+          ],
+          "indicatorCanvases": 0,
+          "meaning": "Desenho seguido de leitura/exportação no mesmo canvas em até 5 s é um indício heurístico, não prova de rastreamento.",
+          "partial": false,
+          "readbackCalls": 0,
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000
+        },
+        "cookies": {
+          "attribution": "Correlação temporal e de contexto; não comprova autoria da aba. Criação é inferida de explicit sem overwrite observado. Não somar estoque, tentativas e eventos.",
+          "correlatedWriteEvents": 0,
+          "correlatedWrites": [],
+          "diagnostics": {
+            "counts": {
+              "associated": 0,
+              "discarded": 0,
+              "pending": 0,
+              "received": 0
+            },
+            "decisions": [],
+            "dropped": 0,
+            "droppedDecisions": 0,
+            "listenerActive": true,
+            "meaning": "Não recebido significa nenhuma entrada encontrada no listener para esta navegação até esta coleta, incluindo reavaliações de eventos anteriores à entrega de onBeforeRequest, com cobertura disponível. Não prova que o Firefox nunca disparou o evento. Probes por nome/domínio não provam autoria nem aceite de Set-Cookie. Consulte priorReceipts para a ordem de entrega.",
+            "navigation": {
+              "hosts": [
+                "localhost",
+                "127.0.0.1"
+              ],
+              "observedAt": 1790659196319,
+              "requestId": "205",
+              "sequence": 7,
+              "startedAt": 1790659196318,
+              "storeId": "firefox-default",
+              "storeStatus": "ready",
+              "topUrl": "http://localhost:49155/security/blocklist"
+            },
+            "probes": [],
+            "readyStatus": "ready",
+            "registeredAt": 1790659148183,
+            "totalReceivedSinceRegistration": 0,
+            "version": "cookie-ingress-v1"
+          },
+          "errors": [],
+          "eventTotals": {
+            "changed": 0,
+            "created": 0,
+            "observed": 0,
+            "removed": 0,
+            "unknown": 0,
+            "writes": 0
+          },
+          "events": [],
+          "historyDropped": 0,
+          "ingressDropped": 0,
+          "inventoryChangedDuringQuery": false,
+          "items": [],
+          "observationWindowMs": 30000,
+          "preexisting": {
+            "completeness": "partial-prior-observations-only",
+            "currentCount": 0,
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            },
+            "unknownCurrentCount": 0
+          },
+          "probable": {
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            }
+          },
+          "processingErrors": 0,
+          "setCookieAttempts": [],
+          "totals": {
+            "first": 0,
+            "partitioned": 0,
+            "persistent": 0,
+            "session": 0,
+            "third": 0,
+            "total": 0
+          },
+          "window": {
+            "endsAt": 1790659226318,
+            "startedAt": 1790659196318,
+            "status": "open"
+          }
+        },
+        "coverage": {
+          "canvasFramesComplete": true,
+          "cookies": "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
+          "droppedCookieHeaders": 0,
+          "droppedCookieWrites": 0,
+          "droppedRequests": 0,
+          "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+          "partial": false,
+          "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis.",
+          "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
+          "storageFramesComplete": true
+        },
+        "extensionVersion": "0.5.0",
+        "generatedAt": "2026-09-29T05:19:57.032Z",
+        "network": {
+          "domains": [
+            {
+              "failed": 0,
+              "host": "localhost",
+              "party": "first",
+              "requests": 3,
+              "site": "localhost",
+              "types": [
+                "main_frame",
+                "script",
+                "image"
+              ]
+            },
+            {
+              "failed": 0,
+              "host": "127.0.0.1",
+              "party": "third",
+              "requests": 1,
+              "site": "127.0.0.1",
+              "types": [
+                "image"
+              ]
+            }
+          ],
+          "requests": [
+            {
+              "at": 1790659196318,
+              "documentUrl": "",
+              "error": null,
+              "finishedAt": 1790659196326,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "205",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "main_frame",
+              "url": "http://localhost:49155/security/blocklist"
+            },
+            {
+              "at": 1790659196332,
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": null,
+              "finishedAt": 1790659196336,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "206",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "script",
+              "url": "http://localhost:49155/security/client.js"
+            },
+            {
+              "at": 1790659196333,
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": null,
+              "finishedAt": 1790659196344,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "127.0.0.1",
+              "id": "207",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "third",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "image",
+              "url": "http://127.0.0.1:49155/pixel"
+            },
+            {
+              "at": 1790659196344,
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": null,
+              "finishedAt": 1790659196346,
+              "frameId": 0,
+              "fromCache": true,
+              "host": "localhost",
+              "id": "208",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 204,
+              "type": "image",
+              "url": "http://localhost:49155/favicon.ico"
+            }
+          ],
+          "totals": {
+            "failed": 0,
+            "first": 3,
+            "third": 1,
+            "total": 4,
+            "unknown": 0
+          }
+        },
+        "page": {
+          "queryKeys": [],
+          "site": "localhost",
+          "startedAt": 1790659196318,
+          "url": "http://localhost:49155/security/blocklist"
+        },
+        "schemaVersion": 3,
+        "score": {
+          "categories": [
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [
+                {
+                  "at": 1790659196333,
+                  "requestId": "207",
+                  "site": "127.0.0.1"
+                }
+              ],
+              "id": "N",
+              "label": "Exposição a terceiros",
+              "points": 2
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "C",
+              "label": "Gravações de cookies correlacionadas",
+              "points": 0
+            },
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [],
+              "id": "S",
+              "label": "Persistência em storage terceiro",
+              "points": 0
+            },
+            {
+              "cap": 15,
+              "covered": true,
+              "evidence": [],
+              "id": "F",
+              "label": "Sequência canvas",
+              "points": 0
+            },
+            {
+              "cap": 25,
+              "covered": true,
+              "evidence": [],
+              "id": "T",
+              "label": "Ligação entre sites",
+              "points": 0
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "H",
+              "label": "Alterações de API e canal persistente",
+              "points": 0
+            }
+          ],
+          "coveredCategories": 4,
+          "interpretation": "Índice normativo de exposição observada, não probabilidade de ataque. Maior = menos penalizações observadas; lacunas não são zeros confirmados.",
+          "method": "100 − N − C − S − F − T − H; tetos 10/20/10/15/25/20. T usa o maior sinal moderado por navegação; T/H: sinais isolados de confiança baixa não pontuam. Bloqueios não ganham bônus.",
+          "observedValue": 98,
+          "range": {
+            "max": 98,
+            "min": 58
+          },
+          "status": "partial",
+          "totalCategories": 6,
+          "value": null,
+          "version": "privacy-score-v1"
+        },
+        "security": {
+          "availability": "available",
+          "changes": [],
+          "channels": [],
+          "combinations": [],
+          "coverage": {
+            "dropped": 0,
+            "elapsedMs": 714,
+            "limitations": "APIs selecionadas comparadas ao document_start; mudanças anteriores, entre amostras, workers e configurações do navegador não são verificadas. Não prova hijacking. Instrumentação canvas própria é separada.",
+            "partial": true
+          },
+          "frames": [
+            {
+              "at": 1790659197031,
+              "frameId": 0,
+              "observation": {
+                "changes": [],
+                "failed": [],
+                "ownInstrumentation": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "scans": 6,
+                "status": "observed",
+                "unsupported": [],
+                "version": "integrity-v1"
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659196317
+            }
+          ],
+          "status": "not-observed",
+          "version": "security-v1"
+        },
+        "storage": [
+          {
+            "activeAtRefresh": true,
+            "at": 1790659197031,
+            "context": "top-level",
+            "frameId": 0,
+            "indexedDB": {
+              "count": 0,
+              "status": "observed",
+              "unit": "databases"
+            },
+            "localStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "origin": "http://localhost:49155",
+            "partitioning": "not-established-by-snapshot",
+            "party": "first",
+            "sessionStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "topOrigin": "http://localhost:49155"
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "blocklist-enable",
+      "report": {
+        "advancedTracking": {
+          "availability": "available",
+          "bounce": {
+            "route": [
+              {
+                "at": 1790659196318,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "205",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/blocklist"
+              },
+              {
+                "at": 1790659197055,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "209",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/blocklist"
+              }
+            ],
+            "sequences": [],
+            "status": "insufficient-evidence"
+          },
+          "cookieSync": {
+            "endpointHints": [],
+            "indicators": [],
+            "limitation": "Sem leitura/comparação de valores de cookies; endpoint com nome sync, isoladamente, é evidência insuficiente.",
+            "status": "not-observed"
+          },
+          "coverage": {
+            "comparison": "HMAC-SHA-256 com chave efêmera por navegação; valores, chaves e hashes não exportados. Nenhuma comparação entre abas.",
+            "dropped": {
+              "findings": 0,
+              "hashes": 0,
+              "hops": 0,
+              "observations": 0,
+              "outOfOrder": 0,
+              "parameters": 0,
+              "previousHops": 0,
+              "values": 0
+            },
+            "hashErrors": 0,
+            "limitations": "Janela de passagem intermediária: 10 s. Histórico curto de main_frame só participa por ligação observada; navegação comum zera queries/comparações. POST, IDs transformados, CNAME, workers sem tabId e frames opacos não cobertos.",
+            "limits": {
+              "bounceMs": 10000,
+              "findings": 128,
+              "hashes": 4096,
+              "hops": 32,
+              "observations": 512,
+              "parameters": 24,
+              "previousHops": 8,
+              "urlLength": 16384,
+              "valueLength": 256
+            },
+            "observedRequests": 4,
+            "partial": false,
+            "pendingComparisons": 0
+          },
+          "queryParameters": {
+            "findings": [],
+            "limitation": "Campanha, formato semelhante a ID e reutilização são sinais, não tracking confirmado. Parâmetros funcionais são excluídos da comparação.",
+            "status": "not-observed"
+          },
+          "version": "advanced-tracking-v1"
+        },
+        "blocklist": {
+          "decisions": [
+            {
+              "action": "cancel-requested",
+              "at": 1790659197075,
+              "author": "privacy-lens-custom-list",
+              "frameId": 0,
+              "host": "127.0.0.1",
+              "requestId": "211",
+              "rule": {
+                "host": "127.0.0.1",
+                "includeSubdomains": true
+              },
+              "type": "image",
+              "url": "http://127.0.0.1:49155/pixel"
+            }
+          ],
+          "dropped": 0,
+          "enabled": true,
+          "error": null,
+          "rules": [
+            {
+              "host": "127.0.0.1",
+              "includeSubdomains": true
+            }
+          ],
+          "status": "ready"
+        },
+        "browser": {
+          "buildID": "20260921121718",
+          "name": "Firefox",
+          "vendor": "Mozilla",
+          "version": "156.0.1"
+        },
+        "canvas": {
+          "canvasCount": 0,
+          "classification": "not-observed",
+          "drawingCalls": 0,
+          "failedReadbacks": 0,
+          "frames": [
+            {
+              "at": 1790659197778,
+              "frameId": 0,
+              "instrumentation": {
+                "failed": [],
+                "installed": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "replaced": [],
+                "strategy": "Firefox wrappedJSObject + exportFunction",
+                "unsupported": []
+              },
+              "observation": {
+                "canvasCount": 0,
+                "canvases": [],
+                "classification": "not-observed",
+                "drawingCalls": 0,
+                "droppedEvents": 0,
+                "droppedSamples": 0,
+                "failedReadbacks": 0,
+                "indicatorCanvases": 0,
+                "readbackCalls": 0,
+                "ruleVersion": "canvas-sequence-v1",
+                "samples": [],
+                "used": false,
+                "windowMs": 5000
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659197053,
+              "url": "http://localhost:49155/security/blocklist"
+            }
+          ],
+          "indicatorCanvases": 0,
+          "meaning": "Desenho seguido de leitura/exportação no mesmo canvas em até 5 s é um indício heurístico, não prova de rastreamento.",
+          "partial": false,
+          "readbackCalls": 0,
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000
+        },
+        "cookies": {
+          "attribution": "Correlação temporal e de contexto; não comprova autoria da aba. Criação é inferida de explicit sem overwrite observado. Não somar estoque, tentativas e eventos.",
+          "correlatedWriteEvents": 0,
+          "correlatedWrites": [],
+          "diagnostics": {
+            "counts": {
+              "associated": 0,
+              "discarded": 0,
+              "pending": 0,
+              "received": 0
+            },
+            "decisions": [],
+            "dropped": 0,
+            "droppedDecisions": 0,
+            "listenerActive": true,
+            "meaning": "Não recebido significa nenhuma entrada encontrada no listener para esta navegação até esta coleta, incluindo reavaliações de eventos anteriores à entrega de onBeforeRequest, com cobertura disponível. Não prova que o Firefox nunca disparou o evento. Probes por nome/domínio não provam autoria nem aceite de Set-Cookie. Consulte priorReceipts para a ordem de entrega.",
+            "navigation": {
+              "hosts": [
+                "localhost",
+                "127.0.0.1"
+              ],
+              "observedAt": 1790659197056,
+              "requestId": "209",
+              "sequence": 8,
+              "startedAt": 1790659197055,
+              "storeId": "firefox-default",
+              "storeStatus": "ready",
+              "topUrl": "http://localhost:49155/security/blocklist"
+            },
+            "probes": [],
+            "readyStatus": "ready",
+            "registeredAt": 1790659148183,
+            "totalReceivedSinceRegistration": 0,
+            "version": "cookie-ingress-v1"
+          },
+          "errors": [],
+          "eventTotals": {
+            "changed": 0,
+            "created": 0,
+            "observed": 0,
+            "removed": 0,
+            "unknown": 0,
+            "writes": 0
+          },
+          "events": [],
+          "historyDropped": 0,
+          "ingressDropped": 0,
+          "inventoryChangedDuringQuery": false,
+          "items": [],
+          "observationWindowMs": 30000,
+          "preexisting": {
+            "completeness": "partial-prior-observations-only",
+            "currentCount": 0,
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            },
+            "unknownCurrentCount": 0
+          },
+          "probable": {
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            }
+          },
+          "processingErrors": 0,
+          "setCookieAttempts": [],
+          "totals": {
+            "first": 0,
+            "partitioned": 0,
+            "persistent": 0,
+            "session": 0,
+            "third": 0,
+            "total": 0
+          },
+          "window": {
+            "endsAt": 1790659227055,
+            "startedAt": 1790659197055,
+            "status": "open"
+          }
+        },
+        "coverage": {
+          "canvasFramesComplete": true,
+          "cookies": "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
+          "droppedCookieHeaders": 0,
+          "droppedCookieWrites": 0,
+          "droppedRequests": 0,
+          "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+          "partial": false,
+          "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis.",
+          "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
+          "storageFramesComplete": true
+        },
+        "extensionVersion": "0.5.0",
+        "generatedAt": "2026-09-29T05:19:57.780Z",
+        "network": {
+          "domains": [
+            {
+              "failed": 0,
+              "host": "localhost",
+              "party": "first",
+              "requests": 3,
+              "site": "localhost",
+              "types": [
+                "main_frame",
+                "script",
+                "image"
+              ]
+            },
+            {
+              "failed": 1,
+              "host": "127.0.0.1",
+              "party": "third",
+              "requests": 1,
+              "site": "127.0.0.1",
+              "types": [
+                "image"
+              ]
+            }
+          ],
+          "requests": [
+            {
+              "at": 1790659197055,
+              "documentUrl": "",
+              "error": null,
+              "finishedAt": 1790659197063,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "209",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "main_frame",
+              "url": "http://localhost:49155/security/blocklist"
+            },
+            {
+              "at": 1790659197069,
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": null,
+              "finishedAt": 1790659197071,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "210",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "script",
+              "url": "http://localhost:49155/security/client.js"
+            },
+            {
+              "at": 1790659197075,
+              "blockedBy": "privacy-lens-custom-list",
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": "NS_ERROR_ABORT",
+              "finishedAt": 1790659197078,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "127.0.0.1",
+              "id": "211",
+              "matchedRule": "127.0.0.1",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "third",
+              "queryKeys": [],
+              "status": "error",
+              "statusCode": null,
+              "type": "image",
+              "url": "http://127.0.0.1:49155/pixel"
+            },
+            {
+              "at": 1790659197079,
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": null,
+              "finishedAt": 1790659197082,
+              "frameId": 0,
+              "fromCache": true,
+              "host": "localhost",
+              "id": "212",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 204,
+              "type": "image",
+              "url": "http://localhost:49155/favicon.ico"
+            }
+          ],
+          "totals": {
+            "failed": 1,
+            "first": 3,
+            "third": 1,
+            "total": 4,
+            "unknown": 0
+          }
+        },
+        "page": {
+          "queryKeys": [],
+          "site": "localhost",
+          "startedAt": 1790659197055,
+          "url": "http://localhost:49155/security/blocklist"
+        },
+        "schemaVersion": 3,
+        "score": {
+          "categories": [
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [],
+              "id": "N",
+              "label": "Exposição a terceiros",
+              "points": 0
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "C",
+              "label": "Gravações de cookies correlacionadas",
+              "points": 0
+            },
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [],
+              "id": "S",
+              "label": "Persistência em storage terceiro",
+              "points": 0
+            },
+            {
+              "cap": 15,
+              "covered": true,
+              "evidence": [],
+              "id": "F",
+              "label": "Sequência canvas",
+              "points": 0
+            },
+            {
+              "cap": 25,
+              "covered": true,
+              "evidence": [],
+              "id": "T",
+              "label": "Ligação entre sites",
+              "points": 0
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "H",
+              "label": "Alterações de API e canal persistente",
+              "points": 0
+            }
+          ],
+          "coveredCategories": 4,
+          "interpretation": "Índice normativo de exposição observada, não probabilidade de ataque. Maior = menos penalizações observadas; lacunas não são zeros confirmados.",
+          "method": "100 − N − C − S − F − T − H; tetos 10/20/10/15/25/20. T usa o maior sinal moderado por navegação; T/H: sinais isolados de confiança baixa não pontuam. Bloqueios não ganham bônus.",
+          "observedValue": 100,
+          "range": {
+            "max": 100,
+            "min": 60
+          },
+          "status": "partial",
+          "totalCategories": 6,
+          "value": null,
+          "version": "privacy-score-v1"
+        },
+        "security": {
+          "availability": "available",
+          "changes": [],
+          "channels": [],
+          "combinations": [],
+          "coverage": {
+            "dropped": 0,
+            "elapsedMs": 725,
+            "limitations": "APIs selecionadas comparadas ao document_start; mudanças anteriores, entre amostras, workers e configurações do navegador não são verificadas. Não prova hijacking. Instrumentação canvas própria é separada.",
+            "partial": true
+          },
+          "frames": [
+            {
+              "at": 1790659197778,
+              "frameId": 0,
+              "observation": {
+                "changes": [],
+                "failed": [],
+                "ownInstrumentation": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "scans": 6,
+                "status": "observed",
+                "unsupported": [],
+                "version": "integrity-v1"
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659197053
+            }
+          ],
+          "status": "not-observed",
+          "version": "security-v1"
+        },
+        "storage": [
+          {
+            "activeAtRefresh": true,
+            "at": 1790659197778,
+            "context": "top-level",
+            "frameId": 0,
+            "indexedDB": {
+              "count": 0,
+              "status": "observed",
+              "unit": "databases"
+            },
+            "localStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "origin": "http://localhost:49155",
+            "partitioning": "not-established-by-snapshot",
+            "party": "first",
+            "sessionStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "topOrigin": "http://localhost:49155"
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "blocklist-remove",
+      "report": {
+        "advancedTracking": {
+          "availability": "available",
+          "bounce": {
+            "route": [
+              {
+                "at": 1790659197055,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "209",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/blocklist"
+              },
+              {
+                "at": 1790659197803,
+                "domain": "localhost",
+                "incoming": "link",
+                "initiatorHost": "",
+                "redirect": null,
+                "requestId": "213",
+                "transitionQualifiers": [],
+                "transitionType": "link",
+                "url": "http://localhost:49155/security/blocklist"
+              }
+            ],
+            "sequences": [],
+            "status": "insufficient-evidence"
+          },
+          "cookieSync": {
+            "endpointHints": [],
+            "indicators": [],
+            "limitation": "Sem leitura/comparação de valores de cookies; endpoint com nome sync, isoladamente, é evidência insuficiente.",
+            "status": "not-observed"
+          },
+          "coverage": {
+            "comparison": "HMAC-SHA-256 com chave efêmera por navegação; valores, chaves e hashes não exportados. Nenhuma comparação entre abas.",
+            "dropped": {
+              "findings": 0,
+              "hashes": 0,
+              "hops": 0,
+              "observations": 0,
+              "outOfOrder": 0,
+              "parameters": 0,
+              "previousHops": 0,
+              "values": 0
+            },
+            "hashErrors": 0,
+            "limitations": "Janela de passagem intermediária: 10 s. Histórico curto de main_frame só participa por ligação observada; navegação comum zera queries/comparações. POST, IDs transformados, CNAME, workers sem tabId e frames opacos não cobertos.",
+            "limits": {
+              "bounceMs": 10000,
+              "findings": 128,
+              "hashes": 4096,
+              "hops": 32,
+              "observations": 512,
+              "parameters": 24,
+              "previousHops": 8,
+              "urlLength": 16384,
+              "valueLength": 256
+            },
+            "observedRequests": 4,
+            "partial": false,
+            "pendingComparisons": 0
+          },
+          "queryParameters": {
+            "findings": [],
+            "limitation": "Campanha, formato semelhante a ID e reutilização são sinais, não tracking confirmado. Parâmetros funcionais são excluídos da comparação.",
+            "status": "not-observed"
+          },
+          "version": "advanced-tracking-v1"
+        },
+        "blocklist": {
+          "decisions": [],
+          "dropped": 0,
+          "enabled": true,
+          "error": null,
+          "rules": [],
+          "status": "ready"
+        },
+        "browser": {
+          "buildID": "20260921121718",
+          "name": "Firefox",
+          "vendor": "Mozilla",
+          "version": "156.0.1"
+        },
+        "canvas": {
+          "canvasCount": 0,
+          "classification": "not-observed",
+          "drawingCalls": 0,
+          "failedReadbacks": 0,
+          "frames": [
+            {
+              "at": 1790659198511,
+              "frameId": 0,
+              "instrumentation": {
+                "failed": [],
+                "installed": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "replaced": [],
+                "strategy": "Firefox wrappedJSObject + exportFunction",
+                "unsupported": []
+              },
+              "observation": {
+                "canvasCount": 0,
+                "canvases": [],
+                "classification": "not-observed",
+                "drawingCalls": 0,
+                "droppedEvents": 0,
+                "droppedSamples": 0,
+                "failedReadbacks": 0,
+                "indicatorCanvases": 0,
+                "readbackCalls": 0,
+                "ruleVersion": "canvas-sequence-v1",
+                "samples": [],
+                "used": false,
+                "windowMs": 5000
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659197802,
+              "url": "http://localhost:49155/security/blocklist"
+            }
+          ],
+          "indicatorCanvases": 0,
+          "meaning": "Desenho seguido de leitura/exportação no mesmo canvas em até 5 s é um indício heurístico, não prova de rastreamento.",
+          "partial": false,
+          "readbackCalls": 0,
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000
+        },
+        "cookies": {
+          "attribution": "Correlação temporal e de contexto; não comprova autoria da aba. Criação é inferida de explicit sem overwrite observado. Não somar estoque, tentativas e eventos.",
+          "correlatedWriteEvents": 0,
+          "correlatedWrites": [],
+          "diagnostics": {
+            "counts": {
+              "associated": 0,
+              "discarded": 0,
+              "pending": 0,
+              "received": 0
+            },
+            "decisions": [],
+            "dropped": 0,
+            "droppedDecisions": 0,
+            "listenerActive": true,
+            "meaning": "Não recebido significa nenhuma entrada encontrada no listener para esta navegação até esta coleta, incluindo reavaliações de eventos anteriores à entrega de onBeforeRequest, com cobertura disponível. Não prova que o Firefox nunca disparou o evento. Probes por nome/domínio não provam autoria nem aceite de Set-Cookie. Consulte priorReceipts para a ordem de entrega.",
+            "navigation": {
+              "hosts": [
+                "localhost",
+                "127.0.0.1"
+              ],
+              "observedAt": 1790659197804,
+              "requestId": "213",
+              "sequence": 9,
+              "startedAt": 1790659197803,
+              "storeId": "firefox-default",
+              "storeStatus": "ready",
+              "topUrl": "http://localhost:49155/security/blocklist"
+            },
+            "probes": [],
+            "readyStatus": "ready",
+            "registeredAt": 1790659148183,
+            "totalReceivedSinceRegistration": 0,
+            "version": "cookie-ingress-v1"
+          },
+          "errors": [],
+          "eventTotals": {
+            "changed": 0,
+            "created": 0,
+            "observed": 0,
+            "removed": 0,
+            "unknown": 0,
+            "writes": 0
+          },
+          "events": [],
+          "historyDropped": 0,
+          "ingressDropped": 0,
+          "inventoryChangedDuringQuery": false,
+          "items": [],
+          "observationWindowMs": 30000,
+          "preexisting": {
+            "completeness": "partial-prior-observations-only",
+            "currentCount": 0,
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            },
+            "unknownCurrentCount": 0
+          },
+          "probable": {
+            "items": [],
+            "totals": {
+              "first": 0,
+              "partitioned": 0,
+              "persistent": 0,
+              "session": 0,
+              "third": 0,
+              "total": 0
+            }
+          },
+          "processingErrors": 0,
+          "setCookieAttempts": [],
+          "totals": {
+            "first": 0,
+            "partitioned": 0,
+            "persistent": 0,
+            "session": 0,
+            "third": 0,
+            "total": 0
+          },
+          "window": {
+            "endsAt": 1790659227803,
+            "startedAt": 1790659197803,
+            "status": "open"
+          }
+        },
+        "coverage": {
+          "canvasFramesComplete": true,
+          "cookies": "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
+          "droppedCookieHeaders": 0,
+          "droppedCookieWrites": 0,
+          "droppedRequests": 0,
+          "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+          "partial": false,
+          "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis.",
+          "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
+          "storageFramesComplete": true
+        },
+        "extensionVersion": "0.5.0",
+        "generatedAt": "2026-09-29T05:19:58.514Z",
+        "network": {
+          "domains": [
+            {
+              "failed": 0,
+              "host": "localhost",
+              "party": "first",
+              "requests": 3,
+              "site": "localhost",
+              "types": [
+                "main_frame",
+                "script",
+                "image"
+              ]
+            },
+            {
+              "failed": 0,
+              "host": "127.0.0.1",
+              "party": "third",
+              "requests": 1,
+              "site": "127.0.0.1",
+              "types": [
+                "image"
+              ]
+            }
+          ],
+          "requests": [
+            {
+              "at": 1790659197803,
+              "documentUrl": "",
+              "error": null,
+              "finishedAt": 1790659197811,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "213",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "main_frame",
+              "url": "http://localhost:49155/security/blocklist"
+            },
+            {
+              "at": 1790659197818,
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": null,
+              "finishedAt": 1790659197821,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "localhost",
+              "id": "214",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "script",
+              "url": "http://localhost:49155/security/client.js"
+            },
+            {
+              "at": 1790659197819,
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": null,
+              "finishedAt": 1790659197830,
+              "frameId": 0,
+              "fromCache": false,
+              "host": "127.0.0.1",
+              "id": "215",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "third",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 200,
+              "type": "image",
+              "url": "http://127.0.0.1:49155/pixel"
+            },
+            {
+              "at": 1790659197831,
+              "documentUrl": "http://localhost:49155/security/blocklist",
+              "error": null,
+              "finishedAt": 1790659197835,
+              "frameId": 0,
+              "fromCache": true,
+              "host": "localhost",
+              "id": "216",
+              "method": "GET",
+              "parentFrameId": -1,
+              "party": "first",
+              "queryKeys": [],
+              "status": "completed",
+              "statusCode": 204,
+              "type": "image",
+              "url": "http://localhost:49155/favicon.ico"
+            }
+          ],
+          "totals": {
+            "failed": 0,
+            "first": 3,
+            "third": 1,
+            "total": 4,
+            "unknown": 0
+          }
+        },
+        "page": {
+          "queryKeys": [],
+          "site": "localhost",
+          "startedAt": 1790659197803,
+          "url": "http://localhost:49155/security/blocklist"
+        },
+        "schemaVersion": 3,
+        "score": {
+          "categories": [
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [
+                {
+                  "at": 1790659197819,
+                  "requestId": "215",
+                  "site": "127.0.0.1"
+                }
+              ],
+              "id": "N",
+              "label": "Exposição a terceiros",
+              "points": 2
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "C",
+              "label": "Gravações de cookies correlacionadas",
+              "points": 0
+            },
+            {
+              "cap": 10,
+              "covered": true,
+              "evidence": [],
+              "id": "S",
+              "label": "Persistência em storage terceiro",
+              "points": 0
+            },
+            {
+              "cap": 15,
+              "covered": true,
+              "evidence": [],
+              "id": "F",
+              "label": "Sequência canvas",
+              "points": 0
+            },
+            {
+              "cap": 25,
+              "covered": true,
+              "evidence": [],
+              "id": "T",
+              "label": "Ligação entre sites",
+              "points": 0
+            },
+            {
+              "cap": 20,
+              "covered": false,
+              "evidence": [],
+              "id": "H",
+              "label": "Alterações de API e canal persistente",
+              "points": 0
+            }
+          ],
+          "coveredCategories": 4,
+          "interpretation": "Índice normativo de exposição observada, não probabilidade de ataque. Maior = menos penalizações observadas; lacunas não são zeros confirmados.",
+          "method": "100 − N − C − S − F − T − H; tetos 10/20/10/15/25/20. T usa o maior sinal moderado por navegação; T/H: sinais isolados de confiança baixa não pontuam. Bloqueios não ganham bônus.",
+          "observedValue": 98,
+          "range": {
+            "max": 98,
+            "min": 58
+          },
+          "status": "partial",
+          "totalCategories": 6,
+          "value": null,
+          "version": "privacy-score-v1"
+        },
+        "security": {
+          "availability": "available",
+          "changes": [],
+          "channels": [],
+          "combinations": [],
+          "coverage": {
+            "dropped": 0,
+            "elapsedMs": 711,
+            "limitations": "APIs selecionadas comparadas ao document_start; mudanças anteriores, entre amostras, workers e configurações do navegador não são verificadas. Não prova hijacking. Instrumentação canvas própria é separada.",
+            "partial": true
+          },
+          "frames": [
+            {
+              "at": 1790659198511,
+              "frameId": 0,
+              "observation": {
+                "changes": [],
+                "failed": [],
+                "ownInstrumentation": [
+                  "CanvasRenderingContext2D.fillRect",
+                  "CanvasRenderingContext2D.strokeRect",
+                  "CanvasRenderingContext2D.fillText",
+                  "CanvasRenderingContext2D.strokeText",
+                  "CanvasRenderingContext2D.drawImage",
+                  "CanvasRenderingContext2D.putImageData",
+                  "CanvasRenderingContext2D.fill",
+                  "CanvasRenderingContext2D.stroke",
+                  "CanvasRenderingContext2D.getImageData",
+                  "HTMLCanvasElement.toDataURL",
+                  "HTMLCanvasElement.toBlob"
+                ],
+                "scans": 6,
+                "status": "observed",
+                "unsupported": [],
+                "version": "integrity-v1"
+              },
+              "origin": "http://localhost:49155",
+              "sequence": 5,
+              "timeOrigin": 1790659197802
+            }
+          ],
+          "status": "not-observed",
+          "version": "security-v1"
+        },
+        "storage": [
+          {
+            "activeAtRefresh": true,
+            "at": 1790659198512,
+            "context": "top-level",
+            "frameId": 0,
+            "indexedDB": {
+              "count": 0,
+              "status": "observed",
+              "unit": "databases"
+            },
+            "localStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "origin": "http://localhost:49155",
+            "partitioning": "not-established-by-snapshot",
+            "party": "first",
+            "sessionStorage": {
+              "count": 0,
+              "status": "observed",
+              "unit": "keys"
+            },
+            "topOrigin": "http://localhost:49155"
+          }
+        ]
+      }
+    }
+  ]
+}

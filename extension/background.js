@@ -11,6 +11,7 @@ const ready = fetch(browser.runtime.getURL("vendor/public_suffix_list.dat"))
   .then(r => { if (!r.ok) throw new Error("Não foi possível ler a Public Suffix List"); return r.text(); })
   .then(text => { resolveDomain = P.createDomainResolver(text); readyStatus = "ready"; })
   .catch(error => { startupError = error.message; readyStatus = "error"; });
+const customBlocklist = P.createBlocklist(browser.storage?.local, ready.then(() => resolveDomain));
 // Listeners de rede precisam existir antes da leitura assíncrona da PSL.
 installObservers();
 
@@ -19,6 +20,8 @@ function stateFor(tabId, url, requestId = null, timestamp) {
   const state = P.newPage(tabId, reduced.url, requestId, timestamp);
   state.pageQueryKeys = reduced.queryKeys;
   state.tracking = P.newTrackingPage(state, pages.get(tabId));
+  state.securityFrames = new Map();
+  state.blockedDecisions = []; state.droppedBlockDecisions = 0;
   state.cookieBaseline = cookieHistory.before(state.startedAt);
   cookieDiagnostics.navigation(state, Date.now());
   pages.set(tabId, state);
@@ -64,19 +67,20 @@ function replayCookieHost(state, host) {
 
 function installObservers() {
   browser.webRequest.onBeforeRequest.addListener(d => {
-    if (d.tabId < 0) return;
+    if (d.tabId < 0) return blockRequest(d);
     let state = pages.get(d.tabId);
     if (d.type === "main_frame") {
       if (!state || state.navigationRequestId !== d.requestId) state = stateFor(d.tabId, d.url, d.requestId, d.timeStamp);
       const reduced = P.safeUrl(d.url);
       state.topUrl = reduced.url; state.pageQueryKeys = reduced.queryKeys;
     }
-    if (!state) return; // A página precisa ser recarregada após instalar.
+    if (!state) return blockRequest(d); // A página precisa ser recarregada após instalar.
     P.observeTrackingRequest(state.tracking, d);
     const host = P.host(d.url), previous = state.hostFirstSeen.get(host);
     P.recordRequest(state, d);
     if (state.hostFirstSeen.get(host) !== previous) replayCookieHost(state, host);
-  }, {urls: ["<all_urls>"]});
+    return blockRequest(d, state, state.latestRequest.get(d.requestId));
+  }, {urls: ["<all_urls>"]}, ["blocking"]);
 
   browser.webRequest.onHeadersReceived.addListener(d => {
     const state = pages.get(d.tabId), req = state?.latestRequest.get(d.requestId);
@@ -107,6 +111,20 @@ function installObservers() {
 
   browser.cookies.onChanged.addListener(receiveCookieChange);
   cookieDiagnostics.registered(Date.now());
+}
+
+async function blockRequest(details, state, request) {
+  const rule = await customBlocklist.decide(details.url);
+  if (!rule) return {};
+  const decision = {at:details.timeStamp, requestId:details.requestId, frameId:details.frameId,
+    url:P.safeUrl(details.url).url, host:P.host(details.url), type:details.type, rule,
+    action:"cancel-requested", author:"privacy-lens-custom-list"};
+  if (request) Object.assign(request, {blockedBy:decision.author, matchedRule:rule.host});
+  if (state) {
+    if (state.blockedDecisions.length < 500) state.blockedDecisions.push(decision);
+    else state.droppedBlockDecisions++;
+  }
+  return {cancel:true};
 }
 
 function receiveCookieChange(change) {
@@ -179,18 +197,37 @@ browser.webNavigation.onCommitted.addListener(d => {
     state.topUrl = reduced.url; state.pageQueryKeys = reduced.queryKeys;
     state.frames.clear();
     state.canvasFrames.clear();
-  } else { state.frames.delete(d.frameId); state.canvasFrames.delete(d.frameId); }
+    state.securityFrames.clear();
+  } else { state.frames.delete(d.frameId); state.canvasFrames.delete(d.frameId); state.securityFrames.delete(d.frameId); }
 });
 
 browser.runtime.onMessage.addListener((message, sender) => {
   if (!message || sender.id !== browser.runtime.id) return undefined;
   if (message.type === "storage-snapshot" && sender.tab) return receiveStorage(message, sender);
   if (message.type === "canvas-snapshot" && sender.tab) return receiveCanvas(message, sender);
+  if (message.type === "security-snapshot" && sender.tab) return receiveSecurity(message, sender);
   // Somente páginas internas podem solicitar inventários completos da aba.
-  if (sender.tab && !sender.url?.startsWith(browser.runtime.getURL(""))) return undefined;
+  if (!sender.url?.startsWith(browser.runtime.getURL(""))) return undefined;
   if (message.type === "report" && Number.isInteger(message.tabId)) return report(message.tabId, message.refresh);
+  if (message.type === "blocklist-get") return customBlocklist.ready.then(() => customBlocklist.snapshot());
+  if (message.type === "blocklist-update") return customBlocklist.update(message.action).catch(error => ({error:error.message}));
   return undefined;
 });
+
+async function receiveSecurity(message, sender) {
+  await ready;
+  const state = pages.get(sender.tab.id), observation = P.sanitizeIntegrity(message.observation);
+  if (!state || !observation || !P.isWeb(sender.url) || !Number.isFinite(message.timeOrigin) ||
+    message.timeOrigin < state.startedAt-100 || message.timeOrigin > Date.now()+100 || !Number.isInteger(message.sequence) || message.sequence < 1 ||
+    observation.changes.some(c => c.at < message.timeOrigin || c.at > Date.now()+100)) return;
+  let frame;
+  try {frame = await browser.webNavigation.getFrame({tabId:sender.tab.id,frameId:sender.frameId});} catch {return;}
+  if (!frame || frame.url !== sender.url || pages.get(sender.tab.id) !== state) return;
+  const previous = state.securityFrames.get(sender.frameId);
+  if (previous?.timeOrigin === message.timeOrigin && previous.sequence >= message.sequence) return;
+  state.securityFrames.set(sender.frameId, {frameId:sender.frameId, origin:new URL(sender.url).origin,
+    timeOrigin:message.timeOrigin, sequence:message.sequence, at:Date.now(), observation});
+}
 
 async function receiveCanvas(message, sender) {
   await ready;
@@ -265,7 +302,8 @@ async function report(tabId, refresh) {
     const activeIds = new Set((frames || []).map(frame => frame.frameId));
     state.activeFrameIds = frames === null ? null : activeIds;
     for (const id of state.canvasFrames.keys()) if (!activeIds.has(id)) state.canvasFrames.delete(id);
-    await Promise.all((frames || []).flatMap(frame => ["collect-storage", "collect-canvas"].map(type =>
+    for (const [id, frame] of state.securityFrames) frame.activeAtRefresh = frames === null ? null : activeIds.has(id);
+    await Promise.all((frames || []).flatMap(frame => ["collect-storage", "collect-canvas", "collect-security"].map(type =>
       browser.tabs.sendMessage(tabId, {type}, {frameId:frame.frameId}).catch(() => {}))));
   }
   const cookies = await collectCookies(state);
@@ -281,7 +319,7 @@ async function report(tabId, refresh) {
   }
   if (pages.get(tabId) !== state) return {error: "A página mudou durante a coleta. Clique em Atualizar."};
   const network = P.summarizeNetwork(state, resolveDomain);
-  return {schemaVersion: 3, extensionVersion: browser.runtime.getManifest().version,
+  const result = {schemaVersion: 3, extensionVersion: browser.runtime.getManifest().version,
     generatedAt: new Date().toISOString(), browser: await browser.runtime.getBrowserInfo(),
     page: {...P.safeUrl(state.topUrl), queryKeys:state.pageQueryKeys || [],
       site: resolveDomain(P.host(state.topUrl)), startedAt: state.startedAt},
@@ -292,11 +330,20 @@ async function report(tabId, refresh) {
       context:frame.frameId === 0 ? "top-level" : "embedded",
       activeAtRefresh:state.activeFrameIds?.has(frame.frameId) ?? null,
       partitioning:"not-established-by-snapshot"})), canvas:P.summarizeCanvas([...state.canvasFrames.values()]),
-    score: {status: "not-implemented", value: null},
     coverage: {partial: state.partial, droppedRequests: state.droppedRequests, droppedCookieHeaders: state.droppedCookieHeaders,
       droppedCookieWrites: state.droppedCookieWrites,
+      storageFramesComplete: !!state.activeFrameIds?.size && [...state.activeFrameIds].every(id => state.frames.has(id)),
+      canvasFramesComplete: !!state.activeFrameIds?.size && [...state.activeFrameIds].every(id => state.canvasFrames.has(id)),
       storage: "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
       cookies: "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
       network: "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
       privacy: "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis."}};
+  try {result.security = P.summarizeSecurity(state,resolveDomain);}
+  catch {result.security = {availability:"unavailable",error:"collection-failed",coverage:{partial:true}};}
+  await customBlocklist.ready;
+  result.blocklist = {...customBlocklist.snapshot(),decisions:state.blockedDecisions.map(d => ({...d})),dropped:state.droppedBlockDecisions};
+  try {result.score = P.privacyScore(result,resolveDomain);}
+  catch {result.score = {status:"unavailable",value:null,error:"calculation-failed"};}
+  if (pages.get(tabId) !== state) return {error:"A página mudou durante a coleta. Clique em Atualizar."};
+  return result;
 }

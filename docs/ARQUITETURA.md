@@ -1,5 +1,7 @@
 # Arquitetura e limites
 
+**Atualização 0.5.0:** [CONCEITO_A.md](CONCEITO_A.md) descreve os módulos aditivos de descritores/canais, score e blocklist. Detectores B preservados; relatórios mantêm schemaVersion 3 com security/score/blocklist. O listener de bloqueio registra primeiro os eventos de rede/cookies, de forma síncrona, e só depois espera a configuração local para decidir. Mensagens de configuração/relatório exigem remetente da própria página da extensão; content scripts enviam apenas snapshots validados.
+
 **Atualização 0.4.0:** [ETAPA_4_TRACKING.md](ETAPA_4_TRACKING.md) documenta o módulo adicional de bounce, query parameters e cookie sync com HMAC por navegação, os limites e os contextos de storage. Não altera a inferência validada de cookies/canvas nem implementa bloqueio. Os planos futuros abaixo devem ser lidos junto dessa atualização.
 
 ## Decisão para Firefox
@@ -26,8 +28,10 @@ Compatibilidade alvo Firefox 128+. PSL é embarcada, sem depender da API `public
 | `webRequest` | Eventos de rede e cabeçalhos de resposta |
 | `webNavigation` | Contexto e validação dos frames |
 | `cookies` | Inventário incluindo HttpOnly e eventos de alteração |
+| `storage` | Persistir somente configuração da blocklist em storage.local |
+| `webRequestBlocking` | Cancelar requests por regra explícita do usuário |
 
-Na Etapa 1 não há `webRequestBlocking` ou `storage`: só serão adicionadas quando houver blocklist. O futuro bloqueio deverá validar hostname, bloquear também subdomínios com fronteira correta, manter allow/remove, persistir em `browser.storage.local` e registrar a própria decisão. Sem backend e sem alterar homepage, proxy ou mecanismo de busca. Navegação privada foi desabilitada no manifest para manter o escopo claro.
+As duas permissões adicionais entram na v0.5.0. A lista começa vazia; valida hostname/PSL, usa fronteira de subdomínio, permite pausar/remover, persiste em storage.local e registra somente suas decisões próprias. As observações e o score continuam transitórios. Sem backend e sem alterar homepage, proxy ou mecanismo de busca. Navegação privada foi desabilitada no manifest para manter o escopo claro.
 
 ## Primeira e terceira parte
 
@@ -47,7 +51,7 @@ Medimos estado nos momentos `document_start`, DOMContentLoaded, pageshow, após 
 
 ## Instrumentação incremental
 
-- Canvas implementado na v0.2.0: wrappers Firefox com wrappedJSObject/exportFunction, desenho/leitura/indício separados, mesmos canvas/frame e intervalo de 5 s. Não altera score. Detalhes e limites em ETAPA_2_CANVAS.md; js-leaks ainda não executado.
+- Canvas implementado na v0.2.0: wrappers Firefox com wrappedJSObject/exportFunction, desenho/leitura/indício separados, mesmos canvas/frame e intervalo de 5 s. O detector foi preservado; o score v1 agora consome sua classificação. Detalhes e limites em ETAPA_2_CANVAS.md; js-leaks ainda não executado.
 - Cookie sync: observar fluxo de identificador entre domínios, com hash efêmero e evidência de origem/destino; remover valores brutos e não classificar `utm_source` como ID de usuário automaticamente.
 - Bounce: histórico limitado entre navegações, redirects HTTP e client-side; considerar permanência e interação. Login legítimo é controle negativo.
 - Hook: WebSocket/polling com janela temporal, domínio e contexto; comparar descritores de globais e mudanças não causadas pela própria extensão. Sinais não equivalem a exploração confirmada.

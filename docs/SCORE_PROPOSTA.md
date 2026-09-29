@@ -1,36 +1,37 @@
-# Score — proposta preliminar v0, ainda não implementada
+# Privacy score — metodologia implementada v1
 
-O enunciado exige critérios, pesos, justificativa e comparação. Não exige reproduzir uma nota do Blacklight. Esta proposta é um índice de exposição e indícios observáveis, **não probabilidade de ataque nem garantia de segurança**. A versão 0.1.0 mostra “Em preparação”; não pontua três sites que ainda não foram informados.
+`privacy-score-v1`, implementada na v0.5.0. Substitui a proposta preliminar v0 deste documento. Pesos normativos, não estimados cientificamente: o resultado mede exposição/indícios observados e **não é probabilidade de ataque nem garantia de segurança**. Maior significa menos descontos observados. Sem faixas de “site seguro”.
 
-## Fórmula a validar no bloco de 26/09
+`Score = max(0, 100 − N − C − S − F − T − H)`.
 
-`Score = max(0, 100 - N - C - S - F - T - H)`.
-
-| Categoria | Regra proposta | Máximo | Justificativa |
+| Categoria | Regra implementada | Teto | Justificativa/evidência |
 |---|---|---:|---|
-| N: exposição a terceiros | 2 por site terceiro com requisição completada | 10 | Mais destinatários ampliam a exposição; teto baixo porque CDNs podem ser legítimas |
-| C: identificadores em cookies | 3 por cookie terceiro com uso/gravação associado; +1 por cookie persistente observado, até 5 desse segundo termo | 20 | Identificação entre sites e persistência têm impacto maior que uma conexão isolada; estoque sem evidência não conta como uso |
-| S: persistência em storage terceiro | 2 por origem terceira com localStorage ou IndexedDB não vazio | 10 | Persistência adicional; sessão e storage próprio não recebem punição automática |
-| F: canvas | 15 se houver sequência compatível de desenho e leitura para fingerprint, após controles | 15 | Coleta de características do navegador é um mecanismo distinto; leitura isolada é indício e deve ter confiança documentada |
-| T: ligação entre sites | 15 por cookie sync corroborado + 10 por bounce com identificador corroborado | 25 | Ligação de identidades entre contextos tem maior impacto; o mesmo fluxo não acumula duas penalizações, usa-se a maior |
-| H: indicadores de hook | 10 por canal persistente terceiro associado a outro sinal relevante; +10 por alteração de globais relevante, independente e não causada pela extensão | 20 | Sinais combinados têm mais evidência; WebSocket/chat ou polling isolados não pontuam |
+| N | 2 por site terceiro (eTLD+1 pela PSL) com resposta concluída HTTP 200–399, excluindo decisões próprias de bloqueio | 10 | Contato amplia exposição, mas CDN pode ser legítima; site, requestId e horário |
+| C | 3 por identidade de cookie terceiro com gravação real correlacionada +1 por identidade persistente gravada, até 5 nesse segundo termo | 20 | Persistência/identificação; nome, domínio, path, store, partição e horário. Correlação não prova autoria exclusiva |
+| S | 2 por origem terceira com localStorage ou IndexedDB >0 em snapshot ativo e atualizado nos últimos 5 s | 10 | Persistência adicional; origem, frame e horário. Sessão e storage próprio não pontuam automaticamente |
+| F | 15 se o detector B indicar sequência canvas desenho + leitura/exportação | 15 | Características do navegador; frame e regra canvas-sequence-v1. Indicador de baixa especificidade, também ocorre em aplicações legítimas, não comprova fingerprinting intencional |
+| T | 15 se existir cookie sync de confiança moderada, senão 10 se houver bounce indicador moderado | 25 | Ligação entre sites; domínios/indicador. Uma dimensão por navegação: usa o maior, nunca soma sync e bounce do mesmo fluxo |
+| H | 20 se houver combinação de alteração de API e polling terceiro no mesmo frame/intervalo | 20 | Dois sinais coexistentes; APIs, domínio, requestIds e horário. Não comprova hijacking, causalidade ou autoria |
 
-“Cookie”, “origem”, “site” e “fluxo” são unidades diferentes e precisam ser deduplicadas com regras explícitas. Máximos somam 100; a proposta reduz dominância por volume. Tentativas bloqueadas entram em seção própria e não têm o mesmo peso de exposição realizada. Um evento pode fundamentar categorias diferentes somente se representar dimensões diferentes; dentro de uma categoria não se repete.
+Refinamentos conservadores da proposta v0: C considera gravações reais correlacionadas, não inventário nem Set-Cookie; S exclui snapshots antigos/removidos; T toma o maior sinal por navegação porque o detector não demonstra independência entre todos os fluxos. T mantém o teto reservado 25, mas sua regra atual desconta no máximo 15; os 10 restantes não são inventados como observações. H não pontua WebSocket, polling ou hook isolados e não soma bootstrap canvas próprio. O sinal canvas F continua pontuado como indício de exposição de baixa especificidade, com sua limitação explícita; em T/H sinais isolados de confiança baixa não pontuam. Não se mede utilidade/necessidade do recurso para o site.
 
-Os pesos são uma **escolha normativa declarada**, não coeficientes cientificamente estimados. Sua defesa é a hierarquia entre contato, persistência e ligação de identidades, com tetos para evitar que centenas de recursos triviais determinem sozinhos a nota. Não há como alegar uma escala objetiva validada sem uma base empírica. Antes da aplicação final, comparar controles positivos/negativos e testar sensibilidade de ±20% nos pesos; congelar versão e regras sem ajustá-las para imitar Blacklight.
+Deduplicação: N por site PSL; C por identidade completa definida pelo detector de cookies (store/domínio/path/nome/FPI/partição), mantendo a última gravação, sem duplicar overwrite; S por origem; F/H binários; T maior sinal moderado da navegação. Remoções de cookies não geram desconto. Categorias diferentes podem representar dimensões distintas do mesmo evento; a sobreposição é declarada, não implica evidências causalmente independentes. Requests bloqueados não dão bônus e não apagam observações já feitas.
 
-Faixas descritivas preliminares: 80–100 exposição observada baixa; 50–79 atenção; 0–49 exposição observada elevada. Elas também são convencionais. Evitar o rótulo “site seguro”.
+## Cobertura e intervalo
 
-## Cobertura e incerteza
+O JSON contém `value` somente quando as seis categorias têm cobertura prevista. Caso contrário `status: partial`, `value: null` e intervalo, apresentado também na UI. `observedValue` é o limite superior calculado, **não nota final**.
 
-- API ausente, frame inacessível ou coleta truncada não equivalem a detector negativo.
-- Se houver categorias não avaliadas, mostrar nota parcial e cobertura, ou intervalo conservador: `máximo possível = 100 - penalizações observadas`; `mínimo possível = máximo possível - tetos das categorias não avaliadas`, limitado a zero.
-- Uma categoria vazia só vale como zero quando o detector operou dentro da janela/protocolo; mesmo assim significa “não observado”.
-- Cada desconto deve apontar para uma evidência e uma versão de regra.
-- Hipóteses de baixa confiança aparecem em separado; não usar como prova de sync/hijacking.
+- Superior: `max(0, 100 − descontos observados)`.
+- Inferior: `max(0, superior − soma(teto − desconto observado) das categorias sem cobertura completa)`.
+- Falha do cálculo: `unavailable`, sem intervalo ou nota fictícios.
+- N exige início de navegação observado e rede sem truncamento; C exige janela de 30 s fechada, eventos sem perdas/erros e inventário sem mudança concorrente.
+- S exige snapshots recentes de todos os frames ativos com três APIs observadas, sem snapshots removidos/defasados. Isso mantém explícita a limitação top-level registrada no DDG Storage Blocking.
+- F exige todos os frames ativos com instrumentação disponível e cobertura canvas completa. T respeita a cobertura do detector B. H exige 30 s e snapshots recentes (até 5 s) de todas as APIs selecionadas dos frames ativos disponíveis, sem truncamento.
 
-## Comparação crítica ao Blacklight
+A cobertura é relativa às APIs e janelas previstas, não a tudo que o navegador/site faz. Lacunas fora desse escopo persistem mesmo em score observado. Exemplo: só H sem cobertura, sem descontos, produz 80–100; não 100 definitivo. Ponderações limitadas por teto mantêm 0–100 e testes avaliam sensibilidade ±20%. Antes de comparar sites, congelar esta versão e registrar os seis descontos, intervalo, data, consentimento, perfil, ETP e regras da blocklist; não ajustar pesos para imitar resultado externo.
 
-Comparar as dimensões sobrepostas (terceiros/trackers, cookies e técnicas de fingerprint), guardando a saída original do Blacklight. Não presumir que o Blacklight fornece um score 0–100 equivalente. Se uma edição da ferramenta reportar apenas contagens/indicadores, usar esses dados e explicar como nossa nota os pondera. Sinais específicos de hook ou métricas não presentes no Blacklight ficam “sem contraparte”, não “discordância”.
+## Aplicação aos três sites e Blacklight
 
-Usar uma linha por divergência com domínio, requisição/HAR, horário, tipo, filtro do uBlock e hipótese testada. Configuração geográfica, dispositivo e cache do Blacklight devem ser anotadas. “Metodologias diferentes” não explica sozinha nenhum caso.
+**Pendente de execução com os três sites oficiais.** Não foi atribuída nota a sites ainda não medidos. Compare dimensões sobrepostas (terceiros, cookies, fingerprinting), preservando a saída original do Blacklight; não presumir que ele oferece nota 0–100 equivalente. Sem contraparte para H não significa discordância.
+
+Para cada divergência, registre domínio, request/HAR, horário, resultado Blacklight/uBlock, configuração e hipótese verificada. Diferenças de método, geografia, sessão ou consentimento precisam de evidência concreta. A implementação e os controles locais não concluem a avaliação acadêmica do score.

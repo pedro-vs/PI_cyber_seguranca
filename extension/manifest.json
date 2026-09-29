@@ -1,21 +1,61 @@
 {
   "manifest_version": 2,
   "name": "Privacy Lens — Insper",
-  "version": "0.4.0",
-  "description": "Relatório local de rede, cookies, storage, canvas e indicadores de bounce, cookie sync e parâmetros de tracking.",
-  "browser_specific_settings": {"gecko": {"id": "privacy-lens@projeto.insper", "strict_min_version": "128.0"}},
-  "permissions": ["<all_urls>", "tabs", "webRequest", "webNavigation", "cookies"],
+  "version": "0.5.0",
+  "description": "Relatório local de privacidade, indicadores de tracking e alterações de APIs, score com cobertura e blocklist personalizada.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "privacy-lens@projeto.insper",
+      "strict_min_version": "128.0"
+    }
+  },
+  "permissions": [
+    "<all_urls>",
+    "tabs",
+    "webRequest",
+    "webNavigation",
+    "cookies",
+    "storage",
+    "webRequestBlocking"
+  ],
   "background": {
-    "scripts": ["lib/domain.js", "lib/model.js", "lib/cookies.js", "lib/cookie-diagnostics.js", "lib/canvas.js", "lib/advanced-tracking.js", "lib/tracking-report.js", "background.js"],
+    "scripts": [
+      "lib/domain.js",
+      "lib/model.js",
+      "lib/cookies.js",
+      "lib/cookie-diagnostics.js",
+      "lib/canvas.js",
+      "lib/advanced-tracking.js",
+      "lib/tracking-report.js",
+      "lib/security.js",
+      "lib/score.js",
+      "lib/blocklist.js",
+      "background.js"
+    ],
     "persistent": true
   },
-  "content_scripts": [{
-    "matches": ["http://*/*", "https://*/*"],
-    "js": ["lib/canvas.js", "content/canvas.js", "content/storage.js"],
-    "all_frames": true,
-    "run_at": "document_start"
-  }],
-  "browser_action": {"default_title": "Privacy Lens", "default_popup": "popup/popup.html"},
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "lib/canvas.js",
+        "lib/security.js",
+        "content/security.js",
+        "content/canvas.js",
+        "content/security-ready.js",
+        "content/storage.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_start"
+    }
+  ],
+  "browser_action": {
+    "default_title": "Privacy Lens",
+    "default_popup": "popup/popup.html"
+  },
   "content_security_policy": "script-src 'self'; object-src 'none'; connect-src 'self'",
   "incognito": "not_allowed"
 }

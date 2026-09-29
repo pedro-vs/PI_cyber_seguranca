@@ -1,13 +1,14 @@
 "use strict";
 const vm = require("node:vm"), fs = require("node:fs"), path = require("node:path");
 const deferred = () => { let resolve; const promise = new Promise(r => {resolve=r;}); return {promise,resolve}; };
-function harness({delayStore = false, delayPSL = false, failFrames = false} = {}) {
+function harness({delayStore = false, delayPSL = false, failFrames = false, localStorage} = {}) {
   const extension = path.join(__dirname,"../../extension");
   const manifest = JSON.parse(fs.readFileSync(path.join(extension,"manifest.json"),"utf8"));
   let now = 1000, inventory = [], inventoryHook;
   const listeners = {}, frames = new Map(), store = deferred(), psl = deferred();
   const event = name => ({addListener(fn) {listeners[name]=fn;},hasListener(fn) {return listeners[name]===fn;}});
   const browser = {
+    storage: localStorage ? {local:localStorage} : undefined,
     runtime: {getURL: p => `moz-extension://test/${p}`, id:"test", onMessage:event("message"),
       getManifest:()=>manifest, getBrowserInfo:async()=>({version:"mock"})},
     tabs: {get:async id => {if(delayStore) await store.promise; return {id,url:"https://example.com/",cookieStoreId:"default"};},

@@ -8,7 +8,7 @@ class Element {
   replaceChildren(...children) {this.children=children;}
   addEventListener(name, fn) {this.events[name]=fn;}
 }
-async function popup(report, {fullPage=false, failure=false}={}) {
+async function popup(report, {fullPage=false, failure=false, messageHandler}={}) {
   const folder=path.join(__dirname,"../../extension/popup"), html=fs.readFileSync(path.join(folder,"popup.html"),"utf8");
   const elements=new Map([...html.matchAll(/id="([^"]+)"/g)].map(m=>[m[1],new Element()]));
   for(const id of ["third","cookies","frames"]) elements.get(id).textContent="—";
@@ -21,7 +21,9 @@ async function popup(report, {fullPage=false, failure=false}={}) {
     }},
     browser:{tabs:{query:async()=>[{id:1}],create:args=>opened.push(args)},runtime:{
       getURL:p=>`moz-extension://test/${p}`,sendMessage:async message=>{
-        messages.push(message);if(reject) throw Error("BACKGROUND_FAILED");return response;
+        messages.push(message);if(reject) throw Error("BACKGROUND_FAILED");
+        if(message.type!=="report" && messageHandler) return messageHandler(message);
+        return response;
       }
     }}
   });
