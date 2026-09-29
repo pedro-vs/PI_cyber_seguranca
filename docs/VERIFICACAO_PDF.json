@@ -1,0 +1,16 @@
+{
+  "pages": 35,
+  "a4": true,
+  "figures": 24,
+  "tables": 15,
+  "outlineEntries": 37,
+  "bytes": 19734821,
+  "sha256": "6da1be656fc0c7ecdf2c808a488f083154818059a7c16f9185379b8cfe8164d8",
+  "textBoundaryAndMissingGlyphChecks": "passed",
+  "source": "docs/relatorio-final.md",
+  "generator": "scripts/build-report.py",
+  "dependencies": "scripts/requirements-report.txt",
+  "twoConsecutiveBuildsSameSha256": true,
+  "visualReview": "35 páginas revisadas em miniaturas; páginas 24, 25, 27, 28, 31 e 32 também em escala maior. Recortes de score/Blacklight e paginação conferidos, sem fontes isoladas em página extra. Revisão do PDF, não novas capturas de navegador.",
+  "supplement": "E57–E62: dois JSONs e quatro PNG; scores reais recalculados; originais preservados."
+}

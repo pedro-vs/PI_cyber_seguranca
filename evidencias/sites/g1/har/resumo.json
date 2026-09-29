@@ -1,0 +1,5089 @@
+{
+  "source": "evidencias/sites/g1/har/g1.har",
+  "topSite": "globo.com",
+  "creator": {
+    "name": "Firefox",
+    "version": "156.0.1"
+  },
+  "browser": {
+    "name": "Firefox",
+    "version": "156.0.1"
+  },
+  "pages": [
+    {
+      "title": "https://g1.globo.com/",
+      "startedDateTime": "2026-09-29T03:25:50.898-03:00",
+      "pageTimings": {
+        "onContentLoad": -2215,
+        "onLoad": -1
+      }
+    }
+  ],
+  "total": 296,
+  "first": 5,
+  "third": 290,
+  "unknown": 1,
+  "schemes": {
+    "https:": 295,
+    "data:": 1
+  },
+  "hostCount": 111,
+  "siteCount": 68,
+  "thirdSiteCount": 67,
+  "start": "2026-09-29T06:25:50.898Z",
+  "end": "2026-09-29T06:26:18.134Z",
+  "status": {
+    "0": 15,
+    "200": 150,
+    "201": 1,
+    "204": 55,
+    "302": 68,
+    "303": 3,
+    "307": 2,
+    "404": 1,
+    "451": 1
+  },
+  "status0": [
+    {
+      "index": 1,
+      "at": "2026-09-29T06:25:50.910Z",
+      "url": "https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202609220101/pubads_impl.js",
+      "method": "GET",
+      "statusText": "",
+      "comment": ""
+    },
+    {
+      "index": 2,
+      "at": "2026-09-29T06:25:50.916Z",
+      "url": "https://macro.adnami.io/macro/gen/adsm.macro.rmb.js",
+      "method": "GET",
+      "statusText": "",
+      "comment": ""
+    },
+    {
+      "index": 3,
+      "at": "2026-09-29T06:25:50.920Z",
+      "url": "https://sdk.mrf.io/statics/marfeel-sdk.js",
+      "method": "GET",
+      "statusText": "",
+      "comment": ""
+    },
+    {
+      "index": 4,
+      "at": "2026-09-29T06:25:50.941Z",
+      "url": "https://pub.doubleverify.com/dvtag/signals/bsc/pub.json",
+      "method": "GET",
+      "statusText": "",
+      "comment": ""
+    },
+    {
+      "index": 5,
+      "at": "2026-09-29T06:25:50.979Z",
+      "url": "https://www.google.com/pagead/1p-user-list/AW-586600620/",
+      "method": "GET",
+      "statusText": "",
+      "comment": ""
+    },
+    {
+      "index": 6,
+      "at": "2026-09-29T06:25:50.980Z",
+      "url": "https://www.google.com.br/pagead/1p-user-list/AW-586600620/",
+      "method": "GET",
+      "statusText": "",
+      "comment": ""
+    },
+    {
+      "index": 7,
+      "at": "2026-09-29T06:25:50.981Z",
+      "url": "https://www.clarity.ms/tag/lknv1pl7r0",
+      "method": "GET",
+      "statusText": "",
+      "comment": ""
+    },
+    {
+      "index": 11,
+      "at": "2026-09-29T06:25:51.078Z",
+      "url": "https://pub.doubleverify.com/dvtag/signals/ids/pub.json",
+      "method": "GET",
+      "statusText": "",
+      "comment": ""
+    },
+    {
+      "index": 12,
+      "at": "2026-09-29T06:25:51.095Z",
+      "url": "https://connect.facebook.net/en_US/fbevents.js",
+      "method": "GET",
+      "statusText": "",
+      "comment": ""
+    },
+    {
+      "index": 14,
+      "at": "2026-09-29T06:25:51.114Z",
+      "url": "https://api.rlcdn.com/api/identity/envelope",
+      "method": "GET",
+      "statusText": "",
+      "comment": ""
+    },
+    {
+      "index": 20,
+      "at": "2026-09-29T06:25:51.249Z",
+      "url": "https://gum.criteo.com/sid/json",
+      "method": "OPTIONS",
+      "statusText": "",
+      "comment": ""
+    },
+    {
+      "index": 21,
+      "at": "2026-09-29T06:25:51.307Z",
+      "url": "https://d39f98ec-9259-4f8b-896d-7ab58be1f900.prmutv.co/v2.0/pxid",
+      "method": "GET",
+      "statusText": "",
+      "comment": ""
+    },
+    {
+      "index": 23,
+      "at": "2026-09-29T06:25:51.421Z",
+      "url": "https://idx.liadm.com/idex/prebid/13715",
+      "method": "GET",
+      "statusText": "",
+      "comment": ""
+    },
+    {
+      "index": 24,
+      "at": "2026-09-29T06:25:51.472Z",
+      "url": "https://ib.adnxs.com/getuidj",
+      "method": "GET",
+      "statusText": "",
+      "comment": ""
+    },
+    {
+      "index": 295,
+      "at": "2026-09-29T06:26:18.134Z",
+      "url": "https://events.newsroom.bi/ingest.php",
+      "method": "POST",
+      "statusText": "",
+      "comment": ""
+    }
+  ],
+  "explicitBlockedAttribution": "não informada nos campos exportados; status 0 não identifica bloqueador",
+  "setCookieHeaderLines": 265,
+  "setCookieResponses": 126,
+  "setCookieByHost": {
+    "events.newsroom.bi": 30,
+    "prg.smartadserver.com": 29,
+    "simage2.pubmatic.com": 16,
+    "horizon-track.globo.com": 15,
+    "match.adsrvr.org": 12,
+    "ups.analytics.yahoo.com": 11,
+    "image2.pubmatic.com": 10,
+    "image6.pubmatic.com": 10,
+    "qvdt3feo.com": 9,
+    "pixel.tapad.com": 8,
+    "x.bidswitch.net": 8,
+    "a.sportradarserving.com": 7,
+    "secure.adnxs.com": 7,
+    "pixel.onaudience.com": 6,
+    "match.prod.bidr.io": 5,
+    "icu.newsroom.bi": 4,
+    "secure.insightexpressai.com": 4,
+    "trace.us.rtbwise.com": 4,
+    "www.temu.com": 4,
+    "c1.adform.net": 3,
+    "dnacdn.net": 3,
+    "dpm.demdex.net": 3,
+    "gum.criteo.com": 3,
+    "ib.adnxs.com": 3,
+    "p.rfihub.com": 3,
+    "pixel-sync.sitescout.com": 3,
+    "pixel.nordicdataresources.net": 3,
+    "s.amazon-adsystem.com": 3,
+    "uipglob.semasio.net": 3,
+    "ad.turn.com": 2,
+    "bcp.crwdcntrl.net": 2,
+    "cs.admanmedia.com": 2,
+    "google-bidout-d.openx.net": 2,
+    "match.deepintent.com": 2,
+    "rp.liadm.com": 2,
+    "sg.semasio.net": 2,
+    "simage4.pubmatic.com": 2,
+    "su.semasio.net": 2,
+    "t.adx.opera.com": 2,
+    "t.oa.opera.com": 2,
+    "um.simpli.fi": 2,
+    "bttrack.com": 1,
+    "image4.pubmatic.com": 1,
+    "pubmatic-match.dotomi.com": 1,
+    "rtb-csync.smartadserver.com": 1,
+    "rtb.openx.net": 1,
+    "sb.scorecardresearch.com": 1,
+    "sync-tm.everesttech.net": 1,
+    "sync.ipredictive.com": 1,
+    "tr.blismedia.com": 1,
+    "tracookiepixel.xyz": 1,
+    "user-sync.fwmrm.net": 1,
+    "www.facebook.com": 1
+  },
+  "redirectCount": 73,
+  "redirects": [
+    {
+      "index": 0,
+      "at": "2026-09-29T06:25:50.898Z",
+      "from": "https://c1.adform.net/serving/cookie/match",
+      "status": 302,
+      "to": "https://c1.adform.net/serving/cookie/match"
+    },
+    {
+      "index": 9,
+      "at": "2026-09-29T06:25:51.076Z",
+      "from": "https://rp.liadm.com/j",
+      "status": 302,
+      "to": ""
+    },
+    {
+      "index": 70,
+      "at": "2026-09-29T06:25:52.524Z",
+      "from": "https://rtb.openx.net/esp",
+      "status": 302,
+      "to": ""
+    },
+    {
+      "index": 103,
+      "at": "2026-09-29T06:25:53.206Z",
+      "from": "https://secure.adnxs.com/seg",
+      "status": 307,
+      "to": "https://secure.adnxs.com/bounce"
+    },
+    {
+      "index": 104,
+      "at": "2026-09-29T06:25:53.206Z",
+      "from": "https://secure.adnxs.com/seg",
+      "status": 307,
+      "to": "https://secure.adnxs.com/bounce"
+    },
+    {
+      "index": 117,
+      "at": "2026-09-29T06:25:54.161Z",
+      "from": "https://c1.adform.net/serving/cookie/match",
+      "status": 302,
+      "to": "https://api.permutive.app/v2.0/px/sync"
+    },
+    {
+      "index": 142,
+      "at": "2026-09-29T06:25:56.032Z",
+      "from": "https://t.adx.opera.com/pub/sync",
+      "status": 302,
+      "to": "https://www.temu.com/api/adx/cm/pixel-opera"
+    },
+    {
+      "index": 147,
+      "at": "2026-09-29T06:25:56.245Z",
+      "from": "https://cm.g.doubleclick.net/pixel",
+      "status": 302,
+      "to": "https://us-u.openx.net/w/1.0/sd"
+    },
+    {
+      "index": 149,
+      "at": "2026-09-29T06:25:56.247Z",
+      "from": "https://match.adsrvr.org/track/cmf/openx",
+      "status": 302,
+      "to": "https://match.adsrvr.org/track/cmb/openx"
+    },
+    {
+      "index": 150,
+      "at": "2026-09-29T06:25:56.248Z",
+      "from": "https://ups.analytics.yahoo.com/ups/58934/cms",
+      "status": 302,
+      "to": "https://ups.analytics.yahoo.com/ups/58934/cms"
+    },
+    {
+      "index": 151,
+      "at": "2026-09-29T06:25:56.248Z",
+      "from": "https://ad.turn.com/r/cs",
+      "status": 302,
+      "to": "https://us-u.openx.net/w/1.0/sd"
+    },
+    {
+      "index": 156,
+      "at": "2026-09-29T06:25:56.580Z",
+      "from": "https://match.adsrvr.org/track/cmb/openx",
+      "status": 302,
+      "to": "https://us-u.openx.net/w/1.0/sd"
+    },
+    {
+      "index": 157,
+      "at": "2026-09-29T06:25:56.581Z",
+      "from": "https://ups.analytics.yahoo.com/ups/58934/cms",
+      "status": 302,
+      "to": "https://us-u.openx.net/w/1.0/sd"
+    },
+    {
+      "index": 165,
+      "at": "2026-09-29T06:25:57.083Z",
+      "from": "https://x.bidswitch.net/sync",
+      "status": 302,
+      "to": "https://x.bidswitch.net/ul_cb/sync"
+    },
+    {
+      "index": 166,
+      "at": "2026-09-29T06:25:57.084Z",
+      "from": "https://secure.adnxs.com/getuid",
+      "status": 302,
+      "to": "https://ssp-sync.criteo.com/user-sync/match"
+    },
+    {
+      "index": 167,
+      "at": "2026-09-29T06:25:57.085Z",
+      "from": "https://cm.g.doubleclick.net/pixel",
+      "status": 302,
+      "to": "https://ssp-sync.criteo.com/user-sync/match"
+    },
+    {
+      "index": 168,
+      "at": "2026-09-29T06:25:57.085Z",
+      "from": "https://ad.turn.com/r/cs",
+      "status": 302,
+      "to": "https://ssp-sync.criteo.com/user-sync/bidder-initiated"
+    },
+    {
+      "index": 169,
+      "at": "2026-09-29T06:25:57.086Z",
+      "from": "https://cs.admanmedia.com/e805be652c9053b8f771665f0ac3c361.gif",
+      "status": 302,
+      "to": "https://ssp-sync.criteo.com/user-sync/match"
+    },
+    {
+      "index": 171,
+      "at": "2026-09-29T06:25:57.086Z",
+      "from": "https://t.adx.opera.com/pub/sync",
+      "status": 302,
+      "to": "https://www.temu.com/api/adx/cm/pixel-opera"
+    },
+    {
+      "index": 172,
+      "at": "2026-09-29T06:25:57.087Z",
+      "from": "https://trace.us.rtbwise.com/api/v1/cookie/sync",
+      "status": 302,
+      "to": "https://ssp-sync.criteo.com/user-sync/match"
+    },
+    {
+      "index": 178,
+      "at": "2026-09-29T06:25:58.013Z",
+      "from": "https://www.temu.com/api/adx/cm/pixel-opera",
+      "status": 302,
+      "to": "https://t.oa.opera.com/sync"
+    },
+    {
+      "index": 182,
+      "at": "2026-09-29T06:25:58.016Z",
+      "from": "https://www.temu.com/api/adx/cm/pixel-opera",
+      "status": 302,
+      "to": "https://t.oa.opera.com/sync"
+    },
+    {
+      "index": 184,
+      "at": "2026-09-29T06:25:58.035Z",
+      "from": "https://um.simpli.fi/pubmatic",
+      "status": 302,
+      "to": "https://image2.pubmatic.com/AdServer/Pug"
+    },
+    {
+      "index": 185,
+      "at": "2026-09-29T06:25:58.036Z",
+      "from": "https://s.amazon-adsystem.com/dcm",
+      "status": 302,
+      "to": "https://s.amazon-adsystem.com/dcm"
+    },
+    {
+      "index": 187,
+      "at": "2026-09-29T06:25:58.050Z",
+      "from": "https://sync.srv.stackadapt.com/sync",
+      "status": 302,
+      "to": "https://qvdt3feo.com/sync"
+    },
+    {
+      "index": 188,
+      "at": "2026-09-29T06:25:58.051Z",
+      "from": "https://ups.analytics.yahoo.com/ups/58917/cms",
+      "status": 302,
+      "to": "https://simage2.pubmatic.com/AdServer/Pug"
+    },
+    {
+      "index": 189,
+      "at": "2026-09-29T06:25:58.051Z",
+      "from": "https://ups.analytics.yahoo.com/ups/58292/sync",
+      "status": 302,
+      "to": "https://image4.pubmatic.com/AdServer/SPug"
+    },
+    {
+      "index": 190,
+      "at": "2026-09-29T06:25:58.127Z",
+      "from": "https://ups.analytics.yahoo.com/ups/58917/cms",
+      "status": 302,
+      "to": "https://simage2.pubmatic.com/AdServer/Pug"
+    },
+    {
+      "index": 191,
+      "at": "2026-09-29T06:25:58.128Z",
+      "from": "https://pixel.tapad.com/idsync/ex/receive",
+      "status": 302,
+      "to": "https://pixel.tapad.com/idsync/ex/receive/check"
+    },
+    {
+      "index": 194,
+      "at": "2026-09-29T06:25:58.131Z",
+      "from": "https://dpm.demdex.net/ibs:dpid=19566&dpuuid=F3154845-15E5-4036-B308-A0A84672A649",
+      "status": 302,
+      "to": "https://dpm.demdex.net/demconf.jpg"
+    },
+    {
+      "index": 195,
+      "at": "2026-09-29T06:25:58.131Z",
+      "from": "https://cm.g.doubleclick.net/pixel",
+      "status": 302,
+      "to": "https://image2.pubmatic.com/AdServer/Pug"
+    },
+    {
+      "index": 196,
+      "at": "2026-09-29T06:25:58.131Z",
+      "from": "https://cm.g.doubleclick.net/pixel",
+      "status": 302,
+      "to": "https://ads.pubmatic.com/AdServer/js/user_sync.html"
+    },
+    {
+      "index": 197,
+      "at": "2026-09-29T06:25:58.132Z",
+      "from": "https://cm.g.doubleclick.net/pixel",
+      "status": 302,
+      "to": "https://image2.pubmatic.com/AdServer/Pug"
+    },
+    {
+      "index": 198,
+      "at": "2026-09-29T06:25:58.132Z",
+      "from": "https://match.adsrvr.org/track/cmf/generic",
+      "status": 302,
+      "to": "https://simage2.pubmatic.com/AdServer/Pug"
+    },
+    {
+      "index": 216,
+      "at": "2026-09-29T06:25:59.028Z",
+      "from": "https://t.oa.opera.com/sync",
+      "status": 302,
+      "to": "https://ssp-sync.criteo.com/user-sync/match"
+    },
+    {
+      "index": 217,
+      "at": "2026-09-29T06:25:59.029Z",
+      "from": "https://t.oa.opera.com/sync",
+      "status": 302,
+      "to": "https://rtb-csync.smartadserver.com/redir/"
+    },
+    {
+      "index": 218,
+      "at": "2026-09-29T06:25:59.031Z",
+      "from": "https://qvdt3feo.com/sync",
+      "status": 302,
+      "to": "https://simage2.pubmatic.com/AdServer/Pug"
+    },
+    {
+      "index": 221,
+      "at": "2026-09-29T06:25:59.095Z",
+      "from": "https://pixel.tapad.com/idsync/ex/receive/check",
+      "status": 302,
+      "to": "https://match.adsrvr.org/track/cmf/generic"
+    },
+    {
+      "index": 223,
+      "at": "2026-09-29T06:25:59.324Z",
+      "from": "https://match.adsrvr.org/track/cmf/generic",
+      "status": 302,
+      "to": "https://pixel.tapad.com/idsync/ex/receive"
+    },
+    {
+      "index": 239,
+      "at": "2026-09-29T06:26:01.425Z",
+      "from": "https://pubmatic-match.dotomi.com/match/bounce/current",
+      "status": 302,
+      "to": "https://pubmatic-match.dotomi.com/match/bounce/current"
+    },
+    {
+      "index": 241,
+      "at": "2026-09-29T06:26:01.436Z",
+      "from": "https://p.rfihub.com/cm",
+      "status": 302,
+      "to": "https://image2.pubmatic.com/AdServer/Pug"
+    },
+    {
+      "index": 242,
+      "at": "2026-09-29T06:26:01.437Z",
+      "from": "https://sync.ipredictive.com/d/sync/cookie/generic",
+      "status": 302,
+      "to": "https://simage2.pubmatic.com/AdServer/Pug"
+    },
+    {
+      "index": 243,
+      "at": "2026-09-29T06:26:01.465Z",
+      "from": "https://x.bidswitch.net/sync",
+      "status": 302,
+      "to": ""
+    },
+    {
+      "index": 244,
+      "at": "2026-09-29T06:26:01.466Z",
+      "from": "https://match.prod.bidr.io/cookie-sync/pm",
+      "status": 303,
+      "to": "https://match.prod.bidr.io/cookie-sync/pm"
+    },
+    {
+      "index": 246,
+      "at": "2026-09-29T06:26:01.468Z",
+      "from": "https://sync-tm.everesttech.net/upi/pid/b9pj45k4",
+      "status": 302,
+      "to": "https://sync-tm.everesttech.net/ct/upi/pid/b9pj45k4"
+    },
+    {
+      "index": 247,
+      "at": "2026-09-29T06:26:01.469Z",
+      "from": "https://pixel-sync.sitescout.com/dmp/pixelSync",
+      "status": 302,
+      "to": "https://pixel-sync.sitescout.com/dmp/pixelSync"
+    },
+    {
+      "index": 248,
+      "at": "2026-09-29T06:26:01.471Z",
+      "from": "https://pixel.onaudience.com/",
+      "status": 302,
+      "to": "https://cm.g.doubleclick.net/pixel"
+    },
+    {
+      "index": 249,
+      "at": "2026-09-29T06:26:01.471Z",
+      "from": "https://uipglob.semasio.net/pubmatic/1/info",
+      "status": 302,
+      "to": ""
+    },
+    {
+      "index": 251,
+      "at": "2026-09-29T06:26:01.648Z",
+      "from": "https://a.sportradarserving.com/sync",
+      "status": 302,
+      "to": "https://a.sportradarserving.com/ul_cb/sync"
+    },
+    {
+      "index": 252,
+      "at": "2026-09-29T06:26:01.789Z",
+      "from": "https://sync-tm.everesttech.net/ct/upi/pid/b9pj45k4",
+      "status": 302,
+      "to": "https://simage2.pubmatic.com/AdServer/Pug"
+    },
+    {
+      "index": 253,
+      "at": "2026-09-29T06:26:01.804Z",
+      "from": "https://pixel-sync.sitescout.com/dmp/pixelSync",
+      "status": 302,
+      "to": "https://image2.pubmatic.com/AdServer/Pug"
+    },
+    {
+      "index": 257,
+      "at": "2026-09-29T06:26:02.086Z",
+      "from": "https://cm.g.doubleclick.net/pixel",
+      "status": 302,
+      "to": "https://target.digitalaudience.io/bakery/sync/g"
+    },
+    {
+      "index": 258,
+      "at": "2026-09-29T06:26:02.133Z",
+      "from": "https://uipglob.semasio.net/pubmatic/1/info2",
+      "status": 302,
+      "to": "https://sg.semasio.net/sync/1/15927723"
+    },
+    {
+      "index": 259,
+      "at": "2026-09-29T06:26:02.200Z",
+      "from": "https://pubmatic-match.dotomi.com/match/bounce/current",
+      "status": 302,
+      "to": "https://simage2.pubmatic.com/AdServer/Pug"
+    },
+    {
+      "index": 260,
+      "at": "2026-09-29T06:26:02.201Z",
+      "from": "https://match.prod.bidr.io/cookie-sync/pm",
+      "status": 303,
+      "to": "https://cm.g.doubleclick.net/pixel"
+    },
+    {
+      "index": 262,
+      "at": "2026-09-29T06:26:02.201Z",
+      "from": "https://a.sportradarserving.com/ul_cb/sync",
+      "status": 302,
+      "to": "https://x.bidswitch.net/sync"
+    },
+    {
+      "index": 263,
+      "at": "2026-09-29T06:26:02.289Z",
+      "from": "https://target.digitalaudience.io/bakery/sync/g",
+      "status": 302,
+      "to": "https://pixel.onaudience.com/"
+    },
+    {
+      "index": 264,
+      "at": "2026-09-29T06:26:02.360Z",
+      "from": "https://cm.g.doubleclick.net/pixel",
+      "status": 302,
+      "to": "https://match.prod.bidr.io/cookie-sync/adx"
+    },
+    {
+      "index": 265,
+      "at": "2026-09-29T06:26:02.445Z",
+      "from": "https://sg.semasio.net/sync/1/15927723",
+      "status": 302,
+      "to": "https://match.adsrvr.org/track/cmf/generic"
+    },
+    {
+      "index": 267,
+      "at": "2026-09-29T06:26:02.452Z",
+      "from": "https://x.bidswitch.net/sync",
+      "status": 302,
+      "to": ""
+    },
+    {
+      "index": 268,
+      "at": "2026-09-29T06:26:02.454Z",
+      "from": "https://match.prod.bidr.io/cookie-sync/adx",
+      "status": 303,
+      "to": "https://tracookiepixel.xyz/log"
+    },
+    {
+      "index": 271,
+      "at": "2026-09-29T06:26:02.923Z",
+      "from": "https://pixel.onaudience.com/",
+      "status": 302,
+      "to": "https://cms.analytics.yahoo.com/cms"
+    },
+    {
+      "index": 272,
+      "at": "2026-09-29T06:26:03.186Z",
+      "from": "https://match.adsrvr.org/track/cmf/generic",
+      "status": 302,
+      "to": "https://uipglob.semasio.net/tradedesk/1/info"
+    },
+    {
+      "index": 273,
+      "at": "2026-09-29T06:26:03.265Z",
+      "from": "https://cms.analytics.yahoo.com/cms",
+      "status": 302,
+      "to": "https://ups.analytics.yahoo.com/ups/58679/cms"
+    },
+    {
+      "index": 275,
+      "at": "2026-09-29T06:26:03.271Z",
+      "from": "https://uipglob.semasio.net/tradedesk/1/info",
+      "status": 302,
+      "to": "https://sg.semasio.net/sync/1/32675800"
+    },
+    {
+      "index": 276,
+      "at": "2026-09-29T06:26:03.320Z",
+      "from": "https://ups.analytics.yahoo.com/ups/58679/cms",
+      "status": 302,
+      "to": "https://pixel.onaudience.com/"
+    },
+    {
+      "index": 277,
+      "at": "2026-09-29T06:26:03.473Z",
+      "from": "https://pixel.onaudience.com/",
+      "status": 302,
+      "to": "https://pixel.nordicdataresources.net/"
+    },
+    {
+      "index": 278,
+      "at": "2026-09-29T06:26:03.520Z",
+      "from": "https://sg.semasio.net/sync/1/32675800",
+      "status": 302,
+      "to": "https://ib.adnxs.com/getuid"
+    },
+    {
+      "index": 279,
+      "at": "2026-09-29T06:26:03.810Z",
+      "from": "https://pixel.nordicdataresources.net/",
+      "status": 302,
+      "to": "https://match.adsrvr.org/track/cmf/generic"
+    },
+    {
+      "index": 280,
+      "at": "2026-09-29T06:26:03.811Z",
+      "from": "https://ib.adnxs.com/getuid",
+      "status": 302,
+      "to": "https://su.semasio.net/sync/1/4354957"
+    },
+    {
+      "index": 283,
+      "at": "2026-09-29T06:26:04.184Z",
+      "from": "https://su.semasio.net/sync/1/4354957",
+      "status": 302,
+      "to": "https://rtd-tm.everesttech.net/upi/pid/dm4ha19W"
+    },
+    {
+      "index": 284,
+      "at": "2026-09-29T06:26:04.656Z",
+      "from": "https://match.adsrvr.org/track/cmf/generic",
+      "status": 302,
+      "to": "https://pixel.nordicdataresources.net/"
+    },
+    {
+      "index": 286,
+      "at": "2026-09-29T06:26:04.867Z",
+      "from": "https://rtd-tm.everesttech.net/upi/pid/dm4ha19W",
+      "status": 302,
+      "to": "https://su.semasio.net/sync/1/19129194"
+    }
+  ],
+  "resourceTypesInferred": {
+    "imagem (MIME)": 77,
+    "JSON (MIME)": 58,
+    "text/plain": 47,
+    "HTML (MIME)": 37,
+    "JavaScript (MIME)": 28,
+    "application/x-unknown-content-type": 22,
+    "não informado": 15,
+    "text/xml": 10,
+    "application/octet-stream": 1,
+    "application/x-binary": 1
+  },
+  "explicitResourceTypes": 0,
+  "exactRepeatedGroups": 24,
+  "exactRepeatedExtra": 68,
+  "repeatedEndpoints": [
+    {
+      "endpoint": "POST https://fastlane.rubiconproject.com/a/api/prebid-exchange.json",
+      "count": 9
+    },
+    {
+      "endpoint": "GET https://cm.g.doubleclick.net/pixel",
+      "count": 8
+    },
+    {
+      "endpoint": "GET https://simage2.pubmatic.com/AdServer/Pug",
+      "count": 8
+    },
+    {
+      "endpoint": "POST https://fundingchoicesmessages.google.com/el/AGSKWxWzJPcWRbN8UmWHKL7zEK4TQfRwZ_LeU1q3TQ_Q5aEIaHbrJpD7cFQEQg25cF4U8pRIpF5JFKCd8jj82iNV6_mTbgkujuIa0JBkodU4Zc-Q6LaTHe2mhAQ37V1guTgKCk-ZOSA=",
+      "count": 8
+    },
+    {
+      "endpoint": "POST https://events.newsroom.bi/ingest.php",
+      "count": 7
+    },
+    {
+      "endpoint": "POST https://grid-bidder.criteo.com/openrtb_2_5/pbjs/auction/request",
+      "count": 7
+    },
+    {
+      "endpoint": "POST https://ib.adnxs.com/ut/v3/prebid",
+      "count": 7
+    },
+    {
+      "endpoint": "POST https://prebid-a.rubiconproject.com/event",
+      "count": 7
+    },
+    {
+      "endpoint": "POST https://hbopenbid.pubmatic.com/translator",
+      "count": 6
+    },
+    {
+      "endpoint": "POST https://l.clarity.ms/collect",
+      "count": 6
+    },
+    {
+      "endpoint": "GET https://image2.pubmatic.com/AdServer/Pug",
+      "count": 5
+    },
+    {
+      "endpoint": "GET https://ssp-sync.criteo.com/user-sync/match",
+      "count": 5
+    },
+    {
+      "endpoint": "POST https://horizon-track.globo.com/event/g1",
+      "count": 5
+    },
+    {
+      "endpoint": "POST https://prg.smartadserver.com/prebid/v1",
+      "count": 5
+    },
+    {
+      "endpoint": "GET https://check.analytics.rlcdn.com/check/13715",
+      "count": 4
+    },
+    {
+      "endpoint": "GET https://match.adsrvr.org/track/cmf/generic",
+      "count": 4
+    },
+    {
+      "endpoint": "GET https://us-u.openx.net/w/1.0/sd",
+      "count": 4
+    },
+    {
+      "endpoint": "GET https://c1.adform.net/serving/cookie/match",
+      "count": 3
+    },
+    {
+      "endpoint": "GET https://dnacdn.net/dna",
+      "count": 3
+    },
+    {
+      "endpoint": "GET https://googleads.g.doubleclick.net/pagead/interaction/",
+      "count": 3
+    },
+    {
+      "endpoint": "GET https://gum.criteo.com/sid/json",
+      "count": 3
+    },
+    {
+      "endpoint": "GET https://pixel.onaudience.com/",
+      "count": 3
+    },
+    {
+      "endpoint": "GET https://securepubads.g.doubleclick.net/gampad/ads",
+      "count": 3
+    },
+    {
+      "endpoint": "GET https://x.bidswitch.net/sync",
+      "count": 3
+    },
+    {
+      "endpoint": "GET https://ad.turn.com/r/cs",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://ads.pubmatic.com/AdServer/js/user_sync.html",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://ag.gbc.criteo.com/newidsd",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://gem.gbc.criteo.com/newidsd",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://gum.criteo.com/syncframe",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://ib.adnxs.com/async_usersync",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://image6.pubmatic.com/AdServer/PugMaster",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://match.prod.bidr.io/cookie-sync/pm",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://pagead2.googlesyndication.com/pagead/gen_204",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://pixel-sync.sitescout.com/dmp/pixelSync",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://pixel.nordicdataresources.net/",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://pixel.tapad.com/idsync/ex/receive",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://pubmatic-match.dotomi.com/match/bounce/current",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://rp.liadm.com/j",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://rtb.openx.net/esp",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://s.amazon-adsystem.com/dcm",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://secure.adnxs.com/bounce",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://secure.adnxs.com/seg",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://securepubads.g.doubleclick.net/pcs/view",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://simage4.pubmatic.com/AdServer/SPug",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://t.adx.opera.com/pub/sync",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://t.oa.opera.com/sync",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://ups.analytics.yahoo.com/ups/58917/cms",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://ups.analytics.yahoo.com/ups/58934/cms",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://ut.pubmatic.com/geo",
+      "count": 2
+    },
+    {
+      "endpoint": "GET https://www.temu.com/api/adx/cm/pixel-opera",
+      "count": 2
+    },
+    {
+      "endpoint": "POST https://api.permutive.com/v1.0/state",
+      "count": 2
+    },
+    {
+      "endpoint": "POST https://events.newsroom.bi/recirculation/recirculation.php",
+      "count": 2
+    },
+    {
+      "endpoint": "POST https://pagead2.googlesyndication.com/pagead/ping",
+      "count": 2
+    },
+    {
+      "endpoint": "POST https://tpsc-ue1.doubleverify.com/event.png",
+      "count": 2
+    }
+  ],
+  "homeDocumentRequests": [],
+  "domains": [
+    {
+      "host": "a.sportradarserving.com",
+      "site": "sportradarserving.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "a.tribalfusion.com",
+      "site": "tribalfusion.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "aa.agkn.com",
+      "site": "agkn.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "aax-eu.amazon-adsystem.com",
+      "site": "amazon-adsystem.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "ab.g.globo",
+      "site": "g.globo",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 13
+    },
+    {
+      "host": "acdn.adnxs.com",
+      "site": "adnxs.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "ad.doubleclick.net",
+      "site": "doubleclick.net",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "ad.sxp.smartclip.net",
+      "site": "smartclip.net",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "ad.turn.com",
+      "site": "turn.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "ade.googlesyndication.com",
+      "site": "googlesyndication.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "ads-library.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 12
+    },
+    {
+      "host": "ads.pubmatic.com",
+      "site": "pubmatic.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "ads.rubiconproject.com",
+      "site": "rubiconproject.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "ag.gbc.criteo.com",
+      "site": "criteo.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "analytics.google.com",
+      "site": "google.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "api.permutive.app",
+      "site": "permutive.app",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "api.permutive.com",
+      "site": "permutive.com",
+      "party": "third",
+      "har": 7,
+      "harStatus0": 0,
+      "pl": 20
+    },
+    {
+      "host": "api.rlcdn.com",
+      "site": "rlcdn.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 1,
+      "pl": 2
+    },
+    {
+      "host": "apps.sascdn.com",
+      "site": "sascdn.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "b1sync.outbrain.com",
+      "site": "outbrain.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "b41bfb489de1c292c6f9e59b7311fb38.safeframe.googlesyndication.com",
+      "site": "googlesyndication.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "b6560a8a965f20db98d4890de829205f.safeframe.googlesyndication.com",
+      "site": "googlesyndication.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "bcp.crwdcntrl.net",
+      "site": "crwdcntrl.net",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "bh.contextweb.com",
+      "site": "contextweb.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "bttrack.com",
+      "site": "bttrack.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "c.bing.com",
+      "site": "bing.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "c1.adform.net",
+      "site": "adform.net",
+      "party": "third",
+      "har": 3,
+      "harStatus0": 0,
+      "pl": 4
+    },
+    {
+      "host": "capi.connatix.com",
+      "site": "connatix.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "cdn.debugbear.com",
+      "site": "debugbear.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "cdn.doubleverify.com",
+      "site": "doubleverify.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 10
+    },
+    {
+      "host": "cdn.id5-sync.com",
+      "site": "id5-sync.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "cdn.jsdelivr.net",
+      "site": "jsdelivr.net",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "cdn.permutive.com",
+      "site": "permutive.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "ce.lijit.com",
+      "site": "lijit.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "ced-ns.sascdn.com",
+      "site": "sascdn.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 5
+    },
+    {
+      "host": "check.analytics.rlcdn.com",
+      "site": "rlcdn.com",
+      "party": "third",
+      "har": 4,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "cm.ctnsnet.com",
+      "site": "ctnsnet.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "cm.g.doubleclick.net",
+      "site": "doubleclick.net",
+      "party": "third",
+      "har": 8,
+      "harStatus0": 0,
+      "pl": 16
+    },
+    {
+      "host": "cms.analytics.yahoo.com",
+      "site": "yahoo.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "cms.quantserve.com",
+      "site": "quantserve.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 4
+    },
+    {
+      "host": "connect.facebook.net",
+      "site": "facebook.net",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 1,
+      "pl": 4
+    },
+    {
+      "host": "cs.admanmedia.com",
+      "site": "admanmedia.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 4
+    },
+    {
+      "host": "cs.lkqd.net",
+      "site": "lkqd.net",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "csi.gstatic.com",
+      "site": "gstatic.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "csync.loopme.me",
+      "site": "loopme.me",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "csync.smartadserver.com",
+      "site": "smartadserver.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "d.adroll.com",
+      "site": "adroll.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "d39f98ec-9259-4f8b-896d-7ab58be1f900.edge.permutive.app",
+      "site": "permutive.app",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "d39f98ec-9259-4f8b-896d-7ab58be1f900.prmutv.co",
+      "site": "prmutv.co",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 1,
+      "pl": 0
+    },
+    {
+      "host": "dis.criteo.com",
+      "site": "criteo.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "dnacdn.net",
+      "site": "dnacdn.net",
+      "party": "third",
+      "har": 3,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "dpm.demdex.net",
+      "site": "demdex.net",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "dsp-cookie.adfarm1.adition.com",
+      "site": "adition.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "dsp.360yield.com",
+      "site": "360yield.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "dsum-sec.casalemedia.com",
+      "site": "casalemedia.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 8
+    },
+    {
+      "host": "ep1.adtrafficquality.google",
+      "site": "adtrafficquality.google",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 6
+    },
+    {
+      "host": "ep2.adtrafficquality.google",
+      "site": "adtrafficquality.google",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 6
+    },
+    {
+      "host": "equativ-match.dotomi.com",
+      "site": "dotomi.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "eu-u.openx.net",
+      "site": "openx.net",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "eus.rubiconproject.com",
+      "site": "rubiconproject.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "events.newsroom.bi",
+      "site": "newsroom.bi",
+      "party": "third",
+      "har": 11,
+      "harStatus0": 1,
+      "pl": 13
+    },
+    {
+      "host": "experiences.newsroom.bi",
+      "site": "newsroom.bi",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "fastlane.rubiconproject.com",
+      "site": "rubiconproject.com",
+      "party": "third",
+      "har": 9,
+      "harStatus0": 0,
+      "pl": 22
+    },
+    {
+      "host": "functions.adnami.io",
+      "site": "adnami.io",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "fundingchoicesmessages.google.com",
+      "site": "google.com",
+      "party": "third",
+      "har": 13,
+      "harStatus0": 0,
+      "pl": 28
+    },
+    {
+      "host": "g1.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 6
+    },
+    {
+      "host": "gem.gbc.criteo.com",
+      "site": "criteo.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "globo-ab.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "go.mediagotechnology.com",
+      "site": "mediagotechnology.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "goidc.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "google-bidout-d.openx.net",
+      "site": "openx.net",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "googleads.g.doubleclick.net",
+      "site": "doubleclick.net",
+      "party": "third",
+      "har": 3,
+      "harStatus0": 0,
+      "pl": 12
+    },
+    {
+      "host": "googleads4.g.doubleclick.net",
+      "site": "doubleclick.net",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "grid-bidder.criteo.com",
+      "site": "criteo.com",
+      "party": "third",
+      "har": 7,
+      "harStatus0": 0,
+      "pl": 18
+    },
+    {
+      "host": "gum.criteo.com",
+      "site": "criteo.com",
+      "party": "third",
+      "har": 6,
+      "harStatus0": 1,
+      "pl": 5
+    },
+    {
+      "host": "hbopenbid.pubmatic.com",
+      "site": "pubmatic.com",
+      "party": "third",
+      "har": 6,
+      "harStatus0": 0,
+      "pl": 16
+    },
+    {
+      "host": "horizon-schemas.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "horizon-track.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 5,
+      "harStatus0": 0,
+      "pl": 46
+    },
+    {
+      "host": "horizon.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 8
+    },
+    {
+      "host": "i.ctnsnet.com",
+      "site": "ctnsnet.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "ib.adnxs.com",
+      "site": "adnxs.com",
+      "party": "third",
+      "har": 11,
+      "harStatus0": 1,
+      "pl": 30
+    },
+    {
+      "host": "icu.newsroom.bi",
+      "site": "newsroom.bi",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 6
+    },
+    {
+      "host": "id.rlcdn.com",
+      "site": "rlcdn.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "id5-sync.com",
+      "site": "id5-sync.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 10
+    },
+    {
+      "host": "idsync.rlcdn.com",
+      "site": "rlcdn.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "idx.liadm.com",
+      "site": "liadm.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 1,
+      "pl": 0
+    },
+    {
+      "host": "image2.pubmatic.com",
+      "site": "pubmatic.com",
+      "party": "third",
+      "har": 5,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "image4.pubmatic.com",
+      "site": "pubmatic.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "image6.pubmatic.com",
+      "site": "pubmatic.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "imasdk.googleapis.com",
+      "site": "imasdk.googleapis.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "l.clarity.ms",
+      "site": "clarity.ms",
+      "party": "third",
+      "har": 6,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "live.primis.tech",
+      "site": "primis.tech",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "m.adnxs.com",
+      "site": "adnxs.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "mab.g.globo",
+      "site": "g.globo",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 27
+    },
+    {
+      "host": "macro.adnami.io",
+      "site": "adnami.io",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 1,
+      "pl": 2
+    },
+    {
+      "host": "marfeelexperimentsexperienceengine.mrf.io",
+      "site": "mrf.io",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "match.adsrvr.org",
+      "site": "adsrvr.org",
+      "party": "third",
+      "har": 6,
+      "harStatus0": 0,
+      "pl": 9
+    },
+    {
+      "host": "match.deepintent.com",
+      "site": "deepintent.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "match.prod.bidr.io",
+      "site": "bidr.io",
+      "party": "third",
+      "har": 3,
+      "harStatus0": 0,
+      "pl": 4
+    },
+    {
+      "host": "match.sharethrough.com",
+      "site": "sharethrough.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 6
+    },
+    {
+      "host": "n.clarity.ms",
+      "site": "clarity.ms",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 22
+    },
+    {
+      "host": "novabarra.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "oa.openxcdn.net",
+      "site": "openxcdn.net",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "odr.mookie1.com",
+      "site": "mookie1.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "p.rfihub.com",
+      "site": "rfihub.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "pagead2.googlesyndication.com",
+      "site": "googlesyndication.com",
+      "party": "third",
+      "har": 7,
+      "harStatus0": 0,
+      "pl": 34
+    },
+    {
+      "host": "pixel-eu.rubiconproject.com",
+      "site": "rubiconproject.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "pixel-sync.sitescout.com",
+      "site": "sitescout.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "pixel.nordicdataresources.net",
+      "site": "nordicdataresources.net",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "pixel.onaudience.com",
+      "site": "onaudience.com",
+      "party": "third",
+      "har": 3,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "pixel.rubiconproject.com",
+      "site": "rubiconproject.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 12
+    },
+    {
+      "host": "pixel.tapad.com",
+      "site": "tapad.com",
+      "party": "third",
+      "har": 3,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "prebid-a.rubiconproject.com",
+      "site": "rubiconproject.com",
+      "party": "third",
+      "har": 7,
+      "harStatus0": 0,
+      "pl": 18
+    },
+    {
+      "host": "prg.smartadserver.com",
+      "site": "smartadserver.com",
+      "party": "third",
+      "har": 5,
+      "harStatus0": 0,
+      "pl": 14
+    },
+    {
+      "host": "pub.doubleverify.com",
+      "site": "doubleverify.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 2,
+      "pl": 4
+    },
+    {
+      "host": "pub.dv.tech",
+      "site": "dv.tech",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "pubmatic-match.dotomi.com",
+      "site": "dotomi.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "px.ads.linkedin.com",
+      "site": "linkedin.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "pxl.iqm.com",
+      "site": "iqm.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "qvdt3feo.com",
+      "site": "qvdt3feo.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "rec.ads.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "recomendacao.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 5
+    },
+    {
+      "host": "recusers.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "rp.liadm.com",
+      "site": "liadm.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "rtb-csync.smartadserver.com",
+      "site": "smartadserver.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 45
+    },
+    {
+      "host": "rtb.adentifi.com",
+      "site": "adentifi.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "rtb.openx.net",
+      "site": "openx.net",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "rtd-tm.everesttech.net",
+      "site": "everesttech.net",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "s.ad.smaato.net",
+      "site": "smaato.net",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "s.amazon-adsystem.com",
+      "site": "amazon-adsystem.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "s.company-target.com",
+      "site": "company-target.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "s.glbimg.com",
+      "site": "glbimg.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 4
+    },
+    {
+      "host": "s0.2mdn.net",
+      "site": "2mdn.net",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "s2-g1.glbimg.com",
+      "site": "glbimg.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 22
+    },
+    {
+      "host": "s3.glbimg.com",
+      "site": "glbimg.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 119
+    },
+    {
+      "host": "sb.scorecardresearch.com",
+      "site": "scorecardresearch.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 8
+    },
+    {
+      "host": "scripts.clarity.ms",
+      "site": "clarity.ms",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "sdk-metrics.g.globo",
+      "site": "g.globo",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 28
+    },
+    {
+      "host": "sdk.mrf.io",
+      "site": "mrf.io",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 1,
+      "pl": 4
+    },
+    {
+      "host": "secure-assets.rubiconproject.com",
+      "site": "rubiconproject.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "secure.adnxs.com",
+      "site": "adnxs.com",
+      "party": "third",
+      "har": 5,
+      "harStatus0": 0,
+      "pl": 5
+    },
+    {
+      "host": "secure.insightexpressai.com",
+      "site": "insightexpressai.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 4
+    },
+    {
+      "host": "securepubads.g.doubleclick.net",
+      "site": "doubleclick.net",
+      "party": "third",
+      "har": 6,
+      "harStatus0": 1,
+      "pl": 22
+    },
+    {
+      "host": "sentry.globoi.com",
+      "site": "globoi.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "sg.semasio.net",
+      "site": "semasio.net",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "simage2.pubmatic.com",
+      "site": "pubmatic.com",
+      "party": "third",
+      "har": 8,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "simage4.pubmatic.com",
+      "site": "pubmatic.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "ssc-cms.33across.com",
+      "site": "33across.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "ssp-sync.criteo.com",
+      "site": "criteo.com",
+      "party": "third",
+      "har": 6,
+      "harStatus0": 0,
+      "pl": 7
+    },
+    {
+      "host": "ssp.disqus.com",
+      "site": "disqus.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "ssp.wp.pl",
+      "site": "wp.pl",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "ssum-sec.casalemedia.com",
+      "site": "casalemedia.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "ssum.casalemedia.com",
+      "site": "casalemedia.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "static.ads-twitter.com",
+      "site": "ads-twitter.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "static.criteo.net",
+      "site": "criteo.net",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "stx-match.dotomi.com",
+      "site": "dotomi.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "su.semasio.net",
+      "site": "semasio.net",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "sync-tm.everesttech.net",
+      "site": "everesttech.net",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "sync.1rx.io",
+      "site": "1rx.io",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "sync.adotmob.com",
+      "site": "adotmob.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "sync.intentiq.com",
+      "site": "intentiq.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "sync.ipredictive.com",
+      "site": "ipredictive.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "sync.mathtag.com",
+      "site": "mathtag.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "sync.search.spotxchange.com",
+      "site": "spotxchange.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "sync.springserve.com",
+      "site": "springserve.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "sync.srv.stackadapt.com",
+      "site": "stackadapt.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "sync.taboola.com",
+      "site": "taboola.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "sync.targeting.unrulymedia.com",
+      "site": "unrulymedia.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "sync.visx.net",
+      "site": "visx.net",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "t.adx.opera.com",
+      "site": "opera.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "t.oa.opera.com",
+      "site": "opera.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "tags.crwdcntrl.net",
+      "site": "crwdcntrl.net",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "target.digitalaudience.io",
+      "site": "digitalaudience.io",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "token.rubiconproject.com",
+      "site": "rubiconproject.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 6
+    },
+    {
+      "host": "tpc.googlesyndication.com",
+      "site": "googlesyndication.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 9
+    },
+    {
+      "host": "tps.doubleverify.com",
+      "site": "doubleverify.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 5
+    },
+    {
+      "host": "tpsc-ue1.doubleverify.com",
+      "site": "doubleverify.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 24
+    },
+    {
+      "host": "tr.blismedia.com",
+      "site": "blismedia.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 4
+    },
+    {
+      "host": "trace.mediago.io",
+      "site": "mediago.io",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "trace.us.rtbwise.com",
+      "site": "rtbwise.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "trackid.globoid.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 8
+    },
+    {
+      "host": "tracking-api-use1.smartadserver.com",
+      "site": "smartadserver.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "tracookiepixel.xyz",
+      "site": "tracookiepixel.xyz",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "u.openx.net",
+      "site": "openx.net",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "uipglob.semasio.net",
+      "site": "semasio.net",
+      "party": "third",
+      "har": 3,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "um.simpli.fi",
+      "site": "simpli.fi",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 0
+    },
+    {
+      "host": "ups.analytics.yahoo.com",
+      "site": "yahoo.com",
+      "party": "third",
+      "har": 6,
+      "harStatus0": 0,
+      "pl": 6
+    },
+    {
+      "host": "us-u.openx.net",
+      "site": "openx.net",
+      "party": "third",
+      "har": 4,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "user-sync.fwmrm.net",
+      "site": "fwmrm.net",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 10
+    },
+    {
+      "host": "usergate.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 4
+    },
+    {
+      "host": "ut.pubmatic.com",
+      "site": "pubmatic.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "visitor.omnitagjs.com",
+      "site": "omnitagjs.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "vtrk.dv.tech",
+      "site": "dv.tech",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "weather.api.g1.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "web-api.globoid.globo.com",
+      "site": "globo.com",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 5
+    },
+    {
+      "host": "wt.rqtrk.eu",
+      "site": "rqtrk.eu",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "www.clarity.ms",
+      "site": "clarity.ms",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 1,
+      "pl": 2
+    },
+    {
+      "host": "www.facebook.com",
+      "site": "facebook.com",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "www.google.com",
+      "site": "google.com",
+      "party": "third",
+      "har": 2,
+      "harStatus0": 1,
+      "pl": 13
+    },
+    {
+      "host": "www.google.com.br",
+      "site": "google.com.br",
+      "party": "third",
+      "har": 1,
+      "harStatus0": 1,
+      "pl": 4
+    },
+    {
+      "host": "www.googletagmanager.com",
+      "site": "googletagmanager.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 16
+    },
+    {
+      "host": "www.temu.com",
+      "site": "temu.com",
+      "party": "third",
+      "har": 3,
+      "harStatus0": 0,
+      "pl": 3
+    },
+    {
+      "host": "x.bidswitch.net",
+      "site": "bidswitch.net",
+      "party": "third",
+      "har": 4,
+      "harStatus0": 0,
+      "pl": 5
+    }
+  ],
+  "collectionRelation": {
+    "overlaps": false,
+    "harStart": "2026-09-29T06:25:50.898Z",
+    "harEnd": "2026-09-29T06:26:18.134Z",
+    "privacyLensStart": "2026-09-29T07:47:40.954Z",
+    "privacyLensEnd": "2026-09-29T07:48:48.979Z",
+    "interpretation": "Coletas sem sobreposição temporal; totais por host descrevem visitas diferentes, sem pareamento de requisições nem inferência de falha do detector."
+  },
+  "approximateAlignment": {
+    "applicable": false,
+    "reason": "Coletas sem sobreposição temporal; totais por host descrevem visitas diferentes, sem pareamento de requisições nem inferência de falha do detector."
+  },
+  "privacyLens": {
+    "source": "evidencias/sites/g1/privacy-lens/g1-relatorio.json",
+    "generatedAt": "2026-09-29T07:48:48.979Z",
+    "start": "2026-09-29T07:47:40.954Z",
+    "totals": {
+      "total": 1066,
+      "first": 108,
+      "third": 958,
+      "unknown": 0,
+      "failed": 31
+    },
+    "types": {
+      "image": 386,
+      "xmlhttprequest": 316,
+      "script": 196,
+      "beacon": 108,
+      "sub_frame": 27,
+      "stylesheet": 16,
+      "font": 11,
+      "imageset": 4,
+      "main_frame": 2
+    },
+    "errors": {
+      "NS_ERROR_DOM_NETWORK_ERR": 24,
+      "NS_ERROR_UNKNOWN_HOST": 5,
+      "NS_ERROR_ABORT": 1,
+      "NS_ERROR_REDIRECT_LOOP": 1
+    },
+    "cookieTotals": {
+      "total": 232,
+      "first": 41,
+      "third": 191,
+      "session": 3,
+      "persistent": 229,
+      "partitioned": 184
+    },
+    "cookieEventTotals": {
+      "observed": 963,
+      "writes": 513,
+      "created": 87,
+      "changed": 426,
+      "unknown": 0,
+      "removed": 450
+    },
+    "setCookieAttempts": 606,
+    "uniqueWrittenIdentities": 153,
+    "thirdWrittenIdentities": 129,
+    "persistentWrittenIdentities": 150,
+    "score": {
+      "version": "privacy-score-v1",
+      "status": "partial",
+      "value": null,
+      "observedValue": 64,
+      "range": {
+        "min": 0,
+        "max": 64
+      },
+      "coveredCategories": 2,
+      "totalCategories": 6,
+      "categories": [
+        {
+          "id": "N",
+          "label": "Exposição a terceiros",
+          "cap": 10,
+          "points": 10,
+          "covered": true,
+          "evidence": [
+            {
+              "site": "glbimg.com",
+              "requestId": "8464",
+              "at": 1790668062798
+            },
+            {
+              "site": "googletagmanager.com",
+              "requestId": "8469",
+              "at": 1790668062839
+            },
+            {
+              "site": "debugbear.com",
+              "requestId": "8291",
+              "at": 1790668061131
+            },
+            {
+              "site": "doubleclick.net",
+              "requestId": "8983",
+              "at": 1790668097141
+            },
+            {
+              "site": "rubiconproject.com",
+              "requestId": "9067",
+              "at": 1790668128410
+            },
+            {
+              "site": "g.globo",
+              "requestId": "9012",
+              "at": 1790668098469
+            },
+            {
+              "site": "dv.tech",
+              "requestId": "8501",
+              "at": 1790668064480
+            },
+            {
+              "site": "adnami.io",
+              "requestId": "8448",
+              "at": 1790668062610
+            },
+            {
+              "site": "googlesyndication.com",
+              "requestId": "9064",
+              "at": 1790668128071
+            },
+            {
+              "site": "permutive.app",
+              "requestId": "8361",
+              "at": 1790668061535
+            },
+            {
+              "site": "imasdk.googleapis.com",
+              "requestId": "8391",
+              "at": 1790668061902
+            },
+            {
+              "site": "google.com",
+              "requestId": "9063",
+              "at": 1790668127998
+            },
+            {
+              "site": "clarity.ms",
+              "requestId": "9059",
+              "at": 1790668127433
+            },
+            {
+              "site": "google.com.br",
+              "requestId": "8497",
+              "at": 1790668064288
+            },
+            {
+              "site": "jsdelivr.net",
+              "requestId": "8460",
+              "at": 1790668062819
+            },
+            {
+              "site": "criteo.com",
+              "requestId": "8981",
+              "at": 1790668096469
+            },
+            {
+              "site": "rlcdn.com",
+              "requestId": "8462",
+              "at": 1790668062820
+            },
+            {
+              "site": "facebook.net",
+              "requestId": "8499",
+              "at": 1790668064394
+            },
+            {
+              "site": "mrf.io",
+              "requestId": "8558",
+              "at": 1790668065875
+            },
+            {
+              "site": "doubleverify.com",
+              "requestId": "9055",
+              "at": 1790668120336
+            },
+            {
+              "site": "permutive.com",
+              "requestId": "9025",
+              "at": 1790668099402
+            },
+            {
+              "site": "liadm.com",
+              "requestId": "8486",
+              "at": 1790668063306
+            },
+            {
+              "site": "scorecardresearch.com",
+              "requestId": "8775",
+              "at": 1790668072548
+            },
+            {
+              "site": "newsroom.bi",
+              "requestId": "9052",
+              "at": 1790668116736
+            },
+            {
+              "site": "adnxs.com",
+              "requestId": "9068",
+              "at": 1790668128417
+            },
+            {
+              "site": "smartadserver.com",
+              "requestId": "8979",
+              "at": 1790668096462
+            },
+            {
+              "site": "pubmatic.com",
+              "requestId": "9071",
+              "at": 1790668128502
+            },
+            {
+              "site": "insightexpressai.com",
+              "requestId": "8989",
+              "at": 1790668097352
+            },
+            {
+              "site": "facebook.com",
+              "requestId": "8545",
+              "at": 1790668065609
+            },
+            {
+              "site": "sascdn.com",
+              "requestId": "8780",
+              "at": 1790668072794
+            },
+            {
+              "site": "agkn.com",
+              "requestId": "8630",
+              "at": 1790668069862
+            },
+            {
+              "site": "openx.net",
+              "requestId": "8705",
+              "at": 1790668073735
+            },
+            {
+              "site": "adition.com",
+              "requestId": "8648",
+              "at": 1790668070018
+            },
+            {
+              "site": "1rx.io",
+              "requestId": "8656",
+              "at": 1790668070030
+            },
+            {
+              "site": "omnitagjs.com",
+              "requestId": "8658",
+              "at": 1790668070041
+            },
+            {
+              "site": "smaato.net",
+              "requestId": "8661",
+              "at": 1790668070048
+            },
+            {
+              "site": "adroll.com",
+              "requestId": "8682",
+              "at": 1790668070108
+            },
+            {
+              "site": "dnacdn.net",
+              "requestId": "8684",
+              "at": 1790668070308
+            },
+            {
+              "site": "casalemedia.com",
+              "requestId": "8729",
+              "at": 1790668072036
+            },
+            {
+              "site": "demdex.net",
+              "requestId": "8715",
+              "at": 1790668070880
+            },
+            {
+              "site": "mookie1.com",
+              "requestId": "8629",
+              "at": 1790668070927
+            },
+            {
+              "site": "temu.com",
+              "requestId": "8732",
+              "at": 1790668071156
+            },
+            {
+              "site": "rqtrk.eu",
+              "requestId": "8665",
+              "at": 1790668071193
+            },
+            {
+              "site": "amazon-adsystem.com",
+              "requestId": "8787",
+              "at": 1790668073913
+            },
+            {
+              "site": "quantserve.com",
+              "requestId": "8649",
+              "at": 1790668071287
+            },
+            {
+              "site": "sharethrough.com",
+              "requestId": "8798",
+              "at": 1790668073867
+            },
+            {
+              "site": "blismedia.com",
+              "requestId": "8702",
+              "at": 1790668071710
+            },
+            {
+              "site": "smartclip.net",
+              "requestId": "8738",
+              "at": 1790668071739
+            },
+            {
+              "site": "tapad.com",
+              "requestId": "8721",
+              "at": 1790668071742
+            },
+            {
+              "site": "2mdn.net",
+              "requestId": "8768",
+              "at": 1790668072393
+            },
+            {
+              "site": "adtrafficquality.google",
+              "requestId": "9066",
+              "at": 1790668128215
+            },
+            {
+              "site": "lijit.com",
+              "requestId": "8800",
+              "at": 1790668073934
+            },
+            {
+              "site": "connatix.com",
+              "requestId": "8801",
+              "at": 1790668073935
+            },
+            {
+              "site": "intentiq.com",
+              "requestId": "8802",
+              "at": 1790668075131
+            },
+            {
+              "site": "id5-sync.com",
+              "requestId": "8655",
+              "at": 1790668076185
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "label": "Gravações de cookies correlacionadas",
+          "cap": 20,
+          "points": 20,
+          "covered": true,
+          "evidence": [
+            {
+              "name": "glb_uid",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668087822,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "glb_uid_jwt",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668087823,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "hsid",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668087823,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_rdc1790668062776",
+              "domain": "g1.globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668062780,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_lr_retry_request",
+              "domain": "g1.globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668062785,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_lr_env_src_ats",
+              "domain": "g1.globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668062785,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_hzcc",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668062859,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_ga_4DF8YFDHV7",
+              "domain": ".g1.globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668062875,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_ga",
+              "domain": ".g1.globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668062875,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "permutive-id",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668062956,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_rdc1790668064216",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668064217,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_scor_uid",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668064264,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "mrf_cookie",
+              "domain": ".g1.globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668064360,
+              "third": false,
+              "persistent": false,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "compass_uid",
+              "domain": ".g1.globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668067046,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "___nrbic_4560",
+              "domain": ".g1.globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668067046,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "___nrbi_4560",
+              "domain": ".g1.globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668067046,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "lidid",
+              "domain": ".liadm.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668064847,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "cto_bundle",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668071802,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "cto_bidid",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668065064,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "__gads",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668065194,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "__gpi",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668065194,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "__eoi",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668065194,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "UID",
+              "domain": ".scorecardresearch.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072720,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_fbp",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668065383,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "4560_u",
+              "domain": ".newsroom.bi",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072679,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "4560_s",
+              "domain": ".newsroom.bi",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668065843,
+              "third": true,
+              "persistent": false,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "4560_lv",
+              "domain": ".newsroom.bi",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072680,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "4560_ut",
+              "domain": ".newsroom.bi",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072681,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "uuid2",
+              "domain": ".adnxs.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073756,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "IXAI93313",
+              "domain": ".insightexpressai.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668065875,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "TID",
+              "domain": ".insightexpressai.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668065875,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "DW",
+              "domain": ".insightexpressai.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668065876,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "DW_Time",
+              "domain": ".insightexpressai.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668065876,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_clsk",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668065964,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "FCNEC",
+              "domain": ".globo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668066302,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "uid",
+              "domain": ".criteo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668069721,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "KTPCACOOKIE",
+              "domain": ".pubmatic.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668069782,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "anj",
+              "domain": ".adnxs.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072178,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "usersync",
+              "domain": ".adnxs.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075937,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "TDID",
+              "domain": ".adsrvr.org",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074116,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "TDCPM",
+              "domain": ".adsrvr.org",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074117,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "id",
+              "domain": ".mookie1.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071185,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "mdata",
+              "domain": ".mookie1.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071186,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "ov",
+              "domain": ".mookie1.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071187,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "i",
+              "domain": ".openx.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071653,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "pd",
+              "domain": ".openx.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071038,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "4560_s",
+              "domain": "events.newsroom.bi",
+              "path": "/recirculation",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668070586,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "bcookie",
+              "domain": ".linkedin.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668070580,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "lidc",
+              "domain": ".linkedin.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668070581,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "__cf_bm",
+              "domain": ".linkedin.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668070581,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "CMID",
+              "domain": ".casalemedia.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074898,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "CMPS",
+              "domain": ".casalemedia.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668070582,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "CMPRO",
+              "domain": ".casalemedia.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074898,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "syncdata_TTD",
+              "domain": ".mookie1.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668070721,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "browser_data",
+              "domain": ".dnacdn.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668070793,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "uid",
+              "domain": ".turn.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072263,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "IDSYNC",
+              "domain": ".analytics.yahoo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073864,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "A3",
+              "domain": ".yahoo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073864,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "statid",
+              "domain": ".wp.pl",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071076,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "bito",
+              "domain": ".bidr.io",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074538,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "equativ",
+              "domain": ".pxl.iqm.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071077,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "iqm.retarget.uid",
+              "domain": ".pxl.iqm.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071078,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "cid",
+              "domain": ".ctnsnet.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071651,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "csync",
+              "domain": ".smartadserver.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073455,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "syncdata_DBC",
+              "domain": ".mookie1.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071187,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_rxuuid",
+              "domain": ".1rx.io",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071866,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "b",
+              "domain": ".blismedia.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072258,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "ssi",
+              "domain": ".sitescout.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075185,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_ssuma",
+              "domain": ".sitescout.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075186,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "obuid",
+              "domain": ".outbrain.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071815,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "uid",
+              "domain": ".adform.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075726,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "demdex",
+              "domain": ".demdex.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071296,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "dpm",
+              "domain": ".dpm.demdex.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071297,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "tuuid",
+              "domain": ".company-target.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071297,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "tuuid_lu",
+              "domain": ".company-target.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071299,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "stx_user_id",
+              "domain": ".sharethrough.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074072,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "admtr",
+              "domain": ".admanmedia.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072989,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "ac_r",
+              "domain": ".admanmedia.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072989,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "viewer_token",
+              "domain": ".csync.loopme.me",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071405,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "uid",
+              "domain": ".adotmob.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071419,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "uuid",
+              "domain": ".adotmob.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071420,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "partners",
+              "domain": ".adotmob.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071420,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "TapAd_TS",
+              "domain": ".tapad.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075344,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "TapAd_DID",
+              "domain": ".tapad.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075345,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "TapAd_3WAY_SYNCS",
+              "domain": ".tapad.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075345,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "CDIUSER",
+              "domain": ".deepintent.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071585,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "CDIPARTNERS",
+              "domain": ".deepintent.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071586,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "cf",
+              "domain": ".id5-sync.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074384,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "cip",
+              "domain": ".id5-sync.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074384,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "cnac",
+              "domain": ".id5-sync.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074385,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "car",
+              "domain": ".id5-sync.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074385,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "gdpr",
+              "domain": ".id5-sync.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074386,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "gpp",
+              "domain": ".id5-sync.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071637,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "id5",
+              "domain": ".id5-sync.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072063,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "callback",
+              "domain": ".id5-sync.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071639,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "zeta-ssp-user-id",
+              "domain": ".disqus.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073156,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "33x_ps",
+              "domain": ".33across.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071660,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "ANON_ID",
+              "domain": ".tribalfusion.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071661,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "ANON_ID_old",
+              "domain": ".tribalfusion.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071662,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "DotomiTest",
+              "domain": ".dotomi.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071714,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "__cf_bm",
+              "domain": ".temu.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071697,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "dsp_88",
+              "domain": ".user-sync.fwmrm.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071711,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_uid",
+              "domain": ".fwmrm.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075908,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "uuid",
+              "domain": ".visx.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071725,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "PMFREQ_ON",
+              "domain": ".ads.pubmatic.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071749,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "ad-id",
+              "domain": ".amazon-adsystem.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073650,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "ad-privacy",
+              "domain": ".amazon-adsystem.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073650,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "t_gid",
+              "domain": ".taboola.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071863,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "t_pt_gid",
+              "domain": ".taboola.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071864,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "cu",
+              "domain": ".ipredictive.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075738,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "GLOBALID",
+              "domain": ".bttrack.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668071865,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "3pi",
+              "domain": ".id5-sync.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668076420,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "sa-user-id-v2",
+              "domain": "qvdt3feo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073961,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "sa-user-id-v2",
+              "domain": ".qvdt3feo.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073961,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "dsp_22",
+              "domain": ".user-sync.fwmrm.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072164,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "OAU",
+              "domain": ".opera.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073708,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "browser_id",
+              "domain": ".rqtrk.eu",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072316,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "dspuuid",
+              "domain": ".sxp.smartclip.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072324,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "psyn",
+              "domain": ".sxp.smartclip.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072324,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "uuid",
+              "domain": ".sxp.smartclip.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072324,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "V",
+              "domain": ".contextweb.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072328,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "VP",
+              "domain": ".contextweb.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072328,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "pb_rtb_ev",
+              "domain": ".contextweb.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072328,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "pb_rtb_ev_part",
+              "domain": ".contextweb.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072329,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "INGRESSCOOKIE",
+              "domain": "bh.contextweb.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072329,
+              "third": true,
+              "persistent": false,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "ljt_reader",
+              "domain": ".lijit.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074117,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "audit_p",
+              "domain": ".rubiconproject.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074294,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "khaos",
+              "domain": ".rubiconproject.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074295,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "khaos_p",
+              "domain": ".rubiconproject.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074295,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "audit",
+              "domain": ".rubiconproject.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074296,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "novasyncts",
+              "domain": ".rtbwise.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072360,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_rxuuid",
+              "domain": ".targeting.unrulymedia.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072483,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "dsp_4",
+              "domain": ".user-sync.fwmrm.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668072484,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "receive-cookie-deprecation",
+              "domain": ".rubiconproject.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074297,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "dsp_97",
+              "domain": ".user-sync.fwmrm.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073223,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "SEUNCY",
+              "domain": ".semasio.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073289,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "rlas3",
+              "domain": ".rlcdn.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073605,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "pxrc",
+              "domain": ".rlcdn.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073605,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "dsp_20",
+              "domain": ".user-sync.fwmrm.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668073637,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "dsp_79",
+              "domain": ".user-sync.fwmrm.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074159,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "dsp_55",
+              "domain": ".user-sync.fwmrm.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074538,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "csuuid",
+              "domain": ".primis.tech",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668074706,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "__Secure-STRP",
+              "domain": ".google.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668074918,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "dsp_71",
+              "domain": ".user-sync.fwmrm.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075043,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "intentIQCDate",
+              "domain": ".intentiq.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075288,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "IQver",
+              "domain": ".intentiq.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075289,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "intentIQ",
+              "domain": ".intentiq.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075290,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "IQPData",
+              "domain": ".intentiq.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075287,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "NID",
+              "domain": ".google.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668077015,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "SNID",
+              "domain": ".google.com",
+              "path": "/verify",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668075443,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "dsp_48",
+              "domain": ".user-sync.fwmrm.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075528,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "dsp_30",
+              "domain": ".user-sync.fwmrm.net",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": {
+                "topLevelSite": "https://globo.com",
+                "hasCrossSiteAncestor": true
+              },
+              "at": 1790668075907,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "DV",
+              "domain": "www.google.com",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668076952,
+              "third": true,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            }
+          ]
+        },
+        {
+          "id": "S",
+          "label": "Persistência em storage terceiro",
+          "cap": 10,
+          "points": 6,
+          "covered": false,
+          "evidence": [
+            {
+              "origin": "https://eus.rubiconproject.com",
+              "frameId": 354334801925,
+              "at": 1790668128884
+            },
+            {
+              "origin": "https://apps.sascdn.com",
+              "frameId": 354334801927,
+              "at": 1790668128884
+            },
+            {
+              "origin": "https://www.google.com",
+              "frameId": 343597383701,
+              "at": 1790668128886
+            }
+          ]
+        },
+        {
+          "id": "F",
+          "label": "Sequência canvas",
+          "cap": 15,
+          "points": 0,
+          "covered": false,
+          "evidence": []
+        },
+        {
+          "id": "T",
+          "label": "Ligação entre sites",
+          "cap": 25,
+          "points": 0,
+          "covered": false,
+          "evidence": []
+        },
+        {
+          "id": "H",
+          "label": "Alterações de API e canal persistente",
+          "cap": 20,
+          "points": 0,
+          "covered": false,
+          "evidence": []
+        }
+      ],
+      "interpretation": "Índice normativo de exposição observada, não probabilidade de ataque. Maior = menos penalizações observadas; lacunas não são zeros confirmados.",
+      "method": "100 − N − C − S − F − T − H; tetos 10/20/10/15/25/20. T usa o maior sinal moderado por navegação; T/H: sinais isolados de confiança baixa não pontuam. Bloqueios não ganham bônus."
+    },
+    "scoreRecomputedEqual": true,
+    "scoreSensitivity": {
+      "0.8": {
+        "min": 0,
+        "max": 65
+      },
+      "1.2": {
+        "min": 0,
+        "max": 63
+      }
+    },
+    "networkCompletedThirdSites": 55
+  },
+  "commonWindow": null
+}

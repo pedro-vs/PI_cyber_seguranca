@@ -1,0 +1,997 @@
+{
+  "schemaVersion": 3,
+  "extensionVersion": "0.4.0",
+  "generatedAt": "2026-09-29T04:30:16.624Z",
+  "browser": {
+    "name": "Firefox",
+    "vendor": "Mozilla",
+    "version": "156.0.1",
+    "buildID": "20260921121718"
+  },
+  "page": {
+    "url": "https://privacy-test-pages.site/privacy-protections/bounce-tracking/",
+    "queryKeys": [
+      "bounceUIDlocalStorage",
+      "bounceUIDcookie",
+      "isNew"
+    ],
+    "site": "privacy-test-pages.site",
+    "startedAt": 1790656101074
+  },
+  "network": {
+    "totals": {
+      "total": 2,
+      "first": 2,
+      "third": 0,
+      "unknown": 0,
+      "failed": 0
+    },
+    "domains": [
+      {
+        "host": "privacy-test-pages.site",
+        "site": "privacy-test-pages.site",
+        "party": "first",
+        "requests": 2,
+        "failed": 0,
+        "types": [
+          "main_frame",
+          "image"
+        ]
+      }
+    ],
+    "requests": [
+      {
+        "id": "3086",
+        "at": 1790656101074,
+        "url": "https://privacy-test-pages.site/privacy-protections/bounce-tracking/",
+        "queryKeys": [
+          "bounceUIDlocalStorage",
+          "bounceUIDcookie",
+          "isNew"
+        ],
+        "host": "privacy-test-pages.site",
+        "type": "main_frame",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://bad.third-party.site/privacy-protections/bounce-tracking/bounce.html",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790656101518,
+        "error": null,
+        "fromCache": true,
+        "party": "first"
+      },
+      {
+        "id": "3087",
+        "at": 1790656101567,
+        "url": "https://privacy-test-pages.site/favicon.ico",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "image",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/bounce-tracking/",
+        "status": "completed",
+        "statusCode": 404,
+        "finishedAt": 1790656101570,
+        "error": null,
+        "fromCache": true,
+        "party": "first"
+      }
+    ]
+  },
+  "cookies": {
+    "items": [
+      {
+        "name": "jsdata",
+        "domain": "privacy-test-pages.site",
+        "path": "/privacy-protections/storage-blocking",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.806,
+        "secure": true,
+        "httpOnly": false,
+        "sameSite": "lax",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "tptdata",
+        "domain": "privacy-test-pages.site",
+        "path": "/privacy-protections/storage-blocking",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.812,
+        "secure": false,
+        "httpOnly": false,
+        "sameSite": "unspecified",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "tpsdata",
+        "domain": "privacy-test-pages.site",
+        "path": "/privacy-protections/storage-blocking",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.812,
+        "secure": false,
+        "httpOnly": false,
+        "sameSite": "unspecified",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "__Host-jsdata_host",
+        "domain": "privacy-test-pages.site",
+        "path": "/",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.806,
+        "secure": true,
+        "httpOnly": false,
+        "sameSite": "lax",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "jsdata_no_samesite",
+        "domain": "privacy-test-pages.site",
+        "path": "/",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.806,
+        "secure": true,
+        "httpOnly": false,
+        "sameSite": "unspecified",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "cookiestoredata",
+        "domain": "privacy-test-pages.site",
+        "path": "/",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.816,
+        "secure": true,
+        "httpOnly": false,
+        "sameSite": "strict",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "top_firstparty_headerdata",
+        "domain": "privacy-test-pages.site",
+        "path": "/",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1791514094.8,
+        "secure": true,
+        "httpOnly": true,
+        "sameSite": "no_restriction",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      }
+    ],
+    "totals": {
+      "total": 7,
+      "first": 7,
+      "third": 0,
+      "session": 0,
+      "persistent": 7,
+      "partitioned": 0
+    },
+    "preexisting": {
+      "items": [
+        {
+          "name": "jsdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.806,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "lax",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790656072018,
+          "party": "first"
+        },
+        {
+          "name": "tptdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.812,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790656072018,
+          "party": "first"
+        },
+        {
+          "name": "tpsdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.812,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790656072018,
+          "party": "first"
+        },
+        {
+          "name": "__Host-jsdata_host",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.806,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "lax",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790656072018,
+          "party": "first"
+        },
+        {
+          "name": "jsdata_no_samesite",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.806,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790656072018,
+          "party": "first"
+        },
+        {
+          "name": "cookiestoredata",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.816,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "strict",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790656072018,
+          "party": "first"
+        },
+        {
+          "name": "top_firstparty_headerdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1791514094.8,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790656072018,
+          "party": "first"
+        }
+      ],
+      "totals": {
+        "total": 7,
+        "first": 7,
+        "third": 0,
+        "session": 0,
+        "persistent": 7,
+        "partitioned": 0
+      },
+      "currentCount": 7,
+      "unknownCurrentCount": 0,
+      "completeness": "partial-prior-observations-only"
+    },
+    "events": [],
+    "eventTotals": {
+      "observed": 0,
+      "writes": 0,
+      "created": 0,
+      "changed": 0,
+      "unknown": 0,
+      "removed": 0
+    },
+    "probable": {
+      "items": [],
+      "totals": {
+        "total": 0,
+        "first": 0,
+        "third": 0,
+        "session": 0,
+        "persistent": 0,
+        "partitioned": 0
+      }
+    },
+    "correlatedWrites": [],
+    "correlatedWriteEvents": 0,
+    "setCookieAttempts": [],
+    "observationWindowMs": 30000,
+    "window": {
+      "startedAt": 1790656101074,
+      "endsAt": 1790656131074,
+      "status": "closed"
+    },
+    "attribution": "Correlação temporal e de contexto; não comprova autoria da aba. Criação é inferida de explicit sem overwrite observado. Não somar estoque, tentativas e eventos.",
+    "errors": [],
+    "diagnostics": {
+      "version": "cookie-ingress-v1",
+      "listenerActive": true,
+      "registeredAt": 1790647423574,
+      "readyStatus": "ready",
+      "totalReceivedSinceRegistration": 30,
+      "dropped": 0,
+      "droppedDecisions": 0,
+      "navigation": {
+        "sequence": 53,
+        "requestId": "3086",
+        "startedAt": 1790656101074,
+        "observedAt": 1790656101085,
+        "storeId": "firefox-default",
+        "storeStatus": "ready",
+        "topUrl": "https://privacy-test-pages.site/privacy-protections/bounce-tracking/",
+        "hosts": [
+          "privacy-test-pages.site"
+        ]
+      },
+      "counts": {
+        "received": 2,
+        "associated": 0,
+        "discarded": 2,
+        "pending": 0
+      },
+      "probes": [
+        {
+          "name": "jsdata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 6,
+              "at": 1790650093816,
+              "cookie": {
+                "name": "jsdata",
+                "domain": "privacy-test-pages.site",
+                "path": "/privacy-protections/storage-blocking",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.806,
+                "secure": true,
+                "httpOnly": false,
+                "sameSite": "lax",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "tptdata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 9,
+              "at": 1790650093818,
+              "cookie": {
+                "name": "tptdata",
+                "domain": "privacy-test-pages.site",
+                "path": "/privacy-protections/storage-blocking",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.812,
+                "secure": false,
+                "httpOnly": false,
+                "sameSite": "unspecified",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "tpsdata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 10,
+              "at": 1790650093818,
+              "cookie": {
+                "name": "tpsdata",
+                "domain": "privacy-test-pages.site",
+                "path": "/privacy-protections/storage-blocking",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.812,
+                "secure": false,
+                "httpOnly": false,
+                "sameSite": "unspecified",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "__Host-jsdata_host",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 7,
+              "at": 1790650093817,
+              "cookie": {
+                "name": "__Host-jsdata_host",
+                "domain": "privacy-test-pages.site",
+                "path": "/",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.806,
+                "secure": true,
+                "httpOnly": false,
+                "sameSite": "lax",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "jsdata_no_samesite",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 8,
+              "at": 1790650093818,
+              "cookie": {
+                "name": "jsdata_no_samesite",
+                "domain": "privacy-test-pages.site",
+                "path": "/",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.806,
+                "secure": true,
+                "httpOnly": false,
+                "sameSite": "unspecified",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "cookiestoredata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 11,
+              "at": 1790650093824,
+              "cookie": {
+                "name": "cookiestoredata",
+                "domain": "privacy-test-pages.site",
+                "path": "/",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.816,
+                "secure": true,
+                "httpOnly": false,
+                "sameSite": "strict",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "top_firstparty_headerdata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 14,
+              "at": 1790650094802,
+              "cookie": {
+                "name": "top_firstparty_headerdata",
+                "domain": "privacy-test-pages.site",
+                "path": "/",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1791514094.8,
+                "secure": true,
+                "httpOnly": true,
+                "sameSite": "no_restriction",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        }
+      ],
+      "decisions": [
+        {
+          "sequence": 54,
+          "at": 1790656128046,
+          "cookie": {
+            "name": "bounceUID",
+            "domain": "bad.third-party.site",
+            "path": "/privacy-protections/bounce-tracking",
+            "storeId": "firefox-container-5",
+            "hostOnly": true,
+            "session": false,
+            "expirationDate": 1795840128.045,
+            "secure": false,
+            "httpOnly": false,
+            "sameSite": "unspecified",
+            "firstPartyDomain": "",
+            "partitionKey": null
+          },
+          "removed": false,
+          "cause": "explicit",
+          "readyAtReceipt": "ready",
+          "decisions": [
+            {
+              "tabId": 74,
+              "navigationSequence": 53,
+              "navigationRequestId": "3086",
+              "startedAt": 1790656101074,
+              "navigationObservedAt": 1790656101085,
+              "deltaMs": 26972,
+              "topUrl": "https://privacy-test-pages.site/privacy-protections/bounce-tracking/",
+              "hosts": [
+                "privacy-test-pages.site"
+              ],
+              "hostEvidence": [
+                {
+                  "host": "privacy-test-pages.site",
+                  "at": 1790656101074,
+                  "observedAt": 1790656101085,
+                  "requestId": "3086",
+                  "source": "main-frame"
+                }
+              ],
+              "hostsTruncated": false,
+              "contextSource": "listener-receipt",
+              "contextCapturedAt": 1790656128046,
+              "storeIdAtContextCapture": "firefox-default",
+              "storeStatusAtContextCapture": "ready",
+              "storeIdAtReceipt": "firefox-default",
+              "storeStatusAtReceipt": "ready",
+              "expectedHasCrossSiteAncestor": null,
+              "status": "discarded",
+              "reason": "store-mismatch",
+              "storeIdAfterWait": "firefox-default",
+              "storeStatusAfterWait": "ready",
+              "sameNavigation": true,
+              "processedAt": 1790656128046,
+              "readyAfterWait": "ready",
+              "currentNavigation": true
+            }
+          ]
+        },
+        {
+          "sequence": 55,
+          "at": 1790656131379,
+          "cookie": {
+            "name": "bounceUID",
+            "domain": "bad.third-party.site",
+            "path": "/privacy-protections/bounce-tracking",
+            "storeId": "firefox-container-5",
+            "hostOnly": true,
+            "session": false,
+            "expirationDate": 1795840128.045,
+            "secure": false,
+            "httpOnly": false,
+            "sameSite": "unspecified",
+            "firstPartyDomain": "",
+            "partitionKey": null
+          },
+          "removed": true,
+          "cause": "explicit",
+          "readyAtReceipt": "ready",
+          "decisions": [
+            {
+              "tabId": 74,
+              "navigationSequence": 53,
+              "navigationRequestId": "3086",
+              "startedAt": 1790656101074,
+              "navigationObservedAt": 1790656101085,
+              "deltaMs": 30305,
+              "topUrl": "https://privacy-test-pages.site/privacy-protections/bounce-tracking/",
+              "hosts": [
+                "privacy-test-pages.site"
+              ],
+              "hostEvidence": [
+                {
+                  "host": "privacy-test-pages.site",
+                  "at": 1790656101074,
+                  "observedAt": 1790656101085,
+                  "requestId": "3086",
+                  "source": "main-frame"
+                }
+              ],
+              "hostsTruncated": false,
+              "contextSource": "listener-receipt",
+              "contextCapturedAt": 1790656131379,
+              "storeIdAtContextCapture": "firefox-default",
+              "storeStatusAtContextCapture": "ready",
+              "storeIdAtReceipt": "firefox-default",
+              "storeStatusAtReceipt": "ready",
+              "expectedHasCrossSiteAncestor": null,
+              "status": "discarded",
+              "reason": "after-window",
+              "currentNavigation": true
+            }
+          ]
+        }
+      ],
+      "meaning": "Não recebido significa nenhuma entrada encontrada no listener para esta navegação até esta coleta, incluindo reavaliações de eventos anteriores à entrega de onBeforeRequest, com cobertura disponível. Não prova que o Firefox nunca disparou o evento. Probes por nome/domínio não provam autoria nem aceite de Set-Cookie. Consulte priorReceipts para a ordem de entrega."
+    },
+    "historyDropped": 0,
+    "ingressDropped": 0,
+    "processingErrors": 0,
+    "inventoryChangedDuringQuery": false
+  },
+  "advancedTracking": {
+    "version": "advanced-tracking-v1",
+    "bounce": {
+      "status": "indicator",
+      "sequences": [
+        {
+          "status": "indicator",
+          "confidence": "low",
+          "domains": [
+            "privacy-test-pages.site",
+            "bad.third-party.site",
+            "privacy-test-pages.site"
+          ],
+          "startedAt": 1790655940086,
+          "intermediateAt": 1790656100647,
+          "destinationAt": 1790656101074,
+          "dwellMs": 427,
+          "redirectType": "client-redirect-inferred",
+          "parameters": [
+            "bounceUIDlocalStorage",
+            "bounceUIDcookie"
+          ],
+          "cookieWrites": [],
+          "storageObserved": [
+            {
+              "frameId": 0,
+              "at": 1790656101069,
+              "localStorage": {
+                "status": "observed",
+                "count": 1,
+                "unit": "keys"
+              },
+              "sessionStorage": {
+                "status": "observed",
+                "count": 0,
+                "unit": "keys"
+              },
+              "indexedDB": {
+                "status": "observed",
+                "count": 0,
+                "unit": "databases"
+              }
+            }
+          ],
+          "reason": "Navegação curta iniciada pelo documento intermediário e sinal de identificador; redirect JS inferido, sem flag client_redirect da API.",
+          "limitation": "SSO, pagamentos e cliques rápidos podem produzir a mesma sequência. Redirect JS inferido não comprova automatismo. Correlação não prova autoria."
+        }
+      ],
+      "route": [
+        {
+          "domain": "privacy-test-pages.site",
+          "url": "https://privacy-test-pages.site/privacy-protections/bounce-tracking/",
+          "at": 1790655940086,
+          "requestId": "3081",
+          "incoming": "client-redirect-inferred",
+          "initiatorHost": "bad.third-party.site",
+          "transitionType": "link",
+          "transitionQualifiers": []
+        },
+        {
+          "domain": "bad.third-party.site",
+          "url": "https://bad.third-party.site/privacy-protections/bounce-tracking/bounce.html",
+          "at": 1790656100647,
+          "requestId": "3084",
+          "incoming": "link",
+          "initiatorHost": "privacy-test-pages.site",
+          "transitionType": "link",
+          "transitionQualifiers": []
+        },
+        {
+          "domain": "privacy-test-pages.site",
+          "url": "https://privacy-test-pages.site/privacy-protections/bounce-tracking/",
+          "at": 1790656101074,
+          "requestId": "3086",
+          "incoming": "client-redirect-inferred",
+          "initiatorHost": "bad.third-party.site",
+          "transitionType": "link",
+          "transitionQualifiers": []
+        }
+      ]
+    },
+    "cookieSync": {
+      "status": "not-observed",
+      "indicators": [],
+      "endpointHints": [],
+      "limitation": "Sem leitura/comparação de valores de cookies; endpoint com nome sync, isoladamente, é evidência insuficiente."
+    },
+    "queryParameters": {
+      "status": "potential-tracking",
+      "findings": [
+        {
+          "domain": "privacy-test-pages.site",
+          "url": "https://privacy-test-pages.site/privacy-protections/bounce-tracking/",
+          "requestId": "3086",
+          "at": 1790656101074,
+          "frameId": 0,
+          "context": "main_frame",
+          "source": "request",
+          "party": "first",
+          "parameter": "bounceUIDlocalStorage",
+          "length": 2,
+          "shape": "numeric",
+          "reasons": [
+            "identifier-like-name"
+          ],
+          "confidence": "low"
+        },
+        {
+          "domain": "privacy-test-pages.site",
+          "url": "https://privacy-test-pages.site/privacy-protections/bounce-tracking/",
+          "requestId": "3086",
+          "at": 1790656101074,
+          "frameId": 0,
+          "context": "main_frame",
+          "source": "request",
+          "party": "first",
+          "parameter": "bounceUIDcookie",
+          "length": 2,
+          "shape": "numeric",
+          "reasons": [
+            "identifier-like-name"
+          ],
+          "confidence": "low"
+        }
+      ],
+      "limitation": "Campanha, formato semelhante a ID e reutilização são sinais, não tracking confirmado. Parâmetros funcionais são excluídos da comparação."
+    },
+    "coverage": {
+      "partial": false,
+      "dropped": {
+        "observations": 0,
+        "parameters": 0,
+        "values": 0,
+        "hashes": 0,
+        "hops": 0,
+        "previousHops": 0,
+        "outOfOrder": 0,
+        "findings": 0
+      },
+      "hashErrors": 0,
+      "pendingComparisons": 0,
+      "limits": {
+        "observations": 512,
+        "parameters": 24,
+        "valueLength": 256,
+        "urlLength": 16384,
+        "hashes": 4096,
+        "hops": 32,
+        "previousHops": 8,
+        "findings": 128,
+        "bounceMs": 10000
+      },
+      "observedRequests": 2,
+      "comparison": "HMAC-SHA-256 com chave efêmera por navegação; valores, chaves e hashes não exportados. Nenhuma comparação entre abas.",
+      "limitations": "Janela de passagem intermediária: 10 s. Histórico curto de main_frame só participa por ligação observada; navegação comum zera queries/comparações. POST, IDs transformados, CNAME, workers sem tabId e frames opacos não cobertos."
+    },
+    "availability": "available"
+  },
+  "storage": [
+    {
+      "frameId": 0,
+      "origin": "https://privacy-test-pages.site",
+      "topOrigin": "https://privacy-test-pages.site",
+      "at": 1790656216619,
+      "localStorage": {
+        "status": "observed",
+        "count": 1,
+        "unit": "keys"
+      },
+      "sessionStorage": {
+        "status": "observed",
+        "count": 0,
+        "unit": "keys"
+      },
+      "indexedDB": {
+        "status": "observed",
+        "count": 1,
+        "unit": "databases"
+      },
+      "party": "first",
+      "context": "top-level",
+      "activeAtRefresh": true,
+      "partitioning": "not-established-by-snapshot"
+    }
+  ],
+  "canvas": {
+    "drawingCalls": 0,
+    "readbackCalls": 0,
+    "failedReadbacks": 0,
+    "canvasCount": 0,
+    "indicatorCanvases": 0,
+    "frames": [
+      {
+        "frameId": 0,
+        "origin": "https://privacy-test-pages.site",
+        "url": "https://privacy-test-pages.site/privacy-protections/bounce-tracking/",
+        "timeOrigin": 1790656101065,
+        "sequence": 5,
+        "at": 1790656216619,
+        "observation": {
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000,
+          "classification": "not-observed",
+          "used": false,
+          "canvasCount": 0,
+          "drawingCalls": 0,
+          "readbackCalls": 0,
+          "failedReadbacks": 0,
+          "indicatorCanvases": 0,
+          "canvases": [],
+          "samples": [],
+          "droppedEvents": 0,
+          "droppedSamples": 0
+        },
+        "instrumentation": {
+          "strategy": "Firefox wrappedJSObject + exportFunction",
+          "installed": [
+            "CanvasRenderingContext2D.fillRect",
+            "CanvasRenderingContext2D.strokeRect",
+            "CanvasRenderingContext2D.fillText",
+            "CanvasRenderingContext2D.strokeText",
+            "CanvasRenderingContext2D.drawImage",
+            "CanvasRenderingContext2D.putImageData",
+            "CanvasRenderingContext2D.fill",
+            "CanvasRenderingContext2D.stroke",
+            "CanvasRenderingContext2D.getImageData",
+            "HTMLCanvasElement.toDataURL",
+            "HTMLCanvasElement.toBlob"
+          ],
+          "failed": [],
+          "unsupported": [],
+          "replaced": []
+        }
+      }
+    ],
+    "classification": "not-observed",
+    "partial": false,
+    "ruleVersion": "canvas-sequence-v1",
+    "windowMs": 5000,
+    "meaning": "Desenho seguido de leitura/exportação no mesmo canvas em até 5 s é um indício heurístico, não prova de rastreamento."
+  },
+  "score": {
+    "status": "not-implemented",
+    "value": null
+  },
+  "coverage": {
+    "partial": false,
+    "droppedRequests": 0,
+    "droppedCookieHeaders": 0,
+    "droppedCookieWrites": 0,
+    "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
+    "cookies": "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
+    "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+    "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis."
+  }
+}

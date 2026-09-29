@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 3,
+  "extensionVersion": "0.4.0",
+  "generatedAt": "2026-09-29T02:13:13.416Z",
+  "browser": {
+    "name": "Firefox",
+    "vendor": "Mozilla",
+    "version": "156.0.1",
+    "buildID": "20260921121718"
+  },
+  "page": {
+    "url": "https://privacy-test-pages.site/tracker-reporting/1major-via-script.html",
+    "queryKeys": [],
+    "site": "privacy-test-pages.site",
+    "startedAt": 1790647758048
+  },
+  "network": {
+    "totals": {
+      "total": 3,
+      "first": 2,
+      "third": 1,
+      "unknown": 0,
+      "failed": 1
+    },
+    "domains": [
+      {
+        "host": "privacy-test-pages.site",
+        "site": "privacy-test-pages.site",
+        "party": "first",
+        "requests": 2,
+        "failed": 0,
+        "types": [
+          "main_frame",
+          "image"
+        ]
+      },
+      {
+        "host": "doubleclick.net",
+        "site": "doubleclick.net",
+        "party": "third",
+        "requests": 1,
+        "failed": 1,
+        "types": [
+          "script"
+        ]
+      }
+    ],
+    "requests": [
+      {
+        "id": "2641",
+        "at": 1790647758048,
+        "url": "https://privacy-test-pages.site/tracker-reporting/1major-via-script.html",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "main_frame",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790647758179,
+        "error": null,
+        "fromCache": true,
+        "party": "first"
+      },
+      {
+        "id": "2642",
+        "at": 1790647758189,
+        "url": "https://doubleclick.net/tracker.js",
+        "queryKeys": [],
+        "host": "doubleclick.net",
+        "type": "script",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/tracker-reporting/1major-via-script.html",
+        "status": "error",
+        "statusCode": 404,
+        "finishedAt": 1790647758263,
+        "error": "NS_ERROR_CORRUPTED_CONTENT",
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2643",
+        "at": 1790647758266,
+        "url": "https://privacy-test-pages.site/favicon.ico",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "image",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/tracker-reporting/1major-via-script.html",
+        "status": "completed",
+        "statusCode": 404,
+        "finishedAt": 1790647758267,
+        "error": null,
+        "fromCache": true,
+        "party": "first"
+      }
+    ]
+  },
+  "cookies": {
+    "items": [],
+    "totals": {
+      "total": 0,
+      "first": 0,
+      "third": 0,
+      "session": 0,
+      "persistent": 0,
+      "partitioned": 0
+    },
+    "preexisting": {
+      "items": [],
+      "totals": {
+        "total": 0,
+        "first": 0,
+        "third": 0,
+        "session": 0,
+        "persistent": 0,
+        "partitioned": 0
+      },
+      "currentCount": 0,
+      "unknownCurrentCount": 0,
+      "completeness": "partial-prior-observations-only"
+    },
+    "events": [],
+    "eventTotals": {
+      "observed": 0,
+      "writes": 0,
+      "created": 0,
+      "changed": 0,
+      "unknown": 0,
+      "removed": 0
+    },
+    "probable": {
+      "items": [],
+      "totals": {
+        "total": 0,
+        "first": 0,
+        "third": 0,
+        "session": 0,
+        "persistent": 0,
+        "partitioned": 0
+      }
+    },
+    "correlatedWrites": [],
+    "correlatedWriteEvents": 0,
+    "setCookieAttempts": [],
+    "observationWindowMs": 30000,
+    "window": {
+      "startedAt": 1790647758048,
+      "endsAt": 1790647788048,
+      "status": "closed"
+    },
+    "attribution": "Correlação temporal e de contexto; não comprova autoria da aba. Criação é inferida de explicit sem overwrite observado. Não somar estoque, tentativas e eventos.",
+    "errors": [],
+    "diagnostics": {
+      "version": "cookie-ingress-v1",
+      "listenerActive": true,
+      "registeredAt": 1790647423574,
+      "readyStatus": "ready",
+      "totalReceivedSinceRegistration": 0,
+      "dropped": 0,
+      "droppedDecisions": 0,
+      "navigation": {
+        "sequence": 4,
+        "requestId": "2641",
+        "startedAt": 1790647758048,
+        "observedAt": 1790647758049,
+        "storeId": "firefox-default",
+        "storeStatus": "ready",
+        "topUrl": "https://privacy-test-pages.site/tracker-reporting/1major-via-script.html",
+        "hosts": [
+          "privacy-test-pages.site",
+          "doubleclick.net"
+        ]
+      },
+      "counts": {
+        "received": 0,
+        "associated": 0,
+        "discarded": 0,
+        "pending": 0
+      },
+      "probes": [],
+      "decisions": [],
+      "meaning": "Não recebido significa nenhuma entrada encontrada no listener para esta navegação até esta coleta, incluindo reavaliações de eventos anteriores à entrega de onBeforeRequest, com cobertura disponível. Não prova que o Firefox nunca disparou o evento. Probes por nome/domínio não provam autoria nem aceite de Set-Cookie. Consulte priorReceipts para a ordem de entrega."
+    },
+    "historyDropped": 0,
+    "ingressDropped": 0,
+    "processingErrors": 0,
+    "inventoryChangedDuringQuery": false
+  },
+  "advancedTracking": {
+    "version": "advanced-tracking-v1",
+    "bounce": {
+      "status": "insufficient-evidence",
+      "sequences": [],
+      "route": [
+        {
+          "domain": "privacy-test-pages.site",
+          "url": "https://privacy-test-pages.site/tracker-reporting/1major-via-script.html",
+          "at": 1790647758048,
+          "requestId": "2641",
+          "incoming": "start",
+          "initiatorHost": "",
+          "transitionType": "reload",
+          "transitionQualifiers": []
+        }
+      ]
+    },
+    "cookieSync": {
+      "status": "not-observed",
+      "indicators": [],
+      "endpointHints": [],
+      "limitation": "Sem leitura/comparação de valores de cookies; endpoint com nome sync, isoladamente, é evidência insuficiente."
+    },
+    "queryParameters": {
+      "status": "not-observed",
+      "findings": [],
+      "limitation": "Campanha, formato semelhante a ID e reutilização são sinais, não tracking confirmado. Parâmetros funcionais são excluídos da comparação."
+    },
+    "coverage": {
+      "partial": false,
+      "dropped": {
+        "observations": 0,
+        "parameters": 0,
+        "values": 0,
+        "hashes": 0,
+        "hops": 0,
+        "previousHops": 0,
+        "outOfOrder": 0,
+        "findings": 0
+      },
+      "hashErrors": 0,
+      "pendingComparisons": 0,
+      "limits": {
+        "observations": 512,
+        "parameters": 24,
+        "valueLength": 256,
+        "urlLength": 16384,
+        "hashes": 4096,
+        "hops": 32,
+        "previousHops": 8,
+        "findings": 128,
+        "bounceMs": 10000
+      },
+      "observedRequests": 3,
+      "comparison": "HMAC-SHA-256 com chave efêmera por navegação; valores, chaves e hashes não exportados. Nenhuma comparação entre abas.",
+      "limitations": "Janela de passagem intermediária: 10 s. Histórico curto de main_frame só participa por ligação observada; navegação comum zera queries/comparações. POST, IDs transformados, CNAME, workers sem tabId e frames opacos não cobertos."
+    },
+    "availability": "available"
+  },
+  "storage": [
+    {
+      "frameId": 0,
+      "origin": "https://privacy-test-pages.site",
+      "topOrigin": "https://privacy-test-pages.site",
+      "at": 1790647993409,
+      "localStorage": {
+        "status": "observed",
+        "count": 0,
+        "unit": "keys"
+      },
+      "sessionStorage": {
+        "status": "observed",
+        "count": 0,
+        "unit": "keys"
+      },
+      "indexedDB": {
+        "status": "observed",
+        "count": 0,
+        "unit": "databases"
+      },
+      "party": "first",
+      "context": "top-level",
+      "activeAtRefresh": true,
+      "partitioning": "not-established-by-snapshot"
+    }
+  ],
+  "canvas": {
+    "drawingCalls": 0,
+    "readbackCalls": 0,
+    "failedReadbacks": 0,
+    "canvasCount": 0,
+    "indicatorCanvases": 0,
+    "frames": [
+      {
+        "frameId": 0,
+        "origin": "https://privacy-test-pages.site",
+        "url": "https://privacy-test-pages.site/tracker-reporting/1major-via-script.html",
+        "timeOrigin": 1790647758046,
+        "sequence": 11,
+        "at": 1790647993409,
+        "observation": {
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000,
+          "classification": "not-observed",
+          "used": false,
+          "canvasCount": 0,
+          "drawingCalls": 0,
+          "readbackCalls": 0,
+          "failedReadbacks": 0,
+          "indicatorCanvases": 0,
+          "canvases": [],
+          "samples": [],
+          "droppedEvents": 0,
+          "droppedSamples": 0
+        },
+        "instrumentation": {
+          "strategy": "Firefox wrappedJSObject + exportFunction",
+          "installed": [
+            "CanvasRenderingContext2D.fillRect",
+            "CanvasRenderingContext2D.strokeRect",
+            "CanvasRenderingContext2D.fillText",
+            "CanvasRenderingContext2D.strokeText",
+            "CanvasRenderingContext2D.drawImage",
+            "CanvasRenderingContext2D.putImageData",
+            "CanvasRenderingContext2D.fill",
+            "CanvasRenderingContext2D.stroke",
+            "CanvasRenderingContext2D.getImageData",
+            "HTMLCanvasElement.toDataURL",
+            "HTMLCanvasElement.toBlob"
+          ],
+          "failed": [],
+          "unsupported": [],
+          "replaced": []
+        }
+      }
+    ],
+    "classification": "not-observed",
+    "partial": false,
+    "ruleVersion": "canvas-sequence-v1",
+    "windowMs": 5000,
+    "meaning": "Desenho seguido de leitura/exportação no mesmo canvas em até 5 s é um indício heurístico, não prova de rastreamento."
+  },
+  "score": {
+    "status": "not-implemented",
+    "value": null
+  },
+  "coverage": {
+    "partial": false,
+    "droppedRequests": 0,
+    "droppedCookieHeaders": 0,
+    "droppedCookieWrites": 0,
+    "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
+    "cookies": "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
+    "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+    "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis."
+  }
+}

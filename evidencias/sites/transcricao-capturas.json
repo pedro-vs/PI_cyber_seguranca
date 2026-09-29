@@ -1,0 +1,158 @@
+{
+  "uol": {
+    "privacyLensScreenshot": {
+      "source": "E36",
+      "requests": 450,
+      "third": 389,
+      "cookies": 66,
+      "frames": 11,
+      "failed": 31
+    },
+    "blacklight": {
+      "source": "E37",
+      "displayedVisit": "Sep. 29, 2026, 02:15 ET",
+      "adTrackers": 48,
+      "thirdPartyCookies": 17,
+      "evasion": "não encontrado",
+      "sessionRecording": "não encontrado",
+      "keystrokes": "não encontrado",
+      "facebook": "detectado",
+      "tiktok": "não encontrado",
+      "x": "não encontrado",
+      "googleAnalytics": "detectado"
+    },
+    "ublock": {
+      "source": "E38",
+      "blocked": 22,
+      "percent": 11,
+      "connected": 17,
+      "totalDomains": 24,
+      "version": "1.75.0",
+      "blockedRows": [
+        "chartbeat.com",
+        "cxense.com",
+        "doubleclick.net",
+        "imasdk.googleapis.com"
+      ],
+      "notes": "Ícone de energia cinza; não prova que bloqueio ficou ativo durante toda a captura. Regras/listas/logger ausentes."
+    }
+  },
+  "g1": {
+    "privacyLensScreenshot": {
+      "source": "E39",
+      "requests": 559,
+      "third": 516,
+      "cookies": 166,
+      "frames": 36,
+      "failed": 20
+    },
+    "blacklight": {
+      "source": "E61",
+      "displayedUrl": "g1.globo.com",
+      "displayedVisit": "Sep. 28, 2026, 01:01 ET",
+      "adTrackers": 27,
+      "thirdPartyCookies": 14,
+      "namedAdCompanies": [
+        "DoubleVerify",
+        "Twitter, Inc."
+      ],
+      "otherAdCompaniesCount": 17,
+      "namedCookieCompanies": [
+        "LiveIntent Inc.",
+        "Twitter, Inc."
+      ],
+      "otherCookieCompaniesCount": 2,
+      "evasion": "não encontrado",
+      "sessionRecording": "não visível",
+      "keystrokes": "não visível",
+      "facebook": "não visível",
+      "tiktok": "não visível",
+      "x": "não visível",
+      "googleAnalytics": "não visível",
+      "notes": "Visita remota de 28/09; captura local de 29/09. Nomes de empresas nas listas não confirmam categorias individuais de pixels. Lista completa de hosts não visível; categorias fora do recorte não são negativas."
+    },
+    "ublock": {
+      "source": "E40",
+      "blocked": 42,
+      "percent": 3,
+      "connected": 145,
+      "totalDomains": 145,
+      "blockedRows": [],
+      "explicitDevToolsBlockedHosts": [
+        "icu.newsroom.bi",
+        "horizon-track.globo.com",
+        "googleads.g.doubleclick.net"
+      ],
+      "notes": "DevTools mostra Bloqueado por uBlock Origin nestas linhas; contador do painel 42, badge externo 43 não substituído."
+    },
+    "privacyLensScoreScreenshot": {
+      "source": "E59",
+      "scoreRange": {
+        "min": 0,
+        "max": 64
+      },
+      "coveredCategories": 2,
+      "totalCategories": 6,
+      "instrumentedFrames": 16,
+      "changes": 7,
+      "channels": 2,
+      "combinations": 0,
+      "note": "Recorte de score/hooks; contagens de rede não visíveis. Painel E39 preservado como execução anterior."
+    }
+  },
+  "mercadolivre": {
+    "privacyLensScreenshot": null,
+    "blacklight": {
+      "source": "E62",
+      "displayedUrl": "www.mercadolivre.com.br/?skipInApp=true&matt_ig…",
+      "urlTruncated": true,
+      "displayedVisit": "Sep. 28, 2026, 18:33 ET",
+      "adTrackers": 11,
+      "thirdPartyCookies": 16,
+      "namedAdCompanies": [
+        "Twitter, Inc.",
+        "Facebook, Inc."
+      ],
+      "otherAdCompaniesCount": 3,
+      "namedCookieCompanies": [
+        "RTB House S.A.",
+        "ByteDance Ltd."
+      ],
+      "otherCookieCompaniesCount": 3,
+      "evasion": "não visível",
+      "sessionRecording": "não visível",
+      "keystrokes": "não visível",
+      "facebook": "não visível",
+      "tiktok": "não visível",
+      "x": "não visível",
+      "googleAnalytics": "não visível",
+      "notes": "Visita remota de 28/09; captura local de 29/09. Nomes de empresas nas listas não confirmam categorias individuais de pixels. Lista completa de hosts não visível; categorias fora do recorte não são negativas."
+    },
+    "ublock": {
+      "source": "E41",
+      "blocked": 40,
+      "percent": 9,
+      "connected": 8,
+      "totalDomains": 10,
+      "blockedRows": [
+        "hotjar.com",
+        "mercadoclics.com"
+      ],
+      "notes": "Regras/listas/logger não visíveis; painel inclui CNAMEs CloudFront, mas HAR recebido cobre apenas janela tardia."
+    },
+    "privacyLensScoreScreenshot": {
+      "source": "E60",
+      "scoreRange": {
+        "min": 41,
+        "max": 66
+      },
+      "coveredCategories": 3,
+      "totalCategories": 6,
+      "instrumentedFrames": 1,
+      "changes": 5,
+      "channels": 2,
+      "combinations": 1,
+      "note": "Recorte de score/hooks; contagens de rede não visíveis."
+    }
+  }
+}

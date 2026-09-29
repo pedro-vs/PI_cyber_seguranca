@@ -1,0 +1,11 @@
+host,site,party,har,har_status_0,privacy_lens
+accounts.google.com,google.com,third,0,0,2
+api.mercadolibre.com,mercadolibre.com,third,7,0,25
+http2.mlstatic.com,mlstatic.com,third,8,0,90
+matt.mercadolivre.com.br,mercadolivre.com.br,first,0,0,1
+o11y-proxy-otel-frontend.meli.com,meli.com,third,9,0,11
+placements.mercadolibre.com,mercadolibre.com,third,0,0,1
+print1.mercadoclics.com,mercadoclics.com,third,0,0,13
+script.hotjar.com,hotjar.com,third,0,0,1
+static.hotjar.com,hotjar.com,third,0,0,1
+www.mercadolivre.com.br,mercadolivre.com.br,first,0,0,3

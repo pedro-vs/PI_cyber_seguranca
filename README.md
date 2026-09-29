@@ -1,8 +1,10 @@
 # Privacy Lens — Insper
 
-Extensão Firefox para a Avaliação Intermediária de Cibersegurança. **Versão 0.5.0 / bloco Conceito A**, em 29/09/2026. Os testes DDG 1–7 da v0.4.0 foram relatados como concluídos; resultados e limitações estão na [tabela consolidada](evidencias/duckduckgo/RESULTADOS.md). Conferência dos artefatos, DDG js-leaks e entregáveis dos três sites reais continuam pendentes. Implementação não equivale à conclusão de todos os requisitos acadêmicos.
+Extensão Firefox **v0.5.0**, com observação de rede, cookies, storage, canvas, tracking avançado, indicadores de hook, score com cobertura e blocklist personalizada.
 
-**Comece pelo [método e controles de Conceito A](docs/CONCEITO_A.md), pela [metodologia do score](docs/SCORE_PROPOSTA.md) e pelo [próximo teste manual: js-leaks](evidencias/duckduckgo/js-leaks/REGISTRO.md).** O [protocolo DDG v0.4.0](docs/VALIDACAO_DDG_V04.md) e os roteiros de [cookies](docs/ETAPA_3_COOKIES.md), [canvas](docs/ETAPA_2_CANVAS.md) e [tracking](docs/ETAPA_4_TRACKING.md) permanecem como referências históricas.
+**Entrega documental:** [relatório final PDF](docs/relatorio-final.pdf) · [fonte Markdown](docs/relatorio-final.md) · [auditoria](docs/AUDITORIA_FINAL.md) · [inventário de evidências](evidencias/INDEX.md) · [fontes dos números](docs/RELATORIO_FONTES.md).
+
+As evidências recebidas foram conferidas, incluindo o complemento de seis arquivos G1/Mercado Livre. Os três sites têm JSON, painel Privacy Lens, HAR, Blacklight e uBlock. Scores recalculados dos JSONs: **UOL 0–31, G1 0–64 e Mercado Livre 41–66/100, todos parciais**. Os novos JSONs G1/Mercado Livre são de visitas sem sobreposição com os HARs anteriores; Blacklight tem visitas e recortes próprios. js-leaks e alguns subcasos DDG têm lacunas declaradas. A implementação não equivale à comprovação integral dos requisitos acadêmicos.
 
 ## Comece aqui
 
@@ -43,7 +45,7 @@ Deixe o terceiro comando rodando. Abra **http://localhost:8787/** no Firefox, ag
 
 Abra `http://localhost:8787/empty`: as requisições anteriores e gravações correlacionadas devem zerar; os 5 cookies existentes continuam no inventário. Abra `http://localhost:8787/redirect`: os dois passos da navegação HTTP devem constar no JSON. `localhost` e `127.0.0.1` apontam para seu computador, mas são sites diferentes para a classificação. Pare o servidor com Ctrl+C.
 
-**Evidência a registrar agora:** print do popup em `localhost:8787`, print da seção de storage, JSON exportado e versão do Firefox. Salve em `evidencias/local/` usando nomes próprios para não sobrescrever os testes entregues. Envie os dois prints e o JSON para revisão. Se não carregar, envie o texto exato do erro de `about:debugging` e a versão do Firefox.
+Evidências históricas locais estão preservadas em `evidencias/local/` e `evidencias/desenvolvimento/`. Para os dados finais, use o [inventário](evidencias/INDEX.md), os [registros DDG](evidencias/duckduckgo/RESULTADOS.md) e as reconciliações de [UOL](evidencias/sites/uol/reconciliacao.md), [G1](evidencias/sites/g1/reconciliacao.md) e [Mercado Livre](evidencias/sites/mercadolivre/reconciliacao.md).
 
 ## O que está implementado
 
@@ -93,15 +95,24 @@ Abra `http://localhost:8787/empty`: as requisições anteriores e gravações co
 | `scripts/check.cjs` | Verificação de sintaxe e referências do manifest |
 | `docs/PLANO_E_CHECKLIST.md` | C/B/A, riscos, cronograma e próximas etapas |
 | `docs/ARQUITETURA.md` | Decisões técnicas e limites |
-| `docs/SCORE_PROPOSTA.md` | Metodologia privacy-score-v1 implementada, aplicação aos três sites pendente |
+| `docs/SCORE_PROPOSTA.md` | Metodologia privacy-score-v1; três scores recalculados, todos parciais |
 | `docs/TESTES_E_EVIDENCIAS.md` | Protocolo DDG, sites reais e reconciliação |
-| `docs/RELATORIO_MODELO.md` | Esqueleto do futuro relatório PDF |
+| `docs/RELATORIO_MODELO.md` | Modelo histórico; relatório final em relatorio-final.md/.pdf |
 | `docs/VALIDACAO_ETAPA_1.md` | O que foi efetivamente validado nesta entrega |
 | `docs/FONTES.md` | Documentação consultada |
-| `evidencias/` | Resultados reais locais e espaços pendentes para DDG/sites |
+| `evidencias/` | Originais conferidos, resultados locais/DDG e reconciliação dos sites |
 
-## Git e próximo bloco
+## Reproduzir análise e relatório
 
-Seu histórico da Etapa 1 foi informado como validado e commitado. Esta entrega não inclui `.git` nem executa comandos no seu GitHub. Preserve os commits existentes e suas evidências. Não rode novamente git init e não substitua a pasta inteira do repositório.
+```bash
+node scripts/analyze-evidence.cjs
+python3 -m venv /tmp/privacy-lens-report
+/tmp/privacy-lens-report/bin/pip install -r scripts/requirements-report.txt
+/tmp/privacy-lens-report/bin/python scripts/build-report.py
+```
 
-Valide as fixtures de Conceito A e execute o controle DDG js-leaks com/sem extensão. Os detectores B foram preservados; a lista deve estar vazia nas comparações observacionais anteriores. Nenhum commit é criado neste bloco. Histórico e evidências existentes são preservados.
+A análise usa a PSL da extensão e não altera os originais. O PDF usa fontes empacotadas, A4 e metadados fixos. Fragmentos `crop` nos links de imagens do Markdown controlam apenas a diagramação PDF; os PNG permanecem íntegros. O HAR UOL está comprimido sem perdas; `gzip -dc evidencias/sites/uol/har/uol.har.gz` recupera o conteúdo original (redirecionar para arquivo externo se desejado).
+
+## Git e entrega
+
+Nove commits anteriores, distribuídos em 24, 28 e 29/09/2026, foram preservados. A finalização documental não cria commit nem publica alterações. [VALIDACAO_FINAL.txt](docs/VALIDACAO_FINAL.txt) registra os comandos finais; [AUDITORIA_FINAL.md](docs/AUDITORIA_FINAL.md) diferencia requisitos OK, parciais e ausentes. Os artefatos finais precisam ser commitados/publicados pelo responsável após revisão.

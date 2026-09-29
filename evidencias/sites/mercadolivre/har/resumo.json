@@ -1,0 +1,388 @@
+{
+  "source": "evidencias/sites/mercadolivre/har/mercadolivre.har",
+  "topSite": "mercadolivre.com.br",
+  "creator": {
+    "name": "Firefox",
+    "version": "156.0.1"
+  },
+  "browser": {
+    "name": "Firefox",
+    "version": "156.0.1"
+  },
+  "pages": [
+    {
+      "title": "https://www.mercadolivre.com.br/",
+      "startedDateTime": "2026-09-29T03:30:06.464-03:00",
+      "pageTimings": {
+        "onContentLoad": -5348,
+        "onLoad": -3485
+      }
+    }
+  ],
+  "total": 24,
+  "first": 0,
+  "third": 24,
+  "unknown": 0,
+  "schemes": {
+    "https:": 24
+  },
+  "hostCount": 3,
+  "siteCount": 3,
+  "thirdSiteCount": 3,
+  "start": "2026-09-29T06:30:06.464Z",
+  "end": "2026-09-29T06:30:44.259Z",
+  "status": {
+    "200": 24
+  },
+  "status0": [],
+  "explicitBlockedAttribution": "não informada nos campos exportados; status 0 não identifica bloqueador",
+  "setCookieHeaderLines": 9,
+  "setCookieResponses": 9,
+  "setCookieByHost": {
+    "o11y-proxy-otel-frontend.meli.com": 9
+  },
+  "redirectCount": 0,
+  "redirects": [],
+  "resourceTypesInferred": {
+    "JSON (MIME)": 16,
+    "imagem (MIME)": 8
+  },
+  "explicitResourceTypes": 0,
+  "exactRepeatedGroups": 3,
+  "exactRepeatedExtra": 15,
+  "repeatedEndpoints": [
+    {
+      "endpoint": "POST https://o11y-proxy-otel-frontend.meli.com/v1/metrics",
+      "count": 9
+    },
+    {
+      "endpoint": "POST https://api.mercadolibre.com/melidata/tracks/component_prints",
+      "count": 7
+    },
+    {
+      "endpoint": "GET https://http2.mlstatic.com/D_NQ_2X_602266-MLA116378269720_092026-OO.webp",
+      "count": 2
+    }
+  ],
+  "homeDocumentRequests": [],
+  "domains": [
+    {
+      "host": "accounts.google.com",
+      "site": "google.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 2
+    },
+    {
+      "host": "api.mercadolibre.com",
+      "site": "mercadolibre.com",
+      "party": "third",
+      "har": 7,
+      "harStatus0": 0,
+      "pl": 25
+    },
+    {
+      "host": "http2.mlstatic.com",
+      "site": "mlstatic.com",
+      "party": "third",
+      "har": 8,
+      "harStatus0": 0,
+      "pl": 90
+    },
+    {
+      "host": "matt.mercadolivre.com.br",
+      "site": "mercadolivre.com.br",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "o11y-proxy-otel-frontend.meli.com",
+      "site": "meli.com",
+      "party": "third",
+      "har": 9,
+      "harStatus0": 0,
+      "pl": 11
+    },
+    {
+      "host": "placements.mercadolibre.com",
+      "site": "mercadolibre.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "print1.mercadoclics.com",
+      "site": "mercadoclics.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 13
+    },
+    {
+      "host": "script.hotjar.com",
+      "site": "hotjar.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "static.hotjar.com",
+      "site": "hotjar.com",
+      "party": "third",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 1
+    },
+    {
+      "host": "www.mercadolivre.com.br",
+      "site": "mercadolivre.com.br",
+      "party": "first",
+      "har": 0,
+      "harStatus0": 0,
+      "pl": 3
+    }
+  ],
+  "collectionRelation": {
+    "overlaps": false,
+    "harStart": "2026-09-29T06:30:06.464Z",
+    "harEnd": "2026-09-29T06:30:44.259Z",
+    "privacyLensStart": "2026-09-29T07:50:08.707Z",
+    "privacyLensEnd": "2026-09-29T07:50:59.031Z",
+    "interpretation": "Coletas sem sobreposição temporal; totais por host descrevem visitas diferentes, sem pareamento de requisições nem inferência de falha do detector."
+  },
+  "approximateAlignment": {
+    "applicable": false,
+    "reason": "Coletas sem sobreposição temporal; totais por host descrevem visitas diferentes, sem pareamento de requisições nem inferência de falha do detector."
+  },
+  "privacyLens": {
+    "source": "evidencias/sites/mercadolivre/privacy-lens/mercadolivre-relatorio.json",
+    "generatedAt": "2026-09-29T07:50:59.031Z",
+    "start": "2026-09-29T07:50:08.707Z",
+    "totals": {
+      "total": 148,
+      "first": 4,
+      "third": 144,
+      "unknown": 0,
+      "failed": 6
+    },
+    "types": {
+      "script": 80,
+      "xmlhttprequest": 48,
+      "image": 15,
+      "font": 3,
+      "beacon": 1,
+      "main_frame": 1
+    },
+    "errors": {
+      "NS_ERROR_DOM_NETWORK_ERR": 6
+    },
+    "cookieTotals": {
+      "total": 22,
+      "first": 14,
+      "third": 8,
+      "session": 1,
+      "persistent": 21,
+      "partitioned": 3
+    },
+    "cookieEventTotals": {
+      "observed": 20,
+      "writes": 10,
+      "created": 2,
+      "changed": 8,
+      "unknown": 0,
+      "removed": 10
+    },
+    "setCookieAttempts": 22,
+    "uniqueWrittenIdentities": 5,
+    "thirdWrittenIdentities": 0,
+    "persistentWrittenIdentities": 4,
+    "score": {
+      "version": "privacy-score-v1",
+      "status": "partial",
+      "value": null,
+      "observedValue": 66,
+      "range": {
+        "min": 41,
+        "max": 66
+      },
+      "coveredCategories": 3,
+      "totalCategories": 6,
+      "categories": [
+        {
+          "id": "N",
+          "label": "Exposição a terceiros",
+          "cap": 10,
+          "points": 10,
+          "covered": true,
+          "evidence": [
+            {
+              "site": "meli.com",
+              "requestId": "9601",
+              "at": 1790668252641
+            },
+            {
+              "site": "mlstatic.com",
+              "requestId": "9598",
+              "at": 1790668251519
+            },
+            {
+              "site": "hotjar.com",
+              "requestId": "9573",
+              "at": 1790668210410
+            },
+            {
+              "site": "mercadoclics.com",
+              "requestId": "9542",
+              "at": 1790668209431
+            },
+            {
+              "site": "google.com",
+              "requestId": "9527",
+              "at": 1790668209318
+            },
+            {
+              "site": "mercadolibre.com",
+              "requestId": "9599",
+              "at": 1790668251567
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "label": "Gravações de cookies correlacionadas",
+          "cap": 20,
+          "points": 4,
+          "covered": true,
+          "evidence": [
+            {
+              "name": "_mldataSessionId",
+              "domain": ".mercadolivre.com.br",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668223790,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "g_state",
+              "domain": "www.mercadolivre.com.br",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668209317,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_hjTLDTest",
+              "domain": ".mercadolivre.com.br",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668210979,
+              "third": false,
+              "persistent": false,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_hjSessionUser_720738",
+              "domain": ".mercadolivre.com.br",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668210980,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            },
+            {
+              "name": "_hjSession_720738",
+              "domain": ".mercadolivre.com.br",
+              "path": "/",
+              "storeId": "firefox-default",
+              "partitionKey": null,
+              "at": 1790668210981,
+              "third": false,
+              "persistent": true,
+              "attribution": "correlated-not-exclusive"
+            }
+          ]
+        },
+        {
+          "id": "S",
+          "label": "Persistência em storage terceiro",
+          "cap": 10,
+          "points": 0,
+          "covered": false,
+          "evidence": []
+        },
+        {
+          "id": "F",
+          "label": "Sequência canvas",
+          "cap": 15,
+          "points": 0,
+          "covered": false,
+          "evidence": []
+        },
+        {
+          "id": "T",
+          "label": "Ligação entre sites",
+          "cap": 25,
+          "points": 0,
+          "covered": true,
+          "evidence": []
+        },
+        {
+          "id": "H",
+          "label": "Alterações de API e canal persistente",
+          "cap": 20,
+          "points": 20,
+          "covered": false,
+          "evidence": [
+            {
+              "frameId": 0,
+              "domain": "api.mercadolibre.com",
+              "requestIds": [
+                "9568",
+                "9569",
+                "9571",
+                "9588"
+              ],
+              "apis": [
+                "Function.toString",
+                "Window.fetch",
+                "Window.XMLHttpRequest",
+                "XMLHttpRequest.open",
+                "XMLHttpRequest.send"
+              ],
+              "at": 1790668210210
+            }
+          ]
+        }
+      ],
+      "interpretation": "Índice normativo de exposição observada, não probabilidade de ataque. Maior = menos penalizações observadas; lacunas não são zeros confirmados.",
+      "method": "100 − N − C − S − F − T − H; tetos 10/20/10/15/25/20. T usa o maior sinal moderado por navegação; T/H: sinais isolados de confiança baixa não pontuam. Bloqueios não ganham bônus."
+    },
+    "scoreRecomputedEqual": true,
+    "scoreSensitivity": {
+      "0.8": {
+        "min": 42,
+        "max": 71
+      },
+      "1.2": {
+        "min": 40,
+        "max": 65
+      }
+    },
+    "networkCompletedThirdSites": 6
+  },
+  "commonWindow": null
+}

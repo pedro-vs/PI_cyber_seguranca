@@ -47,6 +47,8 @@ Relatório da execução final: [conceito-a.json](../evidencias/desenvolvimento/
 
 O caso start-client continua com a limitação de inferência já declarada por B. Não foi alterado para forçar o resultado. Essas contagens pertencem às fixtures locais, não aos quatro casos DDG do Teste 7.
 
-## Pendências humanas
+## Conferência documental posterior
 
-O [Teste 7](../evidencias/duckduckgo/query-parameters/REGISTRO.md) e a [tabela DDG](../evidencias/duckduckgo/RESULTADOS.md) registram os resultados fornecidos pelo usuário; a conferência dos arquivos de evidência ainda está pendente. [DDG js-leaks](../evidencias/duckduckgo/js-leaks/REGISTRO.md) tem roteiro com/sem extensão, mas ainda não foi executado manualmente. Score dos três sites, HAR, comparação Blacklight/uBlock e relatório acadêmico final continuam pendentes.
+Os arquivos DDG e dos sites recebidos em 29/09 foram inventariados e confrontados em [RESULTADOS.md](../evidencias/duckduckgo/RESULTADOS.md). js-leaks tem capturas e um resultado exportado, mas não um par concluído e identificado com/sem extensão. A captura manual da blocklist confirma a decisão própria; pausa/retorno continuam sustentados pelos controles automatizados acima.
+
+Há três HAR, três Blacklight, uBlock e Privacy Lens nos três sites. Os JSONs confirmam scores parciais UOL 0–31, G1 0–64 e Mercado Livre 41–66. As novas coletas G1/ML não se sobrepõem aos HARs anteriores; listas externas completas e algumas categorias Blacklight não estão visíveis. O PDF final existe, com limites explícitos. Ver [auditoria](AUDITORIA_FINAL.md); a conclusão da implementação não significa conclusão integral da avaliação acadêmica.

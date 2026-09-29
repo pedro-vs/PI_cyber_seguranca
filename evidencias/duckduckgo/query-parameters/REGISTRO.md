@@ -1,42 +1,35 @@
 # DDG — Query Parameters
 
-Status: **EXECUTADO E CONCLUÍDO MANUALMENTE**, conforme relato do usuário, na sequência de validação da v0.4.0. Os quatro casos foram registrados. Evidências informadas; arquivos ainda não localizados no repositório, conferência pendente.
+Conferência final: 29/09/2026. Fontes recebidas, preservadas e identificadas por conteúdo; nenhuma nova captura produzida. Este registro substitui as conclusões condicionais anteriores.
 
-[Procedimento documental](../../../docs/VALIDACAO_DDG_V04.md#teste-7) · [Tabela consolidada](../RESULTADOS.md)
+## Objetivo e esperado documental
 
-Página selecionada: https://privacy-test-pages.site/privacy-protections/query-parameters/
+A página de índice mostra quatro casos: remover utm_source preservando q; remover utm_source/utm_medium; remover fbclid/fb_source preservando u; preservar o controle q/id.
 
-## Resultados reais informados
+## Resultado da página
 
-| Caso | Expected DDG | Results real DDG | Privacy Lens | Interpretação |
-|---|---|---|---|---|
-| 01 | q=other | utm_source=something&q=other | 1 sinal potencial | utm_source permaneceu; detecção correta conforme relato; divergência no critério de remoção |
-| 02 | string vazia | utm_source=something&utm_medium=somethingelse | 2 sinais potenciais | dois parâmetros de campanha permaneceram; identificação correta conforme relato; divergência de remoção |
-| 03 | u=14 | fbclid=12345&fb_source=someting&u=14 | 2 sinais potenciais | fbclid/fb_source permaneceram; identificação correta conforme relato; divergência de remoção |
-| 04 — controle | q=something&id=1234 | q=something&id=1234 | 0 sinais potenciais | controle preservado, sem falso positivo observado |
+As páginas de destino mantêm os parâmetros de campanha: caso 01, utm_source=something&q=other; caso 02, utm_source=something&utm_medium=somethingelse; caso 03, fbclid=12345&fb_source=someting&u=14 (grafia do print). A página final do controle 04 não foi fornecida.
 
-Nos casos 01–03, os parâmetros de tracking não foram removidos na configuração atual do Firefox. O Privacy Lens identificou corretamente os parâmetros suspeitos presentes, segundo a validação informada. **Concordância observacional e divergência de remoção**: a v0.4.0 sinaliza parâmetros, não os remove. Não atribuir limpeza ou bloqueio ao plugin nem classificar a permanência dos parâmetros como falha do detector. A avaliação conjunta é parcial nesses três casos, por medir funções diferentes com resultados concretos acima.
+## Resultado do Privacy Lens
 
-No caso 04, concordância total no controle: Results coincide com Expected e não houve sinal potencial. Isso demonstra ausência de falso positivo nesse exemplo, sem generalizar para todas as URLs.
+Caso 01: JSON E46 confirma um sinal utm_source, com q preservado, zero sync e bounce insuficiente. E29/E30 mostram dois sinais, mas não exibem nomes nem URL e não podem ser atribuídos individualmente a 02/03. E32 mostra zero sinais; sua associação ao controle 04 depende do contexto relatado.
 
-Os valores são os dados públicos do teste relatados pelo usuário; o JSON Privacy Lens não exporta valores de queries. RequestIds, horários, motivos individuais e cobertura por caso ainda precisam ser conferidos nos artefatos. Não se presume cobertura sem omissões a partir do Teste 6.
+## Concordância e divergência
 
-## Ambiente e evidências
+Concordância na detecção comprovada do caso 01; divergência esperada quanto à remoção nos casos 01–03. Validação individual de 02/03 e da URL final 04 é parcial.
 
-Referência da sequência: Firefox 156.0.1 / Privacy Lens v0.4.0; mudanças não informadas. Data/hora/fuso, URLs finais completas, ETP/escudo, perfil/container, cache, outras proteções e duração: PENDENTES de transcrição/conferência. As strings de Results foram preservadas literalmente, incluindo `someting` no caso 03.
+O Privacy Lens observa e classifica parâmetros, sem reescrever URLs. Por isso os parâmetros continuam nas páginas mesmo quando sinalizados. Não se alegou remoção bem-sucedida nem falso positivo ausente no controle sem sua URL. As capturas ambíguas foram guardadas em pendentes/, sem decisão arbitrária por proximidade de horário.
 
-Pasta: `evidencias/duckduckgo/query-parameters/`.
+## Evidências
 
-- `ddg-query-parameters-01-plugin.png`
-- `ddg-query-parameters-01-relatorio.json`
-- `ddg-query-parameters-02-plugin.png`
-- `ddg-query-parameters-02-relatorio.json`
-- `ddg-query-parameters-03-plugin.png`
-- `ddg-query-parameters-03-relatorio.json`
-- `ddg-query-parameters-04-plugin.png`
-- `ddg-query-parameters-04-relatorio.json`
-- `ddg-query-parameters-esperados.png`
+- **E25** — [ddg-query-parameters-esperados.png](ddg-query-parameters-esperados.png)
+- **E26** — [ddg-query-parameters-01-pagina.png](ddg-query-parameters-01-pagina.png)
+- **E27** — [ddg-query-parameters-01-plugin.png](ddg-query-parameters-01-plugin.png)
+- **E28** — [ddg-query-parameters-02-pagina.png](ddg-query-parameters-02-pagina.png)
+- **E29** — [query-dois-sinais-a.png](pendentes/query-dois-sinais-a.png)
+- **E30** — [query-dois-sinais-b.png](pendentes/query-dois-sinais-b.png)
+- **E31** — [ddg-query-parameters-03-pagina.png](ddg-query-parameters-03-pagina.png)
+- **E32** — [ddg-query-parameters-controle-zero-plugin.png](ddg-query-parameters-controle-zero-plugin.png)
+- **E46** — [ddg-query-parameters-01-relatorio.json](ddg-query-parameters-01-relatorio.json)
 
-Os nove arquivos foram informados como evidências; não foram localizados no repositório nesta conferência. Não existe download DDG próprio nesta variante. Nenhuma captura foi feita pelo agente e nenhum resultado foi simulado. Preservar os originais por caso, sem sobrescrever.
-
-Testes 1–7 relatados como executados. Conferência das evidências permanece pendente. Próximo bloco autorizado pelo usuário: Conceito A, com indicadores de hook/hijacking, validação js-leaks, score e blocklist; os detectores B devem ser preservados.
+[Consolidação](../RESULTADOS.md) · [Inventário](../../INDEX.md) · [Ambiguidades](../../../docs/AMBIGUIDADES_EVIDENCIAS.md). Horários locais em UTC−3. Perfil, ETP, cache e demais extensões não foram integralmente documentados.

@@ -1,3 +1,3 @@
-# Evidências pendentes
+# Arquivos HAR
 
-Nenhum resultado desta categoria foi executado nesta entrega. Preencher conforme docs/TESTES_E_EVIDENCIAS.md.
+Os três HAR recebidos ficam em [sites/](../sites/README.md), junto das reconciliações. UOL está em gzip sem perdas; G1 e Mercado Livre em HAR original. Este diretório histórico não duplica os arquivos.

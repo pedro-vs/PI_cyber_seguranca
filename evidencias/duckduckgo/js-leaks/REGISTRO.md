@@ -1,40 +1,29 @@
-# DDG — js-leaks / Conceito A
+# DDG — js-leaks / hook
 
-Status: **PREPARADO, NÃO EXECUTADO MANUALMENTE**. Nenhum resultado oficial atribuído à v0.5.0. Próximo teste após os sete testes da v0.4.0 registrados. [Método e controles A](../../../docs/CONCEITO_A.md).
+Conferência final: 29/09/2026. Fontes recebidas, preservadas e identificadas por conteúdo; nenhuma nova captura produzida. Este registro substitui as conclusões condicionais anteriores.
 
-URL completa: https://privacy-test-pages.site/security/js-leaks.html
+## Objetivo e esperado documental
 
-## O que a página mede
+A página compara propriedades globais contra o perfil Firefox 92. O controle relevante é executar Check com e sem a extensão, mantendo o restante do ambiente e comparando os mesmos nomes.
 
-A página compara propriedades globais com um perfil de referência: adicionadas, removidas e alteradas. Em 29/09/2026, a opção Firefox fornecida é **Firefox 92**, não Firefox 156.0.1. Diferenças entre versões do Firefox já podem aparecer sem extensão. A implementação percorre objetos até profundidade limitada e compara funções por `toString`; não cobre necessariamente os protótipos canvas. Ausência de diferenças canvas no DDG não prova transparência da instrumentação.
+## Resultado da página
 
-O Privacy Lens compara 19 descritores selecionados entre início e amostras do próprio documento; o DDG compara um inventário diferente contra referência estática. Concordância depende da propriedade efetivamente comparada. Método alterado não significa código malicioso. O bootstrap canvas do plugin é observável por identidade/representação das funções, explicitamente separado em `security.frames[].observation.ownInstrumentation`; não promete invisibilidade a páginas.
+E33, com Privacy Lens, tem listas vazias e Download the results desabilitado: captura anterior ao Check. E34 tem propriedades adicionadas e o menu de extensões vazio. E49 exporta 849 adicionadas, 17 removidas e 4 alteradas, contra firefox_92, às 02:36:31. O arquivo não identifica a condição com/sem extensão.
 
-## Roteiro exato, com controle
+## Resultado do Privacy Lens
 
-1. Use um perfil de teste com Firefox 156.0.1 (ou registre a versão real), mantendo iguais ETP, preferências, cache/dados e demais extensões nas duas passagens. Não reutilize o perfil temporário da automação como evidência manual. Registre horário/fuso e sistema.
-2. **Sem Privacy Lens:** desative/remova somente a extensão no perfil de teste. Abra a URL completa acima, sem fragmento, selecione **Firefox 92** e clique **Check** uma única vez. Aguarde **Download the results** ficar habilitado, normalmente alguns segundos. Se falhar ou demorar mais de 30 s, registre o erro e não interprete lista vazia como aprovação.
-3. Anote as contagens/listas **Added / Removed / Changed**, a referência usada e erros. Clique **Download the results** e renomeie para `ddg-js-leaks-sem-extensao-results.json`. Depois de Check, clique **Download this browser’s profile** e salve `ddg-js-leaks-sem-extensao-profile.json`. Capture você mesmo `ddg-js-leaks-sem-extensao-pagina.png`.
-4. **Com Privacy Lens v0.5.0:** instale/recarregue `extension/manifest.json`, confirme versão e blocklist vazia. Reabra a URL completa em nova navegação; mantenha **Firefox 92**, clique **Check** uma vez e espere o mesmo estado do botão. Salve `ddg-js-leaks-com-extensao-results.json`, `ddg-js-leaks-com-extensao-profile.json` e sua captura `ddg-js-leaks-com-extensao-pagina.png`.
-5. Aos **31 s desde a navegação**, abra Privacy Lens → **Atualizar** → **Abrir relatório**. Confira Indicadores de hook, instrumentação própria, canais, cobertura e descontos do score. Exporte `ddg-js-leaks-relatorio.json`; capture você mesmo `ddg-js-leaks-plugin.png` e, se necessário, `ddg-js-leaks-detalhes.png`.
-6. Compare os mesmos nomes/flags nas duas passagens, conservando os JSON originais. `date`, temporizadores, frames, foco, tamanho da janela e dados da própria página variam; não atribua toda diferença ao plugin. Repita a passagem sem extensão se uma diferença exigir confirmação. Evite exportar/compartilhar perfis DDG de páginas com dados privados: esses arquivos são produzidos pelo DDG e não usam a sanitização do relatório Privacy Lens.
+Na captura E33, Privacy Lens mostra 100/100 e 6/6 categorias com cobertura prevista; 0 alterações, 0 canais e 0 combinações. A blocklist está ativa e vazia. Não há JSON Privacy Lens dessa página no lote.
 
-**Esperado do plugin:** relatório utilizável, instrumentação própria canvas separada (normalmente 11 métodos no frame principal), sem transformá-la em hijacking/desconto H. Não há contagem DDG fixa esperada contra Firefox 92. Alterações adicionais devem ser verificadas por API e contexto; ausência de hook observado não confirma ausência universal. Score pode ser parcial conforme cobertura real.
+## Concordância e divergência
 
-**Erros a registrar:** popup/relatório interrompido; própria instrumentação confundida com hook externo; funções nativas quebradas; diferença DDG tratada automaticamente como malware; cobertura indisponível apresentada como zero; regra da blocklist ativa interferindo na comparação. O teste não instala código de ataque e não pede alteração do sistema operacional.
+Comparação causal inconclusiva. As duas execuções concluídas com/sem extensão não estão documentadas por dois resultados identificados.
 
-## Resultado a preencher após a execução real
+O DDG compara uma referência estática antiga; o Privacy Lens compara descritores selecionados ao document_start do próprio documento. Nenhum dos dois zeros seria prova universal de ausência de hook. As quatro propriedades alteradas no JSON são languages.0/languages.1 de window.clientInformation e toString/valueOf de window.location. Sem par controlado não se pode atribuir mudanças ao plugin, afirmar que são comuns às duas execuções ou concluir transparência da instrumentação. O resultado 100/100 pertence somente à cobertura declarada pelo plugin naquele instante.
 
-| Campo | Resultado |
-|---|---|
-| Data/hora/fuso, Firefox/macOS, ETP, perfil/cache, demais extensões | PENDENTE |
-| Privacy Lens / referência DDG | v0.5.0 a confirmar / Firefox 92 a confirmar |
-| Sem extensão: added / removed / changed | PENDENTE |
-| Com extensão: added / removed / changed | PENDENTE |
-| Diferenças reproduzíveis atribuíveis à instrumentação, por propriedade | PENDENTE |
-| Privacy Lens: APIs alteradas / próprias / canais / combinações | PENDENTE |
-| Cobertura, score e descontos | PENDENTE |
-| Concordância / complementaridade / divergência e explicação concreta | PENDENTE |
-| Evidências inspecionadas | PENDENTE; nenhum arquivo acima foi capturado pelo agente |
+## Evidências
 
-Fontes consultadas em 29/09/2026: [página oficial](https://privacy-test-pages.site/security/js-leaks.html), [código da comparação](https://privacy-test-pages.site/security/leaks.js). O teste local em Firefox e a suíte Node são verificações de implementação, não resultados desta página.
+- **E33** — [ddg-js-leaks-com-plugin-antes-check.png](ddg-js-leaks-com-plugin-antes-check.png)
+- **E34** — [ddg-js-leaks-sem-plugin-pagina.png](ddg-js-leaks-sem-plugin-pagina.png)
+- **E49** — [ddg-js-leaks-results-configuracao-nao-estabelecida.json](ddg-js-leaks-results-configuracao-nao-estabelecida.json)
+
+[Consolidação](../RESULTADOS.md) · [Inventário](../../INDEX.md) · [Ambiguidades](../../../docs/AMBIGUIDADES_EVIDENCIAS.md). Horários locais em UTC−3. Perfil, ETP, cache e demais extensões não foram integralmente documentados.

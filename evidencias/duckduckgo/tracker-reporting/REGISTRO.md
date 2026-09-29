@@ -1,29 +1,30 @@
 # DDG — Tracker Reporting
 
-Status: **EXECUTADO E VALIDADO MANUALMENTE PELO USUÁRIO**, conforme relato nesta conversa. Os arquivos abaixo foram informados como capturados, mas ainda não foram localizados no repositório; inclusão e conferência dos artefatos permanecem pendentes. Nenhuma captura foi produzida pelo agente.
+Conferência final: 29/09/2026. Fontes recebidas, preservadas e identificadas por conteúdo; nenhuma nova captura produzida. Este registro substitui as conclusões condicionais anteriores.
 
-[Procedimento e esperado documental](../../../docs/VALIDACAO_DDG_V04.md#teste-1) · [Tabela de resultados](../RESULTADOS.md)
+## Objetivo e esperado documental
 
-- Teste/subteste: 1 major tracker loaded via script.
-- URL informada: https://privacy-test-pages.site/tracker-reporting/1major-via-script.html
-- Data/hora/fuso, duração e URL final efetiva: PENDENTE de confirmação no artefato/relato.
-- Ambiente informado para a rodada: Firefox 156.0.1 / Privacy Lens v0.4.0. Versão macOS e referência Git da execução: PENDENTES.
-- Perfil/container, dados prévios/limpeza, cache, ETP, exceções e outras extensões: PENDENTES.
-- Esperado documental: inclusão programada de `https://doubleclick.net/tracker.js` por script; não há garantia de sucesso HTTP nem placar automático.
-- Texto DDG observado pelo usuário: “1 major tracker loaded via script src”.
-- Privacy Lens informado: **3 requests totais**; domínio `doubleclick.net` classificado como terceira parte; URL `https://doubleclick.net/tracker.js`; tipo `script`; estado `error`; HTTP **404**; erro **NS_ERROR_CORRUPTED_CONTENT**.
-- Concordância: **total quanto ao reporte da tentativa, domínio e tipo**, conforme validação manual informada. Não é uma confirmação de carregamento bem-sucedido.
-- Divergência: nenhuma quanto à tentativa reportada. A falha HTTP/erro de conteúdo foi observada e preservada; a página não prometia HTTP 200.
-- Explicação técnica: a requisição do recurso declarado pelo DDG foi observada como script terceiro e terminou com erro. HTTP 404 e NS_ERROR_CORRUPTED_CONTENT não identificam, isoladamente, ação do Firefox, de um bloqueador ou autoria do bloqueio. Não há evidência para essa atribuição.
-- RequestId, timestamps, headers e demais detalhes: PENDENTES da conferência do JSON.
-- Cookies/storage: não avaliados neste relato; não inferir resultados.
+A página 1major-via-script inclui https://doubleclick.net/tracker.js como script. O objetivo observacional é identificar a tentativa e seu domínio; o título da página não certifica resposta HTTP bem-sucedida.
 
-## Evidências informadas pelo usuário
+## Resultado da página
 
-Pasta prevista: `evidencias/duckduckgo/tracker-reporting/`.
+A página anuncia um tracker via script. O detalhe do Privacy Lens registra request 2642, frame 0, tipo script, estado error, HTTP 404 e NS_ERROR_CORRUPTED_CONTENT. O documento principal 2641 retorna 200.
 
-- `ddg-tracker-reporting-plugin.png` — print principal informado como capturado; arquivo ainda não localizado no repositório.
-- `ddg-tracker-reporting-detalhes.png` — print complementar informado como capturado; arquivo ainda não localizado no repositório.
-- `ddg-tracker-reporting-relatorio.json` — exportação informada; arquivo ainda não localizado no repositório.
+## Resultado do Privacy Lens
 
-Não substituir esses arquivos por capturas artificiais. Conferência visual/JSON pendente; resultado textual registrado com origem explícita no relato do usuário. O detector não foi alterado por esse resultado.
+JSON v0.4.0: 3 requisições, 2 próprias e 1 terceira; 1 falha. doubleclick.net é terceiro pela PSL. Exportação em 28/09 às 23:13:13.416 (UTC−3).
+
+## Concordância e divergência
+
+Concordância na observação da tentativa, domínio, tipo e falha; não é prova de tracker executado com sucesso.
+
+Contar a tentativa é coerente com webRequest mesmo quando seu carregamento falha. HTTP 404 e o erro de conteúdo não identificam qual proteção atuou. A v0.4.0 não tinha a blocklist da v0.5.0. A captura posterior E10 ainda mostra o mesmo requestId 2642, permitindo ligar o detalhe visual ao JSON sem presumir uma nova execução.
+
+## Evidências
+
+- **E08** — [ddg-tracker-reporting-plugin.png](ddg-tracker-reporting-plugin.png)
+- **E09** — [ddg-tracker-reporting-detalhes.png](ddg-tracker-reporting-detalhes.png)
+- **E10** — [ddg-tracker-reporting-rede.png](ddg-tracker-reporting-rede.png)
+- **E42** — [ddg-tracker-reporting-relatorio.json](ddg-tracker-reporting-relatorio.json)
+
+[Consolidação](../RESULTADOS.md) · [Inventário](../../INDEX.md) · [Ambiguidades](../../../docs/AMBIGUIDADES_EVIDENCIAS.md). Horários locais em UTC−3. Perfil, ETP, cache e demais extensões não foram integralmente documentados.

@@ -1,0 +1,216 @@
+Privacy Lens — validação final documental
+Início UTC: 2026-09-29T07:27:45.119510+00:00
+Nenhum navegador/site externo executado; detectores preservados.
+
+$ npm test
+
+> privacy-lens-insper@0.5.0 test
+> node --test tests/*.test.cjs
+
+✔ advanced: redirect isolado não vira bounce nem tracking (4.865205ms)
+✔ advanced: A → intermediário curto → A com ID gera indicador defensável (9.351793ms)
+✔ advanced: sequência sem ID distingue bounce observado de tracking (0.863825ms)
+✔ advanced: bounce JS entre documentos preserva origem e exige client_redirect (1.18002ms)
+✔ advanced: navegação digitada não une uma sequência anterior (2.868772ms)
+✔ advanced: passagem longa e intermediário da mesma organização não viram bounce (1.488797ms)
+✔ advanced: redirects em iframe não são bounce de main_frame (0.97477ms)
+✔ advanced: parâmetros funcionais e credenciais não geram falso positivo (0.422513ms)
+✔ advanced: campanha e ID de clique conhecidos são sinais potenciais, sem confirmação (0.433005ms)
+✔ advanced: ID reaparecendo entre sites em terceiro gera comparação segura (2.17893ms)
+✔ advanced: nome de endpoint sync sozinho é insuficiente (0.448909ms)
+✔ advanced: mesmo nome com IDs diferentes e reutilização só no mesmo site não são sync (1.289984ms)
+✔ advanced: contexto do evento não usa host visto depois durante HMAC/PSL assíncrono (0.808141ms)
+✔ advanced: valores sensíveis, credenciais, fragmentos, chave e hashes não saem no JSON (0.940173ms)
+✔ advanced: nomes de parâmetros inseguros são omitidos (0.674901ms)
+✔ advanced: limites de observações, parâmetros, hashes, resultados e histórico são explícitos (0.87666ms)
+✔ advanced: valores longos não são retidos nem comparados (0.328227ms)
+✔ advanced: múltiplas abas nunca misturam IDs ou sequências (1.187562ms)
+✔ advanced: nova navegação zera queries e comparações, inclusive tarefas HMAC pendentes (1.114085ms)
+✔ advanced: destino declarado sem request observado não completa bounce (0.790148ms)
+✔ advanced: Firefox sem client_redirect exige iniciador intermediário, sinal adicional e confiança baixa (1.954705ms)
+✔ advanced: sequência de outra aba não pode virar histórico anterior (0.418569ms)
+✔ advanced: timestamps anteriores à navegação são ignorados e hops fora de ordem sinalizados (0.365573ms)
+✔ advanced: nome numérico ou email também é omitido no relatório de rede (0.145998ms)
+✔ advanced: campanha reutilizada não é automaticamente ID individual/cookie sync (0.390835ms)
+✔ canvas ausente não vira uso ou fingerprinting (3.024655ms)
+✔ somente desenho é negativo (0.536685ms)
+✔ leitura sem desenho é nível separado, não indicador (0.435027ms)
+✔ desenho + HTMLCanvasElement.toDataURL no mesmo canvas produz indício (1.654366ms)
+✔ desenho + HTMLCanvasElement.toBlob no mesmo canvas produz indício (0.293604ms)
+✔ desenho + CanvasRenderingContext2D.getImageData no mesmo canvas produz indício (0.27256ms)
+✔ desenho e leitura em canvases diferentes não se correlacionam (0.305117ms)
+✔ janela de 5 segundos tem fronteira explícita (0.377369ms)
+✔ exceção de leitura não é extração confirmada (0.365723ms)
+✔ canvas zero não produz indício (0.442301ms)
+✔ limites informam perda sem criar falso positivo (0.230449ms)
+✔ amostras limitadas, contagem continua (0.157052ms)
+✔ IDs iguais em frames diferentes não se correlacionam (0.340341ms)
+✔ sem coleta é indisponível; perda de hooks torna cobertura parcial (0.237797ms)
+✔ eventos não retêm texto, pixels, dataURL ou argumentos (0.428647ms)
+✔ hook: distingue bootstrap canvas próprio, alteração posterior e APIs que não alterou (11.741771ms)
+✔ hook: sanitização limita APIs/amostras e não exporta código/valores extras (2.90185ms)
+✔ hook: erro de leitura e API ausente permanecem cobertura parcial (2.92847ms)
+✔ hijacking: WebSocket isolado, polling legítimo e hook isolado não geram combinação (6.104658ms)
+✔ hijacking: exige mesmo frame e intervalo; rajada, requests falhas e bloqueios não contam (3.451233ms)
+✔ score: controle coberto 100; parcial/unavailable não inventa zero confirmado (5.07903ms)
+✔ score: deduplica sites/identidades/origens, ignora Set-Cookie e estoque, não soma bounce e sync (2.675684ms)
+✔ score: sem desconto de baixa confiança; tetos e sensibilidade ±20% permanecem válidos (4.000237ms)
+✔ blocklist: persiste regras; fronteira de hostname, IDN, portas, subdomínios, toggle e remoção (8.36538ms)
+✔ blocklist: rejeita URLs, sufixos públicos e entradas ambíguas; erro de escrita mantém configuração (2.944794ms)
+✔ blocklist: espera carregamento; falhas são explícitas e não bloqueiam tudo (2.271432ms)
+✔ background: hooks associados ao frame/documento; navegação nova não herda sinais (21.291877ms)
+✔ background: blocklist cancela requisição, registra decisão própria sem query e isola acesso do content script (17.645685ms)
+✔ popup/relatório: A ausente ou malformado não quebra B; falha real nunca mostra score 100 (30.15534ms)
+✔ content script real: não invoca getters nem adiciona globais à página; snapshots não vazam funções/valores (3.032539ms)
+✔ blocklist: PSL real protege sufixos PRIVATE, curingas e aceita tenants/exceções/IPv6 (28.025281ms)
+✔ blocklist: atualizações concorrentes não perdem regras; erro não trava a fila (2.251975ms)
+✔ background: falhas de segurança/score são explícitas e preservam tracking B (5.714276ms)
+✔ popup: edição persiste antes de confirmar e invalida exportação antiga; falha mantém regra (5.633443ms)
+✔ popup: lista continua removível quando relatório da página falha (2.187929ms)
+✔ hook: snapshot antigo ou frame sem coleta mantém cobertura parcial mesmo após 30 s (1.488758ms)
+✔ histórico de diagnóstico truncado não afirma que evento nunca foi recebido (3.250587ms)
+✔ listener inativo e navegação parcial não afirmam ausência comprovada (0.755749ms)
+✔ background preserva eventos precoces enquanto PSL e cookieStoreId estão pendentes (38.840277ms)
+✔ background descarta candidato de navegação substituída antes de resolver store (4.855961ms)
+✔ host observado só depois do evento não participa retroativamente da correlação (17.000025ms)
+✔ background correlaciona duas abas compatíveis e exclui store/partição errados (5.84317ms)
+✔ headers HTTP não criam cookies e não vazam seus valores no relatório (3.737559ms)
+✔ inventário adquirido depois do início só estabelece baseline para a próxima navegação (5.448921ms)
+✔ mudança durante inventário sinaliza snapshot não atômico e não contamina baseline (4.899981ms)
+✔ falha de inventário fica explícita sem expor erro bruto potencialmente sensível (4.007467ms)
+✔ redirect mantém hops e classifica evento pelo contexto no instante da ocorrência (4.138614ms)
+✔ regressão storage: relatório mantém contagens e frames enquanto cookies mudam (4.195179ms)
+✔ regressão storage: ignora documento antigo e limpa snapshot na nova navegação (3.8564ms)
+✔ regressão storage: primeira/terceira origem e indisponibilidade permanecem separadas (4.170725ms)
+✔ diagnóstico diferencia header sem entrada real no listener (3.70878ms)
+✔ diagnóstico registra explicit associado sem valores (3.706432ms)
+✔ diagnóstico informa cada motivo de filtro com os campos recebidos (19.907941ms)
+✔ diagnóstico registra relógio anterior e evento tardio sem ampliar janela (6.557995ms)
+✔ diagnóstico mostra ready/store pendentes no recebimento e prontos após espera (4.864582ms)
+✔ diagnóstico preserva descarte de navegação substituída em priorReceipts (4.155523ms)
+✔ Firefox: onChanged entregue antes de onBeforeRequest é reavaliado com horário original (5.685202ms)
+✔ buffer não reatribui eventos anteriores à janela nem aceita container/partição incorretos (5.166612ms)
+✔ buffer sem nenhum onChanged não inventa escrita a partir de inventário novo (3.300886ms)
+✔ terceiro: request subframe anterior seguido de onChanged associa com PSL/store pendentes (3.589023ms)
+✔ terceiro: callback de request atrasado recupera host-mismatch com timestamp anterior (4.175981ms)
+✔ terceiro: callback atrasado durante espera assíncrona aceita limite temporal igual (4.08038ms)
+✔ terceiro: timestamp de request posterior é rejeitado mesmo com callback já entregue (4.198844ms)
+✔ terceiro: reavaliação não duplica evento enquanto outra decisão aguarda PSL (4.841152ms)
+✔ terceiro: reavaliação preserva isolamento de store, FPI e partição (12.85537ms)
+✔ background: queries sensíveis não ficam no estado principal, nem no JSON, antes/depois do commit (18.625736ms)
+✔ storage: falha ao consultar frames não é apresentada como frame removido ou partição comprovada (6.630225ms)
+✔ setup remove identidades e paths emitidos pelos cenários e só recria os dois seeds (5.847813ms)
+✔ limpeza terceira ocorre no iframe da mesma origem, paths e top site (0.71441ms)
+✔ setup não tenta apagar cookies fora dos sete nomes da fixture (0.713079ms)
+✔ cookie antigo observado antes permanece preexistente sem virar criação (5.167654ms)
+✔ snapshot tardio ou no mesmo milissegundo não prova preexistência nem criação (0.628322ms)
+✔ snapshot pendente não ressuscita cookie removido nem sobrescreve evento novo (0.539766ms)
+✔ baseline congelado não é alterado pela gravação posterior (0.364939ms)
+✔ cookie persistente já expirado não entra em baseline (0.246627ms)
+✔ explicit sem overwrite é criação inferida; overwrite + explicit é uma alteração (1.792955ms)
+✔ overwrite identifica alteração mesmo sem inventário prévio (0.285386ms)
+✔ overwrite antigo não transforma substituição atrasada em falsa criação (0.280202ms)
+✔ identidade previamente observada impede classificar escrita como criação (0.363642ms)
+✔ remoção explícita ou expiração seguida de criação não é alteração (0.600519ms)
+✔ tentativa Set-Cookie rejeitada nunca é promovida a sucesso ou gravação (0.724124ms)
+✔ identidades e eventos preservam paths, containers, FPI e partições (1.588894ms)
+✔ bit de ancestralidade participa da identidade e, quando conhecido, do filtro (2.020685ms)
+✔ janela tem limites inclusivos; evento tardio não aparece após Atualizar (0.660629ms)
+✔ página parcial não ganha uma janela artificial de atribuição (0.345753ms)
+✔ primeira/terceira parte e sessão/persistente nas gravações (0.644396ms)
+✔ duas navegações compatíveis preservam ambiguidade, não autoria exclusiva (0.417274ms)
+✔ limite de eventos é visível e não inventa identidades extras (0.327895ms)
+✔ histórico truncado usa classificação indeterminada quando falta evidência (0.221649ms)
+✔ nenhum valor de cookie/cabeçalho aparece no estado, resumo ou JSON (1.054056ms)
+✔ PSL classifica com.br e co.uk sem unir organizações distintas (1.40814ms)
+✔ PSL PRIVATE mantém tenants github.io separados (0.193466ms)
+✔ PSL cobre wildcard e exceções (0.164604ms)
+✔ normaliza IDN, ponto final, IP, IPv6 e localhost (0.17791ms)
+✔ cookies: domínio exige fronteira e respeita hostOnly (0.34821ms)
+✔ cookies: não mistura containers, FPI e partições de outros top sites (0.226651ms)
+✔ cookies de mesmo nome em caminhos ou partições distintas não colapsam (0.274836ms)
+✔ metadados de cookies e URL não incluem valores ou credenciais (1.408286ms)
+✔ rede mantém tentativas, erros e hops sem confundir com TCP (0.849845ms)
+✔ limita volume e informa truncamento (0.357212ms)
+✔ nova navegação tem estado independente (0.198302ms)
+✔ storage real do content script conta chaves/bancos sem ler conteúdo (5.723354ms)
+✔ storage indisponível ou sem API não é relatado como zero (1.646202ms)
+✔ popup: advancedTracking ausente não acessa bounce de undefined nem impede métricas (68.108672ms)
+✔ relatório sem sinais avançados tem estrutura vazia e renderiza nas duas interfaces (9.989762ms)
+✔ relatório parcial sem onBeforeRequest inicializa tracking e informa cobertura parcial (7.273058ms)
+✔ background → popup/relatório: bounce-negative (8.753789ms)
+✔ background → popup/relatório: bounce-positive (12.316921ms)
+✔ background → popup/relatório: query-tracking (8.438546ms)
+✔ background → popup/relatório: cookie-sync (8.65016ms)
+✔ navegação após redirect inicializa novo tracking e não reutiliza sinais anteriores (15.601493ms)
+✔ falha real de tracking permanece explícita no relatório e na UI: state-missing (5.229595ms)
+✔ falha real de tracking permanece explícita no relatório e na UI: collection-failed (5.758364ms)
+✔ falha real de tracking permanece explícita no relatório e na UI: missing-section (5.628751ms)
+✔ falha real de tracking permanece explícita no relatório e na UI: invalid-section (6.341901ms)
+✔ seção malformada, inclusive arrays internos, não interrompe renderização nem mantém indicadores antigos (8.242738ms)
+✔ background sem resposta, com erro ou rejeição não vira relatório com zeros (9.63715ms)
+ℹ tests 142
+ℹ suites 0
+ℹ pass 142
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 374.18673
+exit_code=0
+
+$ npm run check
+
+> privacy-lens-insper@0.5.0 check
+> node scripts/check.cjs
+
+Manifest JSON, arquivos referenciados e sintaxe JavaScript: OK. Não substitui o carregamento no Firefox.
+exit_code=0
+
+$ git diff --check
+
+exit_code=0
+
+
+Verificações documentais finais:
+- git diff --check após ajustes de documentação: exit_code=0
+- 54 arquivos de destino com SHA-256 íntegro, incluindo descompressão E51.
+- Nenhuma alteração em extension/ ou tests/.
+- Links locais verificados: sem destino ausente.
+- PDF: 31 páginas A4, 20 figuras, 15 tabelas, 37 entradas no sumário; limites de texto/glifos OK.
+- Duas gerações consecutivas do PDF têm SHA-256 idêntico: 11c55b103c305c13b180ec3b0b5a3804779bc6c5d1d5fda9fa81ed328e6dd6cf
+
+
+COMPLEMENTO G1 / MERCADO LIVRE — 29/09/2026
+Seis arquivos recebidos do aluno: E57–E62. Não houve nova coleta de navegador.
+node scripts/analyze-evidence.cjs — exit 0
+Recálculos pela função implementada, igualdade integral com os JSONs exportados:
+UOL: 0–31, parcial, 2/6; G1: 0–64, parcial, 2/6; Mercado Livre: 41–66, parcial, 3/6.
+G1/ML: collectionRelation.overlaps=false; alinhamento inaplicável, sem pareamento artificial.
+UOL: pareamento preservado (374 estrito; 513 aproximado; 125 com múltiplos candidatos).
+
+npm test — exit 0
+ℹ tests 142
+ℹ suites 0
+ℹ pass 142
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 414.029978
+
+npm run check — exit 0
+
+> privacy-lens-insper@0.5.0 check
+> node scripts/check.cjs
+
+Manifest JSON, arquivos referenciados e sintaxe JavaScript: OK. Não substitui o carregamento no Firefox.
+
+node --check scripts/analyze-evidence.cjs — exit 0
+git diff --check — exit 0
+git diff --name-only HEAD -- extension tests — saída vazia; detectores/runtime/testes preservados.
+Manifesto: 62 registros; 60 destinos verificados por SHA-256/tamanho, incluindo gzip UOL descomprimido.
+Links locais: nenhum destino ausente. 24 figuras e 15 tabelas numeradas e referenciadas.
+PDF: 35 páginas A4, 37 entradas no sumário; margens/glifos conferidos e revisão visual concluída.
+Duas gerações consecutivas com mesmo SHA-256: 6da1be656fc0c7ecdf2c808a488f083154818059a7c16f9185379b8cfe8164d8
+Git: sem commit/staging/push. Resultado detalhado em VERIFICACAO_PDF.json.

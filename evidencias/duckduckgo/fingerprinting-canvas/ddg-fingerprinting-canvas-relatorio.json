@@ -1,0 +1,1669 @@
+{
+  "schemaVersion": 3,
+  "extensionVersion": "0.4.0",
+  "generatedAt": "2026-09-29T03:27:01.325Z",
+  "browser": {
+    "name": "Firefox",
+    "vendor": "Mozilla",
+    "version": "156.0.1",
+    "buildID": "20260921121718"
+  },
+  "page": {
+    "url": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.html",
+    "queryKeys": [],
+    "site": "privacy-test-pages.site",
+    "startedAt": 1790652123500
+  },
+  "network": {
+    "totals": {
+      "total": 8,
+      "first": 7,
+      "third": 1,
+      "unknown": 0,
+      "failed": 0
+    },
+    "domains": [
+      {
+        "host": "privacy-test-pages.site",
+        "site": "privacy-test-pages.site",
+        "party": "first",
+        "requests": 7,
+        "failed": 0,
+        "types": [
+          "main_frame",
+          "stylesheet",
+          "script",
+          "image"
+        ]
+      },
+      {
+        "host": "cdnjs.cloudflare.com",
+        "site": "cloudflare.com",
+        "party": "third",
+        "requests": 1,
+        "failed": 0,
+        "types": [
+          "script"
+        ]
+      }
+    ],
+    "requests": [
+      {
+        "id": "2778",
+        "at": 1790652123500,
+        "url": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.html",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "main_frame",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790652123996,
+        "error": null,
+        "fromCache": false,
+        "party": "first"
+      },
+      {
+        "id": "2780",
+        "at": 1790652124048,
+        "url": "https://privacy-test-pages.site/privacy-protections/fingerprinting/style.css",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "stylesheet",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.html",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790652124223,
+        "error": null,
+        "fromCache": false,
+        "party": "first"
+      },
+      {
+        "id": "2781",
+        "at": 1790652124056,
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js",
+        "queryKeys": [],
+        "host": "cdnjs.cloudflare.com",
+        "type": "script",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.html",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790652124227,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2782",
+        "at": 1790652124058,
+        "url": "https://privacy-test-pages.site/privacy-protections/fingerprinting/helpers/canvas.js",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "script",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.html",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790652124224,
+        "error": null,
+        "fromCache": false,
+        "party": "first"
+      },
+      {
+        "id": "2783",
+        "at": 1790652124059,
+        "url": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.js",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "script",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.html",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790652124584,
+        "error": null,
+        "fromCache": false,
+        "party": "first"
+      },
+      {
+        "id": "2784",
+        "at": 1790652124059,
+        "url": "https://privacy-test-pages.site/helpers/runMenu.js",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "script",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.html",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790652124453,
+        "error": null,
+        "fromCache": false,
+        "party": "first"
+      },
+      {
+        "id": "2785",
+        "at": 1790652124588,
+        "url": "https://privacy-test-pages.site/favicon.ico",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "image",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.html",
+        "status": "completed",
+        "statusCode": 404,
+        "finishedAt": 1790652124591,
+        "error": null,
+        "fromCache": true,
+        "party": "first"
+      },
+      {
+        "id": "2788",
+        "at": 1790652138765,
+        "url": "https://privacy-test-pages.site/privacy-protections/fingerprinting/pixel.gif",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "image",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.html",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790652138924,
+        "error": null,
+        "fromCache": false,
+        "party": "first"
+      }
+    ]
+  },
+  "cookies": {
+    "items": [
+      {
+        "name": "jsdata",
+        "domain": "privacy-test-pages.site",
+        "path": "/privacy-protections/storage-blocking",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.806,
+        "secure": true,
+        "httpOnly": false,
+        "sameSite": "lax",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "tptdata",
+        "domain": "privacy-test-pages.site",
+        "path": "/privacy-protections/storage-blocking",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.812,
+        "secure": false,
+        "httpOnly": false,
+        "sameSite": "unspecified",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "tpsdata",
+        "domain": "privacy-test-pages.site",
+        "path": "/privacy-protections/storage-blocking",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.812,
+        "secure": false,
+        "httpOnly": false,
+        "sameSite": "unspecified",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "__Host-jsdata_host",
+        "domain": "privacy-test-pages.site",
+        "path": "/",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.806,
+        "secure": true,
+        "httpOnly": false,
+        "sameSite": "lax",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "jsdata_no_samesite",
+        "domain": "privacy-test-pages.site",
+        "path": "/",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.806,
+        "secure": true,
+        "httpOnly": false,
+        "sameSite": "unspecified",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "cookiestoredata",
+        "domain": "privacy-test-pages.site",
+        "path": "/",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.816,
+        "secure": true,
+        "httpOnly": false,
+        "sameSite": "strict",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "top_firstparty_headerdata",
+        "domain": "privacy-test-pages.site",
+        "path": "/",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1791514094.8,
+        "secure": true,
+        "httpOnly": true,
+        "sameSite": "no_restriction",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      }
+    ],
+    "totals": {
+      "total": 7,
+      "first": 7,
+      "third": 0,
+      "session": 0,
+      "persistent": 7,
+      "partitioned": 0
+    },
+    "preexisting": {
+      "items": [
+        {
+          "name": "jsdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.806,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "lax",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790650510085,
+          "party": "first"
+        },
+        {
+          "name": "tptdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.812,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790650510085,
+          "party": "first"
+        },
+        {
+          "name": "tpsdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.812,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790650510085,
+          "party": "first"
+        },
+        {
+          "name": "__Host-jsdata_host",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.806,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "lax",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790650510085,
+          "party": "first"
+        },
+        {
+          "name": "jsdata_no_samesite",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.806,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790650510085,
+          "party": "first"
+        },
+        {
+          "name": "cookiestoredata",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.816,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "strict",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790650510085,
+          "party": "first"
+        },
+        {
+          "name": "top_firstparty_headerdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1791514094.8,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790650510085,
+          "party": "first"
+        }
+      ],
+      "totals": {
+        "total": 7,
+        "first": 7,
+        "third": 0,
+        "session": 0,
+        "persistent": 7,
+        "partitioned": 0
+      },
+      "currentCount": 7,
+      "unknownCurrentCount": 0,
+      "completeness": "partial-prior-observations-only"
+    },
+    "events": [],
+    "eventTotals": {
+      "observed": 0,
+      "writes": 0,
+      "created": 0,
+      "changed": 0,
+      "unknown": 0,
+      "removed": 0
+    },
+    "probable": {
+      "items": [],
+      "totals": {
+        "total": 0,
+        "first": 0,
+        "third": 0,
+        "session": 0,
+        "persistent": 0,
+        "partitioned": 0
+      }
+    },
+    "correlatedWrites": [],
+    "correlatedWriteEvents": 0,
+    "setCookieAttempts": [],
+    "observationWindowMs": 30000,
+    "window": {
+      "startedAt": 1790652123500,
+      "endsAt": 1790652153500,
+      "status": "closed"
+    },
+    "attribution": "Correlação temporal e de contexto; não comprova autoria da aba. Criação é inferida de explicit sem overwrite observado. Não somar estoque, tentativas e eventos.",
+    "errors": [],
+    "diagnostics": {
+      "version": "cookie-ingress-v1",
+      "listenerActive": true,
+      "registeredAt": 1790647423574,
+      "readyStatus": "ready",
+      "totalReceivedSinceRegistration": 24,
+      "dropped": 0,
+      "droppedDecisions": 0,
+      "navigation": {
+        "sequence": 30,
+        "requestId": "2778",
+        "startedAt": 1790652123500,
+        "observedAt": 1790652123524,
+        "storeId": "firefox-default",
+        "storeStatus": "ready",
+        "topUrl": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.html",
+        "hosts": [
+          "privacy-test-pages.site",
+          "cdnjs.cloudflare.com"
+        ]
+      },
+      "counts": {
+        "received": 0,
+        "associated": 0,
+        "discarded": 0,
+        "pending": 0
+      },
+      "probes": [
+        {
+          "name": "jsdata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 6,
+              "at": 1790650093816,
+              "cookie": {
+                "name": "jsdata",
+                "domain": "privacy-test-pages.site",
+                "path": "/privacy-protections/storage-blocking",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.806,
+                "secure": true,
+                "httpOnly": false,
+                "sameSite": "lax",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "tptdata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 9,
+              "at": 1790650093818,
+              "cookie": {
+                "name": "tptdata",
+                "domain": "privacy-test-pages.site",
+                "path": "/privacy-protections/storage-blocking",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.812,
+                "secure": false,
+                "httpOnly": false,
+                "sameSite": "unspecified",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "tpsdata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 10,
+              "at": 1790650093818,
+              "cookie": {
+                "name": "tpsdata",
+                "domain": "privacy-test-pages.site",
+                "path": "/privacy-protections/storage-blocking",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.812,
+                "secure": false,
+                "httpOnly": false,
+                "sameSite": "unspecified",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "__Host-jsdata_host",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 7,
+              "at": 1790650093817,
+              "cookie": {
+                "name": "__Host-jsdata_host",
+                "domain": "privacy-test-pages.site",
+                "path": "/",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.806,
+                "secure": true,
+                "httpOnly": false,
+                "sameSite": "lax",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "jsdata_no_samesite",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 8,
+              "at": 1790650093818,
+              "cookie": {
+                "name": "jsdata_no_samesite",
+                "domain": "privacy-test-pages.site",
+                "path": "/",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.806,
+                "secure": true,
+                "httpOnly": false,
+                "sameSite": "unspecified",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "cookiestoredata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 11,
+              "at": 1790650093824,
+              "cookie": {
+                "name": "cookiestoredata",
+                "domain": "privacy-test-pages.site",
+                "path": "/",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.816,
+                "secure": true,
+                "httpOnly": false,
+                "sameSite": "strict",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "top_firstparty_headerdata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 14,
+              "at": 1790650094802,
+              "cookie": {
+                "name": "top_firstparty_headerdata",
+                "domain": "privacy-test-pages.site",
+                "path": "/",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1791514094.8,
+                "secure": true,
+                "httpOnly": true,
+                "sameSite": "no_restriction",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        }
+      ],
+      "decisions": [],
+      "meaning": "Não recebido significa nenhuma entrada encontrada no listener para esta navegação até esta coleta, incluindo reavaliações de eventos anteriores à entrega de onBeforeRequest, com cobertura disponível. Não prova que o Firefox nunca disparou o evento. Probes por nome/domínio não provam autoria nem aceite de Set-Cookie. Consulte priorReceipts para a ordem de entrega."
+    },
+    "historyDropped": 0,
+    "ingressDropped": 0,
+    "processingErrors": 0,
+    "inventoryChangedDuringQuery": false
+  },
+  "advancedTracking": {
+    "version": "advanced-tracking-v1",
+    "bounce": {
+      "status": "insufficient-evidence",
+      "sequences": [],
+      "route": [
+        {
+          "domain": "privacy-test-pages.site",
+          "url": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.html",
+          "at": 1790652123500,
+          "requestId": "2778",
+          "incoming": "start",
+          "initiatorHost": "",
+          "transitionType": "typed",
+          "transitionQualifiers": [
+            "from_address_bar"
+          ]
+        }
+      ]
+    },
+    "cookieSync": {
+      "status": "not-observed",
+      "indicators": [],
+      "endpointHints": [],
+      "limitation": "Sem leitura/comparação de valores de cookies; endpoint com nome sync, isoladamente, é evidência insuficiente."
+    },
+    "queryParameters": {
+      "status": "not-observed",
+      "findings": [],
+      "limitation": "Campanha, formato semelhante a ID e reutilização são sinais, não tracking confirmado. Parâmetros funcionais são excluídos da comparação."
+    },
+    "coverage": {
+      "partial": false,
+      "dropped": {
+        "observations": 0,
+        "parameters": 0,
+        "values": 0,
+        "hashes": 0,
+        "hops": 0,
+        "previousHops": 0,
+        "outOfOrder": 0,
+        "findings": 0
+      },
+      "hashErrors": 0,
+      "pendingComparisons": 0,
+      "limits": {
+        "observations": 512,
+        "parameters": 24,
+        "valueLength": 256,
+        "urlLength": 16384,
+        "hashes": 4096,
+        "hops": 32,
+        "previousHops": 8,
+        "findings": 128,
+        "bounceMs": 10000
+      },
+      "observedRequests": 8,
+      "comparison": "HMAC-SHA-256 com chave efêmera por navegação; valores, chaves e hashes não exportados. Nenhuma comparação entre abas.",
+      "limitations": "Janela de passagem intermediária: 10 s. Histórico curto de main_frame só participa por ligação observada; navegação comum zera queries/comparações. POST, IDs transformados, CNAME, workers sem tabId e frames opacos não cobertos."
+    },
+    "availability": "available"
+  },
+  "storage": [
+    {
+      "frameId": 0,
+      "origin": "https://privacy-test-pages.site",
+      "topOrigin": "https://privacy-test-pages.site",
+      "at": 1790652421320,
+      "localStorage": {
+        "status": "observed",
+        "count": 1,
+        "unit": "keys"
+      },
+      "sessionStorage": {
+        "status": "observed",
+        "count": 0,
+        "unit": "keys"
+      },
+      "indexedDB": {
+        "status": "observed",
+        "count": 1,
+        "unit": "databases"
+      },
+      "party": "first",
+      "context": "top-level",
+      "activeAtRefresh": true,
+      "partitioning": "not-established-by-snapshot"
+    }
+  ],
+  "canvas": {
+    "drawingCalls": 7039,
+    "readbackCalls": 125,
+    "failedReadbacks": 0,
+    "canvasCount": 18,
+    "indicatorCanvases": 18,
+    "frames": [
+      {
+        "frameId": 0,
+        "origin": "https://privacy-test-pages.site",
+        "url": "https://privacy-test-pages.site/privacy-protections/fingerprinting/canvas.html",
+        "timeOrigin": 1790652123487,
+        "sequence": 15,
+        "at": 1790652421320,
+        "observation": {
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000,
+          "classification": "indicator",
+          "used": true,
+          "canvasCount": 18,
+          "drawingCalls": 7039,
+          "readbackCalls": 125,
+          "failedReadbacks": 0,
+          "indicatorCanvases": 18,
+          "canvases": [
+            {
+              "id": 1,
+              "drawCount": 2,
+              "readCount": 2,
+              "failedReadCount": 0,
+              "lastDrawAt": 4542,
+              "lastDrawMethod": "CanvasRenderingContext2D.fillRect",
+              "drawMethods": [
+                "CanvasRenderingContext2D.putImageData",
+                "CanvasRenderingContext2D.fillRect"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 2,
+              "drawCount": 2,
+              "readCount": 1,
+              "failedReadCount": 0,
+              "lastDrawAt": 4736,
+              "lastDrawMethod": "CanvasRenderingContext2D.fillRect",
+              "drawMethods": [
+                "CanvasRenderingContext2D.putImageData",
+                "CanvasRenderingContext2D.fillRect"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 3,
+              "drawCount": 2,
+              "readCount": 1,
+              "failedReadCount": 0,
+              "lastDrawAt": 4928,
+              "lastDrawMethod": "CanvasRenderingContext2D.fillRect",
+              "drawMethods": [
+                "CanvasRenderingContext2D.putImageData",
+                "CanvasRenderingContext2D.fillRect"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 4,
+              "drawCount": 2,
+              "readCount": 1,
+              "failedReadCount": 0,
+              "lastDrawAt": 5147,
+              "lastDrawMethod": "CanvasRenderingContext2D.fillRect",
+              "drawMethods": [
+                "CanvasRenderingContext2D.putImageData",
+                "CanvasRenderingContext2D.fillRect"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 5,
+              "drawCount": 2,
+              "readCount": 1,
+              "failedReadCount": 0,
+              "lastDrawAt": 5356,
+              "lastDrawMethod": "CanvasRenderingContext2D.fillRect",
+              "drawMethods": [
+                "CanvasRenderingContext2D.putImageData",
+                "CanvasRenderingContext2D.fillRect"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 6,
+              "drawCount": 2,
+              "readCount": 1,
+              "failedReadCount": 0,
+              "lastDrawAt": 5577,
+              "lastDrawMethod": "CanvasRenderingContext2D.fillRect",
+              "drawMethods": [
+                "CanvasRenderingContext2D.putImageData",
+                "CanvasRenderingContext2D.fillRect"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 7,
+              "drawCount": 2,
+              "readCount": 1,
+              "failedReadCount": 0,
+              "lastDrawAt": 5859,
+              "lastDrawMethod": "CanvasRenderingContext2D.fillRect",
+              "drawMethods": [
+                "CanvasRenderingContext2D.putImageData",
+                "CanvasRenderingContext2D.fillRect"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 8,
+              "drawCount": 2,
+              "readCount": 1,
+              "failedReadCount": 0,
+              "lastDrawAt": 6126,
+              "lastDrawMethod": "CanvasRenderingContext2D.fillRect",
+              "drawMethods": [
+                "CanvasRenderingContext2D.putImageData",
+                "CanvasRenderingContext2D.fillRect"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 9,
+              "drawCount": 2,
+              "readCount": 1,
+              "failedReadCount": 0,
+              "lastDrawAt": 6289,
+              "lastDrawMethod": "CanvasRenderingContext2D.fillRect",
+              "drawMethods": [
+                "CanvasRenderingContext2D.putImageData",
+                "CanvasRenderingContext2D.fillRect"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 10,
+              "drawCount": 2,
+              "readCount": 1,
+              "failedReadCount": 0,
+              "lastDrawAt": 6551,
+              "lastDrawMethod": "CanvasRenderingContext2D.fillRect",
+              "drawMethods": [
+                "CanvasRenderingContext2D.putImageData",
+                "CanvasRenderingContext2D.fillRect"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 11,
+              "drawCount": 1,
+              "readCount": 2,
+              "failedReadCount": 0,
+              "lastDrawAt": 10588,
+              "lastDrawMethod": "CanvasRenderingContext2D.putImageData",
+              "drawMethods": [
+                "CanvasRenderingContext2D.putImageData"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 12,
+              "drawCount": 7,
+              "readCount": 2,
+              "failedReadCount": 0,
+              "lastDrawAt": 11827,
+              "lastDrawMethod": "CanvasRenderingContext2D.fill",
+              "drawMethods": [
+                "CanvasRenderingContext2D.fillRect",
+                "CanvasRenderingContext2D.fillText",
+                "CanvasRenderingContext2D.fill"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 13,
+              "drawCount": 7000,
+              "readCount": 2,
+              "failedReadCount": 0,
+              "lastDrawAt": 12987,
+              "lastDrawMethod": "CanvasRenderingContext2D.fill",
+              "drawMethods": [
+                "CanvasRenderingContext2D.fillRect",
+                "CanvasRenderingContext2D.fillText",
+                "CanvasRenderingContext2D.fill"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 14,
+              "drawCount": 7,
+              "readCount": 101,
+              "failedReadCount": 0,
+              "lastDrawAt": 14272,
+              "lastDrawMethod": "CanvasRenderingContext2D.fill",
+              "drawMethods": [
+                "CanvasRenderingContext2D.fillRect",
+                "CanvasRenderingContext2D.fillText",
+                "CanvasRenderingContext2D.fill"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 15,
+              "drawCount": 1,
+              "readCount": 2,
+              "failedReadCount": 0,
+              "lastDrawAt": 15445,
+              "lastDrawMethod": "CanvasRenderingContext2D.drawImage",
+              "drawMethods": [
+                "CanvasRenderingContext2D.drawImage"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData",
+                "HTMLCanvasElement.toDataURL"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 16,
+              "drawCount": 1,
+              "readCount": 2,
+              "failedReadCount": 0,
+              "lastDrawAt": 16461,
+              "lastDrawMethod": "CanvasRenderingContext2D.putImageData",
+              "drawMethods": [
+                "CanvasRenderingContext2D.putImageData"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData",
+                "HTMLCanvasElement.toDataURL"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 17,
+              "drawCount": 1,
+              "readCount": 1,
+              "failedReadCount": 0,
+              "lastDrawAt": 16464,
+              "lastDrawMethod": "CanvasRenderingContext2D.drawImage",
+              "drawMethods": [
+                "CanvasRenderingContext2D.drawImage"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData"
+              ],
+              "indicator": true
+            },
+            {
+              "id": 18,
+              "drawCount": 1,
+              "readCount": 2,
+              "failedReadCount": 0,
+              "lastDrawAt": 17469,
+              "lastDrawMethod": "CanvasRenderingContext2D.putImageData",
+              "drawMethods": [
+                "CanvasRenderingContext2D.putImageData"
+              ],
+              "readMethods": [
+                "CanvasRenderingContext2D.getImageData",
+                "HTMLCanvasElement.toDataURL"
+              ],
+              "indicator": true
+            }
+          ],
+          "samples": [
+            {
+              "canvasId": 1,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 2318,
+              "width": 2000,
+              "height": 2000,
+              "precedingDraw": null,
+              "drawToReadMs": null,
+              "correlated": false
+            },
+            {
+              "canvasId": 1,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 4591,
+              "width": 2000,
+              "height": 2000,
+              "precedingDraw": "CanvasRenderingContext2D.fillRect",
+              "drawToReadMs": 49,
+              "correlated": true
+            },
+            {
+              "canvasId": 2,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 4790,
+              "width": 2000,
+              "height": 2000,
+              "precedingDraw": "CanvasRenderingContext2D.fillRect",
+              "drawToReadMs": 54,
+              "correlated": true
+            },
+            {
+              "canvasId": 3,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 4988,
+              "width": 2000,
+              "height": 2000,
+              "precedingDraw": "CanvasRenderingContext2D.fillRect",
+              "drawToReadMs": 60,
+              "correlated": true
+            },
+            {
+              "canvasId": 4,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 5202,
+              "width": 2000,
+              "height": 2000,
+              "precedingDraw": "CanvasRenderingContext2D.fillRect",
+              "drawToReadMs": 55,
+              "correlated": true
+            },
+            {
+              "canvasId": 5,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 5414,
+              "width": 2000,
+              "height": 2000,
+              "precedingDraw": "CanvasRenderingContext2D.fillRect",
+              "drawToReadMs": 58,
+              "correlated": true
+            },
+            {
+              "canvasId": 6,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 5651,
+              "width": 2000,
+              "height": 2000,
+              "precedingDraw": "CanvasRenderingContext2D.fillRect",
+              "drawToReadMs": 74,
+              "correlated": true
+            },
+            {
+              "canvasId": 7,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 5957,
+              "width": 2000,
+              "height": 2000,
+              "precedingDraw": "CanvasRenderingContext2D.fillRect",
+              "drawToReadMs": 98,
+              "correlated": true
+            },
+            {
+              "canvasId": 8,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 6179,
+              "width": 2000,
+              "height": 2000,
+              "precedingDraw": "CanvasRenderingContext2D.fillRect",
+              "drawToReadMs": 53,
+              "correlated": true
+            },
+            {
+              "canvasId": 9,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 6444,
+              "width": 2000,
+              "height": 2000,
+              "precedingDraw": "CanvasRenderingContext2D.fillRect",
+              "drawToReadMs": 155,
+              "correlated": true
+            },
+            {
+              "canvasId": 10,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 6633,
+              "width": 2000,
+              "height": 2000,
+              "precedingDraw": "CanvasRenderingContext2D.fillRect",
+              "drawToReadMs": 82,
+              "correlated": true
+            },
+            {
+              "canvasId": 11,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 6888,
+              "width": 3840,
+              "height": 2160,
+              "precedingDraw": null,
+              "drawToReadMs": null,
+              "correlated": false
+            },
+            {
+              "canvasId": 11,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 10677,
+              "width": 3840,
+              "height": 2160,
+              "precedingDraw": "CanvasRenderingContext2D.putImageData",
+              "drawToReadMs": 89,
+              "correlated": true
+            },
+            {
+              "canvasId": 12,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 11730,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": null,
+              "drawToReadMs": null,
+              "correlated": false
+            },
+            {
+              "canvasId": 12,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 11869,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 42,
+              "correlated": true
+            },
+            {
+              "canvasId": 13,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 12922,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": null,
+              "drawToReadMs": null,
+              "correlated": false
+            },
+            {
+              "canvasId": 13,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 13264,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 277,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14272,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": null,
+              "drawToReadMs": null,
+              "correlated": false
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14280,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 8,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14282,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 10,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14285,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 13,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14286,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 14,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14288,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 16,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14289,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 17,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14292,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 20,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14293,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 21,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14294,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 22,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14312,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 40,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14314,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 42,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14317,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 45,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14319,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 47,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14321,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 49,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14323,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 51,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14325,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 53,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14326,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 54,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14327,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 55,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14330,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 58,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14331,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 59,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14333,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 61,
+              "correlated": true
+            },
+            {
+              "canvasId": 14,
+              "method": "CanvasRenderingContext2D.getImageData",
+              "outcome": "returned",
+              "errorName": null,
+              "at": 14335,
+              "width": 2000,
+              "height": 200,
+              "precedingDraw": "CanvasRenderingContext2D.fill",
+              "drawToReadMs": 63,
+              "correlated": true
+            }
+          ],
+          "droppedEvents": 0,
+          "droppedSamples": 85
+        },
+        "instrumentation": {
+          "strategy": "Firefox wrappedJSObject + exportFunction",
+          "installed": [
+            "CanvasRenderingContext2D.fillRect",
+            "CanvasRenderingContext2D.strokeRect",
+            "CanvasRenderingContext2D.fillText",
+            "CanvasRenderingContext2D.strokeText",
+            "CanvasRenderingContext2D.drawImage",
+            "CanvasRenderingContext2D.putImageData",
+            "CanvasRenderingContext2D.fill",
+            "CanvasRenderingContext2D.stroke",
+            "CanvasRenderingContext2D.getImageData",
+            "HTMLCanvasElement.toDataURL",
+            "HTMLCanvasElement.toBlob"
+          ],
+          "failed": [],
+          "unsupported": [],
+          "replaced": []
+        }
+      }
+    ],
+    "classification": "indicator",
+    "partial": true,
+    "ruleVersion": "canvas-sequence-v1",
+    "windowMs": 5000,
+    "meaning": "Desenho seguido de leitura/exportação no mesmo canvas em até 5 s é um indício heurístico, não prova de rastreamento."
+  },
+  "score": {
+    "status": "not-implemented",
+    "value": null
+  },
+  "coverage": {
+    "partial": false,
+    "droppedRequests": 0,
+    "droppedCookieHeaders": 0,
+    "droppedCookieWrites": 0,
+    "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
+    "cookies": "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
+    "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+    "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis."
+  }
+}

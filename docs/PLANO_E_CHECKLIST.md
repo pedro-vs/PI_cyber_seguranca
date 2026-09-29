@@ -1,52 +1,16 @@
-# Plano e checklist — fonte de verdade: PDF do enunciado
+# Plano e checklist — conferência final
 
-**Atualização 0.5.0:** testes DDG 1–7 da v0.4.0 relatados como concluídos, com limitações registradas e artefatos aguardando conferência. Conceito A implementado e com testes: descritores/canais, score com cobertura, blocklist persistente e roteiro js-leaks. Consulte [CONCEITO_A.md](CONCEITO_A.md). A checklist acadêmica geral só será encerrada com evidências completas; js-leaks manual, aplicação do score aos três sites e comparação Blacklight continuam pendentes. Cronograma e textos das versões anteriores são históricos.
+Fonte oficial: [enunciado](referencias/enunciado-avaliacao.pdf), páginas 2–4. Situação em 29/09/2026: finalização documental e PDF produzidos; evidências incompletas impedem declarar todos os requisitos atendidos.
 
-PDF de 4 páginas lido integralmente. Referências: entregáveis na p. 2; conceitos e descontos na p. 3; entrega na p. 4. Prazo operacional usado: **29/09/2026**, informado pelo aluno; o PDF diz “1 semana a partir da divulgação”.
+A matriz definitiva, requisito a requisito, está em [AUDITORIA_FINAL.md](AUDITORIA_FINAL.md). Substitui a checklist preliminar vazia, sem apagar o cronograma histórico abaixo.
 
-## Obrigatório para qualquer conceito
-
-- [ ] Repositório Git acessível ao professor, com commits incrementais ao longo da semana.
-- [ ] Extensão Firefox instalável (`manifest.json`) e instruções `about:debugging`.
-- [ ] Relatório DDG: teste × resultado esperado informado pela página × plugin × explicação específica de cada divergência.
-- [ ] Print do plugin na página em cada linha do relatório DDG.
-- [ ] Três sites oficiais sorteados por matrícula, não escolhidos livremente.
-- [ ] Um HAR do DevTools por site, no mínimo.
-- [ ] Comparação de cada site com Blacklight e bloqueios do uBlock Origin.
-- [ ] Score nos três sites, critérios/pesos/justificativa e comparação com Blacklight.
-- [ ] Relatório PDF contendo principalmente entregáveis 2, 3 e 4.
-- [ ] HARs e prints no repositório em `evidencias/`.
-
-Estes itens não ficam dispensados ao visar C. “Implementado” e “evidenciado” são estados diferentes.
-
-## Conceito C
-
-- [ ] Instalação e funcionamento no Firefox sem erro.
-- [ ] Detectar e exibir requisições a domínios de terceira parte.
-- [ ] Contar cookies injetados no carregamento: distinguir estoque, tentativa e alterações observadas; explicar limites de atribuição.
-- [ ] Detectar armazenamento HTML5 (localStorage, sessionStorage, IndexedDB).
-- [ ] Relatório DDG cobrindo Tracker Reporting.
-- [ ] Relatório DDG cobrindo Storage Blocking.
-- [ ] Relatório DDG cobrindo Fingerprinting/Canvas, mesmo que a detecção avançada seja aprofundada em B.
-- [ ] Entregar HAR dos três sites, além dos entregáveis gerais.
-
-## Conceito B — tudo de C, mais
-
-- [ ] Cookies primeira × terceira parte; sessão × persistentes.
-- [ ] Indicadores de canvas fingerprint com evidência de chamadas relevantes e controles negativos.
-- [ ] Bounce tracking / cookie sync; cobrir Bounce Tracking e Query Parameters do DDG.
-- [ ] Relatório DDG incluindo Tracker Blocking.
-- [ ] Relatório DDG incluindo Storage Partitioning.
-- [ ] Explicar tecnicamente cada divergência DDG.
-- [ ] Nos três sites, reconciliar cada rastreador encontrado somente pelo Blacklight, somente pelo uBlock ou somente pela extensão, usando evidência concreta.
-
-## Conceito A — tudo de B, mais
-
-- [ ] Indicadores de hijacking/hook: WebSocket terceiro ou polling persistente; alterações de globais e scripts relevantes, com confiança/limitações.
-- [ ] Usar `security/js-leaks.html` como teste e avaliar as alterações causadas pela própria extensão.
-- [ ] Score explícito, aplicado aos três sites e criticamente comparado ao Blacklight (concordâncias, divergências e causas).
-- [ ] Interface por página exibindo rastreadores/terceiros, cookies, storage e score.
-- [ ] Lista personalizada: adicionar, remover, listar, persistir e bloquear futuras requisições, com prova de funcionamento.
+- Implementação, instalação Firefox, rede/cookies/storage, canvas/tracking, hooks, score e blocklist: evidenciados por código e controles.
+- Oito testes DDG documentados; subcasos com pareamento insuficiente estão explicitados.
+- Três HAR recebidos; G1/Mercado Livre têm cobertura parcial da carga.
+- Três sites com quatro fontes. Scores parciais recalculados dos JSONs: UOL 0–31; G1 0–64; Mercado Livre 41–66. Complemento E57–E62 incorporado; janelas G1/ML não se sobrepõem aos HARs, e categorias/listas Blacklight fora dos recortes permanecem NE.
+- Comparação causal js-leaks com/sem extensão e reconciliação de todos os trackers externos: parciais.
+- Relatório PDF/fonte, catálogo e mapa de fontes: presentes. Sorteio por matrícula: não comprovado.
+- Nenhum commit ou push automático nesta finalização.
 
 ## Riscos e como reduzi-los
 
@@ -55,15 +19,15 @@ Estes itens não ficam dispensados ao visar C. “Implementado” e “evidencia
 | Cookies “injetados” | `getAll` mostra estoque; `onChanged` não contém aba; Set-Cookie pode ser rejeitado | Três métricas distintas; perfil limpo; janela documentada; confrontar headers e armazenamento |
 | ETP/TCP e uBlock | Podem bloquear o evento antes de a extensão observá-lo | Registrar versões/proteções; execuções separadas; consultar HAR e logger; não presumir que zero é ausência |
 | eTLD+1 | Últimos dois rótulos falham em com.br e hospedagens compartilhadas | PSL completa e testada; snapshot versionado |
-| Canvas e hooks | Content script tem contexto isolado; instrumentação muda a página | Próximo bloco: instrumentação inicial específica de Firefox, identificação de autoalterações, controles de canvas legítimo e validação js-leaks |
-| Cookie sync | Parâmetro parecido com ID não prova sincronismo | Correlacionar cadeia, valor pseudonimizado e cookie/origem; baixa confiança se faltarem elos |
+| Canvas e hooks | Content script tem contexto isolado; instrumentação muda a página | Instrumentação Firefox e identificação própria implementadas; controles locais presentes; par js-leaks completo ainda ausente |
+| Cookie sync | Parâmetro parecido com ID não prova sincronismo | Comparar parâmetros entre sites com chave efêmera, sem comparar valores de cookies; baixa confiança se faltarem elos |
 | Bounce | Redirect também serve login e pagamento; estado por página é insuficiente | Histórico curto por aba entre documentos, tempo/interação/identificadores; explicar indícios, sem rótulo definitivo |
 | Storage partitioning | Snapshot isolado não compara a mesma origem sob dois top sites | Protocolo A→T/B→T no DDG, chaves de partição de cookies; inferência de storage só com execução cruzada |
 | Hook/hijacking | WebSocket/polling legítimos são comuns; privilégio limitado | Exigir contexto e combinações de sinais; não alegar acesso a ataques no sistema operacional |
 | Comparação externa | Localização, consentimento, cache, proteção e horário mudam o tráfego | Congelar condições, registrar URLs/filtros/requests, repetir apenas para hipótese concreta |
 | Prazo | Evidências e reconciliação exigem tempo humano | Coleta desde o dia 24; reservar o dia 29 para redação/revisão |
 
-## Cronograma 24–29/09
+## Cronograma originalmente planejado — não é registro de execução
 
 | Data | Bloco | Critério de saída / evidência | Commit sugerido após validação |
 |---|---|---|---|
@@ -80,8 +44,8 @@ Se C atrasar, proteger primeiro seus testes e entregáveis gerais. Não declarar
 
 Arquivos atuais estão descritos no README. Os módulos implementados ficam em `extension/lib/` (incluindo security, score e blocklist), com coleta em `extension/content/` e integração no background/popup. Não há módulo `extension/detectors/` nesta organização.
 
-Estrutura de evidências já preparada: `evidencias/local/`, `evidencias/duckduckgo/`, `evidencias/sites-reais/site-1/`, `site-2/`, `site-3/`, `evidencias/har/`, `evidencias/screenshots/`.
+Estrutura final: `evidencias/INDEX.md`, `desenvolvimento/`, `duckduckgo/`, `sites/{uol,g1,mercadolivre}/`, `conceito-a/`; artefatos históricos locais/screenshots preservados.
 
 ## Escopo exato da Etapa 1
 
-Entregar uma base observacional instalável, testável e compreensível, com rede/cookies/storage e interface; comprovar os cálculos de classificação; fornecer fixture e instruções. Na Etapa 1, score, fingerprinting, bloqueio e reconhecimento de hook não recebiam resultados simulados. A v0.2.0 acrescenta somente canvas, descrito no roteiro atual. A validação manual da Etapa 1 foi informada como concluída. A próxima validação é a de canvas v0.2.0, antes de cookies/DDG.
+Entregar uma base observacional instalável, testável e compreensível, com rede/cookies/storage e interface; comprovar os cálculos de classificação; fornecer fixture e instruções. Na Etapa 1, score, fingerprinting, bloqueio e reconhecimento de hook não recebiam resultados simulados. A v0.2.0 acrescenta somente canvas, descrito no roteiro atual. A validação manual da Etapa 1 foi informada como concluída. Esse era o próximo bloco histórico. O estado final é descrito na auditoria, sem reclassificar o cronograma como execução real.

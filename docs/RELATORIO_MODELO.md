@@ -2,7 +2,7 @@
 
 Autor: Pedro Henrique Vargas Sepulveda. Matrícula: PENDENTE. Disciplina/professor: Cibersegurança / João Eduardo Luisi. Data: PENDENTE. Repositório/commit analisado: PENDENTE.
 
-**Este arquivo é um modelo de trabalho, não o relatório final. Não entregar antes de substituir os campos pendentes por evidências reais.**
+**Modelo histórico, não preencher para a entrega atual.** O documento final está em [relatorio-final.md](relatorio-final.md) e [relatorio-final.pdf](relatorio-final.pdf), com lacunas auditadas em [AUDITORIA_FINAL.md](AUDITORIA_FINAL.md).
 
 ## 1. Introdução
 

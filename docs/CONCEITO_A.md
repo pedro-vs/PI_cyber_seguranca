@@ -39,7 +39,7 @@ Se outra proteção impedir as respostas de polling, registre a limitação: nã
 
 ## Próximo teste manual: DDG js-leaks
 
-Siga exclusivamente o [roteiro e registro de js-leaks](../evidencias/duckduckgo/js-leaks/REGISTRO.md), comparando o mesmo Firefox com e sem Privacy Lens e usando lista vazia. A coleta de três sites/HAR/Blacklight e os demais entregáveis acadêmicos continuam pendentes; existência de código não os substitui.
+A conferência final de [js-leaks](../evidencias/duckduckgo/js-leaks/REGISTRO.md) encontrou um par com/sem extensão incompleto. Os três HAR, Blacklight e JSONs Privacy Lens foram recebidos; scores originais recalculados: UOL 0–31, G1 0–64 e Mercado Livre 41–66, todos parciais. As visitas G1/ML do complemento são posteriores aos HARs; a comparação individual de todos os trackers continua parcial. O [relatório final](relatorio-final.md) e a [auditoria](AUDITORIA_FINAL.md) registram limites e faltas. Existência de código não substitui evidência acadêmica.
 
 ## Verificação automatizada reproduzível
 

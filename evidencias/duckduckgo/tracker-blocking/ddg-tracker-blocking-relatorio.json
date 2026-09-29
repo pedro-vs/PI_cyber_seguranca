@@ -1,0 +1,1704 @@
+{
+  "schemaVersion": 3,
+  "extensionVersion": "0.4.0",
+  "generatedAt": "2026-09-29T03:54:41.962Z",
+  "browser": {
+    "name": "Firefox",
+    "vendor": "Mozilla",
+    "version": "156.0.1",
+    "buildID": "20260921121718"
+  },
+  "page": {
+    "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+    "queryKeys": [],
+    "site": "privacy-test-pages.site",
+    "startedAt": 1790653541625
+  },
+  "network": {
+    "totals": {
+      "total": 31,
+      "first": 9,
+      "third": 22,
+      "unknown": 0,
+      "failed": 1
+    },
+    "domains": [
+      {
+        "host": "bad.third-party.site",
+        "site": "third-party.site",
+        "party": "third",
+        "requests": 22,
+        "failed": 1,
+        "types": [
+          "script",
+          "stylesheet",
+          "object",
+          "sub_frame",
+          "xmlhttprequest",
+          "beacon",
+          "image",
+          "imageset",
+          "websocket",
+          "font",
+          "csp_report",
+          "media"
+        ]
+      },
+      {
+        "host": "privacy-test-pages.site",
+        "site": "privacy-test-pages.site",
+        "party": "first",
+        "requests": 9,
+        "failed": 0,
+        "types": [
+          "main_frame",
+          "script",
+          "stylesheet",
+          "image",
+          "sub_frame",
+          "xmlhttprequest"
+        ]
+      }
+    ],
+    "requests": [
+      {
+        "id": "2803",
+        "at": 1790653541625,
+        "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "main_frame",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653542283,
+        "error": null,
+        "fromCache": false,
+        "party": "first"
+      },
+      {
+        "id": "2805",
+        "at": 1790653542364,
+        "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/main.js",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "script",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653542663,
+        "error": null,
+        "fromCache": false,
+        "party": "first"
+      },
+      {
+        "id": "2806",
+        "at": 1790653542364,
+        "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/style.css",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "stylesheet",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653542507,
+        "error": null,
+        "fromCache": false,
+        "party": "first"
+      },
+      {
+        "id": "2807",
+        "at": 1790653542665,
+        "url": "https://privacy-test-pages.site/favicon.ico",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "image",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 404,
+        "finishedAt": 1790653542669,
+        "error": null,
+        "fromCache": true,
+        "party": "first"
+      },
+      {
+        "id": "2809",
+        "at": 1790653572564,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/script.js",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "script",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573199,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2810",
+        "at": 1790653572566,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/style.css",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "stylesheet",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573131,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2811",
+        "at": 1790653572567,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/object.png",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "object",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573304,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2812",
+        "at": 1790653572589,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/frame.html",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "sub_frame",
+        "method": "GET",
+        "frameId": 158913789953,
+        "parentFrameId": 0,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573183,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2813",
+        "at": 1790653572590,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/cssImport.css",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "stylesheet",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573134,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2814",
+        "at": 1790653572594,
+        "url": "https://bad.third-party.site/block-me/server-sent-events",
+        "queryKeys": [],
+        "host": "bad.third-party.site",
+        "type": "xmlhttprequest",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653574322,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2815",
+        "at": 1790653572595,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/fetch.json",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "xmlhttprequest",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573335,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2816",
+        "at": 1790653572595,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/ajax.json",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "xmlhttprequest",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573130,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2817",
+        "at": 1790653572596,
+        "url": "https://bad.third-party.site/block-me/beacon",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "beacon",
+        "method": "POST",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 204,
+        "finishedAt": 1790653573197,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2818",
+        "at": 1790653572598,
+        "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/frame.html",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "privacy-test-pages.site",
+        "type": "sub_frame",
+        "method": "GET",
+        "frameId": 158913789954,
+        "parentFrameId": 0,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653572733,
+        "error": null,
+        "fromCache": false,
+        "party": "first"
+      },
+      {
+        "id": "2819",
+        "at": 1790653572599,
+        "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/middleframe.html",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "privacy-test-pages.site",
+        "type": "sub_frame",
+        "method": "GET",
+        "frameId": 158913789955,
+        "parentFrameId": 0,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653572731,
+        "error": null,
+        "fromCache": false,
+        "party": "first"
+      },
+      {
+        "id": "2820",
+        "at": 1790653572601,
+        "url": "https://privacy-test-pages.site/redirect",
+        "queryKeys": [
+          "destination"
+        ],
+        "host": "privacy-test-pages.site",
+        "type": "xmlhttprequest",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "redirect",
+        "statusCode": 307,
+        "redirectTo": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/fetch.json",
+        "party": "first"
+      },
+      {
+        "id": "2821",
+        "at": 1790653572602,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/img.jpg",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "image",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573337,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2822",
+        "at": 1790653572602,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/picture.jpg",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "imageset",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573337,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2824",
+        "at": 1790653572606,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/cssbg.jpg",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "image",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573367,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2825",
+        "at": 1790653572611,
+        "url": "wss://bad.third-party.site/block-me/web-socket",
+        "queryKeys": [],
+        "host": "bad.third-party.site",
+        "type": "websocket",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "error",
+        "statusCode": 404,
+        "finishedAt": 1790653573196,
+        "error": "NS_ERROR_WEBSOCKET_CONNECTION_REFUSED",
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2826",
+        "at": 1790653572614,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/cssfont.woff",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "font",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653574421,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2827",
+        "at": 1790653572620,
+        "url": "https://bad.third-party.site/block-me/csp",
+        "queryKeys": [],
+        "host": "bad.third-party.site",
+        "type": "csp_report",
+        "method": "POST",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573317,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2828",
+        "at": 1790653572621,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/audio.wav",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "media",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 206,
+        "finishedAt": 1790653574021,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2829",
+        "at": 1790653572622,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/video.mp4",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "media",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 206,
+        "finishedAt": 1790653575195,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2830",
+        "at": 1790653572624,
+        "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/worker.js",
+        "queryKeys": [],
+        "host": "privacy-test-pages.site",
+        "type": "script",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573336,
+        "error": null,
+        "fromCache": false,
+        "party": "first"
+      },
+      {
+        "id": "2831",
+        "at": 1790653572750,
+        "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/frame.html",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "privacy-test-pages.site",
+        "type": "sub_frame",
+        "method": "GET",
+        "frameId": 158913789956,
+        "parentFrameId": 158913789955,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/middleframe.html",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573028,
+        "error": null,
+        "fromCache": false,
+        "party": "first"
+      },
+      {
+        "id": "2832",
+        "at": 1790653572751,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/fetch.json",
+        "queryKeys": [
+          "iframe-0.9891097204001476"
+        ],
+        "host": "bad.third-party.site",
+        "type": "xmlhttprequest",
+        "method": "GET",
+        "frameId": 158913789954,
+        "parentFrameId": 0,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/frame.html",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573210,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2833",
+        "at": 1790653573038,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/fetch.json",
+        "queryKeys": [
+          "iframe-depth-2-0.8344677239262556"
+        ],
+        "host": "bad.third-party.site",
+        "type": "xmlhttprequest",
+        "method": "GET",
+        "frameId": 158913789956,
+        "parentFrameId": 158913789955,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/frame.html",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573210,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2820",
+        "at": 1790653573302,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/fetch.json",
+        "queryKeys": [
+          "redirected-0.9384581201955521"
+        ],
+        "host": "bad.third-party.site",
+        "type": "xmlhttprequest",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573442,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2834",
+        "at": 1790653573340,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/fetch.json",
+        "queryKeys": [
+          "webworker-0.7281837884044431"
+        ],
+        "host": "bad.third-party.site",
+        "type": "xmlhttprequest",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/worker.js",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653573505,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      },
+      {
+        "id": "2837",
+        "at": 1790653573845,
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/favicon.ico",
+        "queryKeys": [
+          "[nome omitido]"
+        ],
+        "host": "bad.third-party.site",
+        "type": "image",
+        "method": "GET",
+        "frameId": 0,
+        "parentFrameId": -1,
+        "documentUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "status": "completed",
+        "statusCode": 200,
+        "finishedAt": 1790653574073,
+        "error": null,
+        "fromCache": false,
+        "party": "third"
+      }
+    ]
+  },
+  "cookies": {
+    "items": [
+      {
+        "name": "jsdata",
+        "domain": "privacy-test-pages.site",
+        "path": "/privacy-protections/storage-blocking",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.806,
+        "secure": true,
+        "httpOnly": false,
+        "sameSite": "lax",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "tptdata",
+        "domain": "privacy-test-pages.site",
+        "path": "/privacy-protections/storage-blocking",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.812,
+        "secure": false,
+        "httpOnly": false,
+        "sameSite": "unspecified",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "tpsdata",
+        "domain": "privacy-test-pages.site",
+        "path": "/privacy-protections/storage-blocking",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.812,
+        "secure": false,
+        "httpOnly": false,
+        "sameSite": "unspecified",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "__Host-jsdata_host",
+        "domain": "privacy-test-pages.site",
+        "path": "/",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.806,
+        "secure": true,
+        "httpOnly": false,
+        "sameSite": "lax",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "jsdata_no_samesite",
+        "domain": "privacy-test-pages.site",
+        "path": "/",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.806,
+        "secure": true,
+        "httpOnly": false,
+        "sameSite": "unspecified",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "cookiestoredata",
+        "domain": "privacy-test-pages.site",
+        "path": "/",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1825210093.816,
+        "secure": true,
+        "httpOnly": false,
+        "sameSite": "strict",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      },
+      {
+        "name": "top_firstparty_headerdata",
+        "domain": "privacy-test-pages.site",
+        "path": "/",
+        "storeId": "firefox-default",
+        "hostOnly": true,
+        "session": false,
+        "expirationDate": 1791514094.8,
+        "secure": true,
+        "httpOnly": true,
+        "sameSite": "no_restriction",
+        "firstPartyDomain": "",
+        "partitionKey": null,
+        "party": "first",
+        "preexisting": "observed-before-navigation",
+        "hasCorrelatedWrite": false
+      }
+    ],
+    "totals": {
+      "total": 7,
+      "first": 7,
+      "third": 0,
+      "session": 0,
+      "persistent": 7,
+      "partitioned": 0
+    },
+    "preexisting": {
+      "items": [
+        {
+          "name": "jsdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.806,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "lax",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790652421323,
+          "party": "first"
+        },
+        {
+          "name": "tptdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.812,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790652421323,
+          "party": "first"
+        },
+        {
+          "name": "tpsdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/privacy-protections/storage-blocking",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.812,
+          "secure": false,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790652421323,
+          "party": "first"
+        },
+        {
+          "name": "__Host-jsdata_host",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.806,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "lax",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790652421323,
+          "party": "first"
+        },
+        {
+          "name": "jsdata_no_samesite",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.806,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "unspecified",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790652421323,
+          "party": "first"
+        },
+        {
+          "name": "cookiestoredata",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1825210093.816,
+          "secure": true,
+          "httpOnly": false,
+          "sameSite": "strict",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790652421323,
+          "party": "first"
+        },
+        {
+          "name": "top_firstparty_headerdata",
+          "domain": "privacy-test-pages.site",
+          "path": "/",
+          "storeId": "firefox-default",
+          "hostOnly": true,
+          "session": false,
+          "expirationDate": 1791514094.8,
+          "secure": true,
+          "httpOnly": true,
+          "sameSite": "no_restriction",
+          "firstPartyDomain": "",
+          "partitionKey": null,
+          "observedAt": 1790652421323,
+          "party": "first"
+        }
+      ],
+      "totals": {
+        "total": 7,
+        "first": 7,
+        "third": 0,
+        "session": 0,
+        "persistent": 7,
+        "partitioned": 0
+      },
+      "currentCount": 7,
+      "unknownCurrentCount": 0,
+      "completeness": "partial-prior-observations-only"
+    },
+    "events": [],
+    "eventTotals": {
+      "observed": 0,
+      "writes": 0,
+      "created": 0,
+      "changed": 0,
+      "unknown": 0,
+      "removed": 0
+    },
+    "probable": {
+      "items": [],
+      "totals": {
+        "total": 0,
+        "first": 0,
+        "third": 0,
+        "session": 0,
+        "persistent": 0,
+        "partitioned": 0
+      }
+    },
+    "correlatedWrites": [],
+    "correlatedWriteEvents": 0,
+    "setCookieAttempts": [],
+    "observationWindowMs": 30000,
+    "window": {
+      "startedAt": 1790653541625,
+      "endsAt": 1790653571625,
+      "status": "closed"
+    },
+    "attribution": "Correlação temporal e de contexto; não comprova autoria da aba. Criação é inferida de explicit sem overwrite observado. Não somar estoque, tentativas e eventos.",
+    "errors": [],
+    "diagnostics": {
+      "version": "cookie-ingress-v1",
+      "listenerActive": true,
+      "registeredAt": 1790647423574,
+      "readyStatus": "ready",
+      "totalReceivedSinceRegistration": 24,
+      "dropped": 0,
+      "droppedDecisions": 0,
+      "navigation": {
+        "sequence": 31,
+        "requestId": "2803",
+        "startedAt": 1790653541625,
+        "observedAt": 1790653541634,
+        "storeId": "firefox-default",
+        "storeStatus": "ready",
+        "topUrl": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "hosts": [
+          "privacy-test-pages.site",
+          "bad.third-party.site"
+        ]
+      },
+      "counts": {
+        "received": 0,
+        "associated": 0,
+        "discarded": 0,
+        "pending": 0
+      },
+      "probes": [
+        {
+          "name": "jsdata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 6,
+              "at": 1790650093816,
+              "cookie": {
+                "name": "jsdata",
+                "domain": "privacy-test-pages.site",
+                "path": "/privacy-protections/storage-blocking",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.806,
+                "secure": true,
+                "httpOnly": false,
+                "sameSite": "lax",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "tptdata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 9,
+              "at": 1790650093818,
+              "cookie": {
+                "name": "tptdata",
+                "domain": "privacy-test-pages.site",
+                "path": "/privacy-protections/storage-blocking",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.812,
+                "secure": false,
+                "httpOnly": false,
+                "sameSite": "unspecified",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "tpsdata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 10,
+              "at": 1790650093818,
+              "cookie": {
+                "name": "tpsdata",
+                "domain": "privacy-test-pages.site",
+                "path": "/privacy-protections/storage-blocking",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.812,
+                "secure": false,
+                "httpOnly": false,
+                "sameSite": "unspecified",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "__Host-jsdata_host",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 7,
+              "at": 1790650093817,
+              "cookie": {
+                "name": "__Host-jsdata_host",
+                "domain": "privacy-test-pages.site",
+                "path": "/",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.806,
+                "secure": true,
+                "httpOnly": false,
+                "sameSite": "lax",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "jsdata_no_samesite",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 8,
+              "at": 1790650093818,
+              "cookie": {
+                "name": "jsdata_no_samesite",
+                "domain": "privacy-test-pages.site",
+                "path": "/",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.806,
+                "secure": true,
+                "httpOnly": false,
+                "sameSite": "unspecified",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "cookiestoredata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 11,
+              "at": 1790650093824,
+              "cookie": {
+                "name": "cookiestoredata",
+                "domain": "privacy-test-pages.site",
+                "path": "/",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1825210093.816,
+                "secure": true,
+                "httpOnly": false,
+                "sameSite": "strict",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        },
+        {
+          "name": "top_firstparty_headerdata",
+          "domain": "privacy-test-pages.site",
+          "status": "not-received",
+          "received": 0,
+          "events": [],
+          "priorReceipts": [
+            {
+              "sequence": 14,
+              "at": 1790650094802,
+              "cookie": {
+                "name": "top_firstparty_headerdata",
+                "domain": "privacy-test-pages.site",
+                "path": "/",
+                "storeId": "firefox-default",
+                "hostOnly": true,
+                "session": false,
+                "expirationDate": 1791514094.8,
+                "secure": true,
+                "httpOnly": true,
+                "sameSite": "no_restriction",
+                "firstPartyDomain": "",
+                "partitionKey": null
+              },
+              "removed": false,
+              "cause": "explicit",
+              "readyAtReceipt": "ready",
+              "decisions": []
+            }
+          ]
+        }
+      ],
+      "decisions": [],
+      "meaning": "Não recebido significa nenhuma entrada encontrada no listener para esta navegação até esta coleta, incluindo reavaliações de eventos anteriores à entrega de onBeforeRequest, com cobertura disponível. Não prova que o Firefox nunca disparou o evento. Probes por nome/domínio não provam autoria nem aceite de Set-Cookie. Consulte priorReceipts para a ordem de entrega."
+    },
+    "historyDropped": 0,
+    "ingressDropped": 0,
+    "processingErrors": 0,
+    "inventoryChangedDuringQuery": false
+  },
+  "advancedTracking": {
+    "version": "advanced-tracking-v1",
+    "bounce": {
+      "status": "insufficient-evidence",
+      "sequences": [],
+      "route": [
+        {
+          "domain": "privacy-test-pages.site",
+          "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+          "at": 1790653541625,
+          "requestId": "2803",
+          "incoming": "start",
+          "initiatorHost": "",
+          "transitionType": "typed",
+          "transitionQualifiers": [
+            "from_address_bar"
+          ]
+        }
+      ]
+    },
+    "cookieSync": {
+      "status": "not-observed",
+      "indicators": [],
+      "endpointHints": [],
+      "limitation": "Sem leitura/comparação de valores de cookies; endpoint com nome sync, isoladamente, é evidência insuficiente."
+    },
+    "queryParameters": {
+      "status": "not-observed",
+      "findings": [],
+      "limitation": "Campanha, formato semelhante a ID e reutilização são sinais, não tracking confirmado. Parâmetros funcionais são excluídos da comparação."
+    },
+    "coverage": {
+      "partial": false,
+      "dropped": {
+        "observations": 0,
+        "parameters": 0,
+        "values": 0,
+        "hashes": 0,
+        "hops": 0,
+        "previousHops": 0,
+        "outOfOrder": 0,
+        "findings": 0
+      },
+      "hashErrors": 0,
+      "pendingComparisons": 0,
+      "limits": {
+        "observations": 512,
+        "parameters": 24,
+        "valueLength": 256,
+        "urlLength": 16384,
+        "hashes": 4096,
+        "hops": 32,
+        "previousHops": 8,
+        "findings": 128,
+        "bounceMs": 10000
+      },
+      "observedRequests": 31,
+      "comparison": "HMAC-SHA-256 com chave efêmera por navegação; valores, chaves e hashes não exportados. Nenhuma comparação entre abas.",
+      "limitations": "Janela de passagem intermediária: 10 s. Histórico curto de main_frame só participa por ligação observada; navegação comum zera queries/comparações. POST, IDs transformados, CNAME, workers sem tabId e frames opacos não cobertos."
+    },
+    "availability": "available"
+  },
+  "storage": [
+    {
+      "frameId": 0,
+      "origin": "https://privacy-test-pages.site",
+      "topOrigin": "https://privacy-test-pages.site",
+      "at": 1790654081956,
+      "localStorage": {
+        "status": "observed",
+        "count": 1,
+        "unit": "keys"
+      },
+      "sessionStorage": {
+        "status": "observed",
+        "count": 0,
+        "unit": "keys"
+      },
+      "indexedDB": {
+        "status": "observed",
+        "count": 1,
+        "unit": "databases"
+      },
+      "party": "first",
+      "context": "top-level",
+      "activeAtRefresh": true,
+      "partitioning": "not-established-by-snapshot"
+    },
+    {
+      "frameId": 158913789955,
+      "origin": "https://privacy-test-pages.site",
+      "topOrigin": "https://privacy-test-pages.site",
+      "at": 1790654081957,
+      "localStorage": {
+        "status": "observed",
+        "count": 1,
+        "unit": "keys"
+      },
+      "sessionStorage": {
+        "status": "observed",
+        "count": 0,
+        "unit": "keys"
+      },
+      "indexedDB": {
+        "status": "observed",
+        "count": 1,
+        "unit": "databases"
+      },
+      "party": "first",
+      "context": "embedded",
+      "activeAtRefresh": true,
+      "partitioning": "not-established-by-snapshot"
+    },
+    {
+      "frameId": 158913789954,
+      "origin": "https://privacy-test-pages.site",
+      "topOrigin": "https://privacy-test-pages.site",
+      "at": 1790654081956,
+      "localStorage": {
+        "status": "observed",
+        "count": 1,
+        "unit": "keys"
+      },
+      "sessionStorage": {
+        "status": "observed",
+        "count": 0,
+        "unit": "keys"
+      },
+      "indexedDB": {
+        "status": "observed",
+        "count": 1,
+        "unit": "databases"
+      },
+      "party": "first",
+      "context": "embedded",
+      "activeAtRefresh": true,
+      "partitioning": "not-established-by-snapshot"
+    },
+    {
+      "frameId": 158913789956,
+      "origin": "https://privacy-test-pages.site",
+      "topOrigin": "https://privacy-test-pages.site",
+      "at": 1790654081957,
+      "localStorage": {
+        "status": "observed",
+        "count": 1,
+        "unit": "keys"
+      },
+      "sessionStorage": {
+        "status": "observed",
+        "count": 0,
+        "unit": "keys"
+      },
+      "indexedDB": {
+        "status": "observed",
+        "count": 1,
+        "unit": "databases"
+      },
+      "party": "first",
+      "context": "embedded",
+      "activeAtRefresh": true,
+      "partitioning": "not-established-by-snapshot"
+    },
+    {
+      "frameId": 158913789953,
+      "origin": "https://bad.third-party.site",
+      "topOrigin": "https://privacy-test-pages.site",
+      "at": 1790654081956,
+      "localStorage": {
+        "status": "observed",
+        "count": 0,
+        "unit": "keys"
+      },
+      "sessionStorage": {
+        "status": "observed",
+        "count": 0,
+        "unit": "keys"
+      },
+      "indexedDB": {
+        "status": "observed",
+        "count": 0,
+        "unit": "databases"
+      },
+      "party": "third",
+      "context": "embedded",
+      "activeAtRefresh": true,
+      "partitioning": "not-established-by-snapshot"
+    },
+    {
+      "frameId": 158913789957,
+      "origin": "https://bad.third-party.site",
+      "topOrigin": "https://privacy-test-pages.site",
+      "at": 1790654081957,
+      "localStorage": {
+        "status": "observed",
+        "count": 0,
+        "unit": "keys"
+      },
+      "sessionStorage": {
+        "status": "observed",
+        "count": 0,
+        "unit": "keys"
+      },
+      "indexedDB": {
+        "status": "observed",
+        "count": 0,
+        "unit": "databases"
+      },
+      "party": "third",
+      "context": "embedded",
+      "activeAtRefresh": true,
+      "partitioning": "not-established-by-snapshot"
+    }
+  ],
+  "canvas": {
+    "drawingCalls": 0,
+    "readbackCalls": 0,
+    "failedReadbacks": 0,
+    "canvasCount": 0,
+    "indicatorCanvases": 0,
+    "frames": [
+      {
+        "frameId": 0,
+        "origin": "https://privacy-test-pages.site",
+        "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/",
+        "timeOrigin": 1790653541621,
+        "sequence": 9,
+        "at": 1790654081955,
+        "observation": {
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000,
+          "classification": "not-observed",
+          "used": false,
+          "canvasCount": 0,
+          "drawingCalls": 0,
+          "readbackCalls": 0,
+          "failedReadbacks": 0,
+          "indicatorCanvases": 0,
+          "canvases": [],
+          "samples": [],
+          "droppedEvents": 0,
+          "droppedSamples": 0
+        },
+        "instrumentation": {
+          "strategy": "Firefox wrappedJSObject + exportFunction",
+          "installed": [
+            "CanvasRenderingContext2D.fillRect",
+            "CanvasRenderingContext2D.strokeRect",
+            "CanvasRenderingContext2D.fillText",
+            "CanvasRenderingContext2D.strokeText",
+            "CanvasRenderingContext2D.drawImage",
+            "CanvasRenderingContext2D.putImageData",
+            "CanvasRenderingContext2D.fill",
+            "CanvasRenderingContext2D.stroke",
+            "CanvasRenderingContext2D.getImageData",
+            "HTMLCanvasElement.toDataURL",
+            "HTMLCanvasElement.toBlob"
+          ],
+          "failed": [],
+          "unsupported": [],
+          "replaced": []
+        }
+      },
+      {
+        "frameId": 158913789955,
+        "origin": "https://privacy-test-pages.site",
+        "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/middleframe.html",
+        "timeOrigin": 1790653572598,
+        "sequence": 9,
+        "at": 1790654081957,
+        "observation": {
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000,
+          "classification": "not-observed",
+          "used": false,
+          "canvasCount": 0,
+          "drawingCalls": 0,
+          "readbackCalls": 0,
+          "failedReadbacks": 0,
+          "indicatorCanvases": 0,
+          "canvases": [],
+          "samples": [],
+          "droppedEvents": 0,
+          "droppedSamples": 0
+        },
+        "instrumentation": {
+          "strategy": "Firefox wrappedJSObject + exportFunction",
+          "installed": [
+            "CanvasRenderingContext2D.fillRect",
+            "CanvasRenderingContext2D.strokeRect",
+            "CanvasRenderingContext2D.fillText",
+            "CanvasRenderingContext2D.strokeText",
+            "CanvasRenderingContext2D.drawImage",
+            "CanvasRenderingContext2D.putImageData",
+            "CanvasRenderingContext2D.fill",
+            "CanvasRenderingContext2D.stroke",
+            "CanvasRenderingContext2D.getImageData",
+            "HTMLCanvasElement.toDataURL",
+            "HTMLCanvasElement.toBlob"
+          ],
+          "failed": [],
+          "unsupported": [],
+          "replaced": []
+        }
+      },
+      {
+        "frameId": 158913789954,
+        "origin": "https://privacy-test-pages.site",
+        "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/frame.html",
+        "timeOrigin": 1790653572596,
+        "sequence": 9,
+        "at": 1790654081956,
+        "observation": {
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000,
+          "classification": "not-observed",
+          "used": false,
+          "canvasCount": 0,
+          "drawingCalls": 0,
+          "readbackCalls": 0,
+          "failedReadbacks": 0,
+          "indicatorCanvases": 0,
+          "canvases": [],
+          "samples": [],
+          "droppedEvents": 0,
+          "droppedSamples": 0
+        },
+        "instrumentation": {
+          "strategy": "Firefox wrappedJSObject + exportFunction",
+          "installed": [
+            "CanvasRenderingContext2D.fillRect",
+            "CanvasRenderingContext2D.strokeRect",
+            "CanvasRenderingContext2D.fillText",
+            "CanvasRenderingContext2D.strokeText",
+            "CanvasRenderingContext2D.drawImage",
+            "CanvasRenderingContext2D.putImageData",
+            "CanvasRenderingContext2D.fill",
+            "CanvasRenderingContext2D.stroke",
+            "CanvasRenderingContext2D.getImageData",
+            "HTMLCanvasElement.toDataURL",
+            "HTMLCanvasElement.toBlob"
+          ],
+          "failed": [],
+          "unsupported": [],
+          "replaced": []
+        }
+      },
+      {
+        "frameId": 158913789956,
+        "origin": "https://privacy-test-pages.site",
+        "url": "https://privacy-test-pages.site/privacy-protections/request-blocking/frame.html",
+        "timeOrigin": 1790653572748,
+        "sequence": 9,
+        "at": 1790654081957,
+        "observation": {
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000,
+          "classification": "not-observed",
+          "used": false,
+          "canvasCount": 0,
+          "drawingCalls": 0,
+          "readbackCalls": 0,
+          "failedReadbacks": 0,
+          "indicatorCanvases": 0,
+          "canvases": [],
+          "samples": [],
+          "droppedEvents": 0,
+          "droppedSamples": 0
+        },
+        "instrumentation": {
+          "strategy": "Firefox wrappedJSObject + exportFunction",
+          "installed": [
+            "CanvasRenderingContext2D.fillRect",
+            "CanvasRenderingContext2D.strokeRect",
+            "CanvasRenderingContext2D.fillText",
+            "CanvasRenderingContext2D.strokeText",
+            "CanvasRenderingContext2D.drawImage",
+            "CanvasRenderingContext2D.putImageData",
+            "CanvasRenderingContext2D.fill",
+            "CanvasRenderingContext2D.stroke",
+            "CanvasRenderingContext2D.getImageData",
+            "HTMLCanvasElement.toDataURL",
+            "HTMLCanvasElement.toBlob"
+          ],
+          "failed": [],
+          "unsupported": [],
+          "replaced": []
+        }
+      },
+      {
+        "frameId": 158913789953,
+        "origin": "https://bad.third-party.site",
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/frame.html",
+        "timeOrigin": 1790653572589,
+        "sequence": 9,
+        "at": 1790654081956,
+        "observation": {
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000,
+          "classification": "not-observed",
+          "used": false,
+          "canvasCount": 0,
+          "drawingCalls": 0,
+          "readbackCalls": 0,
+          "failedReadbacks": 0,
+          "indicatorCanvases": 0,
+          "canvases": [],
+          "samples": [],
+          "droppedEvents": 0,
+          "droppedSamples": 0
+        },
+        "instrumentation": {
+          "strategy": "Firefox wrappedJSObject + exportFunction",
+          "installed": [
+            "CanvasRenderingContext2D.fillRect",
+            "CanvasRenderingContext2D.strokeRect",
+            "CanvasRenderingContext2D.fillText",
+            "CanvasRenderingContext2D.strokeText",
+            "CanvasRenderingContext2D.drawImage",
+            "CanvasRenderingContext2D.putImageData",
+            "CanvasRenderingContext2D.fill",
+            "CanvasRenderingContext2D.stroke",
+            "CanvasRenderingContext2D.getImageData",
+            "HTMLCanvasElement.toDataURL",
+            "HTMLCanvasElement.toBlob"
+          ],
+          "failed": [],
+          "unsupported": [],
+          "replaced": []
+        }
+      },
+      {
+        "frameId": 158913789957,
+        "origin": "https://bad.third-party.site",
+        "url": "https://bad.third-party.site/privacy-protections/request-blocking/block-me/object.png",
+        "timeOrigin": 1790653573302,
+        "sequence": 8,
+        "at": 1790654081957,
+        "observation": {
+          "ruleVersion": "canvas-sequence-v1",
+          "windowMs": 5000,
+          "classification": "not-observed",
+          "used": false,
+          "canvasCount": 0,
+          "drawingCalls": 0,
+          "readbackCalls": 0,
+          "failedReadbacks": 0,
+          "indicatorCanvases": 0,
+          "canvases": [],
+          "samples": [],
+          "droppedEvents": 0,
+          "droppedSamples": 0
+        },
+        "instrumentation": {
+          "strategy": "Firefox wrappedJSObject + exportFunction",
+          "installed": [
+            "CanvasRenderingContext2D.fillRect",
+            "CanvasRenderingContext2D.strokeRect",
+            "CanvasRenderingContext2D.fillText",
+            "CanvasRenderingContext2D.strokeText",
+            "CanvasRenderingContext2D.drawImage",
+            "CanvasRenderingContext2D.putImageData",
+            "CanvasRenderingContext2D.fill",
+            "CanvasRenderingContext2D.stroke",
+            "CanvasRenderingContext2D.getImageData",
+            "HTMLCanvasElement.toDataURL",
+            "HTMLCanvasElement.toBlob"
+          ],
+          "failed": [],
+          "unsupported": [],
+          "replaced": []
+        }
+      }
+    ],
+    "classification": "not-observed",
+    "partial": false,
+    "ruleVersion": "canvas-sequence-v1",
+    "windowMs": 5000,
+    "meaning": "Desenho seguido de leitura/exportação no mesmo canvas em até 5 s é um indício heurístico, não prova de rastreamento."
+  },
+  "score": {
+    "status": "not-implemented",
+    "value": null
+  },
+  "coverage": {
+    "partial": false,
+    "droppedRequests": 0,
+    "droppedCookieHeaders": 0,
+    "droppedCookieWrites": 0,
+    "storage": "Snapshots por frame HTTP(S); contagem de chaves e de bancos, não de registros IndexedDB.",
+    "cookies": "Inventário atual; preexistência somente com observação anterior. Eventos em 30s são correlação, não autoria; explicit sem overwrite infere criação. Set-Cookie é tentativa, não aceite. Baseline parcial; consulte eventos e perdas.",
+    "network": "Requisições observadas não equivalem a conexões TCP, nem confirmam rastreamento.",
+    "privacy": "Valores de cookies, storage, queries e fragmentos não são exportados. Caminhos e nomes podem ser sensíveis."
+  }
+}

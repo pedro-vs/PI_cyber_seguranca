@@ -2,7 +2,7 @@
 
 **Roteiro atual:** [VALIDACAO_DDG_V04.md](VALIDACAO_DDG_V04.md), com os sete testes e os prints obrigatórios; [ETAPA_4_TRACKING.md](ETAPA_4_TRACKING.md) contém método e controles locais. Os DDG continuam planejados, não executados. As instruções antigas abaixo documentam a evolução; para a coleta atual, usar o roteiro v0.4.0 e [RESULTADOS.md](../evidencias/duckduckgo/RESULTADOS.md).
 
-Resultados DDG e dos sites reais estão **pendentes**. Consultar a documentação online não executa os testes. Resultados reais desta etapa são somente os explicitamente registrados em `evidencias/local/`.
+**Conferência final em 29/09/2026:** os resultados recebidos estão em [DDG](../evidencias/duckduckgo/RESULTADOS.md), [sites](../evidencias/sites/README.md) e [auditoria](AUDITORIA_FINAL.md). Este documento conserva o protocolo, não substitui a evidência final. Consultar documentação não executa testes.
 
 ## Registrar para toda execução
 
@@ -43,7 +43,7 @@ Duplicar a linha para cada subteste/configuração, mantendo um print do plugin 
 
 - Tracker Reporting: abrir a URL, aguardar 30s, registrar o tracker anunciado, comparar domínio/tipo/estado no JSON e no DevTools. Se houver bloqueio antecipado, registrar a prova, não inventar requisição ausente.
 - Storage Blocking: executar os controles que a página oferecer, registrar cada tipo/origem e estado. Comparar “bloqueado” da página com “indisponível”/estoque do plugin, sem confundir a tentativa com sucesso de escrita.
-- Canvas: executar a ação da página, guardar o resultado e a sequência observada. Na v0.2.0 o detector de sequência canvas existe; seus resultados DDG ainda estão pendentes e só serão preenchidos na execução real.
+- Canvas: executar a ação da página, guardar o resultado e a sequência observada. O resultado DDG conferido da v0.4.0 e suas limitações estão no registro final de fingerprinting-canvas.
 - Tracker Blocking: nesta etapa somente medição observacional; Privacy Lens não tem blocklist. Comparar estados concretos da página com requests/erros, sem atribuir ao plugin bloqueio de outra proteção. Implementação de blocklist fica para outro bloco.
 - Storage Partitioning: seguir o fluxo entre top sites indicado pelo teste. Comparar a mesma origem terceira sob contextos distintos; um snapshot único não é suficiente.
 - Bounce Tracking: seguir os links/redirects do próprio teste e manter o histórico entre documentos. Capturar URL/cadeia/tempo/identificador, incluindo controles de login legítimo.
