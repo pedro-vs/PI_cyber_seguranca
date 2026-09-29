@@ -1,8 +1,8 @@
 # Privacy Lens — Insper
 
-Extensão Firefox para a Avaliação Intermediária de Cibersegurança. **Versão 0.3.0 / bloco atual: atribuição de cookies**, em 28/09/2026. Etapa 1 e canvas foram informados como validados pelo aluno no macOS/Firefox 156.0.1. Alteração e lógica de tentativa recusada passaram na validação manual informada pelo aluno; a correção da correlação de cookies terceiros aguarda repetição manual. Ainda não cumpre todos os requisitos de C, B ou A.
+Extensão Firefox para a Avaliação Intermediária de Cibersegurança. **Versão 0.4.0 / bloco atual: indicadores avançados e preparação DDG**, em 28/09/2026. O aluno informou validação manual das etapas 1, 2 e 3, incluindo cookies terceiros, no macOS/Firefox 156.0.1. DDG e os entregáveis dos três sites reais continuam pendentes; ainda não cumpre todos os requisitos de C, B ou A.
 
-**Comece pelo roteiro atual: [Cookies, conceitos e validação manual](docs/ETAPA_3_COOKIES.md).** Inclui preparação, URLs, números por cenário, erros e evidências locais. O [roteiro anterior de canvas](docs/ETAPA_2_CANVAS.md) permanece preservado.
+**Comece pelo [método e controles locais da etapa 4](docs/ETAPA_4_TRACKING.md) e pelo [roteiro completo dos sete testes DDG](docs/VALIDACAO_DDG_V04.md).** Os resultados oficiais serão preenchidos pelo aluno na [tabela de registro](evidencias/duckduckgo/RESULTADOS.md). Roteiros e evidências anteriores de [cookies](docs/ETAPA_3_COOKIES.md) e [canvas](docs/ETAPA_2_CANVAS.md) permanecem preservados.
 
 ## Comece aqui
 
@@ -54,6 +54,9 @@ Abra `http://localhost:8787/empty`: as requisições anteriores e gravações co
 - Tentativas HTTP Set-Cookie separadas de cookies existentes e de gravações correlacionadas pela API de cookies.
 - Snapshots localStorage/sessionStorage/IndexedDB por frame HTTP(S), com estados indisponível/sem suporte.
 - Canvas: instrumentação Firefox no contexto real da página; distinção entre desenho, leitura e sequência compatível; evidência por API/frame.
+- Bounce: sequência principal entre sites, tempos, ligação HTTP/cliente e indicadores adicionais; inferência JS explicitamente limitada quando Firefox não fornece a flag.
+- Query parameters e propagação compatível com cookie sync: HMAC efêmero por navegação, sem exportar valores/hashes nem comparar valores de cookies; parâmetros funcionais e de campanha tratados separadamente.
+- Contexto de storage por origem/frame/top site, sem deduzir bloqueio ou particionamento apenas de ausência/contagem. Rede expõe erros/redirects sem atribuir bloqueio ao plugin.
 - Popup, relatório em aba e exportação JSON. Dados transitórios ficam na memória da extensão.
 - Testes de lógica e fixture local reproduzível.
 
@@ -65,7 +68,7 @@ Abra `http://localhost:8787/empty`: as requisições anteriores e gravações co
 
 **Não observável não é zero.** Páginas internas, domínios protegidos pelo Firefox, frames opacos (`about:blank`, `srcdoc`, sandbox), workers e dados escritos/apagados entre snapshots têm lacunas. O inventário não diz quem originalmente gravou os dados. Scripts terceiros executados no documento principal escrevem no storage da origem desse documento.
 
-**Limites:** 4.000 eventos de requisição, 2.000 tentativas Set-Cookie, 2.000 eventos detalhados de cookies e inventário dos primeiros 256 sites por navegação; histórico global limitado a 4.000 identidades e 4.000 marcadores de substituição, só em memória. Perdas são indicadas. Exporte antes de navegar, fechar a aba ou recarregar a extensão. SPA permanece na mesma navegação; BFCache e cadeia de bounce entre documentos continuam como limitações.
+**Limites:** 4.000 eventos de requisição, 2.000 tentativas Set-Cookie, 2.000 eventos detalhados de cookies e inventário dos primeiros 256 sites por navegação; histórico global limitado a 4.000 identidades e 4.000 marcadores de substituição, só em memória. Tracking avançado analisa até 512 observações, 24 parâmetros por URL e histórico de 32 hops atuais/8 anteriores. Perdas são indicadas. Exporte antes de navegar, fechar a aba ou recarregar a extensão. SPA permanece na mesma navegação; BFCache, POST, IDs transformados e navegações não observadas limitam os indicadores. [Método, confiança e demais limites](docs/ETAPA_4_TRACKING.md).
 
 ## Arquivos e plano
 
@@ -76,6 +79,7 @@ Abra `http://localhost:8787/empty`: as requisições anteriores e gravações co
 | `extension/lib/domain.js` | PSL, classificação e redução de URLs |
 | `extension/lib/model.js` | Metadados, filtros e agregação |
 | `extension/lib/cookies.js` | Histórico sem valores, eventos, janela temporal e resumo de atribuição |
+| `extension/lib/advanced-tracking.js` | Sequências de bounce, parâmetros e comparação efêmera entre sites |
 | `extension/content/storage.js` | Snapshots por frame |
 | `extension/popup/` | HTML/CSS/JS da interface |
 | `extension/vendor/` | PSL local e proveniência |
@@ -94,4 +98,4 @@ Abra `http://localhost:8787/empty`: as requisições anteriores e gravações co
 
 Seu histórico da Etapa 1 foi informado como validado e commitado. Esta entrega não inclui `.git` nem executa comandos no seu GitHub. Preserve os commits existentes e suas evidências. Não rode novamente git init e não substitua a pasta inteira do repositório.
 
-Para este bloco, execute a validação de cookies descrita em `docs/ETAPA_3_COOKIES.md` e envie os resultados. DDG aguarda essa validação. Nenhum commit é executado automaticamente; o histórico e as evidências existentes são preservados.
+Para este bloco, valide as fixtures de tracking e execute os sete roteiros DDG em `docs/VALIDACAO_DDG_V04.md`. Não há resultados DDG previamente preenchidos. Hook/hijacking, score e blocklist não foram implementados nesta etapa. O aluno fará o commit após validar; histórico e evidências existentes são preservados.

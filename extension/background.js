@@ -15,7 +15,10 @@ const ready = fetch(browser.runtime.getURL("vendor/public_suffix_list.dat"))
 installObservers();
 
 function stateFor(tabId, url, requestId = null, timestamp) {
-  const state = P.newPage(tabId, url, requestId, timestamp);
+  const reduced = P.safeUrl(url);
+  const state = P.newPage(tabId, reduced.url, requestId, timestamp);
+  state.pageQueryKeys = reduced.queryKeys;
+  state.tracking = P.newTrackingPage(state, pages.get(tabId));
   state.cookieBaseline = cookieHistory.before(state.startedAt);
   cookieDiagnostics.navigation(state, Date.now());
   pages.set(tabId, state);
@@ -65,9 +68,11 @@ function installObservers() {
     let state = pages.get(d.tabId);
     if (d.type === "main_frame") {
       if (!state || state.navigationRequestId !== d.requestId) state = stateFor(d.tabId, d.url, d.requestId, d.timeStamp);
-      state.topUrl = d.url;
+      const reduced = P.safeUrl(d.url);
+      state.topUrl = reduced.url; state.pageQueryKeys = reduced.queryKeys;
     }
     if (!state) return; // A página precisa ser recarregada após instalar.
+    P.observeTrackingRequest(state.tracking, d);
     const host = P.host(d.url), previous = state.hostFirstSeen.get(host);
     P.recordRequest(state, d);
     if (state.hostFirstSeen.get(host) !== previous) replayCookieHost(state, host);
@@ -94,6 +99,7 @@ function installObservers() {
     if (!req || req.at > d.timeStamp) return;
     req.status = "redirect"; req.redirectTo = P.safeUrl(d.redirectUrl).url;
     req.statusCode = d.statusCode;
+    P.observeTrackingRedirect(state.tracking, d);
   }, {urls: ["<all_urls>"]});
 
   browser.webRequest.onCompleted.addListener(d => finishRequest(d, "completed"), {urls: ["<all_urls>"]});
@@ -158,7 +164,7 @@ function correlateCookieEvent({event, countedStates}, candidates) {
 function finishRequest(d, status) {
   const req = pages.get(d.tabId)?.latestRequest.get(d.requestId);
   if (!req || req.at > d.timeStamp) return;
-  Object.assign(req, {status, statusCode: d.statusCode ?? req.statusCode ?? null,
+  Object.assign(req, {status, finishedAt:d.timeStamp, statusCode: d.statusCode ?? req.statusCode ?? null,
     error: d.error || null, fromCache: d.fromCache ?? null});
 }
 
@@ -168,7 +174,9 @@ browser.webNavigation.onCommitted.addListener(d => {
   if (!state) return;
   if (d.frameId === 0) {
     if (!P.isWeb(d.url)) { pages.delete(d.tabId); return; }
-    state.topUrl = d.url;
+    P.commitTrackingNavigation(state.tracking, d);
+    const reduced = P.safeUrl(d.url);
+    state.topUrl = reduced.url; state.pageQueryKeys = reduced.queryKeys;
     state.frames.clear();
     state.canvasFrames.clear();
   } else { state.frames.delete(d.frameId); state.canvasFrames.delete(d.frameId); }
@@ -212,6 +220,7 @@ async function receiveStorage(message, sender) {
   try { frame = await browser.webNavigation.getFrame({tabId: sender.tab.id, frameId: sender.frameId}); } catch { return; }
   if (!frame || frame.url !== sender.url || pages.get(sender.tab.id) !== state) return;
   state.frames.set(sender.frameId, {frameId: sender.frameId, origin: new URL(sender.url).origin,
+    topOrigin:new URL(state.topUrl).origin,
     at: Date.now(), localStorage: message.localStorage, sessionStorage: message.sessionStorage,
     indexedDB: message.indexedDB});
 }
@@ -252,20 +261,37 @@ async function report(tabId, refresh) {
   if (!state) state = stateFor(tabId, tab.url);
   state.storeId = tab.cookieStoreId;
   if (refresh) {
-    const frames = await browser.webNavigation.getAllFrames({tabId}).catch(() => []);
+    const frames = await browser.webNavigation.getAllFrames({tabId}).catch(() => null);
     const activeIds = new Set((frames || []).map(frame => frame.frameId));
+    state.activeFrameIds = frames === null ? null : activeIds;
     for (const id of state.canvasFrames.keys()) if (!activeIds.has(id)) state.canvasFrames.delete(id);
     await Promise.all((frames || []).flatMap(frame => ["collect-storage", "collect-canvas"].map(type =>
       browser.tabs.sendMessage(tabId, {type}, {frameId:frame.frameId}).catch(() => {}))));
   }
   const cookies = await collectCookies(state);
+  let advancedTracking;
+  if (!state.tracking) advancedTracking = P.unavailableTrackingReport("state-missing");
+  else {
+    try { advancedTracking = P.normalizeTrackingReport(await P.summarizeTracking(state.tracking, resolveDomain)); }
+    catch {
+      // Preserva as outras medições, mas não transforma falha do detector em zero.
+      // Não exporta a exceção bruta: ela pode conter URLs ou identificadores.
+      advancedTracking = P.unavailableTrackingReport("collection-failed");
+    }
+  }
   if (pages.get(tabId) !== state) return {error: "A página mudou durante a coleta. Clique em Atualizar."};
   const network = P.summarizeNetwork(state, resolveDomain);
   return {schemaVersion: 3, extensionVersion: browser.runtime.getManifest().version,
     generatedAt: new Date().toISOString(), browser: await browser.runtime.getBrowserInfo(),
-    page: {...P.safeUrl(state.topUrl), site: resolveDomain(P.host(state.topUrl)), startedAt: state.startedAt},
+    page: {...P.safeUrl(state.topUrl), queryKeys:state.pageQueryKeys || [],
+      site: resolveDomain(P.host(state.topUrl)), startedAt: state.startedAt},
     network: {...network, requests: state.requests.map(r => ({...r, party: P.party(r.host, P.host(state.topUrl), resolveDomain)}))},
-    cookies, storage: [...state.frames.values()], canvas:P.summarizeCanvas([...state.canvasFrames.values()]),
+    cookies, advancedTracking,
+    storage: [...state.frames.values()].map(frame => ({...frame,
+      party:P.party(P.host(frame.origin), P.host(frame.topOrigin || state.topUrl), resolveDomain),
+      context:frame.frameId === 0 ? "top-level" : "embedded",
+      activeAtRefresh:state.activeFrameIds?.has(frame.frameId) ?? null,
+      partitioning:"not-established-by-snapshot"})), canvas:P.summarizeCanvas([...state.canvasFrames.values()]),
     score: {status: "not-implemented", value: null},
     coverage: {partial: state.partial, droppedRequests: state.droppedRequests, droppedCookieHeaders: state.droppedCookieHeaders,
       droppedCookieWrites: state.droppedCookieWrites,

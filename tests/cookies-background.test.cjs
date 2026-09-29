@@ -1,29 +1,6 @@
 "use strict";
-const {test} = require("node:test"), assert = require("node:assert/strict"), vm = require("node:vm"), fs = require("node:fs"), path = require("node:path");
-const deferred = () => { let resolve; const promise = new Promise(r => {resolve=r;}); return {promise,resolve}; };
-function harness({delayStore = false, delayPSL = false} = {}) {
-  let now = 1000, inventory = [], inventoryHook;
-  const listeners = {}, frames = new Map(), store = deferred(), psl = deferred();
-  const event = name => ({addListener(fn) {listeners[name]=fn;},hasListener(fn) {return listeners[name]===fn;}});
-  const browser = {
-    runtime: {getURL: p => `moz-extension://test/${p}`, id:"test", onMessage:event("message"),
-      getManifest:()=>({version:"0.3.0"}), getBrowserInfo:async()=>({version:"mock"})},
-    tabs: {get:async id => {if(delayStore) await store.promise; return {id,url:"https://example.com/",cookieStoreId:"default"};},
-      onRemoved:event("removed"), sendMessage:async()=>{}},
-    webNavigation:{onCommitted:event("committed"),getAllFrames:async()=>[...frames.values()],getFrame:async({frameId})=>frames.get(frameId) || null},
-    cookies:{onChanged:event("cookie"),getAll:async()=>inventoryHook ? inventoryHook() : inventory},
-    webRequest:Object.fromEntries(["onBeforeRequest","onHeadersReceived","onBeforeRedirect","onCompleted","onErrorOccurred"].map(n=>[n,event(n)]))
-  };
-  class Clock extends Date {static now() {return now;}}
-  const ctx=vm.createContext({browser,URL,Date:Clock,fetch:async()=>{if(delayPSL) await psl.promise; return {ok:true,text:async()=>"com\ntest"};}});
-  for(const f of ["lib/domain.js","lib/model.js","lib/cookies.js","lib/cookie-diagnostics.js","lib/canvas.js","background.js"])
-    vm.runInContext(fs.readFileSync(path.join(__dirname,"../extension",f),"utf8"),ctx,{filename:f});
-  return {listeners,frames,store,psl,time:t=>{now=t;},inventory:items=>{inventory=items;},inventoryHook:fn=>{inventoryHook=fn;},
-    navigate:(id="main",tabId=1,url="https://example.com/",timeStamp=now)=>listeners.onBeforeRequest({tabId,type:"main_frame",requestId:id,url,timeStamp,frameId:0}),
-    cookie:(extra={},removed=false,cause="explicit")=>listeners.cookie({removed,cause,cookie:{name:"id",domain:"example.com",path:"/",hostOnly:true,storeId:"default",session:true,value:"DO_NOT_EXPORT",...extra}}),
-    report:async(tabId=1)=>JSON.parse(JSON.stringify(await listeners.message({type:"report",tabId,refresh:true},{id:"test",url:"moz-extension://test/popup/popup.html"})))
-  };
-}
+const {test} = require("node:test"), assert = require("node:assert/strict");
+const {harness} = require("./helpers/background.cjs");
 test("background preserva eventos precoces enquanto PSL e cookieStoreId estão pendentes",async()=>{
   const h=harness({delayStore:true,delayPSL:true});h.navigate();h.time(1001);h.cookie();h.store.resolve();h.psl.resolve();
   const r=await h.report();assert.equal(r.cookies.eventTotals.created,1);assert.equal(r.schemaVersion,3);
@@ -238,4 +215,21 @@ test("terceiro: reavaliação preserva isolamento de store, FPI e partição",as
     h.time(1020);thirdRequest(h,1005);
     const c=(await h.report()).cookies;assert.equal(c.eventTotals.writes,0);assert.equal(c.probable.totals.total,0);
   }
+});
+test("background: queries sensíveis não ficam no estado principal, nem no JSON, antes/depois do commit",async()=>{
+  const h=harness(), url="https://example.com/start?uid=Sensitive29Alpha73Token&email=private%40mail.test#SECRET";
+  h.navigate("private",1,url);
+  assert.equal(/Sensitive29Alpha73Token|private%40mail|SECRET/.test(h.retainedState()),false);
+  h.listeners.committed({frameId:0,tabId:1,url,timeStamp:1010,transitionType:"typed",transitionQualifiers:[]});
+  const r=await h.report();
+  assert.equal(/Sensitive29Alpha73Token|private%40mail|SECRET/.test(h.retainedState()+JSON.stringify(r)),false);
+  assert.deepEqual(r.page.queryKeys,["uid","email"]);assert.equal(r.advancedTracking.queryParameters.findings[0].parameter,"uid");
+  assert.equal(r.advancedTracking.coverage.hashErrors,0);
+});
+test("storage: falha ao consultar frames não é apresentada como frame removido ou partição comprovada",async()=>{
+  const h=harness({failFrames:true});h.navigate();h.frames.set(0,{frameId:0,url:"https://example.com/"});
+  await h.listeners.message(storageSnapshot(),{id:"test",tab:{id:1},frameId:0,url:"https://example.com/"});
+  const r=await h.report(),f=r.storage[0];
+  assert.equal(f.activeAtRefresh,null);assert.equal(f.context,"top-level");assert.equal(f.topOrigin,"https://example.com");
+  assert.equal(f.partitioning,"not-established-by-snapshot");assert.equal(f.localStorage.count,2);
 });

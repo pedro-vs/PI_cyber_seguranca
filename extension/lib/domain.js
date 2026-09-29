@@ -34,10 +34,11 @@
   };
   P.party = (host, topHost, resolve) => !host || !topHost ? "unknown" :
     resolve(host) === resolve(topHost) ? "first" : "third";
+  P.queryName = name => /^[a-z_][a-z0-9_.-]{0,63}$/i.test(name) ? name : "[nome omitido]";
   P.safeUrl = value => {
     try {
       const url = new URL(value);
-      return {url: `${url.origin}${url.pathname}`, queryKeys: [...new Set(url.searchParams.keys())]};
+      return {url: `${url.origin}${url.pathname}`, queryKeys: [...new Set([...url.searchParams.keys()].map(P.queryName))]};
     } catch { return {url: "", queryKeys: []}; }
   };
 })();

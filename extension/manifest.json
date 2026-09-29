@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
   "name": "Privacy Lens — Insper",
-  "version": "0.3.0",
-  "description": "Relatório local de rede, cookies, storage e indicadores de canvas fingerprinting.",
+  "version": "0.4.0",
+  "description": "Relatório local de rede, cookies, storage, canvas e indicadores de bounce, cookie sync e parâmetros de tracking.",
   "browser_specific_settings": {"gecko": {"id": "privacy-lens@projeto.insper", "strict_min_version": "128.0"}},
   "permissions": ["<all_urls>", "tabs", "webRequest", "webNavigation", "cookies"],
   "background": {
-    "scripts": ["lib/domain.js", "lib/model.js", "lib/cookies.js", "lib/cookie-diagnostics.js", "lib/canvas.js", "background.js"],
+    "scripts": ["lib/domain.js", "lib/model.js", "lib/cookies.js", "lib/cookie-diagnostics.js", "lib/canvas.js", "lib/advanced-tracking.js", "lib/tracking-report.js", "background.js"],
     "persistent": true
   },
   "content_scripts": [{

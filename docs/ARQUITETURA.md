@@ -1,5 +1,7 @@
 # Arquitetura e limites
 
+**Atualização 0.4.0:** [ETAPA_4_TRACKING.md](ETAPA_4_TRACKING.md) documenta o módulo adicional de bounce, query parameters e cookie sync com HMAC por navegação, os limites e os contextos de storage. Não altera a inferência validada de cookies/canvas nem implementa bloqueio. Os planos futuros abaixo devem ser lidos junto dessa atualização.
+
 ## Decisão para Firefox
 
 Manifest V2, background persistente via `background.scripts`, content scripts em `document_start`/`all_frames`, popup HTML/CSS/JS. Mozilla mantém MV2; MDN documenta que background service worker não é o modelo suportado no Firefox. MV3 com event page também é possível, mas acrescentaria persistência/reidratação do estado sem benefício necessário neste prazo. A decisão não decorre de falta de `webRequestBlocking` em MV3: o Firefox também o suporta.

@@ -1,6 +1,6 @@
 # Plano e checklist — fonte de verdade: PDF do enunciado
 
-**Atualização 0.2.0:** Etapa 1 validada e commitada pelo aluno; canvas implementado neste bloco, com validação manual pendente. Consulte a checklist operacional e os prints obrigatórios em `ETAPA_2_CANVAS.md`. Os critérios gerais abaixo só serão encerrados com suas evidências completas.
+**Atualização 0.4.0:** etapas 1, 2 e 3 informadas como validadas manualmente pelo aluno. Indicadores avançados implementados; validação manual local/DDG pendente. Consulte [ETAPA_4_TRACKING.md](ETAPA_4_TRACKING.md) e [VALIDACAO_DDG_V04.md](VALIDACAO_DDG_V04.md). A checklist geral abaixo só será encerrada com evidências completas; cronograma e textos das versões anteriores são históricos. Score, hook/hijacking e blocklist foram explicitamente adiados nesta etapa.
 
 PDF de 4 páginas lido integralmente. Referências: entregáveis na p. 2; conceitos e descontos na p. 3; entrega na p. 4. Prazo operacional usado: **29/09/2026**, informado pelo aluno; o PDF diz “1 semana a partir da divulgação”.
 

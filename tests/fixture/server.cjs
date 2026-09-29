@@ -3,10 +3,12 @@ const http = require("node:http"), fs = require("node:fs"), path = require("node
 const port = Number(process.env.FIXTURE_PORT || 8787);
 const top = `http://localhost:${port}`, third = `http://127.0.0.1:${port}`;
 const cookiesFixture = require("./cookies.cjs");
+const trackingFixture = require("./tracking.cjs");
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, top);
   res.setHeader("Cache-Control", "no-store");
   if (cookiesFixture(req, res, url, port)) return;
+  if (trackingFixture(req, res, url, port)) return;
   if (["/canvas/negative","/canvas/positive","/canvas/read-only","/canvas/errors","/canvas/frame"].includes(url.pathname)) {
     res.setHeader("Content-Type","text/html; charset=utf-8");
     res.setHeader("Content-Security-Policy","default-src 'self'; script-src 'self'; style-src 'self'; frame-src http://127.0.0.1:*;");
